@@ -44,9 +44,9 @@ Statistical Quality Control | Process Engineering
 - 2008 - 2020: Process Engineering in Semiconductor Manufacturing
 
 ## 📫 Contact
-- Kaggle: [Your Kaggle Profile]
-- Wantedly: [Your Wantedly Profile]
-- LinkedIn: [Your LinkedIn Profile]
+- Kaggle: https://www.kaggle.com/yasunorim
+- Wantedly: https://www.wantedly.com/id/yasunori_morishima_b
+- LinkedIn: https://www.linkedin.com/in/yasunori-morishima-b70229241/
 
 ---
 
