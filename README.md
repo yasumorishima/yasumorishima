@@ -25,7 +25,7 @@ Machine learning competition participation and notebooks
   * Status: Currently in evaluation period
 * **NFL Big Data Bowl 2026** - 🥉 **Bronze Medal** (Notebook)
   * Sports analytics with player tracking data
-  * Random Forest, XGBoost
+  * Physics-based geometric rules (no ML)
   * Community-recognized notebook contribution
 
 ## 🔬 Learning Projects
