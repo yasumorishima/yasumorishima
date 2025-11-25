@@ -14,19 +14,42 @@ MLB data analysis using pybaseball
 * Python, pandas, matplotlib
 * Data collection, preprocessing, and visualization
 
-### [Kaggle Competitions](https://github.com/yasumorishima/kaggle-competitions)
-Machine learning competition participation and notebooks
+### [Kaggle Competitions](./kaggle-competitions)
+
+**Repository:** https://github.com/yasumorishima/kaggle-competitions
 
 **Recent Competitions:**
-* **MITSUI&CO. Commodity Prediction Challenge (2025)** - Financial time series forecasting
-  * Fixed critical forward-looking target bug
-  * Simple mean reversion approach
-  * Learning: Problem understanding > Model complexity
-  * Status: Currently in evaluation period
-* **NFL Big Data Bowl 2026** - 🥉 **Bronze Medal** (Notebook)
-  * Sports analytics with player tracking data
-  * Physics-based geometric rules (no ML)
-  * Community-recognized notebook contribution
+
+#### MITSUI&CO. Commodity Prediction Challenge (2025) - Participating
+Financial time series forecasting competition for commodity price prediction.
+
+**Learning Focus:**
+- Time series analysis fundamentals
+- Data quality validation and debugging
+- Simple approaches (mean reversion) vs complex models
+- Using AI-assisted development tools for efficient exploration
+
+**Technical Stack:** Python, pandas, time series analysis, Claude Code
+
+**Status:** Currently participating and learning
+
+**Key Insight:** Problem understanding often matters more than model complexity.
+
+---
+
+#### NFL Big Data Bowl 2026 - 🥉 Bronze Medal (Notebook)
+Sports analytics competition using player tracking data.
+
+**Approach:**
+- Physics-based geometric rules (no machine learning)
+- Community-recognized notebook contribution
+- RMSE 2.921
+
+**Technical Stack:** Python, pandas, polars, numpy
+
+**Applied to Work:** Competition experience contributed to processing time prediction system development (R²=0.579).
+
+---
 
 ## 🔬 Learning Projects
 
