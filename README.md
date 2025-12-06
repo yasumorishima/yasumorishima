@@ -14,7 +14,7 @@ MLB data analysis using pybaseball
 * Python, pandas, matplotlib
 * Data collection, preprocessing, and visualization
 
-### [Kaggle Competitions](./kaggle-competitions)
+### [Kaggle Competitions](https://github.com/yasumorishima/kaggle-competitions)
 
 **Repository:** https://github.com/yasumorishima/kaggle-competitions
 
