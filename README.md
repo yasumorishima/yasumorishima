@@ -1,5 +1,4 @@
 # Yasunori Morishima
-
 Manufacturing Engineer with 17 years of experience, specializing in data analysis and business automation.
 
 ## 🎯 Focus Areas
@@ -9,13 +8,34 @@ Manufacturing Engineer with 17 years of experience, specializing in data analysi
 
 ## 📊 Main Projects
 
+### [Business Automation Workflow](https://github.com/yasumorishima/business-automation-workflow)
+End-to-end automation system for processing email PDF attachments and integrating multiple data sources.
+
+**System Architecture:**
+- Step 1: Gmail PDF extraction (Google Apps Script)
+- Step 2: PDF to Excel conversion (VBA + Power Query)
+- Step 3: Data aggregation to Google Sheets (Google Apps Script)
+- Step 4: Multi-source data integration (Python/Google Colab)
+
+**Key Features:**
+- Automated email processing with duplicate detection
+- Text-embedded PDF extraction (Power Query solves GAS OCR accuracy issues)
+- Cross-platform data integration with styled Excel output
+
+**Technical Stack:** Google Apps Script, VBA, Power Query, Python, pandas, gspread, xlsxwriter
+
+**Applied to Work:** Developed for streamlining order processing and repair request management workflows.
+
+---
+
 ### [MLB Data Analysis](https://github.com/yasumorishima/mlb-data-analysis)
 MLB data analysis using pybaseball
 * Python, pandas, matplotlib
 * Data collection, preprocessing, and visualization
 
-### [Kaggle Competitions](https://github.com/yasumorishima/kaggle-competitions)
+---
 
+### [Kaggle Competitions](https://github.com/yasumorishima/kaggle-competitions)
 **Repository:** https://github.com/yasumorishima/kaggle-competitions
 
 **Recent Competitions:**
@@ -57,7 +77,6 @@ Sports analytics competition using player tracking data.
 Learning project for Internet Computer Protocol and Motoko language
 
 ## 🛠️ Tech Stack
-
 **Data Analysis & ML:** Python | pandas | scikit-learn | matplotlib | seaborn
 
 **Automation:** VBA | Google Apps Script | Power Query
