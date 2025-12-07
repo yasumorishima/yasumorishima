@@ -1,4 +1,4 @@
-# Yasunori Morishima
+# Yasunori Morishima　（盛島康徳）
 Manufacturing Engineer with 17 years of experience, specializing in data analysis and business automation.
 
 ## 🎯 Focus Areas
