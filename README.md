@@ -1,10 +1,12 @@
-# Yasunori Morishima　（盛島康徳）
-Manufacturing Engineer with 17 years of experience, specializing in data analysis and business automation.
+# Yasunori Morishima (盛島康徳)
+Manufacturing Engineer & Data Analyst with 17 years of experience, specializing in data analysis and business automation.
 
 ## 🎯 Focus Areas
-* Data Analysis & Machine Learning (Python, scikit-learn)
-* Business Process Automation (VBA, GAS)
-* Statistical Quality Control
+* **Data Analysis & Machine Learning:** Python, scikit-learn
+* **Business Process Automation:** VBA, Google Apps Script (GAS)
+* **Statistical Quality Control:** Manufacturing Process Improvement
+
+---
 
 ## 📊 Main Projects
 
@@ -12,10 +14,10 @@ Manufacturing Engineer with 17 years of experience, specializing in data analysi
 End-to-end automation system for processing email PDF attachments and integrating multiple data sources.
 
 **System Architecture:**
-- Step 1: Gmail PDF extraction (Google Apps Script)
-- Step 2: PDF to Excel conversion (VBA + Power Query)
-- Step 3: Data aggregation to Google Sheets (Google Apps Script)
-- Step 4: Multi-source data integration (Python/Google Colab)
+- **Step 1:** Gmail PDF extraction (Google Apps Script)
+- **Step 2:** PDF to Excel conversion (VBA + Power Query)
+- **Step 3:** Data aggregation to Google Sheets (Google Apps Script)
+- **Step 4:** Multi-source data integration (Python/Google Colab)
 
 **Key Features:**
 - Automated email processing with duplicate detection
@@ -29,7 +31,7 @@ End-to-end automation system for processing email PDF attachments and integratin
 ---
 
 ### [MLB Data Analysis](https://github.com/yasumorishima/mlb-data-analysis)
-MLB data analysis using pybaseball
+MLB data analysis using pybaseball.
 * Python, pandas, matplotlib
 * Data collection, preprocessing, and visualization
 
@@ -55,8 +57,6 @@ Financial time series forecasting competition for commodity price prediction.
 
 **Key Insight:** Problem understanding often matters more than model complexity.
 
----
-
 #### NFL Big Data Bowl 2026 - 🥉 Bronze Medal (Notebook)
 Sports analytics competition using player tracking data.
 
@@ -74,25 +74,39 @@ Sports analytics competition using player tracking data.
 ## 🔬 Learning Projects
 
 ### [ICP Learning Project](https://github.com/yasumorishima/ICP_kinyoku)
-Learning project for Internet Computer Protocol and Motoko language
+Learning project for Internet Computer Protocol and Motoko language.
+
+---
 
 ## 🛠️ Tech Stack
-**Data Analysis & ML:** Python | pandas | scikit-learn | matplotlib | seaborn
+| Category | Technologies |
+| --- | --- |
+| **Data Analysis & ML** | Python, pandas, scikit-learn, matplotlib, seaborn |
+| **Automation** | VBA, Google Apps Script, Power Query |
+| **Tools** | Excel, Access, Looker Studio, Salesforce |
+| **Manufacturing** | Statistical Quality Control, Process Engineering |
 
-**Automation:** VBA | Google Apps Script | Power Query
-
-**Tools:** Excel | Access | Looker Studio | Salesforce
-
-**Manufacturing:** Statistical Quality Control | Process Engineering
+---
 
 ## 📈 Career
-* 2024 - Present: Quality Management @ Marubun Corporation
-* 2020 - 2024: Technical Dept. @ Metaco Corporation
-* 2008 - 2020: Process Engineering in Semiconductor Manufacturing
+* **2024 - Present:** Quality Management @ Marubun Corporation (丸文株式会社)
+* **2020 - 2024:** Technical Dept. @ Metaco Corporation (株式会社メタコ)
+* **2008 - 2020:** Process Engineering in Semiconductor Manufacturing
+
+---
+
+## 🏆 Patents
+**Stencil mask and manufacturing method thereof (ステンシルマスク及びその製造方法)**
+* **Patent No:** 6307851 (特許第6307851号)
+* **Role:** Inventor (発明者)
+* **Assignee:** Toppan Printing Co., Ltd. (凸版印刷株式会社)
+* **Link:** [Google Patents (JP6307851B2)](https://patents.google.com/patent/JP6307851B2/ja)
+
+---
 
 ## 📫 Contact
-* Kaggle: [https://www.kaggle.com/yasunorim](https://www.kaggle.com/yasunorim)
-* Wantedly: [https://www.wantedly.com/id/yasunori_morishima_b](https://www.wantedly.com/id/yasunori_morishima_b)
-* LinkedIn: [https://www.linkedin.com/in/yasunori-morishima-b70229241/](https://www.linkedin.com/in/yasunori-morishima-b70229241/)
+* **Kaggle:** [https://www.kaggle.com/yasunorim](https://www.kaggle.com/yasunorim)
+* **Wantedly:** [https://www.wantedly.com/id/yasunori_morishima_b](https://www.wantedly.com/id/yasunori_morishima_b)
+* **LinkedIn:** [https://www.linkedin.com/in/yasunori-morishima-b70229241/](https://www.linkedin.com/in/yasunori-morishima-b70229241/)
 
-💡 "Bridging manufacturing expertise with data-driven solutions"
+> 💡 *"Bridging manufacturing expertise with data-driven solutions"*
