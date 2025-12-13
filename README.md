@@ -30,6 +30,27 @@ End-to-end automation system for processing email PDF attachments and integratin
 
 ---
 
+### [GAS Calendar Event Registration Tool](https://github.com/yasumorishima/gas-calendar-tool)
+Google Apps Script-based web application for batch calendar event registration with mobile-optimized UI.
+
+**Key Features:**
+- Batch event creation for multiple dates in a single operation
+- Event template management with user properties
+- Mobile-first responsive design with accessibility considerations
+- Support for all-day and timed events with color coding
+
+**Technical Highlights:**
+- **Frontend:** Pure HTML/CSS/JavaScript (no frameworks)
+- **Backend:** Google Apps Script for Calendar API integration
+- **Data Storage:** PropertiesService for user-specific event templates
+- **UI/UX:** Mobile-optimized interface (28px font size, 80px+ touch targets)
+
+**Technical Stack:** Google Apps Script, HTML5, CSS3, JavaScript, Google Calendar API
+
+**Use Case:** Simplifies recurring event scheduling (e.g., shift patterns, medication reminders, regular meetings) with a senior-friendly interface.
+
+---
+
 ### [MLB Data Analysis](https://github.com/yasumorishima/mlb-data-analysis)
 MLB data analysis using pybaseball.
 * Python, pandas, matplotlib
