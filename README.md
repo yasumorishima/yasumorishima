@@ -39,29 +39,31 @@ Google Apps Script-based web application for batch calendar event registration w
 (Google Apps ScriptベースのWebアプリ。モバイルに最適化されたUIでカレンダー一括登録を実現)
 
 **Key Features:**
-- Batch event creation for multiple dates in a single operation (複数日程の一括登録)
-- Event template management with user properties (ユーザープロパティによるテンプレート管理)
-- Mobile-first responsive design with accessibility considerations
+- Batch event creation for multiple dates (複数日程の一括登録)
+- Event template management with user properties
+- Mobile-first responsive design (28px font, 80px+ touch targets for senior-friendly UI)
 - Support for all-day and timed events with color coding
-
-**Technical Highlights:**
-- **Frontend:** Pure HTML/CSS/JavaScript (no frameworks)
-- **Backend:** Google Apps Script for Calendar API integration
-- **Data Storage:** PropertiesService for user-specific event templates
-- **UI/UX:** Mobile-optimized interface (28px font size, 80px+ touch targets)
-  - (高齢者にも使いやすい、28pxフォント・80px以上のタッチターゲットを採用したUI)
 
 **Technical Stack:** Google Apps Script, HTML5, CSS3, JavaScript, Google Calendar API
 
-**Use Case:** Simplifies recurring event scheduling (e.g., shift patterns, medication reminders, regular meetings) with a senior-friendly interface.
+**Use Case:** Simplifies recurring event scheduling (shifts, medication reminders, meetings) with a senior-friendly interface.
 (用途: シニア層にも使いやすいインターフェースで、シフト管理や服薬リマインダーなどの定期予定作成を簡略化)
 
 ---
 
 ### [MLB Data Analysis](https://github.com/yasumorishima/mlb-data-analysis)
-MLB data analysis using pybaseball.
-* Python, pandas, matplotlib
-* Data collection, preprocessing, and visualization
+Professional-grade MLB data analysis including pre-game scouting, image processing, and injury prevention.
+(プロフェッショナルレベルのMLBデータ解析 - スカウティング、画像処理、怪我予防を含む)
+
+**Featured Analyses:**
+- **WBC 2023 Pre-Game Scouting Report:** Strategic analysis for Japan vs. Mexico semifinal
+  - (WBC 2023試合前スカウティングレポート: 日本対メキシコ準決勝の戦略分析)
+- **Trevor Bauer Image Analysis:** Computer vision-based pitcher motion analysis
+  - (トレバー・バウアー画像分析: コンピュータビジョンによる投球動作解析)
+- **Shohei Ohtani Performance & Injury Analysis:** Statistical tracking and predictive analytics
+  - (大谷翔平パフォーマンス・怪我分析: 統計追跡と予測分析)
+
+**Technical Stack:** Python, pybaseball, pandas, matplotlib, PIL (Pillow), scikit-learn
 
 ---
 
