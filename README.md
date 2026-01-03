@@ -51,6 +51,23 @@ Google Apps Script-based web application for batch calendar event registration w
 
 ---
 
+### [Daily Diary Web App](https://github.com/yasumorishima/gas-daily-diary)
+Google Apps Script-based personal diary web application with mobile-optimized UI.
+(Google Apps ScriptベースのWebアプリ。モバイル最適化された個人用日記アプリ)
+
+**Key Features:**
+- Mobile-first responsive design with dark mode support (モバイルファースト設計とダークモード対応)
+- 10 functional pages: Write, Calendar, Search, Statistics, Export, and more
+- Privacy-focused data storage in user's own Google Spreadsheet
+- Full-text search, tag filtering, and past entries viewing
+
+**Technical Stack:** Google Apps Script, HTML5, CSS3, Vanilla JavaScript
+
+**Use Case:** Personal diary management with comprehensive features for daily writing, reflection, and data export.
+(用途: 日常の記録、振り返り、データエクスポートなど、包括的な機能を備えた個人用日記管理)
+
+---
+
 ### [MLB Data Analysis](https://github.com/yasumorishima/mlb-data-analysis)
 Professional-grade MLB data analysis including pre-game scouting, image processing, and injury prevention.
 (プロフェッショナルレベルのMLBデータ解析 - スカウティング、画像処理、怪我予防を含む)
