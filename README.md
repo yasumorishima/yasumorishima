@@ -88,18 +88,17 @@ Cross-platform mobile diary app built with Flutter, evolved from the GAS web app
 ---
 
 ### [MLB Data Analysis](https://github.com/yasumorishima/mlb-data-analysis)
-Professional-grade MLB data analysis including pre-game scouting, image processing, and injury prevention.
-(プロフェッショナルレベルのMLBデータ解析 - スカウティング、画像処理、怪我予防を含む)
+MLB Statcast data analysis with Python. (PythonによるMLB Statcastデータ分析)
 
-**Featured Analyses:**
-- **WBC 2023 Pre-Game Scouting Report:** Strategic analysis for Japan vs. Mexico semifinal
-  - (WBC 2023試合前スカウティングレポート: 日本対メキシコ準決勝の戦略分析)
-- **Trevor Bauer Image Analysis:** Computer vision-based pitcher motion analysis
-  - (トレバー・バウアー画像分析: コンピュータビジョンによる投球動作解析)
-- **Shohei Ohtani Performance & Injury Analysis:** Statistical tracking and predictive analytics
-  - (大谷翔平パフォーマンス・怪我分析: 統計追跡と予測分析)
+| Analysis | Key Finding |
+|----------|-------------|
+| **WBC 2023 Sandoval Scouting** | 49.2% sliders vs left-handed batters, 0 HR allowed (左打者にスライダー49.2%、被HR 0本) |
+| **Bauer Set Position (Image)** | K-means detected glove position "tells" (グラブ位置に球種の癖を検出) |
+| **Ohtani Batting 2022** | Hit concentration at 2B area → "Ohtani Shift" (セカンド付近集中→大谷シフトの根拠) |
+| **Ohtani Injury 2023** | Multi-parameter anomaly detection (±2σ) (複数パラメーター組合せで予兆検出) |
+| **HR Race 2024** | Bar chart race animation (動的バーチャートレース) |
 
-**Technical Stack:** Python, pybaseball, pandas, matplotlib, PIL (Pillow), scikit-learn
+**Technical Stack:** Python, pybaseball, pandas, matplotlib, PIL, scikit-learn
 
 ---
 
