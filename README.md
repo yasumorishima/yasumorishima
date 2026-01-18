@@ -104,40 +104,23 @@ Professional-grade MLB data analysis including pre-game scouting, image processi
 ---
 
 ### [Kaggle Competitions](https://github.com/yasumorishima/kaggle-competitions)
-**Repository:** https://github.com/yasumorishima/kaggle-competitions
+🥉 **4 Bronze Medals (Notebook)** - Earned through AI-assisted development with Claude Code
+(4つのブロンズメダル（ノートブック） - Claude Codeを活用したAI支援開発で獲得)
 
-**Recent Competitions:**
+**Note:** These are Notebook Medals (community votes), not competition ranking medals.
+(注: コミュニティ投票によるノートブックメダルであり、コンペティション順位のメダルではありません)
 
-#### MITSUI&CO. Commodity Prediction Challenge (2025) - Participating
-Financial time series forecasting competition for commodity price prediction.
-(商品価格予測のための金融時系列予測コンペティション)
+| Competition | Notebook | Key Approach |
+|-------------|----------|--------------|
+| **NFL Big Data Bowl 2026** | [Geometric Rules Baseline](https://www.kaggle.com/code/yasunorim/geometric-rules-baseline-2-921-rmse-no-ml) | Physics-based rules, No ML, RMSE 2.921 |
+| **PhysioNet ECG** | [ECG Baseline](https://www.kaggle.com/code/yasunorim/physionet-ecg-baseline) | Submission format guide |
+| **Diabetes (S5E12)** | [EDA & Baseline](https://www.kaggle.com/code/yasunorim/diabetes-prediction-eda-baseline-s5e12) | LightGBM 5-fold CV, AUC 0.727 |
+| **Diabetes (S5E12)** | [Rank-Based Ensemble](https://www.kaggle.com/code/yasunorim/diabetes-prediction-rank-based-ensemble) | Rank averaging for AUC optimization |
 
-**Learning Focus:**
-- Time series analysis fundamentals (時系列分析の基礎)
-- Data quality validation and debugging
-- Simple approaches (mean reversion) vs complex models
-- Using AI-assisted development tools for efficient exploration
+**Technical Stack:** Python, pandas, LightGBM, scikit-learn, Claude Code
 
-**Technical Stack:** Python, pandas, time series analysis, Claude Code
-
-**Status:** Currently participating and learning
-
-**Key Insight:** Problem understanding often matters more than model complexity.
-(洞察: モデルの複雑さよりも、問題設定の理解が重要であること)
-
-#### NFL Big Data Bowl 2026 - 🥉 Bronze Medal (Notebook)
-Sports analytics competition using player tracking data.
-
-**Approach:**
-- Physics-based geometric rules (no machine learning)
-  - (機械学習を使用しない、物理ベースの幾何学的アプローチ)
-- Community-recognized notebook contribution
-- RMSE 2.921
-
-**Technical Stack:** Python, pandas, polars, numpy
-
-**Applied to Work:** Competition experience contributed to processing time prediction system development (R²=0.579).
-(実績: コンペでの経験を、社内の処理時間予測システムの開発に応用)
+**Key Learning:** Domain knowledge + AI tools = effective problem solving
+(重要な学び: ドメイン知識 + AIツール = 効果的な問題解決)
 
 ---
 
