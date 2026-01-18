@@ -68,6 +68,25 @@ Google Apps Script-based personal diary web application with mobile-optimized UI
 
 ---
 
+### [Daily Diary - Flutter Mobile App](https://github.com/yasumorishima/diary-app-flutter)
+Cross-platform mobile diary app built with Flutter, evolved from the GAS web app above.
+(Flutter製クロスプラットフォームモバイル日記アプリ - 上記GAS版からの進化版)
+
+**Key Features:**
+- 5 language support (🇯🇵🇺🇸🇨🇳🇰🇷🇪🇸)
+- Offline-first with local storage (Hive)
+- Dark mode, calendar view, statistics, search
+- Google Play release (Coming Soon)
+
+**Technical Stack:** Flutter, Dart, Hive, Provider, Google AdMob
+
+**Development:** Built with Claude Code (AI-assisted development)
+(開発手法: Claude Codeを活用したAI支援開発)
+
+**Status:** Google Play - Coming Soon (Currently in Closed Testing)
+
+---
+
 ### [MLB Data Analysis](https://github.com/yasumorishima/mlb-data-analysis)
 Professional-grade MLB data analysis including pre-game scouting, image processing, and injury prevention.
 (プロフェッショナルレベルのMLBデータ解析 - スカウティング、画像処理、怪我予防を含む)
@@ -135,6 +154,7 @@ Learning project for Internet Computer Protocol and Motoko language.
 | --- | --- |
 | **Data Analysis & ML** | Python, pandas, scikit-learn, matplotlib, seaborn |
 | **Automation** | VBA, Google Apps Script, Power Query |
+| **Mobile App** | Flutter, Dart, Hive, Google AdMob |
 | **Tools** | Excel, Access, Looker Studio, Salesforce |
 | **Manufacturing** | Statistical Quality Control, Process Engineering |
 
