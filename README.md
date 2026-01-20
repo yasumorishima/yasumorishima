@@ -88,7 +88,7 @@ Cross-platform mobile diary app built with Flutter, evolved from the GAS web app
 ---
 
 ### [MLB Data Analysis](https://github.com/yasumorishima/mlb-data-analysis)
-MLB Statcast data analysis with Python. (PythonによるMLB Statcastデータ分析)
+MLB Statcast data analysis with Python & SQL. (Python & SQLによるMLB Statcastデータ分析)
 
 | Analysis | Key Finding |
 |----------|-------------|
@@ -98,7 +98,10 @@ MLB Statcast data analysis with Python. (PythonによるMLB Statcastデータ分
 | **Ohtani Injury 2023** | Multi-parameter anomaly detection (±2σ) (複数パラメーター組合せで予兆検出) |
 | **HR Race 2024** | Bar chart race animation (動的バーチャートレース) |
 
-**Technical Stack:** Python, pybaseball, pandas, matplotlib, PIL, scikit-learn
+**Technical Stack:** Python, pybaseball, pandas, matplotlib, PIL, scikit-learn, **DuckDB (SQL)**
+
+📌 **SQL versions available** - Each analysis has both Python (pandas) and SQL (DuckDB) implementations
+(各分析にPython版とSQL版の両方を用意)
 
 ---
 
@@ -134,7 +137,7 @@ Learning project for Internet Computer Protocol and Motoko language.
 ## 🛠️ Tech Stack
 | Category | Technologies |
 | --- | --- |
-| **Data Analysis & ML** | Python, pandas, scikit-learn, matplotlib, seaborn |
+| **Data Analysis & ML** | Python, pandas, scikit-learn, matplotlib, seaborn, **DuckDB (SQL)** |
 | **Automation** | VBA, Google Apps Script, Power Query |
 | **Mobile App** | Flutter, Dart, Hive, Google AdMob |
 | **Tools** | Excel, Access, Looker Studio, Salesforce |
