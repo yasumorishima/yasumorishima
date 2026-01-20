@@ -161,6 +161,6 @@ Learning project for Internet Computer Protocol and Motoko language.
 ## 📫 Contact
 * **Kaggle:** [https://www.kaggle.com/yasunorim](https://www.kaggle.com/yasunorim)
 * **Wantedly:** [https://www.wantedly.com/id/yasunori_morishima_b](https://www.wantedly.com/id/yasunori_morishima_b)
-* **LinkedIn:** [https://www.linkedin.com/in/yasunori-morishima-b70229241/](https://www.linkedin.com/in/yasunori-morishima-b70229241/)
+* **LinkedIn:** [https://www.linkedin.com/in/yasunori-morishima-b70229241](https://www.linkedin.com/in/yasunori-morishima-b70229241)
 
 > 💡 *"Bridging manufacturing expertise with data-driven solutions"*
