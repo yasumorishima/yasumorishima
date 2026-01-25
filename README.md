@@ -87,6 +87,26 @@ Cross-platform mobile diary app built with Flutter, evolved from the GAS web app
 
 ---
 
+### [Selenium Automation Guide](https://github.com/yasumorishima/selenium-automation-guide)
+Practical troubleshooting guide for Selenium browser automation, born from real-world problem solving.
+(実務から生まれたSeleniumブラウザ自動化のトラブルシューティングガイド)
+
+**Key Guides:**
+| Problem | Solution Approach |
+|---------|-------------------|
+| **ChromeDriver Version Mismatch** | Dynamic version detection + multi-step fallback (動的バージョン検出+多段階フォールバック) |
+| **DevToolsActivePort Error** | New profile management for latest Chrome/Edge (最新Chrome/Edge対応のプロファイル管理) |
+| **Brave Browser Migration** | Privacy-focused alternative with stable profiles (プライバシー重視の代替ブラウザ活用) |
+
+**Design Philosophy:**
+- No hardcoded version numbers → **Maintenance-free** (バージョン番号ハードコードなし → メンテナンスフリー)
+- Relative retry strategy → **Future-proof** (相対的リトライ戦略 → 将来対応)
+- Multi-browser support → **Environment-independent** (複数ブラウザ対応 → 環境非依存)
+
+**Technical Stack:** Python, Selenium, webdriver-manager, Chrome/Edge/Brave
+
+---
+
 ### [MLB Data Analysis](https://github.com/yasumorishima/mlb-data-analysis)
 MLB Statcast data analysis with Python & SQL. (Python & SQLによるMLB Statcastデータ分析)
 
@@ -138,7 +158,7 @@ Learning project for Internet Computer Protocol and Motoko language.
 | Category | Technologies |
 | --- | --- |
 | **Data Analysis & ML** | Python, pandas, scikit-learn, matplotlib, seaborn, **DuckDB (SQL)** |
-| **Automation** | VBA, Google Apps Script, Power Query |
+| **Automation** | VBA, Google Apps Script, Power Query, Selenium |
 | **Mobile App** | Flutter, Dart, Hive, Google AdMob |
 | **Tools** | Excel, Access, Looker Studio, Salesforce |
 | **Manufacturing** | Statistical Quality Control, Process Engineering |
