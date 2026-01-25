@@ -146,6 +146,24 @@ MLB Statcast data analysis with Python & SQL. (Python & SQLによるMLB Statcast
 
 ---
 
+### [Dune Analytics - Blockchain Data Analysis](https://github.com/yasumorishima/dune-analytics)
+On-chain data analysis using SQL on Dune Analytics. (Dune AnalyticsでSQLを使ったオンチェーンデータ分析)
+
+| Analysis | Key Metrics |
+|----------|-------------|
+| **[JPYC Stablecoin](https://dune.com/shogaku_toushi/jpyc-date)** | ~400K txns, ~10B JPY volume, ~100K users across 3 chains |
+
+**Technical Highlights:**
+- Multi-chain analysis (Ethereum, Polygon, Avalanche)
+- 9 CTEs with window functions (`SUM OVER`, `FIRST_VALUE`)
+- Cross-chain user deduplication logic
+
+**Technical Stack:** SQL (DuneSQL/Trino), Dune Analytics
+
+*Powered by [Dune Analytics](https://dune.com)*
+
+---
+
 ## 🔬 Learning Projects
 
 ### [ICP Learning Project](https://github.com/yasumorishima/ICP_kinyoku)
@@ -157,7 +175,7 @@ Learning project for Internet Computer Protocol and Motoko language.
 ## 🛠️ Tech Stack
 | Category | Technologies |
 | --- | --- |
-| **Data Analysis & ML** | Python, pandas, scikit-learn, matplotlib, seaborn, **DuckDB (SQL)** |
+| **Data Analysis & ML** | Python, pandas, scikit-learn, matplotlib, seaborn, **DuckDB (SQL)**, **Dune Analytics** |
 | **Automation** | VBA, Google Apps Script, Power Query, Selenium |
 | **Mobile App** | Flutter, Dart, Hive, Google AdMob |
 | **Tools** | Excel, Access, Looker Studio, Salesforce |
