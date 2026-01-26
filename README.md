@@ -167,8 +167,15 @@ On-chain data analysis using SQL on Dune Analytics. (Dune AnalyticsでSQLを使�
 ## 🔬 Learning Projects
 
 ### [ICP Learning Project](https://github.com/yasumorishima/ICP_kinyoku)
-Learning project for Internet Computer Protocol and Motoko language.
-(Internet Computer Protocol と Motoko 言語の学習プロジェクト)
+Built a persistent counter dApp on Internet Computer (ICP).
+(ICP上で継続カウンターdAppを構築)
+
+| Challenge | Solution |
+|-----------|----------|
+| **dfx 0.25.1 Type Errors** | Downgrade to dfx 0.20.1 (安定版にダウングレード) |
+| **Cycles Wallet Setup** | 0.5T+ Cycles, Identity & NNS Dapp integration |
+
+**Technical Stack:** Motoko, Vanilla JavaScript, dfx CLI, Webpack
 
 ---
 
