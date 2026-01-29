@@ -164,6 +164,25 @@ On-chain data analysis using SQL on Dune Analytics. (Dune AnalyticsでSQLを使�
 
 ---
 
+## 🌐 Open Source Contributions
+
+### [team-mirai-volunteer](https://github.com/team-mirai-volunteer) — Civic Tech OSS
+Contributing to open-source civic tech projects that promote political transparency and citizen participation in Japan.
+(日本の政治透明化・市民参加を推進するオープンソースプロジェクトに貢献)
+
+**Pull Requests:**
+
+| Repository | PR | Status | Description |
+|---|---|---|---|
+| **action-board** | [#1849](https://github.com/team-mirai-volunteer/action-board/pull/1849) | Merged | Breadcrumb navigation for deep pages (3階層目以降のパンくずリスト追加) |
+| **action-board** | [#1845](https://github.com/team-mirai-volunteer/action-board/pull/1845) | Merged | Fix prefecture cache invalidation on profile update (都道府県変更時のキャッシュ修正) |
+| **fact-checker** | [#83](https://github.com/team-mirai-volunteer/fact-checker/pull/83) | Open | Client-side engagement filtering for tweets (ツイートのエンゲージメントフィルタリング) |
+| **fact-checker** | [#84](https://github.com/team-mirai-volunteer/fact-checker/pull/84) | Open | Disable Twitter posting in non-prod environments (staging環境での誤投稿防止) |
+
+**Technical Stack:** Next.js, TypeScript, Supabase, shadcn/ui, Biome
+
+---
+
 ## 🔬 Learning Projects
 
 ### [ICP Learning Project](https://github.com/yasumorishima/ICP_kinyoku)
@@ -185,6 +204,7 @@ Built a persistent counter dApp on Internet Computer (ICP).
 | **Data Analysis & ML** | Python, pandas, scikit-learn, matplotlib, seaborn, **DuckDB (SQL)**, **Dune Analytics** |
 | **Automation** | VBA, Google Apps Script, Power Query, Selenium |
 | **Mobile App** | Flutter, Dart, Hive, Google AdMob |
+| **Web (OSS)** | Next.js, TypeScript, Supabase, shadcn/ui |
 | **Tools** | Excel, Access, Looker Studio, Salesforce |
 | **Manufacturing** | Statistical Quality Control, Process Engineering |
 
