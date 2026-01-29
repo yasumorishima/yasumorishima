@@ -174,12 +174,15 @@ Contributing to open-source civic tech projects that promote political transpare
 
 | Repository | PR | Status | Description |
 |---|---|---|---|
+| **action-board** | [#1856](https://github.com/team-mirai-volunteer/action-board/pull/1856) | Merged | Update video mission to accept original videos (動画ミッション説明文更新) |
 | **action-board** | [#1849](https://github.com/team-mirai-volunteer/action-board/pull/1849) | Merged | Breadcrumb navigation for deep pages (3階層目以降のパンくずリスト追加) |
 | **action-board** | [#1845](https://github.com/team-mirai-volunteer/action-board/pull/1845) | Merged | Fix prefecture cache invalidation on profile update (都道府県変更時のキャッシュ修正) |
+| **fact-checker** | [#86](https://github.com/team-mirai-volunteer/fact-checker/pull/86) | Open | Unit tests for Note markdown utilities (Note markdown化の単体テスト追加) |
+| **fact-checker** | [#85](https://github.com/team-mirai-volunteer/fact-checker/pull/85) | Open | Slack button env-based branching (Slackボタン環境別分岐) |
 | **fact-checker** | [#83](https://github.com/team-mirai-volunteer/fact-checker/pull/83) | Open | Client-side engagement filtering for tweets (ツイートのエンゲージメントフィルタリング) |
 | **fact-checker** | [#84](https://github.com/team-mirai-volunteer/fact-checker/pull/84) | Open | Disable Twitter posting in non-prod environments (staging環境での誤投稿防止) |
 
-**Technical Stack:** Next.js, TypeScript, Supabase, shadcn/ui, Biome
+**Technical Stack:** Next.js, TypeScript, Supabase, shadcn/ui, Biome, Bun
 
 ---
 
