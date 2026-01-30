@@ -151,7 +151,7 @@ On-chain data analysis using SQL on Dune Analytics. (Dune AnalyticsでSQLを使�
 
 | Analysis | Key Metrics |
 |----------|-------------|
-| **[New JPYC Stablecoin](https://dune.com/shogaku_toushi/jpyc-date)** | Issuance/redemption/circulation tracking across 3 chains (Ethereum, Polygon, Avalanche) since Oct 2025 launch |
+| **[JPYC Stablecoin](https://dune.com/shogaku_toushi/jpyc-date)** | Issuance/redemption/circulation tracking across 3 chains (Ethereum, Polygon, Avalanche) |
 
 **Dashboard:** 2 SQL queries powering monthly summary + daily analysis
 (2つのSQLクエリで月次サマリーと日次推移を可視化)
