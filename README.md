@@ -170,23 +170,26 @@ On-chain data analysis using SQL on Dune Analytics. (Dune AnalyticsでSQLを使�
 Contributing to open-source civic tech projects that promote political transparency and citizen participation in Japan.
 (日本の政治透明化・市民参加を推進するオープンソースプロジェクトに貢献)
 
-**10 PRs (3 Merged / 6 Open / 1 Closed)**
+**13 PRs (3 Merged / 9 Open / 1 Closed)**
 
 **Highlights:**
 
 | Repository | PR | Description |
 |---|---|---|
-| **fact-checker** | [#88](https://github.com/team-mirai-volunteer/fact-checker/pull/88) | Thread replies for Slack completion reports (Slack同スレッド返信) |
-| **fact-checker** | [#87](https://github.com/team-mirai-volunteer/fact-checker/pull/87) | Deduplicate tweets using start_time filter (start_timeフィルタで重複取得防止) |
-| **fact-checker** | [#83](https://github.com/team-mirai-volunteer/fact-checker/pull/83) | Client-side engagement filtering for tweets (エンゲージメントフィルタリング実装) |
+| **action-board** | [#1868](https://github.com/team-mirai-volunteer/action-board/pull/1868) | Posting mission count display: times → sheets with new RPC (ポスティング達成数を枚数表示に変更) |
+| **action-board** | [#1859](https://github.com/team-mirai-volunteer/action-board/pull/1859) | Supabase RPC function tests with admin client (RPC関数テスト追加) |
+| **fact-checker** | [#88](https://github.com/team-mirai-volunteer/fact-checker/pull/88) | Slack same-thread reply for fact-check results (Slack同スレッド返信) |
 | **action-board** | [#1845](https://github.com/team-mirai-volunteer/action-board/pull/1845) | Fix prefecture cache invalidation on profile update (都道府県キャッシュ修正) |
 
 <details>
-<summary>All PRs (10)</summary>
+<summary>All PRs (13)</summary>
 
 | Repository | PR | Status | Description |
 |---|---|---|---|
-| **fact-checker** | [#88](https://github.com/team-mirai-volunteer/fact-checker/pull/88) | Open | Thread replies for Slack completion reports (同スレッド返信) |
+| **action-board** | [#1868](https://github.com/team-mirai-volunteer/action-board/pull/1868) | Open | Posting count display: times → sheets (ポスティング枚数表示) |
+| **action-board** | [#1867](https://github.com/team-mirai-volunteer/action-board/pull/1867) | Open | Error toast for poster mission failure (ポスター貼りエラー表示) |
+| **action-board** | [#1859](https://github.com/team-mirai-volunteer/action-board/pull/1859) | Open | Supabase RPC function tests (RPC関数テスト追加) |
+| **fact-checker** | [#88](https://github.com/team-mirai-volunteer/fact-checker/pull/88) | Open | Slack same-thread reply (同スレッド返信) |
 | **fact-checker** | [#87](https://github.com/team-mirai-volunteer/fact-checker/pull/87) | Open | Deduplicate tweets using start_time filter (重複取得防止) |
 | **fact-checker** | [#86](https://github.com/team-mirai-volunteer/fact-checker/pull/86) | Open | Unit tests for Note markdown utilities (単体テスト33件追加) |
 | **fact-checker** | [#85](https://github.com/team-mirai-volunteer/fact-checker/pull/85) | Open | Slack button env-based branching (環境別分岐) |
