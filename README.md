@@ -151,11 +151,16 @@ On-chain data analysis using SQL on Dune Analytics. (Dune AnalyticsでSQLを使�
 
 | Analysis | Key Metrics |
 |----------|-------------|
-| **[JPYC Stablecoin](https://dune.com/shogaku_toushi/jpyc-date)** | ~400K txns, ~10B JPY volume, ~100K users across 3 chains |
+| **[New JPYC Stablecoin](https://dune.com/shogaku_toushi/jpyc-date)** | Issuance/redemption/circulation tracking across 3 chains (Ethereum, Polygon, Avalanche) since Oct 2025 launch |
+
+**Dashboard:** 2 SQL queries powering monthly summary + daily analysis
+(2つのSQLクエリで月次サマリーと日次推移を可視化)
 
 **Technical Highlights:**
-- Multi-chain analysis (Ethereum, Polygon, Avalanche)
-- 9 CTEs with window functions (`SUM OVER`, `FIRST_VALUE`)
+- Dynamic JPYC company wallet detection via Mint events (Mintイベントからウォレットを動的判定)
+- Multi-chain issuance/redemption analysis (Ethereum, Polygon, Avalanche)
+- 8 CTEs (monthly) + 19 CTEs (daily) with window functions (`SUM OVER`, `PARTITION BY`)
+- Date spine generation for gap-free daily data (`SEQUENCE`, `UNNEST`)
 - Cross-chain user deduplication logic
 
 **Technical Stack:** SQL (DuneSQL/Trino), Dune Analytics
