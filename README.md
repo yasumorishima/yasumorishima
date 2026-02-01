@@ -175,7 +175,7 @@ On-chain data analysis using SQL on Dune Analytics. (Dune AnalyticsでSQLを使�
 Contributing to open-source civic tech projects that promote political transparency and citizen participation in Japan.
 (日本の政治透明化・市民参加を推進するオープンソースプロジェクトに貢献)
 
-**15 PRs (7 Merged / 7 Open / 1 Closed)**
+**15 PRs (8 Merged / 6 Open / 1 Closed)**
 
 **Highlights:**
 
@@ -191,7 +191,7 @@ Contributing to open-source civic tech projects that promote political transpare
 
 | Repository | PR | Status | Description |
 |---|---|---|---|
-| **action-board** | [#1906](https://github.com/team-mirai-volunteer/action-board/pull/1906) | Open | Refactor achieveMissionAction (type別ロジック分離) |
+| **action-board** | [#1906](https://github.com/team-mirai-volunteer/action-board/pull/1906) | Merged | Refactor achieveMissionAction (type別ロジック分離) |
 | **action-board** | [#1869](https://github.com/team-mirai-volunteer/action-board/pull/1869) | Merged | Supabase RPC function tests for develop (RPC関数テスト追加) |
 | **action-board** | [#1868](https://github.com/team-mirai-volunteer/action-board/pull/1868) | Merged | Posting count display: times → sheets (ポスティング枚数表示) |
 | **action-board** | [#1867](https://github.com/team-mirai-volunteer/action-board/pull/1867) | Merged | Error toast for poster mission failure (ポスター貼りエラー表示) |
