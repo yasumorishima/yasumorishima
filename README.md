@@ -175,22 +175,24 @@ On-chain data analysis using SQL on Dune Analytics. (Dune AnalyticsでSQLを使�
 Contributing to open-source civic tech projects that promote political transparency and citizen participation in Japan.
 (日本の政治透明化・市民参加を推進するオープンソースプロジェクトに貢献)
 
-**15 PRs (8 Merged / 6 Open / 1 Closed)**
+**17 PRs (8 Merged / 7 Open / 1 Closed)**
 
 **Highlights:**
 
 | Repository | PR | Description |
 |---|---|---|
+| **post-checker** | [#34](https://github.com/team-mirai-volunteer/post-checker/pull/34) | Fix timezone-dependent date parsing in filename generation (タイムゾーン日付パース修正) |
 | **action-board** | [#1906](https://github.com/team-mirai-volunteer/action-board/pull/1906) | Refactor achieveMissionAction: extract type-specific logic into helpers (achieveMissionActionリファクタ) |
 | **action-board** | [#1868](https://github.com/team-mirai-volunteer/action-board/pull/1868) | Posting mission count display: times → sheets with new RPC (ポスティング達成数を枚数表示に変更) |
 | **action-board** | [#1869](https://github.com/team-mirai-volunteer/action-board/pull/1869) | Supabase RPC function tests with admin client (RPC関数テスト追加) |
 | **fact-checker** | [#88](https://github.com/team-mirai-volunteer/fact-checker/pull/88) | Slack same-thread reply for fact-check results (Slack同スレッド返信) |
 
 <details>
-<summary>All PRs (15)</summary>
+<summary>All PRs (17)</summary>
 
 | Repository | PR | Status | Description |
 |---|---|---|---|
+| **post-checker** | [#34](https://github.com/team-mirai-volunteer/post-checker/pull/34) | Open | Fix timezone-dependent date parsing (タイムゾーン日付パース修正) |
 | **action-board** | [#1906](https://github.com/team-mirai-volunteer/action-board/pull/1906) | Merged | Refactor achieveMissionAction (type別ロジック分離) |
 | **action-board** | [#1869](https://github.com/team-mirai-volunteer/action-board/pull/1869) | Merged | Supabase RPC function tests for develop (RPC関数テスト追加) |
 | **action-board** | [#1868](https://github.com/team-mirai-volunteer/action-board/pull/1868) | Merged | Posting count display: times → sheets (ポスティング枚数表示) |
@@ -209,7 +211,7 @@ Contributing to open-source civic tech projects that promote political transpare
 
 </details>
 
-**Technical Stack:** Next.js, TypeScript, Supabase, shadcn/ui, Biome, Bun
+**Technical Stack:** Next.js, TypeScript, Supabase, shadcn/ui, Biome, Bun, Vitest
 
 ---
 
