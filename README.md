@@ -83,7 +83,8 @@ Cross-platform mobile diary app built with Flutter, evolved from the GAS web app
 **Development:** Built with Claude Code (AI-assisted development)
 (開発手法: Claude Codeを活用したAI支援開発)
 
-**Status:** Google Play - Coming Soon (Currently in Closed Testing)
+**Status:** Google Play - Production approved, preparing final release
+(ステータス: Google Play 製品版審査通過、最終リリース準備中)
 
 ---
 
@@ -175,23 +176,25 @@ On-chain data analysis using SQL on Dune Analytics. (Dune AnalyticsでSQLを使�
 Contributing to open-source civic tech projects that promote political transparency and citizen participation in Japan.
 (日本の政治透明化・市民参加を推進するオープンソースプロジェクトに貢献)
 
-**17 PRs (8 Merged / 7 Open / 1 Closed)**
+**19 PRs (10 Merged / 7 Open / 1 Closed)**
 
 **Highlights:**
 
 | Repository | PR | Description |
 |---|---|---|
+| **action-board** | [#1914](https://github.com/team-mirai-volunteer/action-board/pull/1914) | Block deletion of mission-completed shapes to prevent XP exploit (達成済み図形の削除ブロック) |
+| **action-board** | [#1918](https://github.com/team-mirai-volunteer/action-board/pull/1918) | Disable Supabase Image Transformation for cost optimization (Image Transformation無効化) |
 | **post-checker** | [#34](https://github.com/team-mirai-volunteer/post-checker/pull/34) | Fix timezone-dependent date parsing in filename generation (タイムゾーン日付パース修正) |
 | **action-board** | [#1906](https://github.com/team-mirai-volunteer/action-board/pull/1906) | Refactor achieveMissionAction: extract type-specific logic into helpers (achieveMissionActionリファクタ) |
 | **action-board** | [#1868](https://github.com/team-mirai-volunteer/action-board/pull/1868) | Posting mission count display: times → sheets with new RPC (ポスティング達成数を枚数表示に変更) |
-| **action-board** | [#1869](https://github.com/team-mirai-volunteer/action-board/pull/1869) | Supabase RPC function tests with admin client (RPC関数テスト追加) |
-| **fact-checker** | [#88](https://github.com/team-mirai-volunteer/fact-checker/pull/88) | Slack same-thread reply for fact-check results (Slack同スレッド返信) |
 
 <details>
-<summary>All PRs (17)</summary>
+<summary>All PRs (19)</summary>
 
 | Repository | PR | Status | Description |
 |---|---|---|---|
+| **action-board** | [#1918](https://github.com/team-mirai-volunteer/action-board/pull/1918) | Merged | Disable Supabase Image Transformation (Image Transformation無効化) |
+| **action-board** | [#1914](https://github.com/team-mirai-volunteer/action-board/pull/1914) | Merged | Block deletion of mission-completed shapes (達成済み図形の削除ブロック) |
 | **post-checker** | [#34](https://github.com/team-mirai-volunteer/post-checker/pull/34) | Open | Fix timezone-dependent date parsing (タイムゾーン日付パース修正) |
 | **action-board** | [#1906](https://github.com/team-mirai-volunteer/action-board/pull/1906) | Merged | Refactor achieveMissionAction (type別ロジック分離) |
 | **action-board** | [#1869](https://github.com/team-mirai-volunteer/action-board/pull/1869) | Merged | Supabase RPC function tests for develop (RPC関数テスト追加) |
@@ -208,6 +211,7 @@ Contributing to open-source civic tech projects that promote political transpare
 | **action-board** | [#1855](https://github.com/team-mirai-volunteer/action-board/pull/1855) | Closed | Street speech map link (重複のためClose) |
 | **action-board** | [#1849](https://github.com/team-mirai-volunteer/action-board/pull/1849) | Merged | Breadcrumb navigation (パンくずリスト追加) |
 | **action-board** | [#1845](https://github.com/team-mirai-volunteer/action-board/pull/1845) | Merged | Fix prefecture cache invalidation (キャッシュ修正) |
+| **fact-checker** | [#69](https://github.com/team-mirai-volunteer/fact-checker/issues/69#issuecomment-3811711591) | Done | X API investigation (X API調査) |
 
 </details>
 
