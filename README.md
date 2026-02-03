@@ -3,9 +3,59 @@ Manufacturing Engineer & Data Analyst with 17 years of experience, specializing 
 (製造業にて17年の経験を持つエンジニア。データ分析と業務自動化を専門としています)
 
 ## 🎯 Focus Areas
+* **Open Source Contribution:** Next.js, TypeScript, Supabase
 * **Data Analysis & Machine Learning:** Python, scikit-learn
 * **Business Process Automation:** VBA, Google Apps Script (GAS)
 * **Statistical Quality Control:** Manufacturing Process Improvement (統計的品質管理・工程改善)
+
+---
+
+## 🌐 Open Source Contributions
+
+### [team-mirai-volunteer](https://github.com/team-mirai-volunteer) — Civic Tech OSS
+Contributing to open-source civic tech projects that promote political transparency and citizen participation in Japan.
+(日本の政治透明化・市民参加を推進するオープンソースプロジェクトに貢献)
+
+**19 PRs (10 Merged / 7 Open / 1 Closed)** across 3 repositories
+
+**Highlights:**
+
+| Repository | PR | Description |
+|---|---|---|
+| **action-board** | [#1914](https://github.com/team-mirai-volunteer/action-board/pull/1914) | Block deletion of shapes with XP to prevent infinite XP exploit (XP無限増殖バグ修正) |
+| **action-board** | [#1918](https://github.com/team-mirai-volunteer/action-board/pull/1918) | Disable Supabase Image Transformation to fix broken images (画像変換無効化) |
+| **action-board** | [#1906](https://github.com/team-mirai-volunteer/action-board/pull/1906) | Refactor achieveMissionAction: extract type-specific logic into helpers (achieveMissionActionリファクタ) |
+| **action-board** | [#1869](https://github.com/team-mirai-volunteer/action-board/pull/1869) | Supabase RPC function tests with admin client (RPC関数テスト追加) |
+| **post-checker** | [#34](https://github.com/team-mirai-volunteer/post-checker/pull/34) | Fix timezone-dependent date parsing in filename generation (タイムゾーン日付パース修正) |
+
+<details>
+<summary>All PRs (19)</summary>
+
+| # | Repository | PR | Status | Description |
+|---|---|---|---|---|
+| 19 | **action-board** | [#1918](https://github.com/team-mirai-volunteer/action-board/pull/1918) | Merged | Disable Supabase Image Transformation (画像変換無効化) |
+| 18 | **action-board** | [#1914](https://github.com/team-mirai-volunteer/action-board/pull/1914) | Merged | Block shape deletion with XP (XP無限増殖バグ修正) |
+| 17 | **post-checker** | [#34](https://github.com/team-mirai-volunteer/post-checker/pull/34) | Open | Fix timezone-dependent date parsing (タイムゾーン日付パース修正) |
+| 16 | **action-board** | [#1906](https://github.com/team-mirai-volunteer/action-board/pull/1906) | Merged | Refactor achieveMissionAction (type別ロジック分離) |
+| 15 | **action-board** | [#1869](https://github.com/team-mirai-volunteer/action-board/pull/1869) | Merged | Supabase RPC function tests for develop (RPC関数テスト追加) |
+| 14 | **action-board** | [#1868](https://github.com/team-mirai-volunteer/action-board/pull/1868) | Merged | Posting count display: times → sheets (ポスティング枚数表示) |
+| 13 | **action-board** | [#1867](https://github.com/team-mirai-volunteer/action-board/pull/1867) | Merged | Error toast for poster mission failure (ポスター貼りエラー表示) |
+| 12 | **action-board** | [#1859](https://github.com/team-mirai-volunteer/action-board/pull/1859) | Merged | Supabase RPC function tests (RPC関数テスト追加) |
+| 11 | **fact-checker** | [#88](https://github.com/team-mirai-volunteer/fact-checker/pull/88) | Open | Slack same-thread reply (同スレッド返信) |
+| 10 | **fact-checker** | [#87](https://github.com/team-mirai-volunteer/fact-checker/pull/87) | Open | Deduplicate tweets using start_time filter (重複取得防止) |
+| 9 | **fact-checker** | [#86](https://github.com/team-mirai-volunteer/fact-checker/pull/86) | Open | Unit tests for Note markdown utilities (単体テスト33件追加) |
+| 8 | **action-board** | [#1856](https://github.com/team-mirai-volunteer/action-board/pull/1856) | Merged | Update video mission description (動画説明文更新) |
+| 7 | **action-board** | [#1855](https://github.com/team-mirai-volunteer/action-board/pull/1855) | Closed | Street speech map link (重複のためClose) |
+| 6 | **fact-checker** | [#85](https://github.com/team-mirai-volunteer/fact-checker/pull/85) | Open | Slack button env-based branching (環境別分岐) |
+| 5 | **action-board** | [#1849](https://github.com/team-mirai-volunteer/action-board/pull/1849) | Merged | Breadcrumb navigation (パンくずリスト追加) |
+| 4 | **action-board** | [#1845](https://github.com/team-mirai-volunteer/action-board/pull/1845) | Merged | Fix prefecture cache invalidation (キャッシュ修正) |
+| 3 | **fact-checker** | [#84](https://github.com/team-mirai-volunteer/fact-checker/pull/84) | Open | Disable Twitter posting in staging (staging誤投稿防止) |
+| 2 | **fact-checker** | [#83](https://github.com/team-mirai-volunteer/fact-checker/pull/83) | Open | Client-side engagement filtering (エンゲージメントフィルタリング) |
+| 1 | **fact-checker** | [#69](https://github.com/team-mirai-volunteer/fact-checker/issues/69#issuecomment-3811711591) | Done | X API investigation (X API調査レポート) |
+
+</details>
+
+**Technical Stack:** Next.js, TypeScript, Supabase, shadcn/ui, Biome, Bun, Vitest
 
 ---
 
@@ -167,55 +217,6 @@ On-chain data analysis using SQL on Dune Analytics. (Dune AnalyticsでSQLを使�
 **Technical Stack:** SQL (DuneSQL/Trino), Dune Analytics
 
 *Powered by [Dune Analytics](https://dune.com)*
-
----
-
-## 🌐 Open Source Contributions
-
-### [team-mirai-volunteer](https://github.com/team-mirai-volunteer) — Civic Tech OSS
-Contributing to open-source civic tech projects that promote political transparency and citizen participation in Japan.
-(日本の政治透明化・市民参加を推進するオープンソースプロジェクトに貢献)
-
-**18 PRs (10 Merged / 7 Open / 1 Closed) + 1 Investigation**
-
-**Highlights:**
-
-| Repository | PR | Description |
-|---|---|---|
-| **action-board** | [#1914](https://github.com/team-mirai-volunteer/action-board/pull/1914) | Block deletion of mission-completed shapes to prevent XP exploit (達成済み図形の削除ブロック) |
-| **action-board** | [#1918](https://github.com/team-mirai-volunteer/action-board/pull/1918) | Disable Supabase Image Transformation for cost optimization (Image Transformation無効化) |
-| **post-checker** | [#34](https://github.com/team-mirai-volunteer/post-checker/pull/34) | Fix timezone-dependent date parsing in filename generation (タイムゾーン日付パース修正) |
-| **action-board** | [#1906](https://github.com/team-mirai-volunteer/action-board/pull/1906) | Refactor achieveMissionAction: extract type-specific logic into helpers (achieveMissionActionリファクタ) |
-| **action-board** | [#1868](https://github.com/team-mirai-volunteer/action-board/pull/1868) | Posting mission count display: times → sheets with new RPC (ポスティング達成数を枚数表示に変更) |
-
-<details>
-<summary>All PRs (18 + 1 Investigation)</summary>
-
-| Repository | PR | Status | Description |
-|---|---|---|---|
-| **action-board** | [#1918](https://github.com/team-mirai-volunteer/action-board/pull/1918) | Merged | Disable Supabase Image Transformation (Image Transformation無効化) |
-| **action-board** | [#1914](https://github.com/team-mirai-volunteer/action-board/pull/1914) | Merged | Block deletion of mission-completed shapes (達成済み図形の削除ブロック) |
-| **post-checker** | [#34](https://github.com/team-mirai-volunteer/post-checker/pull/34) | Open | Fix timezone-dependent date parsing (タイムゾーン日付パース修正) |
-| **action-board** | [#1906](https://github.com/team-mirai-volunteer/action-board/pull/1906) | Merged | Refactor achieveMissionAction (type別ロジック分離) |
-| **action-board** | [#1869](https://github.com/team-mirai-volunteer/action-board/pull/1869) | Merged | Supabase RPC function tests for develop (RPC関数テスト追加) |
-| **action-board** | [#1868](https://github.com/team-mirai-volunteer/action-board/pull/1868) | Merged | Posting count display: times → sheets (ポスティング枚数表示) |
-| **action-board** | [#1867](https://github.com/team-mirai-volunteer/action-board/pull/1867) | Merged | Error toast for poster mission failure (ポスター貼りエラー表示) |
-| **action-board** | [#1859](https://github.com/team-mirai-volunteer/action-board/pull/1859) | Merged | Supabase RPC function tests (RPC関数テスト追加) |
-| **fact-checker** | [#88](https://github.com/team-mirai-volunteer/fact-checker/pull/88) | Open | Slack same-thread reply (同スレッド返信) |
-| **fact-checker** | [#87](https://github.com/team-mirai-volunteer/fact-checker/pull/87) | Open | Deduplicate tweets using start_time filter (重複取得防止) |
-| **fact-checker** | [#86](https://github.com/team-mirai-volunteer/fact-checker/pull/86) | Open | Unit tests for Note markdown utilities (単体テスト33件追加) |
-| **fact-checker** | [#85](https://github.com/team-mirai-volunteer/fact-checker/pull/85) | Open | Slack button env-based branching (環境別分岐) |
-| **fact-checker** | [#84](https://github.com/team-mirai-volunteer/fact-checker/pull/84) | Open | Disable Twitter posting in staging (staging誤投稿防止) |
-| **fact-checker** | [#83](https://github.com/team-mirai-volunteer/fact-checker/pull/83) | Open | Client-side engagement filtering (エンゲージメントフィルタリング) |
-| **action-board** | [#1856](https://github.com/team-mirai-volunteer/action-board/pull/1856) | Merged | Update video mission description (動画説明文更新) |
-| **action-board** | [#1855](https://github.com/team-mirai-volunteer/action-board/pull/1855) | Closed | Street speech map link (重複のためClose) |
-| **action-board** | [#1849](https://github.com/team-mirai-volunteer/action-board/pull/1849) | Merged | Breadcrumb navigation (パンくずリスト追加) |
-| **action-board** | [#1845](https://github.com/team-mirai-volunteer/action-board/pull/1845) | Merged | Fix prefecture cache invalidation (キャッシュ修正) |
-| **fact-checker** | [#69](https://github.com/team-mirai-volunteer/fact-checker/issues/69#issuecomment-3811711591) | Done | X API investigation (X API調査) |
-
-</details>
-
-**Technical Stack:** Next.js, TypeScript, Supabase, shadcn/ui, Biome, Bun, Vitest
 
 ---
 
