@@ -176,7 +176,7 @@ On-chain data analysis using SQL on Dune Analytics. (Dune AnalyticsでSQLを使�
 Contributing to open-source civic tech projects that promote political transparency and citizen participation in Japan.
 (日本の政治透明化・市民参加を推進するオープンソースプロジェクトに貢献)
 
-**19 PRs (10 Merged / 7 Open / 1 Closed)**
+**18 PRs (10 Merged / 7 Open / 1 Closed) + 1 Investigation**
 
 **Highlights:**
 
@@ -189,7 +189,7 @@ Contributing to open-source civic tech projects that promote political transpare
 | **action-board** | [#1868](https://github.com/team-mirai-volunteer/action-board/pull/1868) | Posting mission count display: times → sheets with new RPC (ポスティング達成数を枚数表示に変更) |
 
 <details>
-<summary>All PRs (19)</summary>
+<summary>All PRs (18 + 1 Investigation)</summary>
 
 | Repository | PR | Status | Description |
 |---|---|---|---|
