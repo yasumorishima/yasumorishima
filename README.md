@@ -16,7 +16,7 @@ Manufacturing Engineer & Data Analyst with 17 years of experience, specializing 
 Contributing to open-source civic tech projects that promote political transparency and citizen participation in Japan.
 (日本の政治透明化・市民参加を推進するオープンソースプロジェクトに貢献)
 
-**19 PRs (10 Merged / 7 Open / 1 Closed)** across 3 repositories
+**19 PRs (10 Merged / 1 Open / 7 Closed)** across 3 repositories (fact-checker is now inactive; post-checker is its successor)
 
 **Highlights:**
 
@@ -41,16 +41,16 @@ Contributing to open-source civic tech projects that promote political transpare
 | 14 | **action-board** | [#1868](https://github.com/team-mirai-volunteer/action-board/pull/1868) | Merged | Posting count display: times → sheets (ポスティング枚数表示) |
 | 13 | **action-board** | [#1867](https://github.com/team-mirai-volunteer/action-board/pull/1867) | Merged | Error toast for poster mission failure (ポスター貼りエラー表示) |
 | 12 | **action-board** | [#1859](https://github.com/team-mirai-volunteer/action-board/pull/1859) | Merged | Supabase RPC function tests (RPC関数テスト追加) |
-| 11 | **fact-checker** | [#88](https://github.com/team-mirai-volunteer/fact-checker/pull/88) | Open | Slack same-thread reply (同スレッド返信) |
-| 10 | **fact-checker** | [#87](https://github.com/team-mirai-volunteer/fact-checker/pull/87) | Open | Deduplicate tweets using start_time filter (重複取得防止) |
-| 9 | **fact-checker** | [#86](https://github.com/team-mirai-volunteer/fact-checker/pull/86) | Open | Unit tests for Note markdown utilities (単体テスト33件追加) |
+| 11 | **fact-checker** | [#88](https://github.com/team-mirai-volunteer/fact-checker/pull/88) | Closed | Slack same-thread reply (同スレッド返信) |
+| 10 | **fact-checker** | [#87](https://github.com/team-mirai-volunteer/fact-checker/pull/87) | Closed | Deduplicate tweets using start_time filter (重複取得防止) |
+| 9 | **fact-checker** | [#86](https://github.com/team-mirai-volunteer/fact-checker/pull/86) | Closed | Unit tests for Note markdown utilities (単体テスト33件追加) |
 | 8 | **action-board** | [#1856](https://github.com/team-mirai-volunteer/action-board/pull/1856) | Merged | Update video mission description (動画説明文更新) |
 | 7 | **action-board** | [#1855](https://github.com/team-mirai-volunteer/action-board/pull/1855) | Closed | Street speech map link (重複のためClose) |
-| 6 | **fact-checker** | [#85](https://github.com/team-mirai-volunteer/fact-checker/pull/85) | Open | Slack button env-based branching (環境別分岐) |
+| 6 | **fact-checker** | [#85](https://github.com/team-mirai-volunteer/fact-checker/pull/85) | Closed | Slack button env-based branching (環境別分岐) |
 | 5 | **action-board** | [#1849](https://github.com/team-mirai-volunteer/action-board/pull/1849) | Merged | Breadcrumb navigation (パンくずリスト追加) |
 | 4 | **action-board** | [#1845](https://github.com/team-mirai-volunteer/action-board/pull/1845) | Merged | Fix prefecture cache invalidation (キャッシュ修正) |
-| 3 | **fact-checker** | [#84](https://github.com/team-mirai-volunteer/fact-checker/pull/84) | Open | Disable Twitter posting in staging (staging誤投稿防止) |
-| 2 | **fact-checker** | [#83](https://github.com/team-mirai-volunteer/fact-checker/pull/83) | Open | Client-side engagement filtering (エンゲージメントフィルタリング) |
+| 3 | **fact-checker** | [#84](https://github.com/team-mirai-volunteer/fact-checker/pull/84) | Closed | Disable Twitter posting in staging (staging誤投稿防止) |
+| 2 | **fact-checker** | [#83](https://github.com/team-mirai-volunteer/fact-checker/pull/83) | Closed | Client-side engagement filtering (エンゲージメントフィルタリング) |
 | 1 | **fact-checker** | [#69](https://github.com/team-mirai-volunteer/fact-checker/issues/69#issuecomment-3811711591) | Done | X API investigation (X API調査レポート) |
 
 </details>
