@@ -12,6 +12,9 @@ Manufacturing Engineer & Data Analyst with 17 years of experience, specializing 
 
 ## 🌐 Open Source Contributions
 
+> **Full contribution history:** [oss-contributions](https://github.com/yasumorishima/oss-contributions) — All PRs across all projects with status tracking
+> (全プロジェクトのPR一覧・ステータス管理)
+
 ### [team-mirai-volunteer](https://github.com/team-mirai-volunteer) — Civic Tech OSS
 Contributing to open-source civic tech projects that promote political transparency and citizen participation in Japan.
 (日本の政治透明化・市民参加を推進するオープンソースプロジェクトに貢献)
@@ -56,6 +59,18 @@ Contributing to open-source civic tech projects that promote political transpare
 </details>
 
 **Technical Stack:** Next.js, TypeScript, Supabase, shadcn/ui, Biome, Bun, Vitest
+
+### [jldbc/pybaseball](https://github.com/jldbc/pybaseball) — Baseball Data Library (1.5k+ stars)
+Python library for pulling baseball statistics from Statcast, Baseball Reference, and FanGraphs.
+
+**2 PRs (2 Open):**
+
+| PR | Description |
+|---|---|
+| [#499](https://github.com/jldbc/pybaseball/pull/499) | Replace deprecated `errors='ignore'` with explicit try/except |
+| [#498](https://github.com/jldbc/pybaseball/pull/498) | Fix function name typo in statcast_pitcher_spin.md |
+
+**Technical Stack:** Python, pandas
 
 ---
 
