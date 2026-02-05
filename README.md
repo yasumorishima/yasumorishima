@@ -66,14 +66,26 @@ Also contributing to [jldbc/pybaseball](https://github.com/jldbc/pybaseball) (Py
 ### [MLB Statcast Visualization](https://github.com/yasumorishima/mlb-statcast-visualization)
 MLB Statcast data analysis with pybaseball + DuckDB + Google Colab. (pybaseball + DuckDB + Colabを使ったMLB投球・打撃データ分析)
 
+**6 analyses** covering Japanese MLB pitchers (Kikuchi, Senga, Imanaga, Darvish) and Ohtani batting data.
+
 | Analysis | Key Finding | Article |
 |----------|-------------|---------|
-| **Kikuchi Slider Revolution (2019-2025)** | SL usage 17%→37% after Astros trade, became #1 pitch over FF in 2025 (アストロズ移籍後SL倍増、2025年にFF超え最多球種に) | [Zenn](https://zenn.dev/yasumorishima/articles/kikuchi-slider-revolution-2019-2025) |
-| **Senga Ghost Fork (2023-2025)** | FO whiff rate 58%→39%, decline started before injury, movement increased but quality changed (お化けフォーク空振り率低下・故障前から傾向開始) | [Zenn](https://zenn.dev/yasumorishima/articles/senga-ghost-fork-analysis-2023-2025) |
-| **Imanaga 2nd Year (2024-2025)** | 3-pitch concentration (97%), 1st TTO xwOBA .505, FS chase whiff rate drop (球種集中・1巡目被打・スプリット空振り低下) | [Zenn](https://zenn.dev/yasumorishima/articles/imanaga-2nd-year-analysis-2024-2025) |
-| **Darvish Evolution (2021-2025)** | SL/ST usage halved, CU became putaway pitch, FF whiff rate 30%→14% (スライダー半減・カーブが決め球に) | [Zenn](https://zenn.dev/yasumorishima/articles/darvish-pitching-evolution-2021-2025) |
-| **Ohtani Spray Chart** | spraychart() one-liner vs matplotlib manual drawing comparison (1行描画 vs 手動描画の比較) | [Zenn](https://zenn.dev/yasumorishima/articles/pybaseball-spraychart-ohtani) |
-| **Ohtani Heatmap** | Stadium drawing + hit density heatmap from scratch (球場描画+打球密度ヒートマップ) | [Zenn](https://zenn.dev/yasumorishima/articles/matplotlib-baseball-heatmap) |
+| **Kikuchi Slider Revolution (2019-2025)** | SL 17%→37% after Astros trade, #1 pitch in 2025 (SL倍増、FF超え最多球種に) | [Zenn](https://zenn.dev/yasumorishima/articles/kikuchi-slider-revolution-2019-2025) |
+| **Senga Ghost Fork (2023-2025)** | FO whiff rate 58%→39%, decline pre-injury (空振り率低下・故障前から開始) | [Zenn](https://zenn.dev/yasumorishima/articles/senga-ghost-fork-analysis-2023-2025) |
+
+<details>
+<summary>All analyses (6)</summary>
+
+| Analysis | Key Finding | Article |
+|----------|-------------|---------|
+| **Kikuchi Slider Revolution (2019-2025)** | SL 17%→37% after Astros trade, #1 pitch in 2025 | [Zenn](https://zenn.dev/yasumorishima/articles/kikuchi-slider-revolution-2019-2025) |
+| **Senga Ghost Fork (2023-2025)** | FO whiff rate 58%→39%, decline pre-injury | [Zenn](https://zenn.dev/yasumorishima/articles/senga-ghost-fork-analysis-2023-2025) |
+| **Imanaga 2nd Year (2024-2025)** | 3-pitch concentration (97%), 1st TTO xwOBA .505 | [Zenn](https://zenn.dev/yasumorishima/articles/imanaga-2nd-year-analysis-2024-2025) |
+| **Darvish Evolution (2021-2025)** | SL/ST halved, CU became putaway pitch | [Zenn](https://zenn.dev/yasumorishima/articles/darvish-pitching-evolution-2021-2025) |
+| **Ohtani Spray Chart** | spraychart() one-liner vs matplotlib manual | [Zenn](https://zenn.dev/yasumorishima/articles/pybaseball-spraychart-ohtani) |
+| **Ohtani Heatmap** | Stadium drawing + hit density heatmap | [Zenn](https://zenn.dev/yasumorishima/articles/matplotlib-baseball-heatmap) |
+
+</details>
 
 **Technical Stack:** Python, pybaseball, DuckDB, matplotlib, seaborn, Google Colab
 
