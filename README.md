@@ -63,103 +63,6 @@ Also contributing to [jldbc/pybaseball](https://github.com/jldbc/pybaseball) (Py
 
 ## 📊 Main Projects
 
-### [Business Automation Workflow](https://github.com/yasumorishima/business-automation-workflow)
-End-to-end automation system for processing email PDF attachments and integrating multiple data sources.
-(メール添付PDFの処理から複数ソースのデータ統合までを行うエンドツーエンドの自動化システム)
-
-**System Architecture:**
-- **Step 1:** Gmail PDF extraction (Google Apps Script)
-- **Step 2:** PDF to Excel conversion (VBA + Power Query)
-- **Step 3:** Data aggregation to Google Sheets (Google Apps Script)
-- **Step 4:** Multi-source data integration (Python/Google Colab)
-
-**Key Features:**
-- Automated email processing with duplicate detection (重複検知付きのメール自動処理)
-- Text-embedded PDF extraction (Power Query solves GAS OCR accuracy issues)
-  - (GASのOCR精度の課題をPower Queryで解決)
-- Cross-platform data integration with styled Excel output
-
-**Technical Stack:** Google Apps Script, VBA, Power Query, Python, pandas, gspread, xlsxwriter
-
-**Applied to Work:** Developed for streamlining order processing and repair request management workflows.
-(実績: 受注処理および修理依頼管理ワークフローの効率化のために開発・導入)
-
----
-
-### [GAS Calendar Event Registration Tool](https://github.com/yasumorishima/gas-calendar-tool)
-Google Apps Script-based web application for batch calendar event registration with mobile-optimized UI.
-(Google Apps ScriptベースのWebアプリ。モバイルに最適化されたUIでカレンダー一括登録を実現)
-
-**Key Features:**
-- Batch event creation for multiple dates (複数日程の一括登録)
-- Event template management with user properties
-- Mobile-first responsive design (28px font, 80px+ touch targets for senior-friendly UI)
-- Support for all-day and timed events with color coding
-
-**Technical Stack:** Google Apps Script, HTML5, CSS3, JavaScript, Google Calendar API
-
-**Use Case:** Simplifies recurring event scheduling (shifts, medication reminders, meetings) with a senior-friendly interface.
-(用途: シニア層にも使いやすいインターフェースで、シフト管理や服薬リマインダーなどの定期予定作成を簡略化)
-
----
-
-### [Daily Diary Web App](https://github.com/yasumorishima/gas-daily-diary)
-Google Apps Script-based personal diary web application with mobile-optimized UI.
-(Google Apps ScriptベースのWebアプリ。モバイル最適化された個人用日記アプリ)
-
-**Key Features:**
-- Mobile-first responsive design with dark mode support (モバイルファースト設計とダークモード対応)
-- 10 functional pages: Write, Calendar, Search, Statistics, Export, and more
-- Privacy-focused data storage in user's own Google Spreadsheet
-- Full-text search, tag filtering, and past entries viewing
-
-**Technical Stack:** Google Apps Script, HTML5, CSS3, Vanilla JavaScript
-
-**Use Case:** Personal diary management with comprehensive features for daily writing, reflection, and data export.
-(用途: 日常の記録、振り返り、データエクスポートなど、包括的な機能を備えた個人用日記管理)
-
----
-
-### [Daily Diary - Flutter Mobile App](https://github.com/yasumorishima/diary-app-flutter)
-Cross-platform mobile diary app built with Flutter, evolved from the GAS web app above.
-(Flutter製クロスプラットフォームモバイル日記アプリ - 上記GAS版からの進化版)
-
-**Key Features:**
-- 5 language support (🇯🇵🇺🇸🇨🇳🇰🇷🇪🇸)
-- Offline-first with local storage (Hive)
-- Dark mode, calendar view, statistics, search
-- Google Play release (Coming Soon)
-
-**Technical Stack:** Flutter, Dart, Hive, Provider, Google AdMob
-
-**Development:** Built with Claude Code (AI-assisted development)
-(開発手法: Claude Codeを活用したAI支援開発)
-
-**Status:** Google Play - Production approved, preparing final release
-(ステータス: Google Play 製品版審査通過、最終リリース準備中)
-
----
-
-### [Selenium Automation Guide](https://github.com/yasumorishima/selenium-automation-guide)
-Practical troubleshooting guide for Selenium browser automation, born from real-world problem solving.
-(実務から生まれたSeleniumブラウザ自動化のトラブルシューティングガイド)
-
-**Key Guides:**
-| Problem | Solution Approach |
-|---------|-------------------|
-| **ChromeDriver Version Mismatch** | Dynamic version detection + multi-step fallback (動的バージョン検出+多段階フォールバック) |
-| **DevToolsActivePort Error** | New profile management for latest Chrome/Edge (最新Chrome/Edge対応のプロファイル管理) |
-| **Brave Browser Migration** | Privacy-focused alternative with stable profiles (プライバシー重視の代替ブラウザ活用) |
-
-**Design Philosophy:**
-- No hardcoded version numbers → **Maintenance-free** (バージョン番号ハードコードなし → メンテナンスフリー)
-- Relative retry strategy → **Future-proof** (相対的リトライ戦略 → 将来対応)
-- Multi-browser support → **Environment-independent** (複数ブラウザ対応 → 環境非依存)
-
-**Technical Stack:** Python, Selenium, webdriver-manager, Chrome/Edge/Brave
-
----
-
 ### [MLB Statcast Visualization](https://github.com/yasumorishima/mlb-statcast-visualization)
 MLB Statcast data analysis with pybaseball + DuckDB + Google Colab. (pybaseball + DuckDB + Colabを使ったMLB投球・打撃データ分析)
 
@@ -193,31 +96,56 @@ MLB Statcast data analysis with pybaseball + DuckDB + Google Colab. (pybaseball 
 
 **Technical Stack:** Python, pandas, LightGBM, scikit-learn, Claude Code
 
-**Key Learning:** Domain knowledge + AI tools = effective problem solving
-(重要な学び: ドメイン知識 + AIツール = 効果的な問題解決)
-
 ---
 
 ### [Dune Analytics - Blockchain Data Analysis](https://github.com/yasumorishima/dune-analytics)
 On-chain data analysis using SQL on Dune Analytics. (Dune AnalyticsでSQLを使ったオンチェーンデータ分析)
 
-| Analysis | Key Metrics |
-|----------|-------------|
-| **[JPYC Stablecoin](https://dune.com/shogaku_toushi/jpyc-date)** | Issuance/redemption/circulation tracking across 3 chains (Ethereum, Polygon, Avalanche) since Oct 2025 launch |
-
-**Dashboard:** 2 SQL queries powering monthly summary + daily analysis
-(2つのSQLクエリで月次サマリーと日次推移を可視化)
-
-**Technical Highlights:**
-- Dynamic JPYC company wallet detection via Mint events (Mintイベントからウォレットを動的判定)
-- Multi-chain issuance/redemption analysis (Ethereum, Polygon, Avalanche)
-- 8 CTEs (monthly) + 19 CTEs (daily) with window functions (`SUM OVER`, `PARTITION BY`)
-- Date spine generation for gap-free daily data (`SEQUENCE`, `UNNEST`)
-- Cross-chain user deduplication logic
+| Dashboard | Description |
+|-----------|-------------|
+| **[JPYC Stablecoin](https://dune.com/shogaku_toushi/jpyc-date)** | Issuance/redemption/circulation tracking across 3 chains (Ethereum, Polygon, Avalanche) |
 
 **Technical Stack:** SQL (DuneSQL/Trino), Dune Analytics
 
-*Powered by [Dune Analytics](https://dune.com)*
+---
+
+### [Daily Diary](https://github.com/yasumorishima/diary-app-flutter)
+Personal diary app — started as a GAS web app, then evolved into a Flutter mobile app.
+(個人用日記アプリ — GAS Webアプリから始まり、Flutterモバイルアプリへ進化)
+
+| Version | Repository | Stack | Features |
+|---------|-----------|-------|----------|
+| **Mobile (Flutter)** | [diary-app-flutter](https://github.com/yasumorishima/diary-app-flutter) | Flutter, Dart, Hive, AdMob | 5 languages, offline-first, Google Play production approved |
+| **Web (GAS)** | [gas-daily-diary](https://github.com/yasumorishima/gas-daily-diary) | Google Apps Script, JavaScript | 10 pages, dark mode, data stored in user's own Spreadsheet |
+
+---
+
+### [GAS Calendar Tool](https://github.com/yasumorishima/gas-calendar-tool)
+Batch calendar event registration with senior-friendly mobile UI. (シニア向けモバイルUIでカレンダー一括登録)
+
+**Technical Stack:** Google Apps Script, JavaScript, Google Calendar API
+
+---
+
+### [Selenium Automation Guide](https://github.com/yasumorishima/selenium-automation-guide)
+Practical troubleshooting guide for Selenium browser automation, born from real-world problem solving.
+(実務から生まれたSeleniumブラウザ自動化のトラブルシューティングガイド)
+
+| Problem | Solution Approach |
+|---------|-------------------|
+| **ChromeDriver Version Mismatch** | Dynamic version detection + multi-step fallback |
+| **DevToolsActivePort Error** | New profile management for latest Chrome/Edge |
+| **Brave Browser Migration** | Privacy-focused alternative with stable profiles |
+
+**Technical Stack:** Python, Selenium, webdriver-manager
+
+---
+
+### [Business Automation Workflow](https://github.com/yasumorishima/business-automation-workflow)
+End-to-end automation: Gmail PDF extraction → Excel conversion (VBA + Power Query) → Google Sheets aggregation → Python data integration.
+(メール添付PDF処理からデータ統合までのエンドツーエンド自動化)
+
+**Technical Stack:** Google Apps Script, VBA, Power Query, Python, pandas
 
 ---
 
@@ -226,11 +154,6 @@ On-chain data analysis using SQL on Dune Analytics. (Dune AnalyticsでSQLを使�
 ### [ICP Learning Project](https://github.com/yasumorishima/ICP_kinyoku)
 Built a persistent counter dApp on Internet Computer (ICP).
 (ICP上で継続カウンターdAppを構築)
-
-| Challenge | Solution |
-|-----------|----------|
-| **dfx 0.25.1 Type Errors** | Downgrade to dfx 0.20.1 (安定版にダウングレード) |
-| **Cycles Wallet Setup** | 0.5T+ Cycles, Identity & NNS Dapp integration |
 
 **Technical Stack:** Motoko, Vanilla JavaScript, dfx CLI, Webpack
 
