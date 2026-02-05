@@ -68,6 +68,7 @@ MLB Statcast data analysis with pybaseball + DuckDB + Google Colab. (pybaseball 
 
 | Analysis | Key Finding | Article |
 |----------|-------------|---------|
+| **Senga Ghost Fork (2023-2025)** | FO whiff rate 58%→39%, decline started before injury, movement increased but quality changed (お化けフォーク空振り率低下・故障前から傾向開始) | [Zenn](https://zenn.dev/yasumorishima/articles/senga-ghost-fork-analysis-2023-2025) |
 | **Imanaga 2nd Year (2024-2025)** | 3-pitch concentration (97%), 1st TTO xwOBA .505, FS chase whiff rate drop (球種集中・1巡目被打・スプリット空振り低下) | [Zenn](https://zenn.dev/yasumorishima/articles/imanaga-2nd-year-analysis-2024-2025) |
 | **Darvish Evolution (2021-2025)** | SL/ST usage halved, CU became putaway pitch, FF whiff rate 30%→14% (スライダー半減・カーブが決め球に) | [Zenn](https://zenn.dev/yasumorishima/articles/darvish-pitching-evolution-2021-2025) |
 | **Ohtani Spray Chart** | spraychart() one-liner vs matplotlib manual drawing comparison (1行描画 vs 手動描画の比較) | [Zenn](https://zenn.dev/yasumorishima/articles/pybaseball-spraychart-ohtani) |
