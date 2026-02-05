@@ -160,21 +160,20 @@ Practical troubleshooting guide for Selenium browser automation, born from real-
 
 ---
 
-### [MLB Data Analysis](https://github.com/yasumorishima/mlb-data-analysis)
-MLB Statcast data analysis with Python & SQL. (Python & SQLによるMLB Statcastデータ分析)
+### [MLB Statcast Visualization](https://github.com/yasumorishima/mlb-statcast-visualization)
+MLB Statcast data analysis with pybaseball + DuckDB + Google Colab. (pybaseball + DuckDB + Colabを使ったMLB投球・打撃データ分析)
 
-| Analysis | Key Finding |
-|----------|-------------|
-| **WBC 2023 Sandoval Scouting** | 49.2% sliders vs left-handed batters, 0 HR allowed (左打者にスライダー49.2%、被HR 0本) |
-| **Bauer Set Position (Image)** | K-means detected glove position "tells" (グラブ位置に球種の癖を検出) |
-| **Ohtani Batting 2022** | Hit concentration at 2B area → "Ohtani Shift" (セカンド付近集中→大谷シフトの根拠) |
-| **Ohtani Injury 2023** | Multi-parameter anomaly detection (±2σ) (複数パラメーター組合せで予兆検出) |
-| **HR Race 2024** | Bar chart race animation (動的バーチャートレース) |
+| Analysis | Key Finding | Article |
+|----------|-------------|---------|
+| **Imanaga 2nd Year (2024-2025)** | 3-pitch concentration (97%), 1st TTO xwOBA .505, FS chase whiff rate drop (球種集中・1巡目被打・スプリット空振り低下) | [Zenn](https://zenn.dev/yasumorishima/articles/imanaga-2nd-year-analysis-2024-2025) |
+| **Darvish Evolution (2021-2025)** | SL/ST usage halved, CU became putaway pitch, FF whiff rate 30%→14% (スライダー半減・カーブが決め球に) | [Zenn](https://zenn.dev/yasumorishima/articles/darvish-pitching-evolution-2021-2025) |
+| **Ohtani Spray Chart** | spraychart() one-liner vs matplotlib manual drawing comparison (1行描画 vs 手動描画の比較) | [Zenn](https://zenn.dev/yasumorishima/articles/pybaseball-spraychart-ohtani) |
+| **Ohtani Heatmap** | Stadium drawing + hit density heatmap from scratch (球場描画+打球密度ヒートマップ) | [Zenn](https://zenn.dev/yasumorishima/articles/matplotlib-baseball-heatmap) |
 
-**Technical Stack:** Python, pybaseball, pandas, matplotlib, PIL, scikit-learn, **DuckDB (SQL)**
+**Technical Stack:** Python, pybaseball, DuckDB, matplotlib, seaborn, Google Colab
 
-📌 **SQL versions available** - Each analysis has both Python (pandas) and SQL (DuckDB) implementations
-(各分析にPython版とSQL版の両方を用意)
+📌 **All notebooks are executable on Colab** - Click "Open in Colab" badge in each notebook
+(全ノートブックはColabで実行可能)
 
 ---
 
