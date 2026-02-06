@@ -16,7 +16,7 @@ Manufacturing Engineer & Data Analyst with 17 years of experience, specializing 
 Contributing to open-source civic tech projects that promote political transparency and citizen participation in Japan.
 (日本の政治透明化・市民参加を推進するオープンソースプロジェクトに貢献)
 
-**20 PRs (10 Merged / 2 Open / 7 Closed)** across 3 repositories
+**20 PRs (11 Merged / 1 Open / 7 Closed)** across 3 repositories
 
 | Repository | PR | Description |
 |---|---|---|
@@ -29,7 +29,7 @@ Contributing to open-source civic tech projects that promote political transpare
 
 | # | Repository | PR | Status | Description |
 |---|---|---|---|---|
-| 20 | **action-board** | [#1969](https://github.com/team-mirai-volunteer/action-board/pull/1969) | Open | Add 48 unit tests for pure functions (純粋関数テスト追加) |
+| 20 | **action-board** | [#1969](https://github.com/team-mirai-volunteer/action-board/pull/1969) | Merged | Add 48 unit tests for pure functions (純粋関数テスト追加) |
 | 19 | **action-board** | [#1918](https://github.com/team-mirai-volunteer/action-board/pull/1918) | Merged | Disable Supabase Image Transformation (画像変換無効化) |
 | 18 | **action-board** | [#1914](https://github.com/team-mirai-volunteer/action-board/pull/1914) | Merged | Block shape deletion with XP (XP無限増殖バグ修正) |
 | 17 | **post-checker** | [#34](https://github.com/team-mirai-volunteer/post-checker/pull/34) | Open | Fix timezone-dependent date parsing (タイムゾーン日付パース修正) |
