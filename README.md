@@ -77,8 +77,8 @@ MLB Statcast data analysis with pybaseball + DuckDB + Google Colab. (pybaseball 
 |----------|-------------|---------|
 | **Kikuchi Slider Revolution (2019-2025)** | SL 17%→37% after Astros trade, #1 pitch in 2025 | [Zenn](https://zenn.dev/yasumorishima/articles/kikuchi-slider-revolution-2019-2025) |
 | **Senga Ghost Fork (2023-2025)** | FO whiff rate 58%→39%, decline pre-injury | [Zenn](https://zenn.dev/yasumorishima/articles/senga-ghost-fork-analysis-2023-2025) |
-| **Imanaga 2nd Year (2024-2025)** | 3-pitch concentration (97%), 1st TTO xwOBA .505 | [Zenn](https://zenn.dev/yasumorishima/articles/imanaga-2nd-year-analysis-2024-2025) |
-| **Darvish Evolution (2021-2025)** | SL/ST halved, CU became putaway pitch | [Zenn](https://zenn.dev/yasumorishima/articles/darvish-pitching-evolution-2021-2025) |
+| **Imanaga 2nd Year (2024-2025)** | 3-pitch concentration (97%), 1st TTO xwOBA .505 | [Zenn](https://zenn.dev/yasumorishima/articles/imanaga-2nd-year-analysis-2024-2025) / [Kaggle](https://www.kaggle.com/code/yasunorim/imanaga-rookie-to-sophomore-pitching) |
+| **Darvish Evolution (2021-2025)** | SL/ST halved, CU became putaway pitch | [Zenn](https://zenn.dev/yasumorishima/articles/darvish-pitching-evolution-2021-2025) / [Kaggle](https://www.kaggle.com/code/yasunorim/darvish-pitching-evolution) |
 | **Ohtani Spray Chart** | spraychart() one-liner vs matplotlib manual | [Zenn](https://zenn.dev/yasumorishima/articles/pybaseball-spraychart-ohtani) |
 | **Ohtani Heatmap** | Stadium drawing + hit density heatmap | [Zenn](https://zenn.dev/yasumorishima/articles/matplotlib-baseball-heatmap) |
 
