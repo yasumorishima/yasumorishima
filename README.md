@@ -150,12 +150,6 @@ Batch calendar event registration with senior-friendly mobile UI. (シニア向�
 Practical troubleshooting guide for Selenium browser automation, born from real-world problem solving.
 (実務から生まれたSeleniumブラウザ自動化のトラブルシューティングガイド)
 
-| Problem | Solution Approach |
-|---------|-------------------|
-| **ChromeDriver Version Mismatch** | Dynamic version detection + multi-step fallback |
-| **DevToolsActivePort Error** | New profile management for latest Chrome/Edge |
-| **Brave Browser Migration** | Privacy-focused alternative with stable profiles |
-
 **Technical Stack:** Python, Selenium, webdriver-manager
 
 ---
