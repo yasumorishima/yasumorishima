@@ -92,20 +92,28 @@ MLB Statcast data analysis with pybaseball + DuckDB + Google Colab. (pybaseball 
 ---
 
 ### [Kaggle Competitions](https://github.com/yasumorishima/kaggle-competitions)
-🥉 **4 Bronze Medals (Notebook)** - Earned through AI-assisted development with Claude Code
-(4つのブロンズメダル（ノートブック） - Claude Codeを活用したAI支援開発で獲得)
+**Notebooks Expert** | 🥉 **7 Bronze Notebook Medals**
 
-**Note:** These are Notebook Medals (community votes), not competition ranking medals.
-(注: コミュニティ投票によるノートブックメダルであり、コンペティション順位のメダルではありません)
+Active in competitions and publishing analysis notebooks.
 
-| Competition | Notebook | Key Approach |
-|-------------|----------|--------------|
-| **NFL Big Data Bowl 2026** | [Geometric Rules Baseline](https://www.kaggle.com/code/yasunorim/geometric-rules-baseline-2-921-rmse-no-ml) | Physics-based rules, No ML, RMSE 2.921 |
-| **PhysioNet ECG** | [ECG Baseline](https://www.kaggle.com/code/yasunorim/physionet-ecg-baseline) | Submission format guide |
-| **Diabetes (S5E12)** | [EDA & Baseline](https://www.kaggle.com/code/yasunorim/diabetes-prediction-eda-baseline-s5e12) | LightGBM 5-fold CV, AUC 0.727 |
-| **Diabetes (S5E12)** | [Rank-Based Ensemble](https://www.kaggle.com/code/yasunorim/diabetes-prediction-rank-based-ensemble) | Rank averaging for AUC optimization |
+**Competition:** [S6E2 Heart Disease](https://www.kaggle.com/code/yasunorim/s6e2-heart-disease-eda-ensemble-wandb) — LGB+XGB+CatBoost ensemble, CV AUC 0.955, LB 0.953
 
-**Technical Stack:** Python, pandas, LightGBM, scikit-learn, Claude Code
+<details>
+<summary>All Bronze Medal Notebooks (7)</summary>
+
+| Notebook | Topic |
+|----------|-------|
+| [CAFA 6 Baseline with Regularization](https://www.kaggle.com/code/yasunorim/baseline-with-regularization) | Protein function prediction (PyTorch MLP) |
+| [Senga Ghost Fork Analysis](https://www.kaggle.com/code/yasunorim/senga-ghost-fork-analysis-2023-2025) | MLB Statcast pitching analysis |
+| [Kikuchi Slider Revolution](https://www.kaggle.com/code/yasunorim/kikuchi-slider-revolution-2019-2025) | MLB Statcast pitching analysis |
+| [NFL Geometric Rules Baseline](https://www.kaggle.com/code/yasunorim/geometric-rules-baseline-2-921-rmse-no-ml) | Physics-based rules, No ML, RMSE 2.921 |
+| [PhysioNet ECG Baseline](https://www.kaggle.com/code/yasunorim/physionet-ecg-baseline) | ECG submission format guide |
+| [Diabetes EDA & Baseline](https://www.kaggle.com/code/yasunorim/diabetes-prediction-eda-baseline-s5e12) | LightGBM 5-fold CV, AUC 0.727 |
+| [Diabetes Rank-Based Ensemble](https://www.kaggle.com/code/yasunorim/diabetes-prediction-rank-based-ensemble) | Rank averaging for AUC optimization |
+
+</details>
+
+**Technical Stack:** Python, LightGBM, XGBoost, CatBoost, PyTorch, W&B, Claude Code
 
 ---
 
