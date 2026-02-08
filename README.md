@@ -84,6 +84,16 @@ MLB Statcast data analysis with pybaseball + DuckDB + Google Colab. (pybaseball 
 
 </details>
 
+<details>
+<summary>📊 Kaggle Datasets (2 published, 10.0/10 each)</summary>
+
+| Dataset | Description | Score | Article |
+|---------|-------------|-------|---------|
+| [Japanese MLB Players Statcast (2015-2025)](https://www.kaggle.com/datasets/yasunorim/japan-mlb-pitchers-batters-statcast) | 34 Japanese MLB players, 174k pitches+hits | 🏆 **10.0/10** | [Zenn](https://zenn.dev/yasumorishima/articles/kaggle-japan-mlb-dataset) |
+| [MLB Bat Tracking (2024-2025)](https://www.kaggle.com/datasets/yasunorim/mlb-bat-tracking-2024-2025) | 452 batters, 19 swing metrics | 🏆 **10.0/10** | - |
+
+</details>
+
 **Technical Stack:** Python, pybaseball, DuckDB, matplotlib, seaborn, Google Colab
 
 📌 **All notebooks are executable on Colab** - Click "Open in Colab" badge in each notebook
