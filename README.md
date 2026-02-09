@@ -84,15 +84,15 @@ MLB Statcast data analysis with pybaseball + DuckDB + Google Colab. (pybaseball 
 
 </details>
 
-<details>
-<summary>📊 Kaggle Datasets (2 published, 10.0/10 each)</summary>
+### 📊 [Kaggle Datasets](https://github.com/yasumorishima/kaggle-datasets)
 
-| Dataset | Description | Score | Article |
-|---------|-------------|-------|---------|
-| [Japanese MLB Players Statcast (2015-2025)](https://www.kaggle.com/datasets/yasunorim/japan-mlb-pitchers-batters-statcast) | 34 Japanese MLB players, 174k pitches+hits | 🏆 **10.0/10** | [Zenn](https://zenn.dev/yasumorishima/articles/kaggle-japan-mlb-dataset) |
-| [MLB Bat Tracking (2024-2025)](https://www.kaggle.com/datasets/yasunorim/mlb-bat-tracking-2024-2025) | 452 batters, 19 swing metrics | 🏆 **10.0/10** | - |
+**3 published MLB datasets** with comprehensive documentation (size, columns, DOI, articles)
 
-</details>
+| Dataset | Description |
+|---------|-------------|
+| [Japanese MLB Players Statcast (2015-2025)](https://www.kaggle.com/datasets/yasunorim/japan-mlb-pitchers-batters-statcast) | 34 Japanese MLB players, 174k pitches+hits |
+| [MLB Pitcher Arsenal Evolution (2020-2025)](https://www.kaggle.com/datasets/yasunorim/mlb-pitcher-arsenal-2020-2025) | 4,253 pitcher-seasons, 111 metrics |
+| [MLB Bat Tracking (2024-2025)](https://www.kaggle.com/datasets/yasunorim/mlb-bat-tracking-2024-2025) | 452 batters, 19 swing metrics |
 
 **Technical Stack:** Python, pybaseball, DuckDB, matplotlib, seaborn, Google Colab
 
@@ -102,18 +102,19 @@ MLB Statcast data analysis with pybaseball + DuckDB + Google Colab. (pybaseball 
 ---
 
 ### [Kaggle Competitions](https://github.com/yasumorishima/kaggle-competitions)
-**Notebooks Expert** | 🥉 **7 Bronze Notebook Medals**
+**Notebooks Expert** | 🥉 **8 Bronze Notebook Medals**
 
 Active in competitions and publishing analysis notebooks.
 
 **Competition:** [S6E2 Heart Disease](https://www.kaggle.com/code/yasunorim/s6e2-heart-disease-eda-ensemble-wandb) — LGB+XGB+CatBoost ensemble, CV AUC 0.955, LB 0.953
 
 <details>
-<summary>All Bronze Medal Notebooks (7)</summary>
+<summary>All Bronze Medal Notebooks (8)</summary>
 
 | Notebook | Topic |
 |----------|-------|
 | [CAFA 6 Baseline with Regularization](https://www.kaggle.com/code/yasunorim/baseline-with-regularization) | Protein function prediction (PyTorch MLP) |
+| [Bat Tracking: Japanese MLB Batters (2024-2025)](https://www.kaggle.com/code/yasunorim/bat-tracking-japanese-mlb-batters-2024-2025) | MLB bat speed & swing metrics analysis |
 | [Senga Ghost Fork Analysis](https://www.kaggle.com/code/yasunorim/senga-ghost-fork-analysis-2023-2025) | MLB Statcast pitching analysis |
 | [Kikuchi Slider Revolution](https://www.kaggle.com/code/yasunorim/kikuchi-slider-revolution-2019-2025) | MLB Statcast pitching analysis |
 | [NFL Geometric Rules Baseline](https://www.kaggle.com/code/yasunorim/geometric-rules-baseline-2-921-rmse-no-ml) | Physics-based rules, No ML, RMSE 2.921 |
