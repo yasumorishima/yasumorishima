@@ -84,6 +84,25 @@ MLB Statcast data analysis with pybaseball + DuckDB + Google Colab. (pybaseball 
 
 </details>
 
+### [savant-extras](https://github.com/yasumorishima/savant-extras) — PyPI Published
+Python library that adds **date range support** for Baseball Savant bat tracking data. Complements [pybaseball](https://github.com/jldbc/pybaseball).
+
+```bash
+pip install savant-extras
+```
+
+```python
+from savant_extras import bat_tracking, bat_tracking_monthly, bat_tracking_splits
+
+df = bat_tracking("2024-04-01", "2024-04-30")          # Custom date range
+monthly = bat_tracking_monthly(2024)                     # Monthly splits
+splits = bat_tracking_splits(2024)                       # First/second half
+```
+
+**Links:** [PyPI](https://pypi.org/project/savant-extras/) / [Article (EN)](https://dev.to/yasumorishima) / [Article (JP)](https://zenn.dev/yasumorishima/articles/savant-extras-pypi-library)
+
+---
+
 ### 📊 [Kaggle Datasets](https://github.com/yasumorishima/kaggle-datasets)
 
 **4 published MLB datasets** with comprehensive documentation (size, columns, DOI, articles)
