@@ -146,7 +146,7 @@ Personal diary app — started as a GAS web app, then evolved into a Flutter mob
 
 | Version | Repository | Stack | Features |
 |---------|-----------|-------|----------|
-| **Mobile (Flutter)** | [diary-app-flutter](https://github.com/yasumorishima/diary-app-flutter) | Flutter, Dart, Hive, AdMob | 5 languages, offline-first, Google Play production approved |
+| **Mobile (Flutter)** | [diary-app-flutter](https://github.com/yasumorishima/diary-app-flutter) | Flutter, Dart, Hive, AdMob | 5 languages, offline-first, [**Published on Google Play**](https://play.google.com/store/apps/details?id=com.diary.daily) (177 countries) |
 | **Web (GAS)** | [gas-daily-diary](https://github.com/yasumorishima/gas-daily-diary) | Google Apps Script, JavaScript | 10 pages, dark mode, data stored in user's own Spreadsheet |
 
 ---
