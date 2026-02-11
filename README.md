@@ -101,6 +101,9 @@ splits = bat_tracking_splits(2024)                       # First/second half
 
 **Links:** [PyPI](https://pypi.org/project/savant-extras/) / [Article (EN)](https://dev.to/yasumorishima) / [Article (JP)](https://zenn.dev/yasumorishima/articles/savant-extras-pypi-library)
 
+**Demo App:** [MLB Bat Tracking Dashboard](https://yasumorishima-mlb-bat-tracking.streamlit.app/) — Streamlit app powered by savant-extras. 5 tabs: Leaderboard, Player Comparison, WBC Country Strength, Team Lineup Builder, Monthly Trend. English/Japanese bilingual.
+[Article (EN)](https://dev.to/yasumorishima/i-tried-streamlit-for-the-first-time-and-built-an-mlb-bat-tracking-dashboard) / [Article (JP)](https://zenn.dev/yasumorishima/articles/streamlit-mlb-bat-tracking-dashboard)
+
 ---
 
 ### 📊 [Kaggle Datasets](https://github.com/yasumorishima/kaggle-datasets)
