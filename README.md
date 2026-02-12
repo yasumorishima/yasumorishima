@@ -54,7 +54,7 @@ Contributing to open-source civic tech projects that promote political transpare
 
 **Technical Stack:** Next.js, TypeScript, Supabase, shadcn/ui, Biome, Bun, Vitest
 
-Also contributing to [optuna/optuna](https://github.com/optuna/optuna) (Merged), [pandas-dev/pandas](https://github.com/pandas-dev/pandas), [jldbc/pybaseball](https://github.com/jldbc/pybaseball), [line/line-bot-mcp-server](https://github.com/line/line-bot-mcp-server), [dfinity/icp-js](https://github.com/dfinity/icp-js-core), and more. See [oss-contributions](https://github.com/yasumorishima/oss-contributions) for full details (32 PRs / 12 Merged).
+Also contributing to [optuna/optuna](https://github.com/optuna/optuna) (Merged), [pandas-dev/pandas](https://github.com/pandas-dev/pandas), [jldbc/pybaseball](https://github.com/jldbc/pybaseball), [line/line-bot-mcp-server](https://github.com/line/line-bot-mcp-server), [dfinity/icp-js](https://github.com/dfinity/icp-js-core) (Merged), and more. See [oss-contributions](https://github.com/yasumorishima/oss-contributions) for full details (34 PRs / 13 Merged).
 
 ---
 
