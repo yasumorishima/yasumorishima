@@ -54,7 +54,7 @@ Contributing to open-source civic tech projects that promote political transpare
 
 **Technical Stack:** Next.js, TypeScript, Supabase, shadcn/ui, Biome, Bun, Vitest
 
-Also contributing to [jldbc/pybaseball](https://github.com/jldbc/pybaseball) (Python, 1.5k+ stars) and more. See [oss-contributions](https://github.com/yasumorishima/oss-contributions) for full details.
+Also contributing to [optuna/optuna](https://github.com/optuna/optuna) (Merged), [pandas-dev/pandas](https://github.com/pandas-dev/pandas), [jldbc/pybaseball](https://github.com/jldbc/pybaseball), [line/line-bot-mcp-server](https://github.com/line/line-bot-mcp-server), [dfinity/icp-js](https://github.com/dfinity/icp-js-core), and more. See [oss-contributions](https://github.com/yasumorishima/oss-contributions) for full details (32 PRs / 12 Merged).
 
 ---
 
@@ -67,18 +67,18 @@ MLB Statcast data analysis with pybaseball + DuckDB + Google Colab. (pybaseball 
 
 | Analysis | Key Finding | Article |
 |----------|-------------|---------|
-| **Kikuchi Slider Revolution (2019-2025)** | SL 17%→37% after Astros trade, #1 pitch in 2025 (SL倍増、FF超え最多球種に) | [Zenn](https://zenn.dev/yasumorishima/articles/kikuchi-slider-revolution-2019-2025) |
-| **Senga Ghost Fork (2023-2025)** | FO whiff rate 58%→39%, decline pre-injury (空振り率低下・故障前から開始) | [Zenn](https://zenn.dev/yasumorishima/articles/senga-ghost-fork-analysis-2023-2025) |
+| **Kikuchi Slider Revolution (2019-2025)** | SL 17%→37% after Astros trade, #1 pitch in 2025 (SL倍増、FF超え最多球種に) | [Zenn](https://zenn.dev/yasumorishima/articles/kikuchi-slider-revolution-2019-2025) / [DEV.to](https://dev.to/yasumorishima/yusei-kikuchis-pitching-evolution-a-statcast-analysis-2019-2025-2a4a) |
+| **Senga Ghost Fork (2023-2025)** | FO whiff rate 58%→39%, decline pre-injury (空振り率低下・故障前から開始) | [Zenn](https://zenn.dev/yasumorishima/articles/senga-ghost-fork-analysis-2023-2025) / [DEV.to](https://dev.to/yasumorishima/kodai-sengas-ghost-fork-analyzed-with-statcast-data-2023-2025-1k1d) |
 
 <details>
 <summary>All analyses (6)</summary>
 
 | Analysis | Key Finding | Article |
 |----------|-------------|---------|
-| **Kikuchi Slider Revolution (2019-2025)** | SL 17%→37% after Astros trade, #1 pitch in 2025 | [Zenn](https://zenn.dev/yasumorishima/articles/kikuchi-slider-revolution-2019-2025) / [Kaggle](https://www.kaggle.com/code/yasunorim/kikuchi-slider-revolution-2019-2025) |
-| **Senga Ghost Fork (2023-2025)** | FO whiff rate 58%→39%, decline pre-injury | [Zenn](https://zenn.dev/yasumorishima/articles/senga-ghost-fork-analysis-2023-2025) / [Kaggle](https://www.kaggle.com/code/yasunorim/senga-ghost-fork-analysis-2023-2025) |
-| **Imanaga 2nd Year (2024-2025)** | 3-pitch concentration (97%), 1st TTO xwOBA .505 | [Zenn](https://zenn.dev/yasumorishima/articles/imanaga-2nd-year-analysis-2024-2025) / [Kaggle](https://www.kaggle.com/code/yasunorim/imanaga-rookie-to-sophomore-pitching) |
-| **Darvish Evolution (2021-2025)** | SL/ST halved, CU became putaway pitch | [Zenn](https://zenn.dev/yasumorishima/articles/darvish-pitching-evolution-2021-2025) / [Kaggle](https://www.kaggle.com/code/yasunorim/darvish-pitching-evolution) |
+| **Kikuchi Slider Revolution (2019-2025)** | SL 17%→37% after Astros trade, #1 pitch in 2025 | [Zenn](https://zenn.dev/yasumorishima/articles/kikuchi-slider-revolution-2019-2025) / [DEV.to](https://dev.to/yasumorishima/yusei-kikuchis-pitching-evolution-a-statcast-analysis-2019-2025-2a4a) / [Kaggle](https://www.kaggle.com/code/yasunorim/kikuchi-slider-revolution-2019-2025) |
+| **Senga Ghost Fork (2023-2025)** | FO whiff rate 58%→39%, decline pre-injury | [Zenn](https://zenn.dev/yasumorishima/articles/senga-ghost-fork-analysis-2023-2025) / [DEV.to](https://dev.to/yasumorishima/kodai-sengas-ghost-fork-analyzed-with-statcast-data-2023-2025-1k1d) / [Kaggle](https://www.kaggle.com/code/yasunorim/senga-ghost-fork-analysis-2023-2025) |
+| **Imanaga 2nd Year (2024-2025)** | 3-pitch concentration (97%), 1st TTO xwOBA .505 | [Zenn](https://zenn.dev/yasumorishima/articles/imanaga-2nd-year-analysis-2024-2025) / [DEV.to](https://dev.to/yasumorishima/shota-imanagas-sophomore-year-what-statcast-data-reveals-2024-2025-235) / [Kaggle](https://www.kaggle.com/code/yasunorim/imanaga-rookie-to-sophomore-pitching) |
+| **Darvish Evolution (2021-2025)** | SL/ST halved, CU became putaway pitch | [Zenn](https://zenn.dev/yasumorishima/articles/darvish-pitching-evolution-2021-2025) / [DEV.to](https://dev.to/yasumorishima/yu-darvishs-pitching-evolution-2021-2025-a-statcast-data-analysis-fij) / [Kaggle](https://www.kaggle.com/code/yasunorim/darvish-pitching-evolution) |
 | **Ohtani Spray Chart** | spraychart() one-liner vs matplotlib manual | [Zenn](https://zenn.dev/yasumorishima/articles/pybaseball-spraychart-ohtani) |
 | **Ohtani Heatmap** | Stadium drawing + hit density heatmap | [Zenn](https://zenn.dev/yasumorishima/articles/matplotlib-baseball-heatmap) |
 
@@ -99,7 +99,7 @@ monthly = bat_tracking_monthly(2024)                     # Monthly splits
 splits = bat_tracking_splits(2024)                       # First/second half
 ```
 
-**Links:** [PyPI](https://pypi.org/project/savant-extras/) / [Article (EN)](https://dev.to/yasumorishima) / [Article (JP)](https://zenn.dev/yasumorishima/articles/savant-extras-pypi-library)
+**Links:** [PyPI](https://pypi.org/project/savant-extras/) / [Article (EN)](https://dev.to/yasumorishima/i-built-savant-extras-date-range-support-for-baseball-savant-data-4lne) / [Article (JP)](https://zenn.dev/yasumorishima/articles/savant-extras-pypi-library)
 
 **Demo App:** [MLB Bat Tracking Dashboard](https://yasumorishima-mlb-bat-tracking.streamlit.app/) — Streamlit app powered by savant-extras. 5 tabs: Leaderboard, Player Comparison, WBC Country Strength, Team Lineup Builder, Monthly Trend. English/Japanese bilingual.
 [Article (EN)](https://dev.to/yasumorishima/i-tried-streamlit-for-the-first-time-and-built-an-mlb-bat-tracking-dashboard) / [Article (JP)](https://zenn.dev/yasumorishima/articles/streamlit-mlb-bat-tracking-dashboard)
@@ -158,7 +158,11 @@ On-chain data analysis using SQL on Dune Analytics. (Dune AnalyticsでSQLを使�
 |-----------|-------------|
 | **[JPYC Stablecoin](https://dune.com/shogaku_toushi/jpyc-date)** | Issuance/redemption/circulation tracking across 3 chains (Ethereum, Polygon, Avalanche) |
 
-**Technical Stack:** SQL (DuneSQL/Trino), Dune Analytics
+- **v2 query:** Fixed Mint/Burn misclassification bug, added internal transfer handling
+- **Automated:** Dune API + GitHub Actions — weekly CSV fetch & README auto-update
+- **Article:** [Zenn (JP)](https://zenn.dev/yasumorishima/articles/dune-jpyc-v2-api-automation) / [Qiita (JP)](https://qiita.com/ussu_ussu_ussu/items/7bf60bdbcab62c1cbbca)
+
+**Technical Stack:** SQL (DuneSQL/Trino), Dune Analytics, Python (dune-client), GitHub Actions
 
 ---
 
@@ -234,7 +238,8 @@ Built a persistent counter dApp on Internet Computer (ICP).
 
 ---
 
-## 📫 Contact
+## 📫 Contact & Blog
+* **Blog:** [Quarto Blog (EN)](https://yasumorishima.github.io/quarto-blog/) / [DEV.to (EN)](https://dev.to/yasumorishima) / [Zenn (JP)](https://zenn.dev/yasumorishima) / [Qiita (JP)](https://qiita.com/ussu_ussu_ussu)
 * **Kaggle:** [https://www.kaggle.com/yasunorim](https://www.kaggle.com/yasunorim)
 * **Wantedly:** [https://www.wantedly.com/id/yasunori_morishima_b](https://www.wantedly.com/id/yasunori_morishima_b)
 * **LinkedIn:** [https://www.linkedin.com/in/康徳-盛島-b70229241](https://www.linkedin.com/in/康徳-盛島-b70229241)
