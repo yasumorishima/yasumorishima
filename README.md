@@ -12,23 +12,24 @@ Manufacturing Engineer & Data Analyst with 17 years of experience, specializing 
 
 ## 🌐 Open Source Contributions
 
-### [team-mirai-volunteer](https://github.com/team-mirai-volunteer) — Civic Tech OSS
+### [team-mirai](https://github.com/team-mirai) / [team-mirai-volunteer](https://github.com/team-mirai-volunteer) — Civic Tech OSS
 Contributing to open-source civic tech projects that promote political transparency and citizen participation in Japan.
 (日本の政治透明化・市民参加を推進するオープンソースプロジェクトに貢献)
 
-**20 PRs (11 Merged / 1 Open / 7 Closed)** across 3 repositories
+**21 PRs (11 Merged / 2 Open / 8 Closed)** across 4 repositories
 
 | Repository | PR | Description |
 |---|---|---|
+| **marumie** | [#1141](https://github.com/team-mirai/marumie/pull/1141) | Display total amount when category filter is applied (カテゴリーフィルタ合計金額表示) |
 | **action-board** | [#1969](https://github.com/team-mirai-volunteer/action-board/pull/1969) | Add 48 unit tests for pure functions (純粋関数テスト追加) |
 | **action-board** | [#1914](https://github.com/team-mirai-volunteer/action-board/pull/1914) | Block shape deletion with XP (XP無限増殖バグ修正) |
-| **action-board** | [#1918](https://github.com/team-mirai-volunteer/action-board/pull/1918) | Disable Supabase Image Transformation (画像変換無効化) |
 
 <details>
-<summary>All PRs (20)</summary>
+<summary>All PRs (21)</summary>
 
 | # | Repository | PR | Status | Description |
 |---|---|---|---|---|
+| 21 | **marumie** | [#1141](https://github.com/team-mirai/marumie/pull/1141) | Open | Display total amount when category filter is applied (カテゴリーフィルタ合計金額表示) |
 | 20 | **action-board** | [#1969](https://github.com/team-mirai-volunteer/action-board/pull/1969) | Merged | Add 48 unit tests for pure functions (純粋関数テスト追加) |
 | 19 | **action-board** | [#1918](https://github.com/team-mirai-volunteer/action-board/pull/1918) | Merged | Disable Supabase Image Transformation (画像変換無効化) |
 | 18 | **action-board** | [#1914](https://github.com/team-mirai-volunteer/action-board/pull/1914) | Merged | Block shape deletion with XP (XP無限増殖バグ修正) |
