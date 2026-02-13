@@ -16,7 +16,7 @@ Manufacturing Engineer & Data Analyst with 17 years of experience, specializing 
 Contributing to open-source civic tech projects that promote political transparency and citizen participation in Japan.
 (日本の政治透明化・市民参加を推進するオープンソースプロジェクトに貢献)
 
-<!-- TEAM_MIRAI_STATS_START -->**0 PRs (0 Merged / 0 Open / 0 Closed)**<!-- TEAM_MIRAI_STATS_END --> across 4 repositories
+<!-- TEAM_MIRAI_STATS_START -->**20 PRs (11 Merged / 2 Open / 7 Closed)**<!-- TEAM_MIRAI_STATS_END --> across 4 repositories
 
 | Repository | PR | Description |
 |---|---|---|
@@ -55,7 +55,7 @@ Contributing to open-source civic tech projects that promote political transpare
 
 **Technical Stack:** Next.js, TypeScript, Supabase, shadcn/ui, Biome, Bun, Vitest
 
-Also contributing to [optuna/optuna](https://github.com/optuna/optuna) (Merged), [pandas-dev/pandas](https://github.com/pandas-dev/pandas), [jldbc/pybaseball](https://github.com/jldbc/pybaseball), [line/line-bot-mcp-server](https://github.com/line/line-bot-mcp-server), [dfinity/icp-js](https://github.com/dfinity/icp-js-core) (Merged), [pyomeca/ezc3d](https://github.com/pyomeca/ezc3d), and more. See [oss-contributions](https://github.com/yasumorishima/oss-contributions) for full details <!-- OSS_STATS_START -->(0 PRs / 0 Merged)<!-- OSS_STATS_END -->.
+Also contributing to [optuna/optuna](https://github.com/optuna/optuna) (Merged), [pandas-dev/pandas](https://github.com/pandas-dev/pandas), [jldbc/pybaseball](https://github.com/jldbc/pybaseball), [line/line-bot-mcp-server](https://github.com/line/line-bot-mcp-server), [dfinity/icp-js](https://github.com/dfinity/icp-js-core) (Merged), [pyomeca/ezc3d](https://github.com/pyomeca/ezc3d), and more. See [oss-contributions](https://github.com/yasumorishima/oss-contributions) for full details <!-- OSS_STATS_START -->(35 PRs / 14 Merged)<!-- OSS_STATS_END -->.
 
 ---
 
@@ -64,7 +64,7 @@ Also contributing to [optuna/optuna](https://github.com/optuna/optuna) (Merged),
 ### [MLB Statcast Visualization](https://github.com/yasumorishima/mlb-statcast-visualization)
 MLB Statcast data analysis with pybaseball + DuckDB + Google Colab. (pybaseball + DuckDB + Colabを使ったMLB投球・打撃データ分析)
 
-<!-- MLB_STATS_START -->**0 analyses**<!-- MLB_STATS_END --> covering Japanese MLB pitchers (Kikuchi, Senga, Imanaga, Darvish) and Ohtani batting data.
+<!-- MLB_STATS_START -->**6 analyses**<!-- MLB_STATS_END --> covering Japanese MLB pitchers (Kikuchi, Senga, Imanaga, Darvish) and Ohtani batting data.
 
 | Analysis | Key Finding | Article |
 |----------|-------------|---------|
