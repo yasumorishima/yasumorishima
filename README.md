@@ -16,7 +16,7 @@ Manufacturing Engineer & Data Analyst with 17 years of experience, specializing 
 Contributing to open-source civic tech projects that promote political transparency and citizen participation in Japan.
 (日本の政治透明化・市民参加を推進するオープンソースプロジェクトに貢献)
 
-<!-- TEAM_MIRAI_STATS_START -->**20 PRs (11 Merged / 2 Open / 7 Closed)**<!-- TEAM_MIRAI_STATS_END --> across 4 repositories
+<!-- TEAM_MIRAI_STATS_START -->20 PRs (11 Merged / 2 Open / 7 Closed)<!-- TEAM_MIRAI_STATS_END --> across 4 repositories
 
 | Repository | PR | Description |
 |---|---|---|
@@ -64,7 +64,7 @@ Also contributing to [optuna](https://github.com/optuna/optuna), [dfinity/icp-js
 ### [MLB Statcast Visualization](https://github.com/yasumorishima/mlb-statcast-visualization)
 MLB Statcast data analysis with pybaseball + DuckDB + Google Colab. (pybaseball + DuckDB + Colabを使ったMLB投球・打撃データ分析)
 
-<!-- MLB_STATS_START -->**6 analyses**<!-- MLB_STATS_END --> covering Japanese MLB pitchers (Kikuchi, Senga, Imanaga, Darvish) and Ohtani batting data.
+<!-- MLB_STATS_START -->6 analyses<!-- MLB_STATS_END --> covering Japanese MLB pitchers (Kikuchi, Senga, Imanaga, Darvish) and Ohtani batting data.
 
 | Analysis | Key Finding | Article |
 |----------|-------------|---------|
@@ -109,7 +109,7 @@ splits = bat_tracking_splits(2024)                       # First/second half
 
 ### 📊 [Kaggle Datasets](https://github.com/yasumorishima/kaggle-datasets)
 
-<!-- KAGGLE_DS_STATS_START -->**4 published MLB datasets**<!-- KAGGLE_DS_STATS_END --> with comprehensive documentation (size, columns, DOI, articles)
+<!-- KAGGLE_DS_STATS_START -->4 published MLB datasets<!-- KAGGLE_DS_STATS_END --> with comprehensive documentation (size, columns, DOI, articles)
 
 | Dataset | Description |
 |---------|-------------|
@@ -126,7 +126,7 @@ splits = bat_tracking_splits(2024)                       # First/second half
 ---
 
 ### [Kaggle Competitions](https://github.com/yasumorishima/kaggle-competitions)
-<!-- KAGGLE_COMP_STATS_START -->**Notebooks Expert** | 🥉 **8 Bronze Notebook Medals**<!-- KAGGLE_COMP_STATS_END -->
+<!-- KAGGLE_COMP_STATS_START -->Notebooks Expert | 🥉 8 Bronze Notebook Medals<!-- KAGGLE_COMP_STATS_END -->
 
 Active in competitions and publishing analysis notebooks.
 

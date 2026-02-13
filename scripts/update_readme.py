@@ -149,8 +149,8 @@ def main():
     # team-mirai stats
     if mirai["total"] > 0:
         mirai_text = (
-            f"**{mirai['total']} PRs "
-            f"({mirai['merged']} Merged / {mirai['open']} Open / {mirai['closed']} Closed)**"
+            f"{mirai['total']} PRs "
+            f"({mirai['merged']} Merged / {mirai['open']} Open / {mirai['closed']} Closed)"
         )
         readme = replace_marker(readme, "TEAM_MIRAI_STATS", mirai_text)
     else:
@@ -165,18 +165,18 @@ def main():
 
     # Kaggle datasets (skip if API failed)
     if dataset_count is not None:
-        kaggle_ds_text = f"**{dataset_count} published MLB datasets**"
+        kaggle_ds_text = f"{dataset_count} published MLB datasets"
         readme = replace_marker(readme, "KAGGLE_DS_STATS", kaggle_ds_text)
     else:
         print("  Skipping Kaggle dataset update (API unavailable)")
 
     # Kaggle competitions
-    kaggle_comp_text = f"**{kaggle_title}** | 🥉 **{kaggle_bronze} Bronze Notebook Medals**"
+    kaggle_comp_text = f"{kaggle_title} | 🥉 {kaggle_bronze} Bronze Notebook Medals"
     readme = replace_marker(readme, "KAGGLE_COMP_STATS", kaggle_comp_text)
 
     # MLB analysis count
     if mlb_count is not None:
-        mlb_text = f"**{mlb_count} analyses**"
+        mlb_text = f"{mlb_count} analyses"
         readme = replace_marker(readme, "MLB_STATS", mlb_text)
     else:
         print("  Skipping MLB analysis update (API unavailable)")
