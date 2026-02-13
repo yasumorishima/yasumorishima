@@ -32,6 +32,8 @@ jobs:
           chmod 600 ~/.kaggle/kaggle.json
 
       - name: Update README stats
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: python scripts/update_readme.py
 
       - name: Commit and push if changed

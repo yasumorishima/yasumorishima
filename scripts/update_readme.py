@@ -36,39 +36,33 @@ AUTHOR = "yasumorishima"
 
 
 def run(cmd: list[str]) -> str:
-    result = subprocess.run(cmd, capture_output=True, text=True, timeout=60)
+    result = subprocess.run(cmd, capture_output=True, text=True, timeout=120)
     if result.returncode != 0:
         print(f"Command failed: {' '.join(cmd)}", file=sys.stderr)
         print(result.stderr, file=sys.stderr)
     return result.stdout.strip()
 
 
-def get_pr_stats(repos: list[str]) -> dict[str, int]:
-    """Get PR counts by state for given repos using gh CLI."""
-    total = merged = open_count = closed = 0
+def search_prs(repos: list[str]) -> dict[str, int]:
+    """Get PR counts using gh search prs (GitHub Search API), one repo at a time."""
+    all_prs = []
     for repo in repos:
         output = run([
-            "gh", "pr", "list",
-            "--repo", repo,
+            "gh", "search", "prs",
             "--author", AUTHOR,
-            "--state", "all",
-            "--json", "state",
+            "--repo", repo,
             "--limit", "200",
+            "--json", "state",
         ])
         if not output:
             continue
-        prs = json.loads(output)
-        for pr in prs:
-            state = pr["state"]
-            total += 1
-            if state == "MERGED":
-                merged += 1
-            elif state == "OPEN":
-                open_count += 1
-            elif state == "CLOSED":
-                closed += 1
+        all_prs.extend(json.loads(output))
+
+    merged = sum(1 for p in all_prs if p["state"].upper() == "MERGED")
+    open_count = sum(1 for p in all_prs if p["state"].upper() == "OPEN")
+    closed = sum(1 for p in all_prs if p["state"].upper() == "CLOSED")
     return {
-        "total": total,
+        "total": len(all_prs),
         "merged": merged,
         "open": open_count,
         "closed": closed,
@@ -104,17 +98,18 @@ def get_kaggle_notebook_count() -> int | None:
     return count if count > 0 else None
 
 
-def get_mlb_analysis_count() -> int:
-    """Count notebook files in mlb-statcast-visualization repo."""
+def get_mlb_analysis_count() -> int | None:
+    """Count notebook files in mlb-statcast-visualization repo. Returns None on failure."""
     output = run([
         "gh", "api",
         "repos/yasumorishima/mlb-statcast-visualization/contents",
         "--jq", '[.[] | select(.name | endswith(".ipynb"))] | length',
     ])
     try:
-        return int(output)
+        count = int(output)
+        return count if count > 0 else None
     except ValueError:
-        return 0
+        return None
 
 
 def replace_marker(text: str, marker: str, replacement: str) -> str:
@@ -127,11 +122,11 @@ def main():
     config = json.loads(CONFIG.read_text(encoding="utf-8"))
 
     print("Fetching OSS PR stats (all repos)...")
-    oss_all = get_pr_stats(REPOS)
+    oss_all = search_prs(REPOS)
     print(f"  All OSS: {oss_all}")
 
     print("Fetching team-mirai PR stats...")
-    mirai = get_pr_stats(TEAM_MIRAI_REPOS)
+    mirai = search_prs(TEAM_MIRAI_REPOS)
     print(f"  team-mirai: {mirai}")
 
     print("Fetching Kaggle dataset count...")
@@ -151,31 +146,40 @@ def main():
 
     readme = README.read_text(encoding="utf-8")
 
-    # team-mirai stats: "21 PRs (11 Merged / 2 Open / 8 Closed)"
-    mirai_text = (
-        f"**{mirai['total']} PRs "
-        f"({mirai['merged']} Merged / {mirai['open']} Open / {mirai['closed']} Closed)**"
-    )
-    readme = replace_marker(readme, "TEAM_MIRAI_STATS", mirai_text)
+    # team-mirai stats
+    if mirai["total"] > 0:
+        mirai_text = (
+            f"**{mirai['total']} PRs "
+            f"({mirai['merged']} Merged / {mirai['open']} Open / {mirai['closed']} Closed)**"
+        )
+        readme = replace_marker(readme, "TEAM_MIRAI_STATS", mirai_text)
+    else:
+        print("  Skipping team-mirai update (API returned 0)")
 
-    # OSS total stats: "(35 PRs / 14 Merged)"
-    oss_text = f"({oss_all['total']} PRs / {oss_all['merged']} Merged)"
-    readme = replace_marker(readme, "OSS_STATS", oss_text)
+    # OSS total stats
+    if oss_all["total"] > 0:
+        oss_text = f"({oss_all['total']} PRs / {oss_all['merged']} Merged)"
+        readme = replace_marker(readme, "OSS_STATS", oss_text)
+    else:
+        print("  Skipping OSS stats update (API returned 0)")
 
-    # Kaggle datasets: "4 published MLB datasets" (skip if API failed)
+    # Kaggle datasets (skip if API failed)
     if dataset_count is not None:
         kaggle_ds_text = f"**{dataset_count} published MLB datasets**"
         readme = replace_marker(readme, "KAGGLE_DS_STATS", kaggle_ds_text)
     else:
         print("  Skipping Kaggle dataset update (API unavailable)")
 
-    # Kaggle competitions: "Notebooks Expert | 8 Bronze Notebook Medals"
+    # Kaggle competitions
     kaggle_comp_text = f"**{kaggle_title}** | 🥉 **{kaggle_bronze} Bronze Notebook Medals**"
     readme = replace_marker(readme, "KAGGLE_COMP_STATS", kaggle_comp_text)
 
-    # MLB analysis count: "6 analyses"
-    mlb_text = f"**{mlb_count} analyses**"
-    readme = replace_marker(readme, "MLB_STATS", mlb_text)
+    # MLB analysis count
+    if mlb_count is not None:
+        mlb_text = f"**{mlb_count} analyses**"
+        readme = replace_marker(readme, "MLB_STATS", mlb_text)
+    else:
+        print("  Skipping MLB analysis update (API unavailable)")
 
     README.write_text(readme, encoding="utf-8")
     print("README.md updated.")
