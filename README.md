@@ -55,7 +55,7 @@ Contributing to open-source civic tech projects that promote political transpare
 
 **Technical Stack:** Next.js, TypeScript, Supabase, shadcn/ui, Biome, Bun, Vitest
 
-Also contributing to [action-board](https://github.com/team-mirai-volunteer/action-board) (11 Merged), [marumie](https://github.com/team-mirai/marumie), [post-checker](https://github.com/team-mirai-volunteer/post-checker), [fact-checker](https://github.com/team-mirai-volunteer/fact-checker), [optuna/optuna](https://github.com/optuna/optuna) (Merged), [dfinity/icp-js-canisters](https://github.com/dfinity/icp-js-canisters) (Merged), [dfinity/icp-js-core](https://github.com/dfinity/icp-js-core), [dfinity/pic-js](https://github.com/dfinity/pic-js), [pyomeca/ezc3d](https://github.com/pyomeca/ezc3d), [pandas-dev/pandas](https://github.com/pandas-dev/pandas), [jldbc/pybaseball](https://github.com/jldbc/pybaseball), [line/line-bot-mcp-server](https://github.com/line/line-bot-mcp-server), and more. See [oss-contributions](https://github.com/yasumorishima/oss-contributions) for full details <!-- OSS_STATS_START -->(35 PRs / 14 Merged)<!-- OSS_STATS_END -->.
+Also contributing to [optuna](https://github.com/optuna/optuna), [dfinity/icp-js](https://github.com/dfinity/icp-js-core), [pandas](https://github.com/pandas-dev/pandas), [pybaseball](https://github.com/jldbc/pybaseball), [ezc3d](https://github.com/pyomeca/ezc3d), and more. See [oss-contributions](https://github.com/yasumorishima/oss-contributions) for full details <!-- OSS_STATS_START -->(35 PRs / 14 Merged)<!-- OSS_STATS_END -->.
 
 ---
 
