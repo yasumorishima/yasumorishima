@@ -126,14 +126,14 @@ splits = bat_tracking_splits(2024)                       # First/second half
 ---
 
 ### [Kaggle Competitions](https://github.com/yasumorishima/kaggle-competitions)
-<!-- KAGGLE_COMP_STATS_START -->Notebooks Expert | 🥉 8 Bronze Notebook Medals<!-- KAGGLE_COMP_STATS_END -->
+<!-- KAGGLE_COMP_STATS_START -->Notebooks Expert | 🥉 9 Bronze Notebook Medals<!-- KAGGLE_COMP_STATS_END -->
 
 Active in competitions and publishing analysis notebooks.
 
 **Competition:** [S6E2 Heart Disease](https://www.kaggle.com/code/yasunorim/s6e2-heart-disease-eda-ensemble-wandb) — LGB+XGB+CatBoost ensemble, CV AUC 0.955, LB 0.953
 
 <details>
-<summary>All Bronze Medal Notebooks (8)</summary>
+<summary>All Bronze Medal Notebooks (9)</summary>
 
 | Notebook | Topic |
 |----------|-------|
@@ -145,6 +145,7 @@ Active in competitions and publishing analysis notebooks.
 | [PhysioNet ECG Baseline](https://www.kaggle.com/code/yasunorim/physionet-ecg-baseline) | ECG submission format guide |
 | [Diabetes EDA & Baseline](https://www.kaggle.com/code/yasunorim/diabetes-prediction-eda-baseline-s5e12) | LightGBM 5-fold CV, AUC 0.727 |
 | [Diabetes Rank-Based Ensemble](https://www.kaggle.com/code/yasunorim/diabetes-prediction-rank-based-ensemble) | Rank averaging for AUC optimization |
+| [Deep Past Cloud Workflow + TF-IDF Baseline](https://www.kaggle.com/code/yasunorim/deep-past-cloud-workflow-tfidf-baseline) | Akkadian→English TF-IDF baseline |
 
 </details>
 
