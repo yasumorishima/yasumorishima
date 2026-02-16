@@ -107,6 +107,25 @@ splits = bat_tracking_splits(2024)                       # First/second half
 
 ---
 
+### [WBC 2026 Scouting Dashboard](https://github.com/yasumorishima/wbc-scouting)
+Statcast-based scouting dashboards for all WBC 2026 teams, deployed on Streamlit Community Cloud.
+(WBC 2026参加国の Statcast データをビジュアライズしたスカウティングダッシュボード群)
+
+- **30 apps** across 19 countries — batters (17 countries) + pitchers (13 countries)
+- **Features:** Zone heatmaps, spray charts, pitch movement, count-by-count performance, LHP/RHP splits, pitch type filter
+- **Data:** Baseball Savant Statcast via pybaseball, auto-fetched by GitHub Actions
+- **Bilingual:** English / Japanese
+
+| Example | Link |
+|---|---|
+| 🇺🇸 USA Batters | [wbc-usa-batters.streamlit.app](https://wbc-usa-batters.streamlit.app/) |
+| 🇯🇵 Japan Pitchers | [wbc-japan-pitchers.streamlit.app](https://wbc-japan-pitchers.streamlit.app/) |
+| → All 30 apps | [GitHub README](https://github.com/yasumorishima/wbc-scouting#-デプロイ済みアプリ一覧) |
+
+**Technical Stack:** Python, Streamlit, pybaseball, pandas, matplotlib, scipy, GitHub Actions
+
+---
+
 ### 📊 [Kaggle Datasets](https://github.com/yasumorishima/kaggle-datasets)
 
 <!-- KAGGLE_DS_STATS_START -->4 published MLB datasets<!-- KAGGLE_DS_STATS_END --> with comprehensive documentation (size, columns, DOI, articles)
