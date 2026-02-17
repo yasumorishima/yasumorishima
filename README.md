@@ -107,7 +107,7 @@ splits = bat_tracking_splits(2024)                       # First/second half
 
 ---
 
-### [WBC 2026 Scouting Dashboard](https://github.com/yasumorishima/wbc-scouting) 作成中
+### [WBC 2026 Scouting Dashboard](https://github.com/yasumorishima/wbc-scouting)
 Statcast-based scouting dashboards for all WBC 2026 teams, deployed on Streamlit Community Cloud.
 (WBC 2026参加国の Statcast データをビジュアライズしたスカウティングダッシュボード群)
 
