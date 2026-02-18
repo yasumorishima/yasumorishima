@@ -229,7 +229,7 @@ Built a persistent counter dApp on Internet Computer (ICP).
 
 **Technical Stack:** Motoko, Vanilla JavaScript, dfx CLI, Webpack
 
-### [Raspi Baseball Bot](https://github.com/yasumorishima/raspi-baseball-bot)
+### [OpenClaw Intro: Twitter Bot with Raspberry Pi × Gemini](https://github.com/yasumorishima/raspi-baseball-bot)
 Building an automated tweet bot on Raspberry Pi 5 using OpenClaw + Gemini API (free tier).
 (Raspberry Pi 5 + OpenClaw + Gemini API（無料枠）で自動ツイートするbot)
 
