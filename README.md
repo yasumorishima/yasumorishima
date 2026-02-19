@@ -205,22 +205,6 @@ Batch calendar event registration with senior-friendly mobile UI. (シニア向�
 
 ---
 
-### [Selenium Automation Guide](https://github.com/yasumorishima/selenium-automation-guide)
-Practical troubleshooting guide for Selenium browser automation, born from real-world problem solving.
-(実務から生まれたSeleniumブラウザ自動化のトラブルシューティングガイド)
-
-**Technical Stack:** Python, Selenium, webdriver-manager
-
----
-
-### [Business Automation Workflow](https://github.com/yasumorishima/business-automation-workflow)
-End-to-end automation: Gmail PDF extraction → Excel conversion (VBA + Power Query) → Google Sheets aggregation → Python data integration.
-(メール添付PDF処理からデータ統合までのエンドツーエンド自動化)
-
-**Technical Stack:** Google Apps Script, VBA, Power Query, Python, pandas
-
----
-
 ## 🔬 Learning Projects
 
 ### [ICP Learning Project](https://github.com/yasumorishima/ICP_kinyoku)
@@ -264,6 +248,13 @@ Building an automated tweet bot on Raspberry Pi 5 using OpenClaw + Gemini API (f
 * **Role:** Inventor (発明者)
 * **Assignee:** Toppan Printing Co., Ltd. (凸版印刷株式会社)
 * **Link:** [Google Patents (JP6307851B2)](https://patents.google.com/patent/JP6307851B2/ja)
+
+---
+
+## 📦 Past Projects
+
+Older projects (Selenium automation, business workflow tools, etc.) are archived here:
+→ [yasumorishima/archived-projects](https://github.com/yasumorishima/archived-projects)
 
 ---
 
