@@ -136,7 +136,7 @@ Statcast-based scouting dashboards for all WBC 2026 teams, deployed on Streamlit
 | [MLB Statcast + Bat Tracking (2024-2025)](https://www.kaggle.com/datasets/yasunorim/mlb-statcast-bat-tracking-2024-2025) | 1.4M pitches, 118 metrics, bat tracking data |
 | [Japanese MLB Players Statcast (2015-2025)](https://www.kaggle.com/datasets/yasunorim/japan-mlb-pitchers-batters-statcast) | 34 Japanese MLB players, 174k pitches+hits |
 | [MLB Pitcher Arsenal Evolution (2020-2025)](https://www.kaggle.com/datasets/yasunorim/mlb-pitcher-arsenal-2020-2025) | 4,253 pitcher-seasons, 111 metrics |
-| [MLB Bat Tracking Leaderboard (2024-2025)](https://www.kaggle.com/datasets/yasunorim/mlb-bat-tracking-2024-2025) 🥉 | 452 batters, 19 swing metrics |
+| [MLB Bat Tracking Leaderboard (2024-2025)](https://www.kaggle.com/datasets/yasunorim/mlb-bat-tracking-2024-2025) 🥈 | 452 batters, 19 swing metrics |
 
 **Technical Stack:** Python, pybaseball, DuckDB, matplotlib, seaborn, Google Colab
 
