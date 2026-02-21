@@ -102,27 +102,6 @@ splits = bat_tracking_splits(2024)                       # First/second half
 
 **Links:** [PyPI](https://pypi.org/project/savant-extras/) / [Article (EN)](https://dev.to/yasumorishima/i-built-savant-extras-date-range-support-for-baseball-savant-data-4lne) / [Article (JP)](https://zenn.dev/shogaku/articles/savant-extras-pypi-library)
 
-### [kaggle-wandb-sync](https://github.com/yasumorishima/kaggle-wandb-sync) — PyPI Published
-CLI tool to sync **W&B offline runs** from Kaggle Notebooks to W&B cloud. Kaggle competition notebooks run with internet disabled, so `kaggle-wandb-sync` automates the offline sync pipeline: push → poll → download output → `wandb sync`.
-
-```bash
-pip install kaggle-wandb-sync
-kaggle-wandb-sync run my-notebook/   # all-in-one pipeline
-```
-
-**Links:** [PyPI](https://pypi.org/project/kaggle-wandb-sync/) / [GitHub](https://github.com/yasumorishima/kaggle-wandb-sync)
-
-### [kaggle-notebook-deploy](https://github.com/yasumorishima/kaggle-notebook-deploy) — PyPI Published
-CLI tool to deploy Kaggle Notebooks with `git push` via GitHub Actions. Validates metadata, scaffolds competition directories, and pushes notebooks to Kaggle.
-
-```bash
-pip install kaggle-notebook-deploy
-kaggle-notebook-deploy init titanic   # scaffold
-kaggle-notebook-deploy push titanic   # deploy
-```
-
-**Links:** [PyPI](https://pypi.org/project/kaggle-notebook-deploy/) / [GitHub](https://github.com/yasumorishima/kaggle-notebook-deploy) / [Article (EN)](https://dev.to/yasumorishima/deploy-kaggle-notebooks-with-git-push-i-built-a-cli-tool-for-it-ncg) / [Article (JP)](https://zenn.dev/shogaku/articles/kaggle-notebook-deploy-march-mania-2026)
-
 📦 **All PyPI packages:** [pypi-packages](https://github.com/yasumorishima/pypi-packages)
 
 **Demo App:** [MLB Bat Tracking Dashboard](https://yasumorishima-mlb-bat-tracking.streamlit.app/) ([Source](https://github.com/yasumorishima/mlb-bat-tracking-dashboard)) — Streamlit app powered by savant-extras. 5 tabs: Leaderboard, Player Comparison, WBC Country Strength, Team Lineup Builder, Monthly Trend. English/Japanese bilingual.
@@ -183,6 +162,18 @@ kaggle-notebook-deploy push march-machine-learning-mania-2026       # Deploy
 **Links:** [PyPI](https://pypi.org/project/kaggle-notebook-deploy/) / [Article (EN)](https://dev.to/yasumorishima/deploy-kaggle-notebooks-with-git-push-i-built-a-cli-tool-for-it-ncg) / [Article (JP)](https://zenn.dev/shogaku/articles/kaggle-notebook-deploy-march-mania-2026)
 
 **Example notebook:** [March Machine Learning Mania 2026 Baseline](https://www.kaggle.com/code/yasunorim/march-machine-learning-mania-2026-baseline) — deployed with this tool
+
+---
+
+### [kaggle-wandb-sync](https://github.com/yasumorishima/kaggle-wandb-sync) — PyPI Published
+CLI tool to sync **W&B offline runs** from Kaggle Notebooks to W&B cloud. Kaggle competition notebooks run with internet disabled, so `kaggle-wandb-sync` automates the offline sync pipeline: push → poll → download output → `wandb sync`.
+
+```bash
+pip install kaggle-wandb-sync
+kaggle-wandb-sync run my-notebook/   # all-in-one: push → poll → output → sync
+```
+
+**Links:** [PyPI](https://pypi.org/project/kaggle-wandb-sync/) / [GitHub](https://github.com/yasumorishima/kaggle-wandb-sync)
 
 ---
 
