@@ -108,25 +108,6 @@ splits = bat_tracking_splits(2024)                       # First/second half
 
 ---
 
-### [kaggle-notebook-deploy](https://github.com/yasumorishima/kaggle-notebook-deploy) — PyPI Published
-CLI tool that automates Kaggle Notebook deployment via GitHub Actions. Edit notebooks locally, `git push`, and they deploy to Kaggle automatically.
-
-```bash
-pip install kaggle-notebook-deploy
-```
-
-```bash
-kaggle-notebook-deploy init-repo                                    # Set up GitHub Actions
-kaggle-notebook-deploy init march-machine-learning-mania-2026 --gpu --public  # Create competition dir
-kaggle-notebook-deploy push march-machine-learning-mania-2026       # Deploy
-```
-
-**Links:** [PyPI](https://pypi.org/project/kaggle-notebook-deploy/) / [Article (EN)](https://dev.to/yasumorishima/deploy-kaggle-notebooks-with-git-push-i-built-a-cli-tool-for-it-ncg) / [Article (JP)](https://zenn.dev/shogaku/articles/kaggle-notebook-deploy-march-mania-2026)
-
-**Example notebook:** [March Machine Learning Mania 2026 Baseline](https://www.kaggle.com/code/yasunorim/march-machine-learning-mania-2026-baseline) — deployed with this tool
-
----
-
 ### [WBC 2026 Scouting Dashboard](https://github.com/yasumorishima/wbc-scouting)
 Statcast-based scouting dashboards for all WBC 2026 teams, deployed on Streamlit Community Cloud.
 (WBC 2026参加国の Statcast データをビジュアライズしたスカウティングダッシュボード群)
@@ -161,6 +142,25 @@ Statcast-based scouting dashboards for all WBC 2026 teams, deployed on Streamlit
 
 📌 **All notebooks are executable on Colab** - Click "Open in Colab" badge in each notebook
 (全ノートブックはColabで実行可能)
+
+---
+
+### [kaggle-notebook-deploy](https://github.com/yasumorishima/kaggle-notebook-deploy) — PyPI Published
+CLI tool that automates Kaggle Notebook deployment via GitHub Actions. Edit notebooks locally, `git push`, and they deploy to Kaggle automatically.
+
+```bash
+pip install kaggle-notebook-deploy
+```
+
+```bash
+kaggle-notebook-deploy init-repo                                    # Set up GitHub Actions
+kaggle-notebook-deploy init march-machine-learning-mania-2026 --gpu --public  # Create competition dir
+kaggle-notebook-deploy push march-machine-learning-mania-2026       # Deploy
+```
+
+**Links:** [PyPI](https://pypi.org/project/kaggle-notebook-deploy/) / [Article (EN)](https://dev.to/yasumorishima/deploy-kaggle-notebooks-with-git-push-i-built-a-cli-tool-for-it-ncg) / [Article (JP)](https://zenn.dev/shogaku/articles/kaggle-notebook-deploy-march-mania-2026)
+
+**Example notebook:** [March Machine Learning Mania 2026 Baseline](https://www.kaggle.com/code/yasunorim/march-machine-learning-mania-2026-baseline) — deployed with this tool
 
 ---
 
