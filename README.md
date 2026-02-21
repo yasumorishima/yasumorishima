@@ -121,7 +121,7 @@ kaggle-notebook-deploy init march-machine-learning-mania-2026 --gpu --public  # 
 kaggle-notebook-deploy push march-machine-learning-mania-2026       # Deploy
 ```
 
-**Links:** [PyPI](https://pypi.org/project/kaggle-notebook-deploy/) / [Article (EN)](https://dev.to/yasumorishima) / [Article (JP)](https://zenn.dev/shogaku/articles/kaggle-notebook-deploy-march-mania-2026)
+**Links:** [PyPI](https://pypi.org/project/kaggle-notebook-deploy/) / [Article (EN)](https://dev.to/yasumorishima/deploy-kaggle-notebooks-with-git-push-i-built-a-cli-tool-for-it-ncg) / [Article (JP)](https://zenn.dev/shogaku/articles/kaggle-notebook-deploy-march-mania-2026)
 
 **Example notebook:** [March Machine Learning Mania 2026 Baseline](https://www.kaggle.com/code/yasunorim/march-machine-learning-mania-2026-baseline) — deployed with this tool
 
