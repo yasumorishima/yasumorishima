@@ -130,14 +130,24 @@ Statcast-based scouting dashboards for all WBC 2026 teams, deployed on Streamlit
 
 ### 📊 [Kaggle Datasets](https://github.com/yasumorishima/kaggle-datasets)
 
-<!-- KAGGLE_DS_STATS_START -->4 published MLB datasets<!-- KAGGLE_DS_STATS_END --> with comprehensive documentation (size, columns, DOI, articles)
+<!-- KAGGLE_DS_STATS_START -->5 published datasets<!-- KAGGLE_DS_STATS_END --> with comprehensive documentation (size, columns, DOI, articles)
 
 | Dataset | Description |
 |---------|-------------|
+| [MLB Bat Tracking Leaderboard (2024-2025)](https://www.kaggle.com/datasets/yasunorim/mlb-bat-tracking-2024-2025) 🥈 | 452 batters, 19 swing metrics |
+
+<details>
+<summary>All datasets (5)</summary>
+
+| Dataset | Description |
+|---------|-------------|
+| [MLB Bat Tracking Leaderboard (2024-2025)](https://www.kaggle.com/datasets/yasunorim/mlb-bat-tracking-2024-2025) 🥈 | 452 batters, 19 swing metrics |
+| [WBC 2026 Scouting](https://www.kaggle.com/datasets/yasunorim/wbc-2026-scouting) | MLB Statcast scouting data for all WBC 2026 teams (306 players, 20 countries) |
 | [MLB Statcast + Bat Tracking (2024-2025)](https://www.kaggle.com/datasets/yasunorim/mlb-statcast-bat-tracking-2024-2025) | 1.4M pitches, 118 metrics, bat tracking data |
 | [Japanese MLB Players Statcast (2015-2025)](https://www.kaggle.com/datasets/yasunorim/japan-mlb-pitchers-batters-statcast) | 34 Japanese MLB players, 174k pitches+hits |
 | [MLB Pitcher Arsenal Evolution (2020-2025)](https://www.kaggle.com/datasets/yasunorim/mlb-pitcher-arsenal-2020-2025) | 4,253 pitcher-seasons, 111 metrics |
-| [MLB Bat Tracking Leaderboard (2024-2025)](https://www.kaggle.com/datasets/yasunorim/mlb-bat-tracking-2024-2025) 🥈 | 452 batters, 19 swing metrics |
+
+</details>
 
 **Technical Stack:** Python, pybaseball, DuckDB, matplotlib, seaborn, Google Colab
 
@@ -187,7 +197,7 @@ Active in competitions and publishing analysis notebooks.
 **Competition:** [S6E2 Heart Disease](https://www.kaggle.com/code/yasunorim/s6e2-heart-disease-eda-ensemble-wandb) — LGB+XGB+CatBoost ensemble, CV AUC 0.955, LB 0.953
 
 <details>
-<summary>All Bronze Medal Notebooks (9)</summary>
+<summary>All Bronze Medal Notebooks (10)</summary>
 
 | Notebook | Topic |
 |----------|-------|
