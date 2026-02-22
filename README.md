@@ -173,7 +173,9 @@ pip install kaggle-wandb-sync
 kaggle-wandb-sync run my-notebook/   # all-in-one: push → poll → output → sync
 ```
 
-**Links:** [PyPI](https://pypi.org/project/kaggle-wandb-sync/) / [GitHub](https://github.com/yasumorishima/kaggle-wandb-sync)
+**Links:** [PyPI](https://pypi.org/project/kaggle-wandb-sync/) / [Article (EN)](https://dev.to/yasumorishima/track-kaggle-experiments-with-wb-even-without-internet-access-jdf) / [Article (JP)](https://zenn.dev/shogaku/articles/kaggle-wandb-sync-offline-sync)
+
+**Example:** [Stanford RNA 3D Folding 2 | Template Matching + W&B Offline Sync](https://www.kaggle.com/code/yasunorim/template-matching-w-b-via-kaggle-wandb-sync)
 
 ---
 
