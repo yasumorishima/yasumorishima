@@ -180,7 +180,7 @@ kaggle-wandb-sync run my-notebook/   # all-in-one: push → poll → output → 
 ---
 
 ### [Kaggle Competitions](https://github.com/yasumorishima/kaggle-competitions)
-<!-- KAGGLE_COMP_STATS_START -->Notebooks Expert | 🥉 9 Bronze Notebook Medals<!-- KAGGLE_COMP_STATS_END -->
+<!-- KAGGLE_COMP_STATS_START -->Notebooks Expert | 🥉 10 Bronze Notebook Medals<!-- KAGGLE_COMP_STATS_END -->
 
 Active in competitions and publishing analysis notebooks.
 
@@ -191,6 +191,7 @@ Active in competitions and publishing analysis notebooks.
 
 | Notebook | Topic |
 |----------|-------|
+| [March Machine Learning Mania 2026 Baseline](https://www.kaggle.com/code/yasunorim/march-machine-learning-mania-2026-baseline) | NCAA basketball tournament prediction (LightGBM + Logistic Regression) |
 | [CAFA 6 Baseline with Regularization](https://www.kaggle.com/code/yasunorim/baseline-with-regularization) | Protein function prediction (PyTorch MLP) |
 | [Bat Tracking: Japanese MLB Batters (2024-2025)](https://www.kaggle.com/code/yasunorim/bat-tracking-japanese-mlb-batters-2024-2025) | MLB bat speed & swing metrics analysis |
 | [Senga Ghost Fork Analysis](https://www.kaggle.com/code/yasunorim/senga-ghost-fork-analysis-2023-2025) | MLB Statcast pitching analysis |
