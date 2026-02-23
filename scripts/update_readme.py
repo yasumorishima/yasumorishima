@@ -115,7 +115,9 @@ def get_mlb_analysis_count() -> int | None:
 def replace_marker(text: str, marker: str, replacement: str) -> str:
     """Replace content between <!-- {marker}_START --> and <!-- {marker}_END -->."""
     pattern = rf"(<!-- {marker}_START -->).*?(<!-- {marker}_END -->)"
-    return re.sub(pattern, rf"\1{replacement}\2", text, flags=re.DOTALL)
+    return re.sub(
+        pattern, lambda m: f"{m.group(1)}{replacement}{m.group(2)}", text, flags=re.DOTALL
+    )
 
 
 def main():
