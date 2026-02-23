@@ -218,21 +218,6 @@ Active in competitions and publishing analysis notebooks.
 
 ---
 
-### [Dune Analytics - Blockchain Data Analysis](https://github.com/yasumorishima/dune-analytics)
-On-chain data analysis using SQL on Dune Analytics. (Dune AnalyticsでSQLを使ったオンチェーンデータ分析)
-
-| Dashboard | Description |
-|-----------|-------------|
-| **[JPYC Stablecoin](https://dune.com/shogaku_toushi/jpyc-date)** | Issuance/redemption/circulation tracking across 3 chains (Ethereum, Polygon, Avalanche) |
-
-- **v2 query:** Fixed Mint/Burn misclassification bug, added internal transfer handling
-- **Automated:** Dune API + GitHub Actions — weekly CSV fetch & README auto-update
-- **Article:** [Zenn (JP)](https://zenn.dev/shogaku/articles/dune-jpyc-v2-api-automation)
-
-**Technical Stack:** SQL (DuneSQL/Trino), Dune Analytics, Python (dune-client), GitHub Actions
-
----
-
 ### [Daily Diary](https://github.com/yasumorishima/diary-app-flutter)
 Personal diary app — started as a GAS web app, then evolved into a Flutter mobile app.
 (個人用日記アプリ — GAS Webアプリから始まり、Flutterモバイルアプリへ進化)
@@ -241,13 +226,6 @@ Personal diary app — started as a GAS web app, then evolved into a Flutter mob
 |---------|-----------|-------|----------|
 | **Mobile (Flutter)** | [diary-app-flutter](https://github.com/yasumorishima/diary-app-flutter) | Flutter, Dart, Hive, AdMob | 5 languages, offline-first, [**Published on Google Play**](https://play.google.com/store/apps/details?id=com.diary.daily) (177 countries) |
 | **Web (GAS)** | [gas-daily-diary](https://github.com/yasumorishima/gas-daily-diary) | Google Apps Script, JavaScript | 10 pages, dark mode, data stored in user's own Spreadsheet |
-
----
-
-### [GAS Calendar Tool](https://github.com/yasumorishima/gas-calendar-tool)
-Batch calendar event registration with senior-friendly mobile UI. (シニア向けモバイルUIでカレンダー一括登録)
-
-**Technical Stack:** Google Apps Script, JavaScript, Google Calendar API
 
 ---
 
@@ -299,7 +277,12 @@ Building an automated tweet bot on Raspberry Pi 5 using OpenClaw + Gemini API (f
 
 ## 📦 Past Projects
 
-Older projects (Selenium automation, business workflow tools, etc.) are archived here:
+| Project | Description |
+|---|---|
+| [GAS Calendar Tool](https://github.com/yasumorishima/gas-calendar-tool) | Batch calendar event registration with senior-friendly mobile UI (GAS + Google Calendar API) |
+| [Dune Analytics - JPYC](https://github.com/yasumorishima/dune-analytics) | JPYC stablecoin on-chain tracking across 3 chains via DuneSQL + GitHub Actions automation |
+
+Older projects (Selenium automation, business workflow tools, etc.) are also archived here:
 → [yasumorishima/archived-projects](https://github.com/yasumorishima/archived-projects)
 
 ---
