@@ -55,7 +55,7 @@ Contributing to open-source civic tech projects that promote political transpare
 
 **Technical Stack:** Next.js, TypeScript, Supabase, shadcn/ui, Biome, Bun, Vitest
 
-Also contributing to [optuna](https://github.com/optuna/optuna), [dfinity/icp-js](https://github.com/dfinity/icp-js-core), [pandas](https://github.com/pandas-dev/pandas), [pybaseball](https://github.com/jldbc/pybaseball), [ezc3d](https://github.com/pyomeca/ezc3d), and more. See [oss-contributions](https://github.com/yasumorishima/oss-contributions) for full details <!-- OSS_STATS_START -->(37 PRs / 15 Merged)<!-- OSS_STATS_END -->.
+Also contributing to [optuna](https://github.com/optuna/optuna), [dfinity/icp-js](https://github.com/dfinity/icp-js-core), [pandas](https://github.com/pandas-dev/pandas), [pybaseball](https://github.com/jldbc/pybaseball), [ezc3d](https://github.com/pyomeca/ezc3d), and more. See [oss-contributions](https://github.com/yasumorishima/oss-contributions) for full details <!-- OSS_STATS_START -->(36 PRs / 16 Merged)<!-- OSS_STATS_END -->.
 
 ---
 
@@ -130,7 +130,7 @@ Statcast-based scouting dashboards for all WBC 2026 teams, deployed on Streamlit
 
 ### 📊 [Kaggle Datasets](https://github.com/yasumorishima/kaggle-datasets)
 
-<!-- KAGGLE_DS_STATS_START -->5 published datasets<!-- KAGGLE_DS_STATS_END --> with comprehensive documentation (size, columns, DOI, articles)
+<!-- KAGGLE_DS_STATS_START -->5 published MLB datasets<!-- KAGGLE_DS_STATS_END --> with comprehensive documentation (size, columns, DOI, articles)
 
 | Dataset | Description |
 |---------|-------------|
@@ -190,7 +190,7 @@ kaggle-wandb-sync run my-notebook/   # all-in-one: push → poll → output → 
 ---
 
 ### [Kaggle Competitions](https://github.com/yasumorishima/kaggle-competitions)
-<!-- KAGGLE_COMP_STATS_START -->Notebooks Expert | 🥉 10 Bronze Notebook Medals<!-- KAGGLE_COMP_STATS_END -->
+<!-- KAGGLE_COMP_STATS_START -->Notebooks Expert | 🥉 9 Bronze Notebook Medals<!-- KAGGLE_COMP_STATS_END -->
 
 Active in competitions and publishing analysis notebooks.
 
