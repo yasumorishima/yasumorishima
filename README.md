@@ -1,12 +1,6 @@
 # Yasunori Morishima (盛島康徳)
-Manufacturing Engineer & Data Analyst with 17 years of experience, specializing in data analysis and business automation.
-(製造業にて17年の経験を持つエンジニア。データ分析と業務自動化を専門としています)
-
-## 🎯 Focus Areas
-* **Open Source Contribution:** Next.js, TypeScript, Supabase
-* **Data Analysis & Machine Learning:** Python, scikit-learn
-* **Business Process Automation:** VBA, Google Apps Script (GAS)
-* **Statistical Quality Control:** Manufacturing Process Improvement (統計的品質管理・工程改善)
+Manufacturing Engineer & Data Analyst with 17 years of experience, specializing in data analysis, open source contribution, and business automation.
+(製造業にて17年の経験を持つエンジニア。データ分析・OSS貢献・業務自動化を専門としています)
 
 ---
 
@@ -55,11 +49,11 @@ Contributing to open-source civic tech projects that promote political transpare
 
 **Technical Stack:** Next.js, TypeScript, Supabase, shadcn/ui, Biome, Bun, Vitest
 
-Also contributing to [optuna](https://github.com/optuna/optuna), [dfinity/icp-js](https://github.com/dfinity/icp-js-core), [pandas](https://github.com/pandas-dev/pandas), [pybaseball](https://github.com/jldbc/pybaseball), [ezc3d](https://github.com/pyomeca/ezc3d), and more. See [oss-contributions](https://github.com/yasumorishima/oss-contributions) for full details <!-- OSS_STATS_START -->(36 PRs / 16 Merged)<!-- OSS_STATS_END -->.
+Also contributing to [optuna](https://github.com/optuna/optuna), [dfinity/icp-js](https://github.com/dfinity/icp-js-core), [pandas](https://github.com/pandas-dev/pandas), [pybaseball](https://github.com/jldbc/pybaseball), [ezc3d](https://github.com/pyomeca/ezc3d), [kouchou-ai](https://github.com/digitaldemocracy2030/kouchou-ai), [openclaw](https://github.com/openclaw/openclaw), and more. See [oss-contributions](https://github.com/yasumorishima/oss-contributions) for full details <!-- OSS_STATS_START -->(36 PRs / 16 Merged)<!-- OSS_STATS_END -->.
 
 ---
 
-## 📊 Main Projects
+## 📊 Data Analysis
 
 ### [MLB Statcast Visualization](https://github.com/yasumorishima/mlb-statcast-visualization)
 MLB Statcast data analysis with pybaseball + DuckDB + Google Colab. (pybaseball + DuckDB + Colabを使ったMLB投球・打撃データ分析)
@@ -68,8 +62,8 @@ MLB Statcast data analysis with pybaseball + DuckDB + Google Colab. (pybaseball 
 
 | Analysis | Key Finding | Article |
 |----------|-------------|---------|
-| **Kikuchi Slider Revolution (2019-2025)** | SL 17%→37% after Astros trade, #1 pitch in 2025 (SL倍増、FF超え最多球種に) | [Zenn](https://zenn.dev/shogaku/articles/kikuchi-slider-revolution-2019-2025) / [DEV.to](https://dev.to/yasumorishima/yusei-kikuchis-pitching-evolution-a-statcast-analysis-2019-2025-2a4a) |
-| **Senga Ghost Fork (2023-2025)** | FO whiff rate 58%→39%, decline pre-injury (空振り率低下・故障前から開始) | [Zenn](https://zenn.dev/shogaku/articles/senga-ghost-fork-analysis-2023-2025) / [DEV.to](https://dev.to/yasumorishima/kodai-sengas-ghost-fork-analyzed-with-statcast-data-2023-2025-1k1d) |
+| **Kikuchi Slider Revolution (2019-2025)** | SL 17%→37% after Astros trade, #1 pitch in 2025 | [Zenn](https://zenn.dev/shogaku/articles/kikuchi-slider-revolution-2019-2025) / [DEV.to](https://dev.to/yasumorishima/yusei-kikuchis-pitching-evolution-a-statcast-analysis-2019-2025-2a4a) |
+| **Senga Ghost Fork (2023-2025)** | FO whiff rate 58%→39%, decline pre-injury | [Zenn](https://zenn.dev/shogaku/articles/senga-ghost-fork-analysis-2023-2025) / [DEV.to](https://dev.to/yasumorishima/kodai-sengas-ghost-fork-analyzed-with-statcast-data-2023-2025-1k1d) |
 
 <details>
 <summary>All analyses (6)</summary>
@@ -85,114 +79,30 @@ MLB Statcast data analysis with pybaseball + DuckDB + Google Colab. (pybaseball 
 
 </details>
 
-### [savant-extras](https://github.com/yasumorishima/savant-extras) — PyPI Published
-Python library that adds **date range support** for Baseball Savant bat tracking data. Complements [pybaseball](https://github.com/jldbc/pybaseball).
-
-```bash
-pip install savant-extras
-```
-
-```python
-from savant_extras import bat_tracking, bat_tracking_monthly, bat_tracking_splits
-
-df = bat_tracking("2024-04-01", "2024-04-30")          # Custom date range
-monthly = bat_tracking_monthly(2024)                     # Monthly splits
-splits = bat_tracking_splits(2024)                       # First/second half
-```
-
-**Links:** [PyPI](https://pypi.org/project/savant-extras/) / [Article (EN)](https://dev.to/yasumorishima/i-built-savant-extras-date-range-support-for-baseball-savant-data-4lne) / [Article (JP)](https://zenn.dev/shogaku/articles/savant-extras-pypi-library)
-
-📦 **All PyPI packages:** [pypi-packages](https://github.com/yasumorishima/pypi-packages)
-
-**Demo App:** [MLB Bat Tracking Dashboard](https://yasumorishima-mlb-bat-tracking.streamlit.app/) ([Source](https://github.com/yasumorishima/mlb-bat-tracking-dashboard)) — Streamlit app powered by savant-extras. 5 tabs: Leaderboard, Player Comparison, WBC Country Strength, Team Lineup Builder, Monthly Trend. English/Japanese bilingual.
-[Article (EN)](https://dev.to/yasumorishima/i-tried-streamlit-for-the-first-time-and-built-an-mlb-bat-tracking-dashboard) / [Article (JP)](https://zenn.dev/shogaku/articles/streamlit-mlb-bat-tracking-dashboard)
-
----
-
-### [WBC 2026 Scouting Dashboard](https://github.com/yasumorishima/wbc-scouting)
-Statcast-based scouting dashboards for all WBC 2026 teams, deployed on Streamlit Community Cloud.
-(WBC 2026参加国の Statcast データをビジュアライズしたスカウティングダッシュボード群)
-
-- **30 apps** across 19 countries — batters (17 countries) + pitchers (13 countries)
-- **Features:** Zone heatmaps, spray charts, pitch movement, count-by-count performance, LHP/RHP splits, pitch type filter
-- **Data:** Baseball Savant Statcast via pybaseball, auto-fetched by GitHub Actions
-- **Bilingual:** English / Japanese
-
-| Example | Link |
-|---|---|
-| 🇺🇸 USA Batters | [wbc-usa-batters.streamlit.app](https://wbc-usa-batters.streamlit.app/) |
-| 🇯🇵 Japan Pitchers | [wbc-japan-pitchers.streamlit.app](https://wbc-japan-pitchers.streamlit.app/) |
-| → All 30 apps | [GitHub README](https://github.com/yasumorishima/wbc-scouting#-デプロイ済みアプリ一覧) |
-
-**Technical Stack:** Python, Streamlit, pybaseball, pandas, matplotlib, scipy, GitHub Actions
-
----
-
-### 📊 [Kaggle Datasets](https://github.com/yasumorishima/kaggle-datasets)
+### [Kaggle Datasets](https://github.com/yasumorishima/kaggle-datasets)
 
 <!-- KAGGLE_DS_STATS_START -->5 published MLB datasets<!-- KAGGLE_DS_STATS_END --> with comprehensive documentation (size, columns, DOI, articles)
 
 | Dataset | Description |
 |---------|-------------|
-| [MLB Bat Tracking Leaderboard (2024-2025)](https://www.kaggle.com/datasets/yasunorim/mlb-bat-tracking-2024-2025) 🥈 | 452 batters, 19 swing metrics |
+| [MLB Bat Tracking Leaderboard (2024-2025)](https://www.kaggle.com/datasets/yasunorim/mlb-bat-tracking-2024-2025) | 452 batters, 19 swing metrics |
+| [Baseball Savant Leaderboards (2024-2025)](https://www.kaggle.com/datasets/yasunorim/baseball-savant-leaderboards-2024) | 15 leaderboards, 2 seasons combined |
 
 <details>
 <summary>All datasets (5)</summary>
 
 | Dataset | Description |
 |---------|-------------|
-| [MLB Bat Tracking Leaderboard (2024-2025)](https://www.kaggle.com/datasets/yasunorim/mlb-bat-tracking-2024-2025) 🥈 | 452 batters, 19 swing metrics |
+| [MLB Bat Tracking Leaderboard (2024-2025)](https://www.kaggle.com/datasets/yasunorim/mlb-bat-tracking-2024-2025) | 452 batters, 19 swing metrics |
+| [Baseball Savant Leaderboards (2024-2025)](https://www.kaggle.com/datasets/yasunorim/baseball-savant-leaderboards-2024) | 15 leaderboards, 2 seasons combined |
 | [WBC 2026 Scouting](https://www.kaggle.com/datasets/yasunorim/wbc-2026-scouting) | MLB Statcast scouting data for all WBC 2026 teams (306 players, 20 countries) |
-| [MLB Statcast + Bat Tracking (2024-2025)](https://www.kaggle.com/datasets/yasunorim/mlb-statcast-bat-tracking-2024-2025) | 1.4M pitches, 118 metrics, bat tracking data |
 | [Japanese MLB Players Statcast (2015-2025)](https://www.kaggle.com/datasets/yasunorim/japan-mlb-pitchers-batters-statcast) | 34 Japanese MLB players, 174k pitches+hits |
 | [MLB Pitcher Arsenal Evolution (2020-2025)](https://www.kaggle.com/datasets/yasunorim/mlb-pitcher-arsenal-2020-2025) | 4,253 pitcher-seasons, 111 metrics |
 
 </details>
 
-**Technical Stack:** Python, pybaseball, DuckDB, matplotlib, seaborn, Google Colab
-
-📌 **All notebooks are executable on Colab** - Click "Open in Colab" badge in each notebook
-(全ノートブックはColabで実行可能)
-
----
-
-### [kaggle-notebook-deploy](https://github.com/yasumorishima/kaggle-notebook-deploy) — PyPI Published
-CLI tool that automates Kaggle Notebook deployment via GitHub Actions. Edit notebooks locally, `git push`, and they deploy to Kaggle automatically.
-
-```bash
-pip install kaggle-notebook-deploy
-```
-
-```bash
-kaggle-notebook-deploy init-repo                                    # Set up GitHub Actions
-kaggle-notebook-deploy init march-machine-learning-mania-2026 --gpu --public  # Create competition dir
-kaggle-notebook-deploy push march-machine-learning-mania-2026       # Deploy
-```
-
-**Links:** [PyPI](https://pypi.org/project/kaggle-notebook-deploy/) / [Article (EN)](https://dev.to/yasumorishima/deploy-kaggle-notebooks-with-git-push-i-built-a-cli-tool-for-it-ncg) / [Article (JP)](https://zenn.dev/shogaku/articles/kaggle-notebook-deploy-march-mania-2026)
-
-**Example notebook:** [March Machine Learning Mania 2026 Baseline](https://www.kaggle.com/code/yasunorim/march-machine-learning-mania-2026-baseline) — deployed with this tool
-
----
-
-### [kaggle-wandb-sync](https://github.com/yasumorishima/kaggle-wandb-sync) — PyPI Published
-CLI tool to sync **W&B offline runs** from Kaggle Notebooks to W&B cloud. Kaggle competition notebooks run with internet disabled, so `kaggle-wandb-sync` automates the offline sync pipeline: push → poll → download output → `wandb sync`.
-
-```bash
-pip install kaggle-wandb-sync
-kaggle-wandb-sync run my-notebook/   # all-in-one: push → poll → output → sync
-```
-
-**Links:** [PyPI](https://pypi.org/project/kaggle-wandb-sync/) / [Article (EN)](https://dev.to/yasumorishima/track-kaggle-experiments-with-wb-even-without-internet-access-jdf) / [Article (JP)](https://zenn.dev/shogaku/articles/kaggle-wandb-sync-offline-sync)
-
-**Example:** [Stanford RNA 3D Folding 2 | Template Matching + W&B Offline Sync](https://www.kaggle.com/code/yasunorim/template-matching-w-b-via-kaggle-wandb-sync)
-
----
-
 ### [Kaggle Competitions](https://github.com/yasumorishima/kaggle-competitions)
 <!-- KAGGLE_COMP_STATS_START -->Notebooks Expert | 🥉 11 Bronze Notebook Medals<!-- KAGGLE_COMP_STATS_END -->
-
-Active in competitions and publishing analysis notebooks.
 
 **Competition:** [S6E2 Heart Disease](https://www.kaggle.com/code/yasunorim/s6e2-heart-disease-eda-ensemble-wandb) — LGB+XGB+CatBoost ensemble, CV AUC 0.955, LB 0.953
 
@@ -215,47 +125,90 @@ Active in competitions and publishing analysis notebooks.
 
 </details>
 
-**Technical Stack:** Python, LightGBM, XGBoost, CatBoost, PyTorch, W&B, Claude Code
+### [Dune Analytics - Blockchain Data Analysis](https://github.com/yasumorishima/dune-analytics)
+On-chain data analysis using SQL on Dune Analytics. [JPYC Stablecoin Dashboard](https://dune.com/shogaku_toushi/jpyc-date) — issuance/redemption/circulation tracking across 3 chains.
+
+<details>
+<summary>PyPI Packages (7)</summary>
+
+All packages: [pypi-packages](https://github.com/yasumorishima/pypi-packages)
+
+| Package | Description |
+|---------|-------------|
+| [savant-extras](https://pypi.org/project/savant-extras/) | 16 Baseball Savant leaderboards + date range support. Complements pybaseball |
+| [baseball-field-viz](https://pypi.org/project/baseball-field-viz/) | Statcast coordinate transform + field drawing + spray charts + pitch zone charts |
+| [kaggle-notebook-deploy](https://pypi.org/project/kaggle-notebook-deploy/) | Deploy Kaggle Notebooks via `git push` + GitHub Actions |
+| [kaggle-wandb-sync](https://pypi.org/project/kaggle-wandb-sync/) | Sync W&B offline runs from Kaggle to W&B cloud |
+| [signate-deploy](https://pypi.org/project/signate-deploy/) | SIGNATE competition workflow via GitHub Actions |
+| [signate-wandb-sync](https://pypi.org/project/signate-wandb-sync/) | Record SIGNATE scores to W&B runs |
+| [npb-prediction](https://github.com/yasumorishima/npb-prediction) | NPB season prediction with Marcel method + ML (WIP) |
+
+</details>
 
 ---
+
+## 📱 Apps
+
+### [WBC 2026 Scouting Dashboard](https://github.com/yasumorishima/wbc-scouting)
+Statcast-based scouting dashboards for all WBC 2026 teams, deployed on Streamlit Community Cloud.
+(WBC 2026参加国の Statcast データをビジュアライズしたスカウティングダッシュボード群)
+
+- **30 apps** across 19 countries — batters (17 countries) + pitchers (13 countries)
+- **Features:** Zone heatmaps, spray charts, pitch movement, count-by-count performance, LHP/RHP splits, pitch type filter
+- **Data:** Baseball Savant Statcast via pybaseball, auto-fetched by GitHub Actions
+- **Bilingual:** English / Japanese
+
+| Example | Link |
+|---|---|
+| USA Batters | [wbc-usa-batters.streamlit.app](https://wbc-usa-batters.streamlit.app/) |
+| Japan Pitchers | [wbc-japan-pitchers.streamlit.app](https://wbc-japan-pitchers.streamlit.app/) |
+| All 30 apps | [GitHub README](https://github.com/yasumorishima/wbc-scouting#-デプロイ済みアプリ一覧) |
+
+### [MLB Bat Tracking Dashboard](https://yasumorishima-mlb-bat-tracking.streamlit.app/) ([Source](https://github.com/yasumorishima/mlb-bat-tracking-dashboard))
+Streamlit app powered by [savant-extras](https://pypi.org/project/savant-extras/). 5 tabs: Leaderboard, Player Comparison, WBC Country Strength, Team Lineup Builder, Monthly Trend. English/Japanese bilingual.
 
 ### [Daily Diary](https://github.com/yasumorishima/diary-app-flutter)
 Personal diary app — started as a GAS web app, then evolved into a Flutter mobile app.
 (個人用日記アプリ — GAS Webアプリから始まり、Flutterモバイルアプリへ進化)
 
-| Version | Repository | Stack | Features |
-|---------|-----------|-------|----------|
-| **Mobile (Flutter)** | [diary-app-flutter](https://github.com/yasumorishima/diary-app-flutter) | Flutter, Dart, Hive, AdMob | 5 languages, offline-first, [**Published on Google Play**](https://play.google.com/store/apps/details?id=com.diary.daily) (177 countries) |
-| **Web (GAS)** | [gas-daily-diary](https://github.com/yasumorishima/gas-daily-diary) | Google Apps Script, JavaScript | 10 pages, dark mode, data stored in user's own Spreadsheet |
+| Version | Stack | Features |
+|---------|-------|----------|
+| **Mobile (Flutter)** | Flutter, Dart, Hive, AdMob | 5 languages, offline-first, [**Published on Google Play**](https://play.google.com/store/apps/details?id=com.diary.daily) (177 countries) |
+| **Web (GAS)** | Google Apps Script, JavaScript | 10 pages, dark mode, data stored in user's own Spreadsheet |
 
 ---
 
 ## 🔬 Learning Projects
 
 ### [ICP Learning Project](https://github.com/yasumorishima/ICP_kinyoku)
-Built a persistent counter dApp on Internet Computer (ICP).
-(ICP上で継続カウンターdAppを構築)
+Built a persistent counter dApp on Internet Computer (ICP). **Stack:** Motoko, Vanilla JavaScript, dfx CLI
 
-**Technical Stack:** Motoko, Vanilla JavaScript, dfx CLI, Webpack
+### [OpenClaw Intro: Twitter Bot with Raspberry Pi](https://github.com/yasumorishima/raspi-baseball-bot)
+Automated tweet bot on Raspberry Pi 5 using OpenClaw + Gemini API (free tier). **Stack:** Raspberry Pi 5, OpenClaw, Gemini 2.5 Flash, X API, Node.js
+[Article (JP)](https://zenn.dev/shogaku/articles/raspi-baseball-bot-openclaw-gemini)
 
-### [OpenClaw Intro: Twitter Bot with Raspberry Pi × Gemini](https://github.com/yasumorishima/raspi-baseball-bot)
-Building an automated tweet bot on Raspberry Pi 5 using OpenClaw + Gemini API (free tier).
-(Raspberry Pi 5 + OpenClaw + Gemini API（無料枠）で自動ツイートするbot)
+---
 
-**Technical Stack:** Raspberry Pi 5, OpenClaw, Gemini 2.5 Flash, X (Twitter) API, Node.js
+## 📦 Past Projects
 
-**Article:** [Zenn (JP)](https://zenn.dev/shogaku/articles/raspi-baseball-bot-openclaw-gemini)
+| Project | Description |
+|---|---|
+| [GAS Calendar Tool](https://github.com/yasumorishima/gas-calendar-tool) | Batch calendar event registration with senior-friendly mobile UI (GAS + Google Calendar API) |
+
+Older projects (Selenium automation, business workflow tools, etc.) are also archived here:
+[yasumorishima/archived-projects](https://github.com/yasumorishima/archived-projects)
 
 ---
 
 ## 🛠️ Tech Stack
 | Category | Technologies |
 | --- | --- |
-| **Data Analysis & ML** | Python, pandas, scikit-learn, matplotlib, seaborn, **DuckDB (SQL)**, **Dune Analytics** |
-| **Automation** | VBA, Google Apps Script, Power Query, Selenium |
+| **Data Analysis & ML** | Python, pandas, scikit-learn, LightGBM, XGBoost, CatBoost, PyTorch, matplotlib, seaborn, DuckDB, W&B |
+| **Data Sources** | Baseball Savant (Statcast), pybaseball, Dune Analytics |
+| **Web & Dashboards** | Streamlit, Next.js, TypeScript, Supabase, shadcn/ui |
 | **Mobile App** | Flutter, Dart, Hive, Google AdMob |
-| **Web (OSS)** | Next.js, TypeScript, Supabase, shadcn/ui |
-| **Tools** | Excel, Access, Looker Studio, Salesforce |
+| **Automation & DevOps** | GitHub Actions, Google Apps Script, VBA, Power Query |
+| **Tools** | Claude Code, Kaggle, Google Colab, Excel, Looker Studio |
 | **Manufacturing** | Statistical Quality Control, Process Engineering |
 
 ---
@@ -276,22 +229,8 @@ Building an automated tweet bot on Raspberry Pi 5 using OpenClaw + Gemini API (f
 
 ---
 
-## 📦 Past Projects
-
-| Project | Description |
-|---|---|
-| [GAS Calendar Tool](https://github.com/yasumorishima/gas-calendar-tool) | Batch calendar event registration with senior-friendly mobile UI (GAS + Google Calendar API) |
-| [Dune Analytics - JPYC](https://github.com/yasumorishima/dune-analytics) | JPYC stablecoin on-chain tracking across 3 chains via DuneSQL + GitHub Actions automation |
-
-Older projects (Selenium automation, business workflow tools, etc.) are also archived here:
-→ [yasumorishima/archived-projects](https://github.com/yasumorishima/archived-projects)
-
----
-
 ## 📫 Contact & Blog
-* **Blog:** [Quarto Blog (EN)](https://yasumorishima.github.io/quarto-blog/) / [DEV.to (EN)](https://dev.to/yasumorishima) / [Zenn (JP)](https://zenn.dev/shogaku)
+* **Blog:** [DEV.to (EN)](https://dev.to/yasumorishima) / [Zenn (JP)](https://zenn.dev/shogaku) / [Quarto Blog (EN)](https://yasumorishima.github.io/quarto-blog/)
 * **Kaggle:** [https://www.kaggle.com/yasunorim](https://www.kaggle.com/yasunorim)
 * **Wantedly:** [https://www.wantedly.com/id/yasunori_morishima_b](https://www.wantedly.com/id/yasunori_morishima_b)
 * **LinkedIn:** [https://www.linkedin.com/in/康徳-盛島-b70229241](https://www.linkedin.com/in/康徳-盛島-b70229241)
-
-> 💡 *"Bridging manufacturing expertise with data-driven solutions"*
