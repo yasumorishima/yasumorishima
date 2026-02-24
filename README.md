@@ -81,23 +81,22 @@ MLB Statcast data analysis with pybaseball + DuckDB + Google Colab. (pybaseball 
 
 ### [Kaggle Datasets](https://github.com/yasumorishima/kaggle-datasets)
 
-<!-- KAGGLE_DS_STATS_START -->5 published MLB datasets<!-- KAGGLE_DS_STATS_END --> with comprehensive documentation (size, columns, DOI, articles)
+<!-- KAGGLE_DS_STATS_START -->6 published MLB datasets<!-- KAGGLE_DS_STATS_END --> with comprehensive documentation (size, columns, DOI, articles)
 
 | Dataset | Description |
 |---------|-------------|
-| [MLB Bat Tracking Leaderboard (2024-2025)](https://www.kaggle.com/datasets/yasunorim/mlb-bat-tracking-2024-2025) | 452 batters, 19 swing metrics |
-| [Baseball Savant Leaderboards (2024-2025)](https://www.kaggle.com/datasets/yasunorim/baseball-savant-leaderboards-2024) | 15 leaderboards, 2 seasons combined |
+| 🥈 [MLB Bat Tracking Leaderboard (2024-2025)](https://www.kaggle.com/datasets/yasunorim/mlb-bat-tracking-2024-2025) | 452 batters, 19 swing metrics |
 
 <details>
-<summary>All datasets (5)</summary>
+<summary>Other datasets (5)</summary>
 
 | Dataset | Description |
 |---------|-------------|
-| [MLB Bat Tracking Leaderboard (2024-2025)](https://www.kaggle.com/datasets/yasunorim/mlb-bat-tracking-2024-2025) | 452 batters, 19 swing metrics |
 | [Baseball Savant Leaderboards (2024-2025)](https://www.kaggle.com/datasets/yasunorim/baseball-savant-leaderboards-2024) | 15 leaderboards, 2 seasons combined |
 | [WBC 2026 Scouting](https://www.kaggle.com/datasets/yasunorim/wbc-2026-scouting) | MLB Statcast scouting data for all WBC 2026 teams (306 players, 20 countries) |
 | [Japanese MLB Players Statcast (2015-2025)](https://www.kaggle.com/datasets/yasunorim/japan-mlb-pitchers-batters-statcast) | 34 Japanese MLB players, 174k pitches+hits |
 | [MLB Pitcher Arsenal Evolution (2020-2025)](https://www.kaggle.com/datasets/yasunorim/mlb-pitcher-arsenal-2020-2025) | 4,253 pitcher-seasons, 111 metrics |
+| [MLB Statcast + Bat Tracking (2024-2025)](https://www.kaggle.com/datasets/yasunorim/mlb-statcast-bat-tracking-2024-2025) | Combined Statcast + bat tracking data |
 
 </details>
 
@@ -125,11 +124,10 @@ MLB Statcast data analysis with pybaseball + DuckDB + Google Colab. (pybaseball 
 
 </details>
 
-### [Dune Analytics - Blockchain Data Analysis](https://github.com/yasumorishima/dune-analytics)
-On-chain data analysis using SQL on Dune Analytics. [JPYC Stablecoin Dashboard](https://dune.com/shogaku_toushi/jpyc-date) — issuance/redemption/circulation tracking across 3 chains.
+### PyPI Packages
 
 <details>
-<summary>PyPI Packages (7)</summary>
+<summary>7 packages (click to expand)</summary>
 
 All packages: [pypi-packages](https://github.com/yasumorishima/pypi-packages)
 
@@ -194,6 +192,7 @@ Automated tweet bot on Raspberry Pi 5 using OpenClaw + Gemini API (free tier). *
 | Project | Description |
 |---|---|
 | [GAS Calendar Tool](https://github.com/yasumorishima/gas-calendar-tool) | Batch calendar event registration with senior-friendly mobile UI (GAS + Google Calendar API) |
+| [Dune Analytics](https://github.com/yasumorishima/dune-analytics) | On-chain data analysis using SQL on Dune Analytics. [JPYC Stablecoin Dashboard](https://dune.com/shogaku_toushi/jpyc-date) — issuance/redemption/circulation tracking across 3 chains. |
 
 Older projects (Selenium automation, business workflow tools, etc.) are also archived here:
 [yasumorishima/archived-projects](https://github.com/yasumorishima/archived-projects)
