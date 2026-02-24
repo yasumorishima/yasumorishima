@@ -124,21 +124,19 @@ MLB Statcast data analysis with pybaseball + DuckDB + Google Colab. (pybaseball 
 
 </details>
 
-### PyPI Packages
+### 📦 [PyPI Packages](https://github.com/yasumorishima/pypi-packages)
 
 <details>
 <summary>7 packages (click to expand)</summary>
 
-All packages: [pypi-packages](https://github.com/yasumorishima/pypi-packages)
-
 | Package | Description |
 |---------|-------------|
-| [savant-extras](https://pypi.org/project/savant-extras/) | 16 Baseball Savant leaderboards + date range support. Complements pybaseball |
-| [baseball-field-viz](https://pypi.org/project/baseball-field-viz/) | Statcast coordinate transform + field drawing + spray charts + pitch zone charts |
-| [kaggle-notebook-deploy](https://pypi.org/project/kaggle-notebook-deploy/) | Deploy Kaggle Notebooks via `git push` + GitHub Actions |
-| [kaggle-wandb-sync](https://pypi.org/project/kaggle-wandb-sync/) | Sync W&B offline runs from Kaggle to W&B cloud |
-| [signate-deploy](https://pypi.org/project/signate-deploy/) | SIGNATE competition workflow via GitHub Actions |
-| [signate-wandb-sync](https://pypi.org/project/signate-wandb-sync/) | Record SIGNATE scores to W&B runs |
+| [savant-extras](https://github.com/yasumorishima/savant-extras) | 16 Baseball Savant leaderboards + date range support. Complements pybaseball |
+| [baseball-field-viz](https://github.com/yasumorishima/baseball-field-viz) | Statcast coordinate transform + field drawing + spray charts + pitch zone charts |
+| [kaggle-notebook-deploy](https://github.com/yasumorishima/kaggle-notebook-deploy) | Deploy Kaggle Notebooks via `git push` + GitHub Actions |
+| [kaggle-wandb-sync](https://github.com/yasumorishima/kaggle-wandb-sync) | Sync W&B offline runs from Kaggle to W&B cloud |
+| [signate-deploy](https://github.com/yasumorishima/signate-deploy) | SIGNATE competition workflow via GitHub Actions |
+| [signate-wandb-sync](https://github.com/yasumorishima/signate-wandb-sync) | Record SIGNATE scores to W&B runs |
 | [npb-prediction](https://github.com/yasumorishima/npb-prediction) | NPB season prediction with Marcel method + ML (WIP) |
 
 </details>
