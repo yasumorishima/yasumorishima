@@ -2,6 +2,20 @@
 Manufacturing Engineer & Data Analyst with 17 years of experience, specializing in data analysis, open source contribution, and business automation.
 (製造業にて17年の経験を持つエンジニア。データ分析・OSS貢献・業務自動化を専門としています)
 
+<table>
+<tr>
+<td align="center"><b>Pitching Skeleton (3D C3D)</b></td>
+<td align="center"><b>Hitting Skeleton (3D C3D)</b></td>
+</tr>
+<tr>
+<td><img src="https://raw.githubusercontent.com/yasumorishima/baseball-cv/master/data/output/skeleton_pitching_anim.gif" width="400"></td>
+<td><img src="https://raw.githubusercontent.com/yasumorishima/baseball-cv/master/data/output/skeleton_hitting_anim.gif" width="400"></td>
+</tr>
+<tr>
+<td colspan="2" align="center"><i>3D skeleton visualization from <a href="https://github.com/drivelineresearch/openbiomechanics">Driveline OpenBiomechanics</a> C3D data — <a href="https://github.com/yasumorishima/baseball-cv">baseball-cv</a></i></td>
+</tr>
+</table>
+
 ---
 
 ## 🌐 Open Source Contributions
