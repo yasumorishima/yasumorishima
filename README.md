@@ -53,7 +53,33 @@ Also contributing to [optuna](https://github.com/optuna/optuna), [dfinity/icp-js
 
 ---
 
-## 📊 Data Analysis
+## ⚾ Baseball Analytics
+
+### [NPB Player Prediction](https://github.com/yasumorishima/npb-prediction)
+NPB season prediction system comparing Marcel method vs ML (LightGBM/XGBoost). Includes custom wOBA/wRC+ calculation for NPB, Pythagorean win expectation, and FastAPI inference API with Docker support.
+(NPB選手成績予測システム — Marcel法 vs 機械学習の精度比較、wOBA/wRC+自前算出、FastAPI+Docker対応)
+
+| Topic | Result |
+|-------|--------|
+| Marcel vs ML (OPS) | Marcel MAE=.055 / LightGBM MAE=.077 |
+| Marcel vs ML (ERA) | Marcel MAE=0.62 / LightGBM MAE=0.95 |
+| Pythagorean wins | NPB optimal k=1.72, MAE=3.20 wins |
+| API | 7 endpoints, Swagger UI, Docker |
+
+[Article (JP)](https://zenn.dev/shogaku/articles/npb-prediction-marcel-vs-ml) / [Article (EN)](https://dev.to/yasumorishima/why-marcel-beat-lightgbm-building-an-npb-player-performance-prediction-system-2jcb)
+
+### [Baseball Skeleton Analysis](https://github.com/yasumorishima/baseball-cv)
+3D skeleton visualization and biomechanical analysis of baseball motions using Driveline OpenBiomechanics C3D data + ezc3d + MediaPipe.
+(Driveline C3Dデータによる投球・打撃の3D骨格可視化と関節角度・球速の相関分析)
+
+| Topic | Result |
+|-------|--------|
+| C3D visualization | 45-marker pitching + 55-marker hitting skeleton animation |
+| Joint kinematics | Elbow, shoulder, trunk, knee angle & angular velocity extraction |
+| Speed correlation | Trunk rotation range vs pitch speed: r=0.425 (strongest) |
+| ezc3d OSS | Contributed bug fix [PR #384](https://github.com/pyomeca/ezc3d/pull/384) |
+
+[Article (JP)](https://zenn.dev/shogaku/articles/baseball-cv-skeleton-biomechanics) / [Article (EN)](https://dev.to/yasumorishima/3d-skeleton-detection-from-baseball-motion-capture-data-with-driveline-c3d-29ja)
 
 ### [MLB Statcast Visualization](https://github.com/yasumorishima/mlb-statcast-visualization)
 MLB Statcast data analysis with pybaseball + DuckDB + Google Colab. (pybaseball + DuckDB + Colabを使ったMLB投球・打撃データ分析)
@@ -78,6 +104,10 @@ MLB Statcast data analysis with pybaseball + DuckDB + Google Colab. (pybaseball 
 | **Ohtani Heatmap** | Stadium drawing + hit density heatmap | [Zenn](https://zenn.dev/shogaku/articles/matplotlib-baseball-heatmap) |
 
 </details>
+
+---
+
+## 📊 Data Analysis
 
 ### [Kaggle Datasets](https://github.com/yasumorishima/kaggle-datasets)
 
@@ -127,7 +157,7 @@ MLB Statcast data analysis with pybaseball + DuckDB + Google Colab. (pybaseball 
 ### 📦 [PyPI Packages](https://github.com/yasumorishima/pypi-packages)
 
 <details>
-<summary>7 packages (click to expand)</summary>
+<summary>6 packages (click to expand)</summary>
 
 | Package | Description |
 |---------|-------------|
@@ -137,7 +167,6 @@ MLB Statcast data analysis with pybaseball + DuckDB + Google Colab. (pybaseball 
 | [kaggle-wandb-sync](https://github.com/yasumorishima/kaggle-wandb-sync) | Sync W&B offline runs from Kaggle to W&B cloud |
 | [signate-deploy](https://github.com/yasumorishima/signate-deploy) | SIGNATE competition workflow via GitHub Actions |
 | [signate-wandb-sync](https://github.com/yasumorishima/signate-wandb-sync) | Record SIGNATE scores to W&B runs |
-| [npb-prediction](https://github.com/yasumorishima/npb-prediction) | NPB season prediction with Marcel method + ML (WIP) |
 
 </details>
 
