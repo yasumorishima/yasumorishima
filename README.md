@@ -67,18 +67,28 @@ Also contributing to [optuna](https://github.com/optuna/optuna), [dfinity/icp-js
 
 ---
 
-## ⚾ Baseball Analytics
+## ⚾ Baseball Prediction & Analytics
 
-### [NPB Player Prediction](https://github.com/yasumorishima/npb-prediction)
-NPB season prediction system comparing Marcel method vs ML (LightGBM/XGBoost). Includes custom wOBA/wRC+ calculation for NPB, Pythagorean win expectation, and FastAPI inference API with Docker support.
-(NPB選手成績予測システム — Marcel法 vs 機械学習の精度比較、wOBA/wRC+自前算出、FastAPI+Docker対応)
+### [MLB Win Probability Engine](https://github.com/yasumorishima/mlb-win-probability) 🚧 WIP
+Real-time Win Probability, Leverage Index, and tactical recommendations — built from scratch with Markov Chain + RE24.
+(マルコフ連鎖 + RE24テーブルによるMLBリアルタイム勝利確率・レバレッジ指数・作戦提案エンジン)
 
-| Topic | Result |
-|-------|--------|
-| Marcel vs ML (OPS) | Marcel MAE=.055 / LightGBM MAE=.077 |
-| Marcel vs ML (ERA) | Marcel MAE=0.62 / LightGBM MAE=0.95 |
-| Pythagorean wins | NPB optimal k=1.72, MAE=3.20 wins |
-| API | 7 endpoints, Swagger UI, Docker |
+- **Live demo:** [mlb-wp-engine.streamlit.app](https://mlb-wp-engine.streamlit.app/)
+- **API:** FastAPI (6 endpoints) — `/wp`, `/wp/live/{gamePk}`, `/re24`, `/wp/scenario`, `/games/today`
+- **Live feed:** MLB Stats API → real-time WP / LI update every 30s
+- **Core math:** 24 base-out states × run expectancy (RE24, MLB 2010–2019) → Poisson/Normal WP approximation
+- **Tech:** Python, FastAPI, Streamlit, Docker (Raspberry Pi), `runs_per_game` param for NPB support
+
+### [NPB Season Prediction](https://github.com/yasumorishima/npb-prediction)
+2026 NPB season prediction using Marcel projection + LightGBM/XGBoost, with Pythagorean win% team simulation.
+(Marcel法 + ML + ピタゴラス勝率によるNPB 2026年シーズン予測)
+
+- **Live demo:** [npb-prediction.streamlit.app](https://npb-prediction.streamlit.app/)
+- **API:** FastAPI (8 endpoints) — `/predict/hitter`, `/predict/pitcher`, `/simulate/team`, and more
+- **2026 Predictions:** Central: 阪神 80.1 > DeNA 71.3 > 巨人 70.7 / Pacific: SB 80.5 > 日ハム 76.8 > オリ 73.8
+- **Accuracy (2025 backtest):** Marcel OPS MAE = .048 / ERA MAE = 0.63
+- **Data:** baseball-data.com + npb.jp (2015–2025)
+- **Tech:** Python, FastAPI, Streamlit, Docker (Raspberry Pi), Marcel method, LightGBM, XGBoost
 
 [Article (JP)](https://zenn.dev/shogaku/articles/npb-prediction-marcel-vs-ml) / [Article (EN)](https://dev.to/yasumorishima/why-marcel-beat-lightgbm-building-an-npb-player-performance-prediction-system-2jcb)
 
@@ -94,6 +104,10 @@ NPB season prediction system comparing Marcel method vs ML (LightGBM/XGBoost). I
 | ezc3d OSS | Contributed bug fix [PR #384](https://github.com/pyomeca/ezc3d/pull/384) |
 
 [Article (JP)](https://zenn.dev/shogaku/articles/baseball-cv-skeleton-biomechanics) / [Article (EN)](https://dev.to/yasumorishima/3d-skeleton-detection-from-baseball-motion-capture-data-with-driveline-c3d-29ja)
+
+---
+
+## 📊 Data Analysis
 
 ### [MLB Statcast Visualization](https://github.com/yasumorishima/mlb-statcast-visualization)
 MLB Statcast data analysis with pybaseball + DuckDB + Google Colab. (pybaseball + DuckDB + Colabを使ったMLB投球・打撃データ分析)
