@@ -92,6 +92,14 @@ Real-time Win Probability, Leverage Index, and tactical recommendations — buil
 
 [Article (JP)](https://zenn.dev/shogaku/articles/npb-prediction-marcel-vs-ml) / [Article (EN)](https://dev.to/yasumorishima/why-marcel-beat-lightgbm-building-an-npb-player-performance-prediction-system-2jcb)
 
+### [NPB MLOps Pipeline](https://github.com/yasumorishima/npb-mlops) 🚧 WIP
+MLOps pipeline for NPB player OPS & team win% prediction — auto-retrained weekly as the season progresses.
+(週次自動再学習によるNPB選手OPS・チーム勝率予測MLOpsパイプライン)
+
+- **Pipeline:** GitHub Actions cron → scrape → LightGBM retrain → W&B versioning → FastAPI → Streamlit
+- **Rolling window:** Trains on 2015–present, expands weekly as new season data accumulates
+- **Tech:** LightGBM, Weights & Biases, FastAPI, Streamlit, GitHub Actions
+
 ### [Baseball Skeleton Analysis](https://github.com/yasumorishima/baseball-cv)
 3D skeleton visualization and biomechanical analysis of baseball motions using Driveline OpenBiomechanics C3D data + ezc3d + MediaPipe.
 (Driveline C3Dデータによる投球・打撃の3D骨格可視化と関節角度・球速の相関分析)
