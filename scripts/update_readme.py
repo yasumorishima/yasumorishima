@@ -88,14 +88,18 @@ def get_kaggle_dataset_count() -> int | None:
     return count if count > 0 else None
 
 
-def get_kaggle_notebook_count() -> int | None:
-    """Count published Kaggle notebooks. Returns None on failure."""
-    output = run([*kaggle_cmd(), "kernels", "list", "--user", "yasunorim", "--csv"])
-    if not output:
-        return None
-    lines = output.strip().split("\n")
-    count = len(lines) - 1
-    return count if count > 0 else None
+def count_bronze_notebooks(readme_text: str) -> int:
+    """Count notebook rows in the Bronze Medal Notebooks table in README."""
+    in_section = False
+    count = 0
+    for line in readme_text.splitlines():
+        if "All Bronze Medal Notebooks" in line:
+            in_section = True
+        elif in_section and line.strip() == "</details>":
+            break
+        elif in_section and line.startswith("| ["):
+            count += 1
+    return count
 
 
 def get_mlb_analysis_count() -> int | None:
@@ -135,18 +139,16 @@ def main():
     dataset_count = get_kaggle_dataset_count()
     print(f"  Datasets: {dataset_count}")
 
-    print("Fetching Kaggle notebook count...")
-    notebook_count = get_kaggle_notebook_count()
-    print(f"  Notebooks: {notebook_count}")
-
     print("Fetching MLB analysis count...")
     mlb_count = get_mlb_analysis_count()
     print(f"  MLB analyses: {mlb_count}")
 
     kaggle_title = config.get("kaggle_title", "Notebooks Expert")
-    kaggle_bronze = config.get("kaggle_bronze_medals", 0)
 
     readme = README.read_text(encoding="utf-8")
+
+    bronze_count = count_bronze_notebooks(readme)
+    print(f"  Bronze notebooks (from README list): {bronze_count}")
 
     # team-mirai stats
     if mirai["total"] > 0:
@@ -173,8 +175,15 @@ def main():
         print("  Skipping Kaggle dataset update (API unavailable)")
 
     # Kaggle competitions
-    kaggle_comp_text = f"{kaggle_title} | 🥉 {kaggle_bronze} Bronze Notebook Medals"
+    kaggle_comp_text = f"{kaggle_title} | 🥉 {bronze_count} Bronze Notebook Medals"
     readme = replace_marker(readme, "KAGGLE_COMP_STATS", kaggle_comp_text)
+
+    # Sync the <summary> count with the actual list count
+    readme = re.sub(
+        r"<summary>All Bronze Medal Notebooks \(\d+\)</summary>",
+        f"<summary>All Bronze Medal Notebooks ({bronze_count})</summary>",
+        readme,
+    )
 
     # MLB analysis count
     if mlb_count is not None:
