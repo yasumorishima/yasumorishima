@@ -167,7 +167,7 @@ MLB Statcast data analysis with pybaseball + DuckDB + Google Colab. (pybaseball 
 </details>
 
 ### [Kaggle Competitions](https://github.com/yasumorishima/kaggle-competitions)
-<!-- KAGGLE_COMP_STATS_START -->Notebooks Expert | 🥉 9 Bronze Notebook Medals<!-- KAGGLE_COMP_STATS_END -->
+<!-- KAGGLE_COMP_STATS_START -->Notebooks Expert | 🥉 11 Bronze Notebook Medals<!-- KAGGLE_COMP_STATS_END -->
 
 **Competition:** [S6E2 Heart Disease](https://www.kaggle.com/code/yasunorim/s6e2-heart-disease-eda-ensemble-wandb) — LGB+XGB+CatBoost ensemble, CV AUC 0.955, LB 0.953
 
