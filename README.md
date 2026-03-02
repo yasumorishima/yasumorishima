@@ -152,14 +152,14 @@ MLB Statcast data analysis with pybaseball + DuckDB + Google Colab. (pybaseball 
 | Dataset | Description |
 |---------|-------------|
 | 🥈 [MLB Bat Tracking Leaderboard (2024-2025)](https://www.kaggle.com/datasets/yasunorim/mlb-bat-tracking-2024-2025) | 452 batters, 19 swing metrics |
+| 🥉 [WBC 2026 Scouting](https://www.kaggle.com/datasets/yasunorim/wbc-2026-scouting) | MLB Statcast scouting data for all WBC 2026 teams (306 players, 20 countries) |
 
 <details>
-<summary>Other datasets (5)</summary>
+<summary>Other datasets (4)</summary>
 
 | Dataset | Description |
 |---------|-------------|
 | [Baseball Savant Leaderboards (2024-2025)](https://www.kaggle.com/datasets/yasunorim/baseball-savant-leaderboards-2024) | 15 leaderboards, 2 seasons combined |
-| 🥉 [WBC 2026 Scouting](https://www.kaggle.com/datasets/yasunorim/wbc-2026-scouting) | MLB Statcast scouting data for all WBC 2026 teams (306 players, 20 countries) |
 | [Japanese MLB Players Statcast (2015-2025)](https://www.kaggle.com/datasets/yasunorim/japan-mlb-pitchers-batters-statcast) | 34 Japanese MLB players, 174k pitches+hits |
 | [MLB Pitcher Arsenal Evolution (2020-2025)](https://www.kaggle.com/datasets/yasunorim/mlb-pitcher-arsenal-2020-2025) | 4,253 pitcher-seasons, 111 metrics |
 | [MLB Statcast + Bat Tracking (2024-2025)](https://www.kaggle.com/datasets/yasunorim/mlb-statcast-bat-tracking-2024-2025) | Combined Statcast + bat tracking data |
