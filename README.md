@@ -69,16 +69,6 @@ Also contributing to [optuna](https://github.com/optuna/optuna), [dfinity/icp-js
 
 ## ⚾ Baseball Prediction & Analytics
 
-### [MLB Win Probability Engine](https://github.com/yasumorishima/mlb-win-probability) 🚧 WIP
-Real-time Win Probability, Leverage Index, and tactical recommendations — built from scratch with Markov Chain + RE24.
-(マルコフ連鎖 + RE24テーブルによるMLBリアルタイム勝利確率・レバレッジ指数・作戦提案エンジン)
-
-- **Live demo:** [mlb-wp-engine.streamlit.app](https://mlb-wp-engine.streamlit.app/)
-- **API:** FastAPI (6 endpoints) — `/wp`, `/wp/live/{gamePk}`, `/re24`, `/wp/scenario`, `/games/today`
-- **Live feed:** MLB Stats API → real-time WP / LI update every 30s
-- **Core math:** 24 base-out states × run expectancy (RE24, MLB 2010–2019) → Poisson/Normal WP approximation
-- **Tech:** Python, FastAPI, Streamlit, Docker (Raspberry Pi), `runs_per_game` param for NPB support
-
 ### [NPB Season Prediction](https://github.com/yasumorishima/npb-prediction)
 2026 NPB season prediction using Marcel projection + LightGBM/XGBoost, with Pythagorean win% team simulation.
 (Marcel法 + ML + ピタゴラス勝率によるNPB 2026年シーズン予測)
@@ -91,15 +81,6 @@ Real-time Win Probability, Leverage Index, and tactical recommendations — buil
 - **Tech:** Python, FastAPI, Streamlit, Docker (Raspberry Pi), Marcel method, LightGBM, XGBoost
 
 [Article (JP)](https://zenn.dev/shogaku/articles/npb-prediction-marcel-vs-ml) / [Article (EN)](https://dev.to/yasumorishima/why-marcel-beat-lightgbm-building-an-npb-player-performance-prediction-system-2jcb)
-
-### [Baseball MLOps Pipeline](https://github.com/yasumorishima/npb-mlops) 🚧 WIP
-MLB Statcast × MLOps — weekly auto-retrained player performance prediction that outperforms Marcel projections.
-(MLB Statcastトラッキングデータ × MLOpsパイプラインによる選手成績予測。Marcel法を上回る精度)
-
-- **Live demo:** [baseball-mlops.streamlit.app](https://baseball-mlops.streamlit.app/)
-- **Accuracy (2025 backtest):** Batter wOBA MAE = .0296 (Marcel: .0325) / Pitcher xFIP MAE = 0.546 (Marcel: 0.566)
-- **Pipeline:** GitHub Actions cron (weekly) → pybaseball Statcast fetch → LightGBM retrain → W&B Model Registry → FastAPI → Streamlit
-- **Tech:** LightGBM, Weights & Biases, FastAPI, Streamlit, GitHub Actions, pybaseball
 
 ### [NPB Prediction — Bayesian Edition](https://github.com/yasumorishima/npb-prediction-bayes) 🚧 WIP
 Marcel projections + Bayesian foreign player estimation — side-by-side comparison with Marcel-only standings.
@@ -122,6 +103,25 @@ Marcel projections + Bayesian foreign player estimation — side-by-side compari
 | ezc3d OSS | Contributed bug fix [PR #384](https://github.com/pyomeca/ezc3d/pull/384) |
 
 [Article (JP)](https://zenn.dev/shogaku/articles/baseball-cv-skeleton-biomechanics) / [Article (EN)](https://dev.to/yasumorishima/3d-skeleton-detection-from-baseball-motion-capture-data-with-driveline-c3d-29ja)
+
+### [MLB Win Probability Engine](https://github.com/yasumorishima/mlb-win-probability) 🚧 WIP
+Real-time Win Probability, Leverage Index, and tactical recommendations — built from scratch with Markov Chain + RE24.
+(マルコフ連鎖 + RE24テーブルによるMLBリアルタイム勝利確率・レバレッジ指数・作戦提案エンジン)
+
+- **Live demo:** [mlb-wp-engine.streamlit.app](https://mlb-wp-engine.streamlit.app/)
+- **API:** FastAPI (6 endpoints) — `/wp`, `/wp/live/{gamePk}`, `/re24`, `/wp/scenario`, `/games/today`
+- **Live feed:** MLB Stats API → real-time WP / LI update every 30s
+- **Core math:** 24 base-out states × run expectancy (RE24, MLB 2010–2019) → Poisson/Normal WP approximation
+- **Tech:** Python, FastAPI, Streamlit, Docker (Raspberry Pi), `runs_per_game` param for NPB support
+
+### [Baseball MLOps Pipeline](https://github.com/yasumorishima/npb-mlops) 🚧 WIP
+MLB Statcast × MLOps — weekly auto-retrained player performance prediction that outperforms Marcel projections.
+(MLB Statcastトラッキングデータ × MLOpsパイプラインによる選手成績予測。Marcel法を上回る精度)
+
+- **Live demo:** [baseball-mlops.streamlit.app](https://baseball-mlops.streamlit.app/)
+- **Accuracy (2025 backtest):** Batter wOBA MAE = .0296 (Marcel: .0325) / Pitcher xFIP MAE = 0.546 (Marcel: 0.566)
+- **Pipeline:** GitHub Actions cron (weekly) → pybaseball Statcast fetch → LightGBM retrain → W&B Model Registry → FastAPI → Streamlit
+- **Tech:** LightGBM, Weights & Biases, FastAPI, Streamlit, GitHub Actions, pybaseball
 
 ---
 
