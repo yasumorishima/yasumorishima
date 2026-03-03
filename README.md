@@ -82,10 +82,11 @@ Also contributing to [optuna](https://github.com/optuna/optuna), [dfinity/icp-js
 
 [Article (JP)](https://zenn.dev/shogaku/articles/npb-prediction-marcel-vs-ml) / [Article (EN)](https://dev.to/yasumorishima/why-marcel-beat-lightgbm-building-an-npb-player-performance-prediction-system-2jcb)
 
-### [NPB Prediction — Bayesian Edition](https://github.com/yasumorishima/npb-prediction-bayes) 🚧 WIP
+### [NPB Prediction — Bayesian Edition](https://github.com/yasumorishima/npb-prediction-bayes)
 Marcel projections + Bayesian foreign player estimation — side-by-side comparison with Marcel-only standings.
 (Marcel法 + ベイズ推定で外国人選手を加味した順位予測。Marcel版との比較が一目でわかる)
 
+- **Live demo:** [npb-prediction-bayes.streamlit.app](https://npb-prediction-bayes.streamlit.app/)
 - **3 pages:** Standings comparison (Marcel vs Marcel+Bayes), Foreign player projections (24 players), Historical foreign analysis (367 players)
 - **Bayesian model:** Shrinkage model (w≈0.14) converting prior league stats (wOBA/ERA) to NPB scale
 - **Uncertainty:** Monte Carlo simulation (5,000 draws) for prediction ranges
