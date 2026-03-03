@@ -101,6 +101,15 @@ MLB Statcast × MLOps — weekly auto-retrained player performance prediction th
 - **Pipeline:** GitHub Actions cron (weekly) → pybaseball Statcast fetch → LightGBM retrain → W&B Model Registry → FastAPI → Streamlit
 - **Tech:** LightGBM, Weights & Biases, FastAPI, Streamlit, GitHub Actions, pybaseball
 
+### [NPB Prediction — Bayesian Edition](https://github.com/yasumorishima/npb-prediction-bayes) 🚧 WIP
+Marcel projections + Bayesian foreign player estimation — side-by-side comparison with Marcel-only standings.
+(Marcel法 + ベイズ推定で外国人選手を加味した順位予測。Marcel版との比較が一目でわかる)
+
+- **3 pages:** Standings comparison (Marcel vs Marcel+Bayes), Foreign player projections (24 players), Historical foreign analysis (367 players)
+- **Bayesian model:** Shrinkage model (w≈0.14) converting prior league stats (wOBA/ERA) to NPB scale
+- **Uncertainty:** Monte Carlo simulation (5,000 draws) for prediction ranges
+- **Data:** baseball-data.com + npb.jp (2015–2025)
+
 ### [Baseball Skeleton Analysis](https://github.com/yasumorishima/baseball-cv)
 3D skeleton visualization and biomechanical analysis of baseball motions using Driveline OpenBiomechanics C3D data + ezc3d + MediaPipe.
 (Driveline C3Dデータによる投球・打撃の3D骨格可視化と関節角度・球速の相関分析)
