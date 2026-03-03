@@ -92,13 +92,14 @@ Real-time Win Probability, Leverage Index, and tactical recommendations — buil
 
 [Article (JP)](https://zenn.dev/shogaku/articles/npb-prediction-marcel-vs-ml) / [Article (EN)](https://dev.to/yasumorishima/why-marcel-beat-lightgbm-building-an-npb-player-performance-prediction-system-2jcb)
 
-### [NPB MLOps Pipeline](https://github.com/yasumorishima/npb-mlops) 🚧 WIP
-MLOps pipeline for NPB player OPS & team win% prediction — auto-retrained weekly as the season progresses.
-(週次自動再学習によるNPB選手OPS・チーム勝率予測MLOpsパイプライン)
+### [Baseball MLOps Pipeline](https://github.com/yasumorishima/npb-mlops) 🚧 WIP
+MLB Statcast × MLOps — weekly auto-retrained player performance prediction that outperforms Marcel projections.
+(MLB Statcastトラッキングデータ × MLOpsパイプラインによる選手成績予測。Marcel法を上回る精度)
 
-- **Pipeline:** GitHub Actions cron → scrape → LightGBM retrain → W&B versioning → FastAPI → Streamlit
-- **Rolling window:** Trains on 2015–present, expands weekly as new season data accumulates
-- **Tech:** LightGBM, Weights & Biases, FastAPI, Streamlit, GitHub Actions
+- **Live demo:** [baseball-mlops.streamlit.app](https://baseball-mlops.streamlit.app/)
+- **Accuracy (2025 backtest):** Batter wOBA MAE = .0296 (Marcel: .0325) / Pitcher xFIP MAE = 0.546 (Marcel: 0.566)
+- **Pipeline:** GitHub Actions cron (weekly) → pybaseball Statcast fetch → LightGBM retrain → W&B Model Registry → FastAPI → Streamlit
+- **Tech:** LightGBM, Weights & Biases, FastAPI, Streamlit, GitHub Actions, pybaseball
 
 ### [Baseball Skeleton Analysis](https://github.com/yasumorishima/baseball-cv)
 3D skeleton visualization and biomechanical analysis of baseball motions using Driveline OpenBiomechanics C3D data + ezc3d + MediaPipe.
