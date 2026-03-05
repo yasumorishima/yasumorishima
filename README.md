@@ -208,7 +208,7 @@ MLB Statcast data analysis with pybaseball + DuckDB + Google Colab. (pybaseball 
 
 | Package | Description |
 |---------|-------------|
-| [savant-extras](https://github.com/yasumorishima/savant-extras) | 16 Baseball Savant leaderboards + date range support. Complements pybaseball |
+| [savant-extras](https://github.com/yasumorishima/savant-extras) | 17 Baseball Savant leaderboards + date range support. Complements pybaseball |
 | [baseball-field-viz](https://github.com/yasumorishima/baseball-field-viz) | Statcast coordinate transform + field drawing + spray charts + pitch zone charts |
 | [kaggle-notebook-deploy](https://github.com/yasumorishima/kaggle-notebook-deploy) | Deploy Kaggle Notebooks via `git push` + GitHub Actions |
 | [kaggle-wandb-sync](https://github.com/yasumorishima/kaggle-wandb-sync) | Sync W&B offline runs from Kaggle to W&B cloud |
