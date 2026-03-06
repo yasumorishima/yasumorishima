@@ -4,6 +4,9 @@ on:
   schedule:
     # Every Monday at 00:00 UTC (Monday 09:00 JST)
     - cron: '0 0 * * 1'
+  push:
+    paths:
+      - 'config.json'
   workflow_dispatch:
 
 permissions:
@@ -34,6 +37,7 @@ jobs:
       - name: Update README stats
         env:
           GH_TOKEN: ${{ github.token }}
+          CROSS_REPO_PAT: ${{ secrets.CROSS_REPO_PAT }}
         run: python scripts/update_readme.py
 
       - name: Commit and push if changed

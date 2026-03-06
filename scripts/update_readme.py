@@ -1,9 +1,11 @@
 """Update Profile README with live statistics from GitHub and Kaggle APIs."""
 
 import json
+import os
 import re
 import subprocess
 import sys
+import tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -33,6 +35,7 @@ TEAM_MIRAI_REPOS = [
 ]
 
 AUTHOR = "yasumorishima"
+COMPETITIONS_REPO = "yasumorishima/kaggle-competitions"
 
 
 def run(cmd: list[str]) -> str:
@@ -88,20 +91,6 @@ def get_kaggle_dataset_count() -> int | None:
     return count if count > 0 else None
 
 
-def count_bronze_notebooks(readme_text: str) -> int:
-    """Count notebook rows in the Bronze Medal Notebooks table in README."""
-    in_section = False
-    count = 0
-    for line in readme_text.splitlines():
-        if "All Bronze Medal Notebooks" in line:
-            in_section = True
-        elif in_section and line.strip() == "</details>":
-            break
-        elif in_section and line.startswith("| ["):
-            count += 1
-    return count
-
-
 def get_mlb_analysis_count() -> int | None:
     """Count notebook files in mlb-statcast-visualization repo. Returns None on failure."""
     output = run([
@@ -124,8 +113,65 @@ def replace_marker(text: str, marker: str, replacement: str) -> str:
     )
 
 
+def update_bronze_in_text(text: str, bronze: int) -> str:
+    """Update all bronze medal count patterns in a text."""
+    # "12 Bronze Notebook Medals" -> "13 Bronze Notebook Medals"
+    text = re.sub(r"\d+ Bronze Notebook Medals", f"{bronze} Bronze Notebook Medals", text)
+    # "Bronze Medal Notebooks (12)" -> "Bronze Medal Notebooks (13)"
+    text = re.sub(
+        r"Bronze Medal Notebooks \(\d+\)", f"Bronze Medal Notebooks ({bronze})", text
+    )
+    return text
+
+
+def update_competitions_readme(bronze: int) -> None:
+    """Clone kaggle-competitions, update README, commit & push."""
+    token = os.environ.get("CROSS_REPO_PAT", "")
+    if not token:
+        print("  CROSS_REPO_PAT not set, skipping kaggle-competitions update")
+        return
+
+    tmpdir = tempfile.mkdtemp()
+    repo_url = f"https://x-access-token:{token}@github.com/{COMPETITIONS_REPO}.git"
+
+    print(f"  Cloning {COMPETITIONS_REPO}...")
+    result = subprocess.run(
+        ["git", "clone", "--depth=1", repo_url, tmpdir],
+        capture_output=True, text=True, timeout=60,
+    )
+    if result.returncode != 0:
+        print(f"  Clone failed: {result.stderr}", file=sys.stderr)
+        return
+
+    readme_path = Path(tmpdir) / "README.md"
+    original = readme_path.read_text(encoding="utf-8")
+    updated = update_bronze_in_text(original, bronze)
+
+    if updated == original:
+        print("  No change in kaggle-competitions README")
+        return
+
+    readme_path.write_text(updated, encoding="utf-8")
+
+    subprocess.run(
+        ["git", "config", "user.name", "github-actions[bot]"], cwd=tmpdir, check=True
+    )
+    subprocess.run(
+        ["git", "config", "user.email", "github-actions[bot]@users.noreply.github.com"],
+        cwd=tmpdir, check=True,
+    )
+    subprocess.run(["git", "add", "README.md"], cwd=tmpdir, check=True)
+    subprocess.run(
+        ["git", "commit", "-m", f"docs: update bronze medal count to {bronze}"],
+        cwd=tmpdir, check=True,
+    )
+    subprocess.run(["git", "push"], cwd=tmpdir, check=True)
+    print(f"  Pushed kaggle-competitions README (bronze={bronze})")
+
+
 def main():
     config = json.loads(CONFIG.read_text(encoding="utf-8"))
+    bronze = config.get("notebook_bronze", 0)
 
     print("Fetching OSS PR stats (all repos)...")
     oss_all = search_prs(REPOS)
@@ -144,11 +190,9 @@ def main():
     print(f"  MLB analyses: {mlb_count}")
 
     kaggle_title = config.get("kaggle_title", "Notebooks Expert")
+    print(f"  Bronze notebooks (from config.json): {bronze}")
 
     readme = README.read_text(encoding="utf-8")
-
-    bronze_count = count_bronze_notebooks(readme)
-    print(f"  Bronze notebooks (from README list): {bronze_count}")
 
     # team-mirai stats
     if mirai["total"] > 0:
@@ -174,14 +218,14 @@ def main():
     else:
         print("  Skipping Kaggle dataset update (API unavailable)")
 
-    # Kaggle competitions
-    kaggle_comp_text = f"{kaggle_title} | 🥉 {bronze_count} Bronze Notebook Medals"
+    # Kaggle competitions — from config.json
+    kaggle_comp_text = f"{kaggle_title} | 🥉 {bronze} Bronze Notebook Medals"
     readme = replace_marker(readme, "KAGGLE_COMP_STATS", kaggle_comp_text)
 
-    # Sync the <summary> count with the actual list count
+    # Sync the <summary> count
     readme = re.sub(
         r"<summary>All Bronze Medal Notebooks \(\d+\)</summary>",
-        f"<summary>All Bronze Medal Notebooks ({bronze_count})</summary>",
+        f"<summary>All Bronze Medal Notebooks ({bronze})</summary>",
         readme,
     )
 
@@ -193,7 +237,11 @@ def main():
         print("  Skipping MLB analysis update (API unavailable)")
 
     README.write_text(readme, encoding="utf-8")
-    print("README.md updated.")
+    print("Profile README.md updated.")
+
+    # Cross-repo: kaggle-competitions
+    print("\nUpdating kaggle-competitions README...")
+    update_competitions_readme(bronze)
 
 
 if __name__ == "__main__":
