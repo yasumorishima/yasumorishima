@@ -20,50 +20,51 @@ Manufacturing Engineer & Data Analyst with 17 years of experience, specializing 
 
 ## 🌐 Open Source Contributions
 
-### [team-mirai](https://github.com/team-mirai) / [team-mirai-volunteer](https://github.com/team-mirai-volunteer) — Civic Tech OSS
-Contributing to open-source civic tech projects that promote political transparency and citizen participation in Japan.
-(日本の政治透明化・市民参加を推進するオープンソースプロジェクトに貢献)
-
-<!-- TEAM_MIRAI_STATS_START -->20 PRs (11 Merged / 2 Open / 7 Closed)<!-- TEAM_MIRAI_STATS_END --> across 4 repositories
+<!-- OSS_STATS_START -->(38 PRs / 17 Merged)<!-- OSS_STATS_END --> across 12 repositories. See [oss-contributions](https://github.com/yasumorishima/oss-contributions) for full details.
 
 | Repository | PR | Description |
 |---|---|---|
-| **marumie** | [#1141](https://github.com/team-mirai/marumie/pull/1141) | Display total amount when category filter is applied (カテゴリーフィルタ合計金額表示) |
-| **action-board** | [#1969](https://github.com/team-mirai-volunteer/action-board/pull/1969) | Add 48 unit tests for pure functions (純粋関数テスト追加) |
-| **action-board** | [#1914](https://github.com/team-mirai-volunteer/action-board/pull/1914) | Block shape deletion with XP (XP無限増殖バグ修正) |
+| **dfinity/icp-js-core** | [#1270](https://github.com/dfinity/icp-js-core/pull/1270) | Improve Candid decode error messages |
+| **dfinity/icp-js-core** | [#1277](https://github.com/dfinity/icp-js-core/pull/1277) | Deduplicate parallel fetchSubnetKeys |
+| **dfinity/pic-js** | [#235](https://github.com/dfinity/pic-js/pull/235) | Add fetchCanisterLogs() method |
+| **line/line-bot-mcp-server** | [#369](https://github.com/line/line-bot-mcp-server/pull/369) | Add get_follower_ids tool |
+| **pyomeca/ezc3d** | [#384](https://github.com/pyomeca/ezc3d/pull/384) | Fix `__eq__` early return bug |
+| **optuna/optuna** | — | Hyperparameter optimization framework |
+| **pandas-dev/pandas** | — | Data analysis library |
+| **jldbc/pybaseball** | [#498-504](https://github.com/jldbc/pybaseball) | Bug fixes & documentation |
 
 <details>
-<summary>All PRs (21)</summary>
+<summary>team-mirai — Civic Tech OSS (<!-- TEAM_MIRAI_STATS_START -->20 PRs (11 Merged / 2 Open / 7 Closed)<!-- TEAM_MIRAI_STATS_END -->)</summary>
+
+Contributing to open-source civic tech projects that promote political transparency and citizen participation in Japan.
 
 | # | Repository | PR | Status | Description |
 |---|---|---|---|---|
-| 21 | **marumie** | [#1141](https://github.com/team-mirai/marumie/pull/1141) | Open | Display total amount when category filter is applied (カテゴリーフィルタ合計金額表示) |
-| 20 | **action-board** | [#1969](https://github.com/team-mirai-volunteer/action-board/pull/1969) | Merged | Add 48 unit tests for pure functions (純粋関数テスト追加) |
-| 19 | **action-board** | [#1918](https://github.com/team-mirai-volunteer/action-board/pull/1918) | Merged | Disable Supabase Image Transformation (画像変換無効化) |
-| 18 | **action-board** | [#1914](https://github.com/team-mirai-volunteer/action-board/pull/1914) | Merged | Block shape deletion with XP (XP無限増殖バグ修正) |
-| 17 | **post-checker** | [#34](https://github.com/team-mirai-volunteer/post-checker/pull/34) | Open | Fix timezone-dependent date parsing (タイムゾーン日付パース修正) |
-| 16 | **action-board** | [#1906](https://github.com/team-mirai-volunteer/action-board/pull/1906) | Merged | Refactor achieveMissionAction (type別ロジック分離) |
-| 15 | **action-board** | [#1869](https://github.com/team-mirai-volunteer/action-board/pull/1869) | Merged | Supabase RPC function tests for develop (RPC関数テスト追加) |
-| 14 | **action-board** | [#1868](https://github.com/team-mirai-volunteer/action-board/pull/1868) | Merged | Posting count display: times → sheets (ポスティング枚数表示) |
-| 13 | **action-board** | [#1867](https://github.com/team-mirai-volunteer/action-board/pull/1867) | Merged | Error toast for poster mission failure (ポスター貼りエラー表示) |
-| 12 | **action-board** | [#1859](https://github.com/team-mirai-volunteer/action-board/pull/1859) | Merged | Supabase RPC function tests (RPC関数テスト追加) |
-| 11 | **fact-checker** | [#88](https://github.com/team-mirai-volunteer/fact-checker/pull/88) | Closed | Slack same-thread reply (同スレッド返信) |
-| 10 | **fact-checker** | [#87](https://github.com/team-mirai-volunteer/fact-checker/pull/87) | Closed | Deduplicate tweets using start_time filter (重複取得防止) |
-| 9 | **fact-checker** | [#86](https://github.com/team-mirai-volunteer/fact-checker/pull/86) | Closed | Unit tests for Note markdown utilities (単体テスト33件追加) |
-| 8 | **action-board** | [#1856](https://github.com/team-mirai-volunteer/action-board/pull/1856) | Merged | Update video mission description (動画説明文更新) |
-| 7 | **action-board** | [#1855](https://github.com/team-mirai-volunteer/action-board/pull/1855) | Closed | Street speech map link (重複のためClose) |
-| 6 | **fact-checker** | [#85](https://github.com/team-mirai-volunteer/fact-checker/pull/85) | Closed | Slack button env-based branching (環境別分岐) |
-| 5 | **action-board** | [#1849](https://github.com/team-mirai-volunteer/action-board/pull/1849) | Merged | Breadcrumb navigation (パンくずリスト追加) |
-| 4 | **action-board** | [#1845](https://github.com/team-mirai-volunteer/action-board/pull/1845) | Merged | Fix prefecture cache invalidation (キャッシュ修正) |
-| 3 | **fact-checker** | [#84](https://github.com/team-mirai-volunteer/fact-checker/pull/84) | Closed | Disable Twitter posting in staging (staging誤投稿防止) |
-| 2 | **fact-checker** | [#83](https://github.com/team-mirai-volunteer/fact-checker/pull/83) | Closed | Client-side engagement filtering (エンゲージメントフィルタリング) |
-| 1 | **fact-checker** | [#69](https://github.com/team-mirai-volunteer/fact-checker/issues/69#issuecomment-3811711591) | Done | X API investigation (X API調査レポート) |
+| 21 | **marumie** | [#1141](https://github.com/team-mirai/marumie/pull/1141) | Open | Display total amount when category filter is applied |
+| 20 | **action-board** | [#1969](https://github.com/team-mirai-volunteer/action-board/pull/1969) | Merged | Add 48 unit tests for pure functions |
+| 19 | **action-board** | [#1918](https://github.com/team-mirai-volunteer/action-board/pull/1918) | Merged | Disable Supabase Image Transformation |
+| 18 | **action-board** | [#1914](https://github.com/team-mirai-volunteer/action-board/pull/1914) | Merged | Block shape deletion with XP |
+| 17 | **post-checker** | [#34](https://github.com/team-mirai-volunteer/post-checker/pull/34) | Open | Fix timezone-dependent date parsing |
+| 16 | **action-board** | [#1906](https://github.com/team-mirai-volunteer/action-board/pull/1906) | Merged | Refactor achieveMissionAction |
+| 15 | **action-board** | [#1869](https://github.com/team-mirai-volunteer/action-board/pull/1869) | Merged | Supabase RPC function tests for develop |
+| 14 | **action-board** | [#1868](https://github.com/team-mirai-volunteer/action-board/pull/1868) | Merged | Posting count display: times to sheets |
+| 13 | **action-board** | [#1867](https://github.com/team-mirai-volunteer/action-board/pull/1867) | Merged | Error toast for poster mission failure |
+| 12 | **action-board** | [#1859](https://github.com/team-mirai-volunteer/action-board/pull/1859) | Merged | Supabase RPC function tests |
+| 11 | **fact-checker** | [#88](https://github.com/team-mirai-volunteer/fact-checker/pull/88) | Closed | Slack same-thread reply |
+| 10 | **fact-checker** | [#87](https://github.com/team-mirai-volunteer/fact-checker/pull/87) | Closed | Deduplicate tweets using start_time filter |
+| 9 | **fact-checker** | [#86](https://github.com/team-mirai-volunteer/fact-checker/pull/86) | Closed | Unit tests for Note markdown utilities |
+| 8 | **action-board** | [#1856](https://github.com/team-mirai-volunteer/action-board/pull/1856) | Merged | Update video mission description |
+| 7 | **action-board** | [#1855](https://github.com/team-mirai-volunteer/action-board/pull/1855) | Closed | Street speech map link |
+| 6 | **fact-checker** | [#85](https://github.com/team-mirai-volunteer/fact-checker/pull/85) | Closed | Slack button env-based branching |
+| 5 | **action-board** | [#1849](https://github.com/team-mirai-volunteer/action-board/pull/1849) | Merged | Breadcrumb navigation |
+| 4 | **action-board** | [#1845](https://github.com/team-mirai-volunteer/action-board/pull/1845) | Merged | Fix prefecture cache invalidation |
+| 3 | **fact-checker** | [#84](https://github.com/team-mirai-volunteer/fact-checker/pull/84) | Closed | Disable Twitter posting in staging |
+| 2 | **fact-checker** | [#83](https://github.com/team-mirai-volunteer/fact-checker/pull/83) | Closed | Client-side engagement filtering |
+| 1 | **fact-checker** | [#69](https://github.com/team-mirai-volunteer/fact-checker/issues/69#issuecomment-3811711591) | Done | X API investigation |
+
+**Tech Stack:** Next.js, TypeScript, Supabase, shadcn/ui, Biome, Bun, Vitest
 
 </details>
-
-**Technical Stack:** Next.js, TypeScript, Supabase, shadcn/ui, Biome, Bun, Vitest
-
-Also contributing to [optuna](https://github.com/optuna/optuna), [dfinity/icp-js](https://github.com/dfinity/icp-js-core), [pandas](https://github.com/pandas-dev/pandas), [pybaseball](https://github.com/jldbc/pybaseball), [ezc3d](https://github.com/pyomeca/ezc3d), [kouchou-ai](https://github.com/digitaldemocracy2030/kouchou-ai), [openclaw](https://github.com/openclaw/openclaw), and more. See [oss-contributions](https://github.com/yasumorishima/oss-contributions) for full details <!-- OSS_STATS_START -->(38 PRs / 17 Merged)<!-- OSS_STATS_END -->.
 
 ---
 
