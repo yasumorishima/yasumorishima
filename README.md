@@ -178,15 +178,16 @@ MLB Statcast data analysis with pybaseball + DuckDB + Google Colab. (pybaseball 
 </details>
 
 ### [Kaggle Competitions](https://github.com/yasumorishima/kaggle-competitions)
-<!-- KAGGLE_COMP_STATS_START -->Notebooks Expert | 🥉 11 Bronze Notebook Medals<!-- KAGGLE_COMP_STATS_END -->
+<!-- KAGGLE_COMP_STATS_START -->Notebooks Expert | 🥉 12 Bronze Notebook Medals<!-- KAGGLE_COMP_STATS_END -->
 
 **Competition:** [S6E2 Heart Disease](https://www.kaggle.com/code/yasunorim/s6e2-heart-disease-eda-ensemble-wandb) — LGB+XGB+CatBoost ensemble, CV AUC 0.955, LB 0.953
 
 <details>
-<summary>All Bronze Medal Notebooks (11)</summary>
+<summary>All Bronze Medal Notebooks (12)</summary>
 
 | Notebook | Topic |
 |----------|-------|
+| [savant-extras Defense & Pitching Quality](https://www.kaggle.com/code/yasunorim/savant-extras-defense-pitching-quality) | Defense metrics & pitching quality analysis (savant-extras) |
 | [MLB Statcast Spray Charts for WBC 2026 Players](https://www.kaggle.com/code/yasunorim/mlb-statcast-spray-charts-for-wbc-2026-players) | WBC 2026 player spray charts + pitch zone charts (baseball-field-viz) |
 | [March Machine Learning Mania 2026 Baseline](https://www.kaggle.com/code/yasunorim/march-machine-learning-mania-2026-baseline) | NCAA basketball tournament prediction (LightGBM + Logistic Regression) |
 | [CAFA 6 Baseline with Regularization](https://www.kaggle.com/code/yasunorim/baseline-with-regularization) | Protein function prediction (PyTorch MLP) |
