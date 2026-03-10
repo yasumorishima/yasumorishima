@@ -3,7 +3,7 @@ name: Update Profile README
 on:
   schedule:
     # Every Monday at 00:00 UTC (Monday 09:00 JST)
-    - cron: '0 0 * * 1'
+    - cron: '30 9 * * 1'  # Monday 09:30 UTC (after oss-contributions refresh at 09:00)
   push:
     paths:
       - 'config.json'
