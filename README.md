@@ -20,7 +20,7 @@ Manufacturing Engineer & Data Analyst with 17 years of experience, specializing 
 
 ## 🌐 Open Source Contributions
 
-<!-- OSS_STATS_START -->(40 PRs / 17 Merged)<!-- OSS_STATS_END --> across 12 repositories. See [oss-contributions](https://github.com/yasumorishima/oss-contributions) for full details.
+<!-- OSS_STATS_START -->(43 PRs / 21 Merged)<!-- OSS_STATS_END --> across 14 repositories. See [oss-contributions](https://github.com/yasumorishima/oss-contributions) for full details.
 
 | Repository | PR | Description |
 |---|---|---|
@@ -34,7 +34,7 @@ Manufacturing Engineer & Data Analyst with 17 years of experience, specializing 
 | **jldbc/pybaseball** | [#498-504](https://github.com/jldbc/pybaseball) | Bug fixes & documentation |
 
 <details>
-<summary>team-mirai — Civic Tech OSS (<!-- TEAM_MIRAI_STATS_START -->20 PRs (11 Merged / 2 Open / 7 Closed)<!-- TEAM_MIRAI_STATS_END -->)</summary>
+<summary>team-mirai — Civic Tech OSS (<!-- TEAM_MIRAI_STATS_START -->21 PRs (11 Merged / 2 Open / 8 Closed)<!-- TEAM_MIRAI_STATS_END -->)</summary>
 
 Contributing to open-source civic tech projects that promote political transparency and citizen participation in Japan.
 
