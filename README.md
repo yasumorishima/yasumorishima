@@ -164,7 +164,7 @@ MLB Statcast data analysis with pybaseball + DuckDB + Google Colab. (pybaseball 
 | Dataset | Description |
 |---------|-------------|
 | 🥈 [MLB Bat Tracking Leaderboard (2024-2025)](https://www.kaggle.com/datasets/yasunorim/mlb-bat-tracking-2024-2025) | 452 batters, 19 swing metrics |
-| 🥉 [WBC 2026 Scouting](https://www.kaggle.com/datasets/yasunorim/wbc-2026-scouting) | MLB Statcast scouting data for all WBC 2026 teams (306 players, 20 countries) |
+| 🥈 [WBC 2026 Scouting](https://www.kaggle.com/datasets/yasunorim/wbc-2026-scouting) | MLB Statcast scouting data for all WBC 2026 teams (306 players, 20 countries) |
 
 <details>
 <summary>Other datasets (4)</summary>
