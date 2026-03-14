@@ -9,23 +9,6 @@ Real-time vessel tracking in the Strait of Hormuz using AIS data, running 24/7 o
 <a href="https://github.com/yasumorishima/hormuz-ship-tracker"><img src="https://raw.githubusercontent.com/yasumorishima/hormuz-ship-tracker/master/docs/screenshot.png" width="600"></a>
 
 `aisstream.io (WebSocket) → Raspberry Pi 5 → SQLite → FastAPI + Leaflet.js`
-
----
-
-<table>
-<tr>
-<td align="center"><b>Pitching Skeleton (3D C3D)</b></td>
-<td align="center"><b>Hitting Skeleton (3D C3D)</b></td>
-</tr>
-<tr>
-<td><img src="https://raw.githubusercontent.com/yasumorishima/baseball-cv/master/data/output/skeleton_pitching_anim.gif" width="400"></td>
-<td><img src="https://raw.githubusercontent.com/yasumorishima/baseball-cv/master/data/output/skeleton_hitting_anim.gif" width="400"></td>
-</tr>
-<tr>
-<td colspan="2" align="center"><i>3D skeleton visualization from <a href="https://github.com/drivelineresearch/openbiomechanics">Driveline OpenBiomechanics</a> C3D data — <a href="https://github.com/yasumorishima/baseball-cv">baseball-cv</a></i></td>
-</tr>
-</table>
-
 ---
 
 ## 🌐 Open Source Contributions
@@ -106,6 +89,20 @@ Marcel projections + Bayesian foreign player estimation — side-by-side compari
 ### [Baseball Skeleton Analysis](https://github.com/yasumorishima/baseball-cv)
 3D skeleton visualization and biomechanical analysis of baseball motions using Driveline OpenBiomechanics C3D data + ezc3d + MediaPipe.
 (Driveline C3Dデータによる投球・打撃の3D骨格可視化と関節角度・球速の相関分析)
+
+<table>
+<tr>
+<td align="center"><b>Pitching Skeleton (3D C3D)</b></td>
+<td align="center"><b>Hitting Skeleton (3D C3D)</b></td>
+</tr>
+<tr>
+<td><img src="https://raw.githubusercontent.com/yasumorishima/baseball-cv/master/data/output/skeleton_pitching_anim.gif" width="400"></td>
+<td><img src="https://raw.githubusercontent.com/yasumorishima/baseball-cv/master/data/output/skeleton_hitting_anim.gif" width="400"></td>
+</tr>
+<tr>
+<td colspan="2" align="center"><i>3D skeleton visualization from <a href="https://github.com/drivelineresearch/openbiomechanics">Driveline OpenBiomechanics</a> C3D data — <a href="https://github.com/yasumorishima/baseball-cv">baseball-cv</a></i></td>
+</tr>
+</table>
 
 | Topic | Result |
 |-------|--------|
