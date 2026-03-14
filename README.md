@@ -2,7 +2,7 @@
 Manufacturing Engineer & Data Analyst with 17 years of experience, specializing in data analysis, open source contribution, and business automation.
 (製造業にて17年の経験を持つエンジニア。データ分析・OSS貢献・業務自動化を専門としています)
 
-### [Realtime Open Data](https://github.com/yasumorishima/realtime-open-data) — Live geophysical & maritime monitoring
+## 🌍 [Realtime Open Data](https://github.com/yasumorishima/realtime-open-data)
 
 <table>
 <tr>
@@ -23,10 +23,12 @@ Manufacturing Engineer & Data Analyst with 17 years of experience, specializing 
 
 ---
 
-<details>
-<summary><b>🌐 Open Source Contributions</b> — <!-- OSS_STATS_START -->(43 PRs / 21 Merged)<!-- OSS_STATS_END --> across 14 repositories</summary>
+## 🌐 Open Source Contributions
 
-See [oss-contributions](https://github.com/yasumorishima/oss-contributions) for full details.
+<!-- OSS_STATS_START -->(43 PRs / 21 Merged)<!-- OSS_STATS_END --> across 14 repositories. See [oss-contributions](https://github.com/yasumorishima/oss-contributions) for full details.
+
+<details>
+<summary>PR highlights (click to expand)</summary>
 
 | Repository | PR | Description |
 |---|---|---|
