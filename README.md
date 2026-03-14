@@ -2,6 +2,16 @@
 Manufacturing Engineer & Data Analyst with 17 years of experience, specializing in data analysis, open source contribution, and business automation.
 (製造業にて17年の経験を持つエンジニア。データ分析・OSS貢献・業務自動化を専門としています)
 
+### [Strait of Hormuz — Live Ship Tracker](https://github.com/yasumorishima/hormuz-ship-tracker)
+
+Real-time vessel tracking in the Strait of Hormuz using AIS data, running 24/7 on Raspberry Pi 5.
+
+<a href="https://github.com/yasumorishima/hormuz-ship-tracker"><img src="https://raw.githubusercontent.com/yasumorishima/hormuz-ship-tracker/master/docs/screenshot.png" width="600"></a>
+
+`aisstream.io (WebSocket) → Raspberry Pi 5 → SQLite → FastAPI + Leaflet.js`
+
+---
+
 <table>
 <tr>
 <td align="center"><b>Pitching Skeleton (3D C3D)</b></td>
