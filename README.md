@@ -177,10 +177,6 @@ MLB Statcast data analysis with pybaseball + DuckDB + Google Colab. (pybaseball 
 
 </details>
 
----
-
-## 📊 Data Analysis
-
 ### [Kaggle Datasets](https://github.com/yasumorishima/kaggle-datasets)
 
 <!-- KAGGLE_DS_STATS_START -->6 published MLB datasets<!-- KAGGLE_DS_STATS_END --> with comprehensive documentation (size, columns, DOI, articles)
