@@ -19,7 +19,7 @@ Manufacturing Engineer & Data Analyst with 17 years of experience, specializing 
 </tr>
 </table>
 
-`Real-time API / WebSocket → SQLite → FastAPI + Leaflet.js (dark theme)`
+`Real-time API / WebSocket → SQLite → FastAPI + Leaflet.js (dark theme)` — [All projects](https://github.com/yasumorishima/realtime-open-data)
 
 ---
 
