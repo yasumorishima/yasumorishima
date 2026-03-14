@@ -2,18 +2,31 @@
 Manufacturing Engineer & Data Analyst with 17 years of experience, specializing in data analysis, open source contribution, and business automation.
 (製造業にて17年の経験を持つエンジニア。データ分析・OSS貢献・業務自動化を専門としています)
 
-### [Strait of Hormuz — Live Ship Tracker](https://github.com/yasumorishima/hormuz-ship-tracker)
+### [Realtime Open Data](https://github.com/yasumorishima/realtime-open-data) — Live geophysical & maritime monitoring
 
-Real-time vessel tracking in the Strait of Hormuz using AIS data, running 24/7 on Raspberry Pi 5.
+<table>
+<tr>
+<td align="center"><a href="https://github.com/yasumorishima/japan-geohazard-monitor"><b>Japan Geohazard Monitor</b></a></td>
+<td align="center"><a href="https://github.com/yasumorishima/hormuz-ship-tracker"><b>Persian Gulf Ship Tracker</b></a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/yasumorishima/japan-geohazard-monitor"><img src="https://raw.githubusercontent.com/yasumorishima/japan-geohazard-monitor/master/docs/screenshot.png" width="420"></a></td>
+<td><a href="https://github.com/yasumorishima/hormuz-ship-tracker"><img src="https://raw.githubusercontent.com/yasumorishima/hormuz-ship-tracker/master/docs/screenshot.png" width="420"></a></td>
+</tr>
+<tr>
+<td>Earthquakes (USGS + JMA + P2P), volcanoes, geomagnetism, ionosphere — multi-layer correlation dashboard</td>
+<td>AIS vessel tracking across the Persian Gulf & Gulf of Oman with land mask filtering</td>
+</tr>
+</table>
 
-<a href="https://github.com/yasumorishima/hormuz-ship-tracker"><img src="https://raw.githubusercontent.com/yasumorishima/hormuz-ship-tracker/master/docs/screenshot.png" width="600"></a>
+`Real-time API / WebSocket → SQLite → FastAPI + Leaflet.js (dark theme)`
 
-`aisstream.io (WebSocket) → Raspberry Pi 5 → SQLite → FastAPI + Leaflet.js`
 ---
 
-## 🌐 Open Source Contributions
+<details>
+<summary><b>🌐 Open Source Contributions</b> — <!-- OSS_STATS_START -->(43 PRs / 21 Merged)<!-- OSS_STATS_END --> across 14 repositories</summary>
 
-<!-- OSS_STATS_START -->(43 PRs / 21 Merged)<!-- OSS_STATS_END --> across 14 repositories. See [oss-contributions](https://github.com/yasumorishima/oss-contributions) for full details.
+See [oss-contributions](https://github.com/yasumorishima/oss-contributions) for full details.
 
 | Repository | PR | Description |
 |---|---|---|
@@ -56,6 +69,8 @@ Contributing to open-source civic tech projects that promote political transpare
 | 1 | **fact-checker** | [#69](https://github.com/team-mirai-volunteer/fact-checker/issues/69#issuecomment-3811711591) | Done | X API investigation |
 
 **Tech Stack:** Next.js, TypeScript, Supabase, shadcn/ui, Biome, Bun, Vitest
+
+</details>
 
 </details>
 
