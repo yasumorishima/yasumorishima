@@ -158,11 +158,6 @@ MLB Statcast data analysis with pybaseball + DuckDB + Google Colab. (pybaseball 
 
 <!-- MLB_STATS_START -->6 analyses<!-- MLB_STATS_END --> covering Japanese MLB pitchers (Kikuchi, Senga, Imanaga, Darvish) and Ohtani batting data.
 
-| Analysis | Key Finding | Article |
-|----------|-------------|---------|
-| **Kikuchi Slider Revolution (2019-2025)** | SL 17%→37% after Astros trade, #1 pitch in 2025 | [Zenn](https://zenn.dev/shogaku/articles/kikuchi-slider-revolution-2019-2025) / [DEV.to](https://dev.to/yasumorishima/yusei-kikuchis-pitching-evolution-a-statcast-analysis-2019-2025-2a4a) |
-| **Senga Ghost Fork (2023-2025)** | FO whiff rate 58%→39%, decline pre-injury | [Zenn](https://zenn.dev/shogaku/articles/senga-ghost-fork-analysis-2023-2025) / [DEV.to](https://dev.to/yasumorishima/kodai-sengas-ghost-fork-analyzed-with-statcast-data-2023-2025-1k1d) |
-
 <details>
 <summary>All analyses (6)</summary>
 
