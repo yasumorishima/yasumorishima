@@ -198,6 +198,10 @@ MLB Statcast data analysis with pybaseball + DuckDB + Google Colab. (pybaseball 
 
 </details>
 
+### [DrivenData Competitions](https://github.com/yasumorishima/drivendata-comp)
+Automated competition pipeline — GitHub Actions + Kaggle GPU training + GPU→CPU fallback.
+Currently competing in [On Top of Pasketti](https://www.drivendata.org/competitions/309/) (Children's ASR, $120K prize, Wav2Vec2 CTC).
+
 ### [Kaggle Competitions](https://github.com/yasumorishima/kaggle-competitions)
 <!-- KAGGLE_COMP_STATS_START -->Notebooks Expert | 🥉 12 Bronze Notebook Medals<!-- KAGGLE_COMP_STATS_END -->
 
