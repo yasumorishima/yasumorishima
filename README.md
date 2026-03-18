@@ -156,12 +156,12 @@ Contributing to open-source civic tech projects that promote political transpare
 
 ### Kaggle
 
-<!-- KAGGLE_COMP_STATS_START -->Notebooks Expert | 🥉 12 Bronze Notebook Medals<!-- KAGGLE_COMP_STATS_END -->
+<!-- KAGGLE_COMP_STATS_START -->Notebooks Expert | 🥉 13 Bronze Notebook Medals<!-- KAGGLE_COMP_STATS_END -->
 
 **Active:** [S6E3 Churn](https://www.kaggle.com/competitions/playground-series-s6e3) (LB 0.914) / [Deep Past](https://www.kaggle.com/competitions/deep-past-initiative-machine-translation) (Akkadian→English) / [RNA 3D Folding 2](https://www.kaggle.com/competitions/stanford-ribonanza-rna-folding-2)
 
 <details>
-<summary>Bronze Medal Notebooks (12)</summary>
+<summary>Bronze Medal Notebooks (13)</summary>
 
 | Notebook | Topic |
 |----------|-------|
@@ -177,6 +177,7 @@ Contributing to open-source civic tech projects that promote political transpare
 | [Diabetes EDA & Baseline](https://www.kaggle.com/code/yasunorim/diabetes-prediction-eda-baseline-s5e12) | LightGBM 5-fold CV, AUC 0.727 |
 | [Diabetes Rank-Based Ensemble](https://www.kaggle.com/code/yasunorim/diabetes-prediction-rank-based-ensemble) | Rank averaging for AUC optimization |
 | [Deep Past Cloud Workflow + TF-IDF Baseline](https://www.kaggle.com/code/yasunorim/deep-past-cloud-workflow-tfidf-baseline) | Akkadian→English TF-IDF baseline |
+| [Titanic Japanese Optuna Test](https://www.kaggle.com/code/yasunorim/titanic-japanese-optuna-test) | Titanic survival prediction with Optuna tuning |
 
 </details>
 
