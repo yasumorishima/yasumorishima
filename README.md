@@ -278,7 +278,8 @@ Currently competing in [On Top of Pasketti](https://www.drivendata.org/competiti
 | Category | Technologies |
 | --- | --- |
 | **Data Analysis & ML** | Python, pandas, scikit-learn, LightGBM, XGBoost, CatBoost, PyTorch, matplotlib, seaborn, DuckDB, W&B |
-| **Data Sources** | Baseball Savant (Statcast), pybaseball, Dune Analytics |
+| **Data Platform** | Google BigQuery (7 datasets — geohazard, baseball, ship tracking) |
+| **Data Sources** | Baseball Savant (Statcast), pybaseball, USGS, NASA Earthdata, AIS |
 | **Web & Dashboards** | Streamlit, Next.js, TypeScript, Supabase, shadcn/ui |
 | **Mobile App** | Flutter, Dart, Hive, Google AdMob |
 | **Automation & DevOps** | GitHub Actions, Google Apps Script, VBA, Power Query |
