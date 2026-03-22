@@ -309,4 +309,4 @@ Currently competing in [On Top of Pasketti](https://www.drivendata.org/competiti
 * **Blog:** [DEV.to (EN)](https://dev.to/yasumorishima) / [Zenn (JP)](https://zenn.dev/shogaku) / [Quarto Blog (EN)](https://yasumorishima.github.io/quarto-blog/)
 * **Kaggle:** [https://www.kaggle.com/yasunorim](https://www.kaggle.com/yasunorim)
 * **Wantedly:** [https://www.wantedly.com/id/yasunori_morishima_b](https://www.wantedly.com/id/yasunori_morishima_b)
-* **LinkedIn:** [https://www.linkedin.com/in/康徳-盛島-b70229241](https://www.linkedin.com/in/康徳-盛島-b70229241)
+* **LinkedIn:** [https://www.linkedin.com/in/morishima-yasunori-b70229241](https://www.linkedin.com/in/morishima-yasunori-b70229241?trk=contact-info)
