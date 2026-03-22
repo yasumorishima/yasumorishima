@@ -31,8 +31,8 @@ Manufacturing Engineer & Data Analyst with 17 years of experience, specializing 
 |---|---|---|
 | **[NPB Season Prediction](https://github.com/yasumorishima/npb-prediction)** | Marcel projection + LightGBM/XGBoost + Pythagorean win% | [Live](https://npb-prediction.streamlit.app/) |
 | **[NPB Prediction — Bayesian Edition](https://github.com/yasumorishima/npb-prediction-bayes)** | Marcel + Bayesian foreign player estimation | [Live](https://npb-prediction-bayes.streamlit.app/) |
-| **[MLB Win Probability Engine](https://github.com/yasumorishima/mlb-win-probability)** 🚧 | Markov Chain + RE24 real-time WP/LI engine | [Live](https://mlb-wp-engine.streamlit.app/) |
-| **[Baseball MLOps Pipeline](https://github.com/yasumorishima/npb-mlops)** 🚧 | Statcast × weekly auto-retrained prediction (beats Marcel) | [Live](https://baseball-mlops.streamlit.app/) |
+| **[MLB Win Probability Engine](https://github.com/yasumorishima/mlb-win-probability)** | 3-engine ensemble WP (Normal + Empirical + LightGBM) + Gemini AI commentary | [Live](https://mlb-wp-engine.streamlit.app/) |
+| **[Baseball MLOps Pipeline](https://github.com/yasumorishima/baseball-mlops)** | Statcast × 5-model ensemble, weekly auto-retrained (beats Marcel) | [Live](https://baseball-mlops.streamlit.app/) |
 
 <details>
 <summary>Prediction accuracy & details</summary>
@@ -49,9 +49,10 @@ Manufacturing Engineer & Data Analyst with 17 years of experience, specializing 
 - 3 pages: Standings comparison, Foreign player projections (24 players), Historical analysis (367 players)
 
 **MLB Win Probability Engine**
-- 24 base-out states × RE24 (MLB 2010–2019) → Poisson/Normal WP approximation
-- Live feed: MLB Stats API → real-time WP / LI update every 30s
-- `runs_per_game` param for NPB support
+- 3-engine ensemble: v1 (Markov + Normal + Optuna), v2 (Empirical WP table), LightGBM — inverse-Brier weighted + Isotonic calibration
+- 367K+ play states (2015–2024) on BigQuery for training/validation, leave-one-year-out CV
+- Gemini 2.5 Flash AI commentary with prompt versioning, quality evaluation (100pt), W&B tracking
+- Live feed: MLB Stats API → real-time WP / LI / tactical recommendations (30s auto-refresh)
 
 **Baseball MLOps Pipeline**
 - Accuracy (2025 backtest): Batter wOBA MAE = .0296 (Marcel: .0325) / Pitcher xFIP MAE = 0.546 (Marcel: 0.566)
