@@ -32,7 +32,7 @@ Manufacturing Engineer & Data Analyst with 17 years of experience, specializing 
 | **[NPB Season Prediction](https://github.com/yasumorishima/npb-prediction)** | Marcel projection + LightGBM/XGBoost + Pythagorean win% | [Live](https://npb-prediction.streamlit.app/) |
 | **[NPB Prediction — Bayesian Edition](https://github.com/yasumorishima/npb-prediction-bayes)** | Marcel + Bayesian foreign player estimation | [Live](https://npb-prediction-bayes.streamlit.app/) |
 | **[MLB Win Probability Engine](https://github.com/yasumorishima/mlb-win-probability)** | 3-engine ensemble WP (Normal + Empirical + LightGBM) + Gemini AI commentary | [Live](https://mlb-wp-engine.streamlit.app/) |
-| **[Baseball MLOps Pipeline](https://github.com/yasumorishima/baseball-mlops)** | Statcast × 5-model ensemble, weekly auto-retrained (beats Marcel) | [Live](https://baseball-mlops.streamlit.app/) |
+| **[Baseball MLOps Pipeline](https://github.com/yasumorishima/baseball-mlops)** | Statcast × GCP MLOps: 5-model ensemble + BQML, weekly auto-retrained on BigQuery + Cloud Run | [Live](https://baseball-mlops.streamlit.app/) |
 
 <details>
 <summary>Prediction accuracy & details</summary>
@@ -55,8 +55,10 @@ Manufacturing Engineer & Data Analyst with 17 years of experience, specializing 
 - Live feed: MLB Stats API → real-time WP / LI / tactical recommendations (30s auto-refresh)
 
 **Baseball MLOps Pipeline**
-- Accuracy (2025 backtest): Batter wOBA MAE = .0296 (Marcel: .0325) / Pitcher xFIP MAE = 0.546 (Marcel: 0.566)
-- Pipeline: GitHub Actions cron (weekly) → pybaseball → LightGBM retrain → W&B → FastAPI → Streamlit
+- Accuracy (2025 backtest): Batter wOBA MAE = .0287 (Marcel: .0326) / Pitcher xFIP MAE = 0.483 (Marcel: 0.558)
+- 5-model ensemble: LightGBM + CatBoost + ElasticNet Bayes + Component (PECOTA) + BQML Boosted Tree
+- GCP: BigQuery (13 raw tables + BQML models) + Cloud Run (FastAPI) + Grafana dashboard
+- Pipeline: GitHub Actions cron (weekly) → pybaseball → 5-model retrain → W&B + BigQuery → Cloud Run → Streamlit
 
 </details>
 
@@ -280,7 +282,7 @@ Currently competing in [On Top of Pasketti](https://www.drivendata.org/competiti
 | Category | Technologies |
 | --- | --- |
 | **Data Analysis & ML** | Python, pandas, scikit-learn, LightGBM, XGBoost, CatBoost, PyTorch, matplotlib, seaborn, DuckDB, W&B |
-| **Data Platform** | Google BigQuery (7 datasets — geohazard, baseball, ship tracking) |
+| **Data Platform** | Google BigQuery (8 datasets, 96+ tables — baseball, geohazard, ship tracking), BigQuery ML, Cloud Run, Grafana |
 | **Data Sources** | Baseball Savant (Statcast), pybaseball, USGS, NASA Earthdata, AIS |
 | **Web & Dashboards** | Streamlit, Next.js, TypeScript, Supabase, shadcn/ui |
 | **Mobile App** | Flutter, Dart, Hive, Google AdMob |
