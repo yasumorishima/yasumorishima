@@ -338,7 +338,11 @@ def main():
 
     # Cross-repo: kaggle-competitions
     print("\nUpdating kaggle-competitions README...")
-    update_competitions_readme(bronze)
+    try:
+        update_competitions_readme(bronze)
+    except Exception as e:
+        print(f"  WARNING: kaggle-competitions update failed: {e}", file=sys.stderr)
+        print("  Continuing without kaggle-competitions update.")
 
 
 if __name__ == "__main__":
