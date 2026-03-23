@@ -104,7 +104,7 @@ Trunk rotation range vs pitch speed: r=0.425 (strongest). Contributed bug fix [P
 
 ## 🌐 Open Source Contributions
 
-<!-- OSS_STATS_START -->(46 PRs / 25 Merged)<!-- OSS_STATS_END --> across 16 repositories. See [oss-contributions](https://github.com/yasumorishima/oss-contributions) for full details.
+<!-- OSS_STATS_START -->(55 PRs / 28 Merged)<!-- OSS_STATS_END --> across 22 repositories. See [oss-contributions](https://github.com/yasumorishima/oss-contributions) for full details.
 
 <details>
 <summary>PR highlights (click to expand)</summary>
@@ -161,7 +161,7 @@ Contributing to open-source civic tech projects that promote political transpare
 
 ### Kaggle
 
-<!-- KAGGLE_COMP_STATS_START -->Notebooks Expert | 🥉 14 Bronze Notebook Medals<!-- KAGGLE_COMP_STATS_END -->
+<!-- KAGGLE_COMP_STATS_START -->Notebooks Expert | 🥉 13 Bronze Notebook Medals<!-- KAGGLE_COMP_STATS_END -->
 
 **Active:** [S6E3 Churn](https://www.kaggle.com/competitions/playground-series-s6e3) (LB 0.914) / [Deep Past](https://www.kaggle.com/competitions/deep-past-initiative-machine-translation) (Akkadian→English) / [RNA 3D Folding 2](https://www.kaggle.com/competitions/stanford-ribonanza-rna-folding-2)
 
