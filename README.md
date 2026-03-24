@@ -31,24 +31,29 @@ Manufacturing Engineer & Data Analyst with 17 years of experience, specializing 
 
 | Project | Description | Demo |
 |---|---|---|
-| **[NPB Season Prediction](https://github.com/yasumorishima/npb-prediction)** | Marcel projection + LightGBM/XGBoost + Pythagorean win% | [Live](https://npb-prediction.streamlit.app/) |
-| **[NPB Prediction — Bayesian Edition](https://github.com/yasumorishima/npb-prediction-bayes)** | Marcel + Bayesian foreign player estimation | [Live](https://npb-prediction-bayes.streamlit.app/) |
+| **[NPB Season Prediction](https://github.com/yasumorishima/npb-prediction)** | Bayesian ensemble (Marcel 35% + Stan/Ridge 40% + ML 25%) + Monte Carlo team simulation + 24 foreign player individual projections | [Live](https://npb-prediction.streamlit.app/) |
+| **[NPB 2021 Backtest](https://github.com/yasumorishima/npb-2021-backtest)** | Could Bayesian model predict Yakult & Orix last→champion? 25 foreign players with FanGraphs data | [Analysis](https://github.com/yasumorishima/npb-2021-backtest) |
 | **[MLB Win Probability Engine](https://github.com/yasumorishima/mlb-win-probability)** | 3-engine ensemble WP (Normal + Empirical + LightGBM) + Gemini AI commentary | [Live](https://mlb-wp-engine.streamlit.app/) |
 | **[Baseball MLOps Pipeline](https://github.com/yasumorishima/baseball-mlops)** | Statcast × GCP MLOps: 5-model ensemble + BQML, weekly auto-retrained on BigQuery + Cloud Run | [Live](https://baseball-mlops.streamlit.app/) |
 
 <details>
 <summary>Prediction accuracy & details</summary>
 
-**NPB Season Prediction**
-- 2026 Predictions: Central: 阪神 80.1 > DeNA 71.3 > 巨人 70.7 / Pacific: SB 80.5 > 日ハム 76.8 > オリ 73.8
-- Accuracy (2025 backtest): Marcel OPS MAE = .048 / ERA MAE = 0.63
-- Data: baseball-data.com + npb.jp (2015–2025)
-- [Article (JP)](https://zenn.dev/shogaku/articles/npb-prediction-marcel-vs-ml) / [Article (EN)](https://dev.to/yasumorishima/why-marcel-beat-lightgbm-building-an-npb-player-performance-prediction-system-2jcb)
+**NPB Season Prediction — 2026 Forecast**
+- Bayesian ensemble: Marcel 35% + Stan/Ridge skill correction 40% + ML (XGBoost/LightGBM) 25%
+- CL: 阪神 71.5W (26%) > 巨人 71.1 > 中日 71.0 > DeNA 70.7 — 4 teams within 0.8W / PL: SB 81.3W (48%) > 日ハム 79.1 > オリ 77.5
+- 24 foreign players individually projected via Stan v2 (MLB/KBO → NPB conversion)
+- 10,000 Monte Carlo sims with park factors (Pythagorean k=1.83)
+- 8-year backtest: Bayesian wOBA MAE .0498, ERA MAE 1.222 — 97% probability of beating Marcel
+- [Article (JP)](https://zenn.dev/shogaku/articles/npb-bayes-integration-production) / [Article (EN)](https://dev.to/yasumorishima/adding-bayesian-ensemble-monte-carlo-to-an-npb-prediction-app-58po)
 
-**NPB Prediction — Bayesian Edition**
-- Bayesian shrinkage model (w≈0.14) converting prior league stats to NPB scale
-- Monte Carlo simulation (5,000 draws) for prediction ranges
-- 3 pages: Standings comparison, Foreign player projections (24 players), Historical analysis (367 players)
+**NPB Season Prediction — 2021 Backtest**
+- Tested if Bayesian model could predict Yakult & Orix going from last place to champions
+- 25 foreign players (13 hitters, 12 pitchers) with full FanGraphs data (wOBA, K%, BB%, ERA, FIP, WHIP)
+- Result: MAE 10.7 wins (vs 10.4 without foreign predictions) — foreign players had minimal impact
+- Key finding: Bayesian regression over-corrects extreme values; model predicted mediocre players well (Cron .703 vs .701 actual) but failed on extremes (Gerber .862 vs .352)
+- 2021 standings were driven by Japanese player breakouts/collapses, not foreign players
+- Data: baseball-data.com + npb.jp + FanGraphs + Baseball Savant
 
 **MLB Win Probability Engine**
 - 3-engine ensemble: v1 (Markov + Normal + Optuna), v2 (Empirical WP table), LightGBM — inverse-Brier weighted + Isotonic calibration
