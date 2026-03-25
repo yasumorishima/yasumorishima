@@ -35,6 +35,7 @@ Manufacturing Engineer & Data Analyst with 17 years of experience, specializing 
 | **[NPB 2021 Backtest](https://github.com/yasumorishima/npb-2021-backtest)** | Could Bayesian model predict Yakult & Orix last→champion? 25 foreign players with FanGraphs data | [Analysis](https://github.com/yasumorishima/npb-2021-backtest) |
 | **[MLB Win Probability Engine](https://github.com/yasumorishima/mlb-win-probability)** | 3-engine ensemble WP (Normal + Empirical + LightGBM) + Gemini AI commentary | [Live](https://mlb-wp-engine.streamlit.app/) |
 | **[Baseball MLOps Pipeline](https://github.com/yasumorishima/baseball-mlops)** | Statcast × GCP MLOps: 5-model ensemble + BQML, weekly auto-retrained on BigQuery + Cloud Run | [Live](https://baseball-mlops.streamlit.app/) |
+| **[MLB Data Pipeline](https://github.com/yasumorishima/mlb-data-pipeline)** | Shared BigQuery data platform — FanGraphs + Savant + Statcast for all baseball analytics projects | — |
 
 <details>
 <summary>Prediction accuracy & details</summary>
