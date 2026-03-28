@@ -228,6 +228,7 @@ Currently competing in [On Top of Pasketti](https://www.drivendata.org/competiti
 | **[MLB Bat Tracking Dashboard](https://github.com/yasumorishima/mlb-bat-tracking-dashboard)** | Leaderboard, Player Comparison, Team Lineup Builder. Powered by savant-extras | [Live](https://yasumorishima-mlb-bat-tracking.streamlit.app/) |
 | **[WBC 2026 Scouting Dashboard](https://github.com/yasumorishima/wbc-scouting)** | 30 Statcast apps across 19 countries. Zone heatmaps, spray charts, pitch movement | [Live](https://wbc-scouting-usa-batters.streamlit.app/) |
 | **[Daily Diary](https://github.com/yasumorishima/diary-app-flutter)** | Flutter mobile app, 5 languages, offline-first, AdMob | [Google Play](https://play.google.com/store/apps/details?id=com.diary.daily) |
+| **[野球部OB会サイト](https://github.com/yasumorishima/minami-baseball-ob-docs)** | Next.js 15 + Supabase + Vercel. Google OAuth, YAML権限管理, 写真管理, ダークモード | [Live](https://minami-baseball-ob.vercel.app/) |
 
 <details>
 <summary>WBC 2026 Scouting Dashboard details (30 apps)</summary>
