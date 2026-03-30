@@ -110,7 +110,7 @@ Trunk rotation range vs pitch speed: r=0.425 (strongest). Contributed bug fix [P
 
 ## 🌐 Open Source Contributions
 
-<!-- OSS_STATS_START -->(55 PRs / 28 Merged)<!-- OSS_STATS_END --> across 22 repositories. See [oss-contributions](https://github.com/yasumorishima/oss-contributions) for full details.
+<!-- OSS_STATS_START -->(55 PRs / 29 Merged)<!-- OSS_STATS_END --> across 22 repositories. See [oss-contributions](https://github.com/yasumorishima/oss-contributions) for full details.
 
 <details>
 <summary>PR highlights (click to expand)</summary>
@@ -195,7 +195,7 @@ Contributing to open-source civic tech projects that promote political transpare
 
 ### Kaggle Datasets
 
-<!-- KAGGLE_DS_STATS_START -->6 published MLB datasets<!-- KAGGLE_DS_STATS_END -->
+<!-- KAGGLE_DS_STATS_START -->7 published MLB datasets<!-- KAGGLE_DS_STATS_END -->
 
 | Dataset | Description |
 |---------|-------------|
