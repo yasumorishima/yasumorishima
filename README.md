@@ -315,8 +315,7 @@ Full-stack web app for a high school baseball alumni association. [Source](https
 
 ## 📈 Career
 * **2024 - Present:** Quality Management @ Marubun Corporation (丸文株式会社)
-* **2020 - 2024:** Technical Dept. @ Metaco Corporation (株式会社メタコ)
-* **2008 - 2020:** Process Engineering in Semiconductor Manufacturing (半導体製造プロセスエンジニア)
+* **2008 - 2024:** Semiconductor Manufacturing Process Engineer (半導体製造プロセスエンジニア)
 
 ---
 
