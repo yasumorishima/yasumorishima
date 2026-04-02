@@ -221,14 +221,26 @@ Currently competing in [On Top of Pasketti](https://www.drivendata.org/competiti
 
 ---
 
-## 📱 Apps
+## 🌐 Web & Apps
+
+### [Minami Baseball OB](https://minami-baseball-ob.vercel.app/) — Alumni Association Site
+
+Full-stack web app for a high school baseball alumni association. [Source](https://github.com/minami-baseball-ob/minami-baseball-ob) / [Tech Docs](https://github.com/yasumorishima/minami-baseball-ob-docs)
+
+- **5-level access control** (public → viewer → member → editor → admin) with Google OAuth + RLS on all tables
+- **680 historical match records** (1955–present) with per-game photo management, soft-delete & edit history
+- **Zero-code admin workflow**: Google Form → Apps Script → GitHub Actions → Supabase auto-sync
+- **Zero-code bug reports**: Google Form → Apps Script → GitHub Issue (with image upload)
+
+`Next.js 15 / TypeScript / Tailwind CSS 4 / Supabase / Vercel / GitHub Actions / Google Apps Script / GA4`
+
+### Dashboards & Mobile
 
 | App | Description | Link |
 |---|---|---|
 | **[MLB Bat Tracking Dashboard](https://github.com/yasumorishima/mlb-bat-tracking-dashboard)** | Leaderboard, Player Comparison, Team Lineup Builder. Powered by savant-extras | [Live](https://yasumorishima-mlb-bat-tracking.streamlit.app/) |
 | **[WBC 2026 Scouting Dashboard](https://github.com/yasumorishima/wbc-scouting)** | 30 Statcast apps across 19 countries. Zone heatmaps, spray charts, pitch movement | [Live](https://wbc-scouting-usa-batters.streamlit.app/) |
 | **[Daily Diary](https://github.com/yasumorishima/diary-app-flutter)** | Flutter mobile app, 5 languages, offline-first, AdMob | [Google Play](https://play.google.com/store/apps/details?id=com.diary.daily) |
-| **[野球部OB会サイト](https://github.com/minami-baseball-ob/minami-baseball-ob)** | Next.js 15 + Supabase + Vercel. Google OAuth, RLS全テーブル保護, Googleフォーム会員申請自動化, ダークモード | [Live](https://minami-baseball-ob.vercel.app/) |
 
 <details>
 <summary>WBC 2026 Scouting Dashboard details (30 apps)</summary>
@@ -293,7 +305,7 @@ Currently competing in [On Top of Pasketti](https://www.drivendata.org/competiti
 | **Data Analysis & ML** | Python, pandas, scikit-learn, LightGBM, XGBoost, CatBoost, PyTorch, matplotlib, seaborn, DuckDB, W&B |
 | **Data Platform** | Google BigQuery (8 datasets, 96+ tables — baseball, geohazard, ship tracking), BigQuery ML, Cloud Run, Grafana |
 | **Data Sources** | Baseball Savant (Statcast), pybaseball, USGS, NASA Earthdata, AIS |
-| **Web & Dashboards** | Streamlit, Next.js, TypeScript, Supabase, shadcn/ui |
+| **Web & Dashboards** | Streamlit, Next.js, TypeScript, Supabase, Vercel, shadcn/ui |
 | **Mobile App** | Flutter, Dart, Hive, Google AdMob |
 | **Automation & DevOps** | GitHub Actions, Google Apps Script, VBA, Power Query |
 | **Tools** | Claude Code, Kaggle, Google Colab, Excel, Looker Studio |
