@@ -169,7 +169,7 @@ Contributing to open-source civic tech projects that promote political transpare
 
 <!-- KAGGLE_COMP_STATS_START -->Notebooks Expert | 🥉 14 Bronze Notebook Medals<!-- KAGGLE_COMP_STATS_END -->
 
-**Active:** [S6E3 Churn](https://www.kaggle.com/competitions/playground-series-s6e3) (LB 0.914) / [Deep Past](https://www.kaggle.com/competitions/deep-past-initiative-machine-translation) (Akkadian→English) / [RNA 3D Folding 2](https://www.kaggle.com/competitions/stanford-ribonanza-rna-folding-2)
+**Active:** [Deep Past](https://www.kaggle.com/competitions/deep-past-initiative-machine-translation) (Akkadian→English) / [BirdCLEF+ 2026](https://www.kaggle.com/competitions/birdclef-2026) (Bird Sound Recognition)
 
 <details>
 <summary>Bronze Medal Notebooks (14)</summary>
