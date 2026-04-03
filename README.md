@@ -195,7 +195,7 @@ Contributing to open-source civic tech projects that promote political transpare
 
 ### Kaggle Datasets
 
-<!-- KAGGLE_DS_STATS_START -->7 published MLB datasets<!-- KAGGLE_DS_STATS_END -->
+<!-- KAGGLE_DS_STATS_START -->6 published MLB datasets<!-- KAGGLE_DS_STATS_END -->
 
 | Dataset | Description |
 |---------|-------------|
@@ -225,7 +225,7 @@ Currently competing in [On Top of Pasketti](https://www.drivendata.org/competiti
 
 ### [Minami Baseball OB](https://minami-baseball-ob.vercel.app/) — Alumni Association Site
 
-Full-stack web app for a high school baseball alumni association. [Source](https://github.com/minami-baseball-ob/minami-baseball-ob) / [Tech Docs](https://github.com/yasumorishima/minami-baseball-ob-docs)
+Full-stack web app for a high school baseball alumni association. [Tech Docs](https://github.com/yasumorishima/minami-baseball-ob-docs)
 
 - **5-level access control** (public → viewer → member → editor → admin) with Google OAuth + RLS on all tables
 - **680 historical match records** (1955–present) with per-game photo management, soft-delete & edit history
