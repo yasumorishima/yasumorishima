@@ -225,7 +225,7 @@ Currently competing in [On Top of Pasketti](https://www.drivendata.org/competiti
 
 ### [Minami Baseball OB](https://minami-baseball-ob.vercel.app/) — Alumni Association Site
 
-Full-stack web app for a high school baseball alumni association (113 files, ~12,800 LOC). **[Technical Documentation](https://github.com/yasumorishima/minami-baseball-ob-docs)**
+Full-stack web app for a high school baseball alumni association (<!--ob:ts_files-->113<!--/ob--> files, <!--ob:loc-->~12800<!--/ob--> LOC). **[Technical Documentation](https://github.com/yasumorishima/minami-baseball-ob-docs)**
 
 <table>
 <tr>
