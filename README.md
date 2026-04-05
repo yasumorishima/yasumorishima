@@ -248,10 +248,10 @@ Full-stack web app for a high school baseball alumni association (98 files, ~10,
 
 - **5-tier RBAC** (guest → viewer → member → editor → admin): Next.js Middleware + Supabase RLS + `useAuth()` hook — authorization at route, row, and component level
 - **Automated member pipeline**: Google Form → Apps Script → `repository_dispatch` → GitHub Actions auto-PR → merge → Supabase role sync. **Personal names never touch Git** (UUID + graduation year only)
-- **Custom CMS**: 8 editor pages with inline editing, inline photo upload, soft delete (7-day trash + auto-purge), change history (DB triggers), and audit logs
+- **Custom CMS**: 10 editor pages with inline editing, inline photo upload, soft delete (7-day trash + auto-purge), change history (DB triggers), and audit logs
 - **680 historical match records** (1955–present) with stable IDs, cross-source verification, dynamic sitemap, and per-game photo management
 - **Zero-code bug reports**: Google Form → Apps Script → GitHub Issue (with image upload to dedicated repo)
-- **Security**: RLS on all 14 tables, `server-only` admin client, CODEOWNERS, branch protection, secret scanning, cookie consent gate, 60-min session timeout, structured JSON logging
+- **Security**: RLS on all 21 tables, `server-only` admin client, CODEOWNERS, branch protection, secret scanning, cookie consent gate, 60-min session timeout, structured JSON logging
 
 `Next.js 15 / TypeScript 5.8 / Tailwind CSS 4 / Supabase (PostgreSQL + Auth + Storage) / Vercel / GitHub Actions / Google Apps Script / GA4`
 
