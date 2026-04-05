@@ -251,6 +251,7 @@ Full-stack web app for a high school baseball alumni association (<!--ob:ts_file
 - **Custom CMS**: 10 editor pages with inline editing, venue map preview (live Google Maps confirmation), inline photo upload, soft delete (7-day trash + auto-purge), change history (DB triggers), and audit logs
 - **<!--ob:senseki-->680<!--/ob--> historical match records** (1955–present) with stable IDs, cross-source verification, dynamic sitemap, and per-game photo management
 - **Zero-code bug reports**: Google Form → Apps Script → GitHub Issue (with image upload to dedicated repo)
+- **Touch-optimized UX**: Material Design ripple on all interactive elements (`useRipple` hook), page transition animations, icon bounce, PWA, 44px+ touch targets, dark mode
 - **Security**: RLS on all 21 tables, `server-only` admin client, CODEOWNERS, branch protection, secret scanning, cookie consent gate, 60-min session timeout, structured JSON logging
 
 `Next.js 15 / TypeScript 5.8 / Tailwind CSS 4 / Supabase (PostgreSQL + Auth + Storage) / Vercel / GitHub Actions / Google Apps Script / GA4`
