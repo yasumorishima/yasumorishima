@@ -195,7 +195,7 @@ Contributing to open-source civic tech projects that promote political transpare
 
 ### Kaggle Datasets
 
-<!-- KAGGLE_DS_STATS_START -->6 published MLB datasets<!-- KAGGLE_DS_STATS_END -->
+<!-- KAGGLE_DS_STATS_START -->7 published MLB datasets<!-- KAGGLE_DS_STATS_END -->
 
 | Dataset | Description |
 |---------|-------------|
