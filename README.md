@@ -250,6 +250,7 @@ Full-stack web app for a high school baseball alumni association (<!--ob:ts_file
 - **Automated member pipeline**: Google Form → Apps Script → `repository_dispatch` → GitHub Actions auto-PR → merge → Supabase role sync. **Personal names never touch Git** (UUID + graduation year only)
 - **Custom CMS**: 10 editor pages with inline editing, venue map preview (live Google Maps confirmation), inline photo upload, soft delete (7-day trash + auto-purge), change history (DB triggers), and audit logs
 - **<!--ob:senseki-->680<!--/ob--> historical match records** (1955–present) with stable IDs, cross-source verification, dynamic sitemap, and per-game photo management
+- **Automated game detection**: Weekly scraping (kyureki.com + hb-nippon.com) detects new current-team games and auto-creates GitHub Issues for human review
 - **Zero-code bug reports**: Google Form → Apps Script → GitHub Issue (with image upload to dedicated repo)
 - **Touch-optimized UX**: Material Design ripple + press feedback on all interactive elements (`useRipple` hook, `TappableCard`), page transition animations, icon bounce, PWA, 44px+ touch targets, dark mode
 - **Security**: RLS on all 21 tables, `server-only` admin client, CODEOWNERS, branch protection, secret scanning, cookie consent gate, 60-min session timeout, structured JSON logging
