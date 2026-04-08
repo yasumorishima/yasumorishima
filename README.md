@@ -249,8 +249,8 @@ Full-stack web app for a high school baseball alumni association (<!--ob:ts_file
 - **5-tier RBAC** (guest → viewer → member → editor → admin): Next.js Middleware + Supabase RLS + `useAuth()` hook — authorization at route, row, and component level
 - **Automated member pipeline**: Google Form → Apps Script → `repository_dispatch` → GitHub Actions auto-PR → merge → Supabase role sync. **Personal names never touch Git** (UUID + graduation year only)
 - **Custom CMS**: 8 editor pages + 5 inline edit components, venue map preview (live Google Maps confirmation), inline photo upload, soft delete (7-day trash + auto-purge), change history (DB triggers), and audit logs
-- **<!--ob:senseki-->681<!--/ob--> historical match records** (1955–present) with stable IDs, cross-source verification, dynamic sitemap, nested collapsible grouping (year → tournament type), and per-game photo management
-- **UX features**: Unsaved change warning (click capture phase + popstate + beforeunload), Web Share API with LINE fallback, Google Calendar one-tap registration, ripple tap feedback, page transitions
+- **<!--ob:senseki-->681<!--/ob--> historical match records** (1955–present) with stable IDs, cross-source verification, dynamic sitemap, nested collapsible grouping (year → tournament type), per-game + tournament photo management
+- **UX features**: Unsaved change warning (click capture phase + popstate + beforeunload), Web Share API with LINE fallback, Google Calendar one-tap registration, ripple tap feedback, page transitions, Suspense-based skeleton UI
 - **Automated game detection**: Scrapes 2 sources (kyureki.com + hb-nippon.com) weekly, updates senseki.json, auto-creates PR for review
 - **Zero-code bug reports**: Google Form → Apps Script → GitHub Issue (with image upload to dedicated repo)
 - **Security**: RLS on all 19 tables, `server-only` admin client, CODEOWNERS, branch protection, secret scanning, cookie consent gate, 60-min session timeout, structured JSON logging
