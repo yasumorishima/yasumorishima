@@ -8,6 +8,7 @@ import re
 import subprocess
 import sys
 import tempfile
+from datetime import date
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -332,6 +333,12 @@ def main():
         readme = replace_marker(readme, "MLB_STATS", f"{mlb_count} analyses")
     else:
         print("  Skipping MLB analysis update (API unavailable)")
+
+    # Career years (started 2008)
+    career_years = date.today().year - 2008
+    readme = replace_marker(readme, "CAREER_YEARS", str(career_years))
+    readme = replace_marker(readme, "CAREER_YEARS_JP", str(career_years))
+    print(f"  Career years: {career_years}")
 
     README.write_text(readme, encoding="utf-8")
     print("Profile README.md updated.")

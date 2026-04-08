@@ -1,6 +1,6 @@
 # Yasunori Morishima (盛島康徳)
-Manufacturing Engineer & Data Analyst with 17 years of experience, specializing in data analysis, open source contribution, and business automation.
-(製造業にて17年の経験を持つエンジニア。データ分析・OSS貢献・業務自動化を専門としています)
+Manufacturing Engineer & Data Analyst with <!-- CAREER_YEARS_START -->18<!-- CAREER_YEARS_END --> years of experience, specializing in data analysis, open source contribution, and business automation.
+(製造業にて<!-- CAREER_YEARS_JP_START -->18<!-- CAREER_YEARS_JP_END -->年の経験を持つエンジニア。データ分析・OSS貢献・業務自動化を専門としています)
 
 ## 🌍 Realtime Open Data
 
@@ -307,7 +307,7 @@ Full-stack web app for a high school baseball alumni association (<!--ob:ts_file
 | Project | Description |
 |---|---|
 | **[ICP Learning Project](https://github.com/yasumorishima/ICP_kinyoku)** | Persistent counter dApp on Internet Computer (Motoko, dfx CLI) |
-| **[OpenClaw Twitter Bot](https://github.com/yasumorishima/raspi-baseball-bot)** | Raspberry Pi 5 + OpenClaw + Gemini API auto-tweet bot — [Article (JP)](https://zenn.dev/shogaku/articles/raspi-baseball-bot-openclaw-gemini) |
+| **[OpenClaw Twitter Bot](https://github.com/yasumorishima/raspi-baseball-bot)** | Raspberry Pi 5 + OpenClaw + Gemini API auto-tweet bot (stopped) — [Article (JP)](https://zenn.dev/shogaku/articles/raspi-baseball-bot-openclaw-gemini) |
 
 <details>
 <summary>Past Projects</summary>
