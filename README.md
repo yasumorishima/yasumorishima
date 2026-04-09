@@ -250,9 +250,10 @@ Full-stack web app for a high school baseball alumni association (<!--ob:ts_file
 - **Automated member pipeline**: Google Form → Apps Script → `repository_dispatch` → GitHub Actions auto-PR → merge → Supabase role sync. **Personal names never touch Git** (UUID + graduation year only)
 - **Custom CMS**: 8 editor pages + 5 inline edit components, venue map preview (live Google Maps confirmation), inline photo upload, soft delete (7-day trash + auto-purge), change history (DB triggers), and audit logs
 - **<!--ob:senseki-->681<!--/ob--> historical match records** (1955–present) with stable IDs, cross-source verification, dynamic sitemap, nested collapsible grouping (year → tournament type), per-game + tournament photo management
-- **UX features**: Unsaved change warning (click capture phase + popstate + beforeunload), Web Share API with LINE fallback, Google Calendar one-tap registration, ripple tap feedback, page transitions, Suspense-based skeleton UI
+- **UX features**: Unsaved change warning (click capture phase + popstate + beforeunload), Web Share API with LINE fallback, Google Calendar one-tap registration, ripple tap feedback, page transitions, Suspense-based skeleton UI, LINE in-app browser detection (auto-redirect to external browser for OAuth)
+- **Weather forecast**: Auto-display weather on schedule detail pages (3 days before game). Venue master (10 stadiums with geocoded coordinates), standalone `/weather` page with expandable venue cards, hourly forecast strips, precipitation probability bars. Open-Meteo API (free), 30-min ISR cache
 - **Automated game detection**: Scrapes 2 sources (kyureki.com + hb-nippon.com) weekly, updates senseki.json, auto-creates PR for review
-- **Zero-code bug reports**: Google Form → Apps Script → GitHub Issue (with image upload to dedicated repo)
+- **In-app feedback form**: `/feedback` page with Google login, category/image upload (camera + gallery, client-side compression), auto-creates GitHub Issue with labels + GAS Gmail notification. Honeypot + IP rate limiting
 - **Security**: RLS on all 19 tables, `server-only` admin client, CODEOWNERS, branch protection, secret scanning, cookie consent gate, 60-min session timeout, structured JSON logging
 
 `Next.js 15 / TypeScript 5.8 / Tailwind CSS 4 / Supabase (PostgreSQL + Auth + Storage) / Vercel / GitHub Actions / Google Apps Script / GA4`
