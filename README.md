@@ -183,21 +183,18 @@ Full-stack web app for a high school baseball alumni association (<!--ob:ts_file
 <table>
 <tr>
 <td align="center"><b>PC (Light)</b></td>
-<td align="center"><b>PC (Dark)</b></td>
+<td align="center"><b>Game Results</b></td>
 </tr>
 <tr>
 <td><a href="https://minami-baseball-ob.vercel.app/"><img src="https://raw.githubusercontent.com/yasumorishima/minami-baseball-ob-docs/main/screenshots/top-pc.png" width="420"></a></td>
-<td><a href="https://minami-baseball-ob.vercel.app/"><img src="https://raw.githubusercontent.com/yasumorishima/minami-baseball-ob-docs/main/screenshots/dark.png" width="420"></a></td>
-</tr>
-<tr>
-<td align="center"><b>Game Results</b></td>
-<td align="center"><b>Historical Records (<!--ob:senseki-->681<!--/ob--> games)</b></td>
-</tr>
-<tr>
 <td><img src="https://raw.githubusercontent.com/yasumorishima/minami-baseball-ob-docs/main/screenshots/results.png" width="420"></td>
-<td><img src="https://raw.githubusercontent.com/yasumorishima/minami-baseball-ob-docs/main/screenshots/history.png" width="420"></td>
 </tr>
 </table>
+
+5-tier RBAC (Middleware + RLS), automated member pipeline (Form → GAS → Actions → Supabase), <!--ob:senseki-->681<!--/ob--> match records (1955–present)
+
+<details>
+<summary>Architecture & features</summary>
 
 - **5-tier RBAC** (guest → admin): Next.js Middleware + Supabase RLS — authorization at route, row, and component level
 - **Automated member pipeline**: Google Form → Apps Script → GitHub Actions auto-PR → Supabase role sync. Personal names never touch Git
@@ -205,6 +202,8 @@ Full-stack web app for a high school baseball alumni association (<!--ob:ts_file
 - **<!--ob:senseki-->681<!--/ob--> match records** (1955–present): cross-source verification, generation-based grouping, per-game photo management
 - **UX**: Unsaved warning, Web Share + LINE fallback, Calendar registration, ripple feedback, Suspense skeleton UI, weather forecast (Open-Meteo, 10 venues), automated game detection (2 sources → auto-PR)
 - **Security**: RLS on all 19 tables, `server-only` admin, CODEOWNERS, branch protection, secret scanning, cookie consent, 60-min session timeout
+
+</details>
 
 `Next.js 15 / TypeScript 5.8 / Tailwind CSS 4 / Supabase (PostgreSQL + Auth + Storage) / Vercel / GitHub Actions / Google Apps Script / GA4`
 
