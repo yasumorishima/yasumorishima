@@ -40,33 +40,12 @@ Manufacturing Engineer & Data Analyst with <!-- CAREER_YEARS_START -->18<!-- CAR
 <details>
 <summary>Prediction accuracy & details</summary>
 
-**NPB Season Prediction — 2026 Forecast**
-- Bayesian ensemble: Marcel 35% + Stan/Ridge skill correction 40% + ML (XGBoost/LightGBM) 25%
-- CL: 阪神 71.5W (26%) > 巨人 71.1 > 中日 71.0 > DeNA 70.7 — 4 teams within 0.8W / PL: SB 81.3W (48%) > 日ハム 79.1 > オリ 77.5
-- 24 foreign players individually projected via Stan v2 (MLB/KBO → NPB conversion)
-- 10,000 Monte Carlo sims with park factors (Pythagorean k=1.83)
-- 8-year backtest: Bayesian wOBA MAE .0498, ERA MAE 1.222 — 97% probability of beating Marcel
-- [Article (JP)](https://zenn.dev/shogaku/articles/npb-bayes-integration-production) / [Article (EN)](https://dev.to/yasumorishima/adding-bayesian-ensemble-monte-carlo-to-an-npb-prediction-app-58po)
-
-**NPB Season Prediction — 2021 Backtest**
-- Tested if Bayesian model could predict Yakult & Orix going from last place to champions
-- 25 foreign players (13 hitters, 12 pitchers) with full FanGraphs data (wOBA, K%, BB%, ERA, FIP, WHIP)
-- Result: MAE 10.7 wins (vs 10.4 without foreign predictions) — foreign players had minimal impact
-- Key finding: Bayesian regression over-corrects extreme values; model predicted mediocre players well (Cron .703 vs .701 actual) but failed on extremes (Gerber .862 vs .352)
-- 2021 standings were driven by Japanese player breakouts/collapses, not foreign players
-- Data: baseball-data.com + npb.jp + FanGraphs + Baseball Savant
-
-**MLB Win Probability Engine**
-- 3-engine ensemble: v1 (Markov + Normal + Optuna), v2 (Empirical WP table), LightGBM — inverse-Brier weighted + Isotonic calibration
-- 367K+ play states (2015–2024) on BigQuery for training/validation, leave-one-year-out CV
-- Gemini 2.5 Flash AI commentary with prompt versioning, quality evaluation (100pt), W&B tracking
-- Live feed: MLB Stats API → real-time WP / LI / tactical recommendations (30s auto-refresh)
-
-**Baseball MLOps Pipeline**
-- Accuracy (2025 backtest): Batter wOBA MAE = .0287 (Marcel: .0326) / Pitcher xFIP MAE = 0.483 (Marcel: 0.558)
-- 5-model ensemble: LightGBM + CatBoost + ElasticNet Bayes + Component (PECOTA) + BQML Boosted Tree
-- GCP: BigQuery (13 raw tables + BQML models) + Cloud Run (FastAPI) + Grafana dashboard
-- Pipeline: GitHub Actions cron (weekly) → pybaseball → 5-model retrain → W&B + BigQuery → Cloud Run → Streamlit
+| System | Key Metric | Articles |
+|--------|-----------|----------|
+| **NPB 2026** | 8-yr backtest wOBA MAE .0498, 97% prob. of beating Marcel. 10K Monte Carlo sims | [JP](https://zenn.dev/shogaku/articles/npb-bayes-integration-production) / [EN](https://dev.to/yasumorishima/adding-bayesian-ensemble-monte-carlo-to-an-npb-prediction-app-58po) |
+| **NPB 2021 Backtest** | MAE 10.7W — Yakult & Orix last→champion driven by JP player breakouts, not foreign players | [Repo](https://github.com/yasumorishima/npb-2021-backtest) |
+| **MLB WP Engine** | 3-engine ensemble, 367K+ play states (2015–2024), inverse-Brier weighted + Isotonic calibration | [Live](https://mlb-wp-engine.streamlit.app/) |
+| **Baseball MLOps** | Batter wOBA MAE .0287 (Marcel: .0326) / Pitcher xFIP MAE 0.483 (Marcel: 0.558) | [Live](https://baseball-mlops.streamlit.app/) |
 
 </details>
 
@@ -129,33 +108,14 @@ Trunk rotation range vs pitch speed: r=0.425 (strongest). Contributed bug fix [P
 <details>
 <summary>team-mirai — Civic Tech OSS (<!-- TEAM_MIRAI_STATS_START -->21 PRs (11 Merged / 2 Open / 8 Closed)<!-- TEAM_MIRAI_STATS_END -->)</summary>
 
-Contributing to open-source civic tech projects that promote political transparency and citizen participation in Japan.
+Civic tech projects for political transparency & citizen participation in Japan. Next.js / TypeScript / Supabase / Vitest.
 
-| # | Repository | PR | Status | Description |
-|---|---|---|---|---|
-| 21 | **marumie** | [#1141](https://github.com/team-mirai/marumie/pull/1141) | Open | Display total amount when category filter is applied |
-| 20 | **action-board** | [#1969](https://github.com/team-mirai-volunteer/action-board/pull/1969) | Merged | Add 48 unit tests for pure functions |
-| 19 | **action-board** | [#1918](https://github.com/team-mirai-volunteer/action-board/pull/1918) | Merged | Disable Supabase Image Transformation |
-| 18 | **action-board** | [#1914](https://github.com/team-mirai-volunteer/action-board/pull/1914) | Merged | Block shape deletion with XP |
-| 17 | **post-checker** | [#34](https://github.com/team-mirai-volunteer/post-checker/pull/34) | Open | Fix timezone-dependent date parsing |
-| 16 | **action-board** | [#1906](https://github.com/team-mirai-volunteer/action-board/pull/1906) | Merged | Refactor achieveMissionAction |
-| 15 | **action-board** | [#1869](https://github.com/team-mirai-volunteer/action-board/pull/1869) | Merged | Supabase RPC function tests for develop |
-| 14 | **action-board** | [#1868](https://github.com/team-mirai-volunteer/action-board/pull/1868) | Merged | Posting count display: times to sheets |
-| 13 | **action-board** | [#1867](https://github.com/team-mirai-volunteer/action-board/pull/1867) | Merged | Error toast for poster mission failure |
-| 12 | **action-board** | [#1859](https://github.com/team-mirai-volunteer/action-board/pull/1859) | Merged | Supabase RPC function tests |
-| 11 | **fact-checker** | [#88](https://github.com/team-mirai-volunteer/fact-checker/pull/88) | Closed | Slack same-thread reply |
-| 10 | **fact-checker** | [#87](https://github.com/team-mirai-volunteer/fact-checker/pull/87) | Closed | Deduplicate tweets using start_time filter |
-| 9 | **fact-checker** | [#86](https://github.com/team-mirai-volunteer/fact-checker/pull/86) | Closed | Unit tests for Note markdown utilities |
-| 8 | **action-board** | [#1856](https://github.com/team-mirai-volunteer/action-board/pull/1856) | Merged | Update video mission description |
-| 7 | **action-board** | [#1855](https://github.com/team-mirai-volunteer/action-board/pull/1855) | Closed | Street speech map link |
-| 6 | **fact-checker** | [#85](https://github.com/team-mirai-volunteer/fact-checker/pull/85) | Closed | Slack button env-based branching |
-| 5 | **action-board** | [#1849](https://github.com/team-mirai-volunteer/action-board/pull/1849) | Merged | Breadcrumb navigation |
-| 4 | **action-board** | [#1845](https://github.com/team-mirai-volunteer/action-board/pull/1845) | Merged | Fix prefecture cache invalidation |
-| 3 | **fact-checker** | [#84](https://github.com/team-mirai-volunteer/fact-checker/pull/84) | Closed | Disable Twitter posting in staging |
-| 2 | **fact-checker** | [#83](https://github.com/team-mirai-volunteer/fact-checker/pull/83) | Closed | Client-side engagement filtering |
-| 1 | **fact-checker** | [#69](https://github.com/team-mirai-volunteer/fact-checker/issues/69#issuecomment-3811711591) | Done | X API investigation |
-
-**Tech Stack:** Next.js, TypeScript, Supabase, shadcn/ui, Biome, Bun, Vitest
+| Repository | Highlights |
+|---|---|
+| **action-board** | [48 unit tests](https://github.com/team-mirai-volunteer/action-board/pull/1969), [RPC tests](https://github.com/team-mirai-volunteer/action-board/pull/1869), [breadcrumb nav](https://github.com/team-mirai-volunteer/action-board/pull/1849), [cache fix](https://github.com/team-mirai-volunteer/action-board/pull/1845) + 5 more |
+| **marumie** | [Category filter total](https://github.com/team-mirai/marumie/pull/1141) |
+| **post-checker** | [Timezone fix](https://github.com/team-mirai-volunteer/post-checker/pull/34) |
+| **fact-checker** | [X API investigation](https://github.com/team-mirai-volunteer/fact-checker/issues/69#issuecomment-3811711591) + 5 PRs |
 
 </details>
 
@@ -176,20 +136,13 @@ Contributing to open-source civic tech projects that promote political transpare
 
 | Notebook | Topic |
 |----------|-------|
-| [savant-extras Defense & Pitching Quality](https://www.kaggle.com/code/yasunorim/savant-extras-defense-pitching-quality) | Defense metrics & pitching quality analysis (savant-extras) |
-| [MLB Statcast Spray Charts for WBC 2026 Players](https://www.kaggle.com/code/yasunorim/mlb-statcast-spray-charts-for-wbc-2026-players) | WBC 2026 player spray charts + pitch zone charts (baseball-field-viz) |
-| [March Machine Learning Mania 2026 Baseline](https://www.kaggle.com/code/yasunorim/march-machine-learning-mania-2026-baseline) | NCAA basketball tournament prediction (LightGBM + Logistic Regression) |
-| [CAFA 6 Baseline with Regularization](https://www.kaggle.com/code/yasunorim/baseline-with-regularization) | Protein function prediction (PyTorch MLP) |
-| [Bat Tracking: Japanese MLB Batters (2024-2025)](https://www.kaggle.com/code/yasunorim/bat-tracking-japanese-mlb-batters-2024-2025) | MLB bat speed & swing metrics analysis |
-| [Senga Ghost Fork Analysis](https://www.kaggle.com/code/yasunorim/senga-ghost-fork-analysis-2023-2025) | MLB Statcast pitching analysis |
-| [Kikuchi Slider Revolution](https://www.kaggle.com/code/yasunorim/kikuchi-slider-revolution-2019-2025) | MLB Statcast pitching analysis |
+| [savant-extras Defense & Pitching Quality](https://www.kaggle.com/code/yasunorim/savant-extras-defense-pitching-quality) | Defense metrics & pitching quality (savant-extras) |
+| [MLB Statcast Spray Charts for WBC 2026](https://www.kaggle.com/code/yasunorim/mlb-statcast-spray-charts-for-wbc-2026-players) | WBC 2026 spray + pitch zone charts (baseball-field-viz) |
+| [March Machine Learning Mania 2026](https://www.kaggle.com/code/yasunorim/march-machine-learning-mania-2026-baseline) | NCAA tournament prediction (LightGBM) |
 | [NFL Geometric Rules Baseline](https://www.kaggle.com/code/yasunorim/geometric-rules-baseline-2-921-rmse-no-ml) | Physics-based rules, No ML, RMSE 2.921 |
-| [PhysioNet ECG Baseline](https://www.kaggle.com/code/yasunorim/physionet-ecg-baseline) | ECG submission format guide |
-| [Diabetes EDA & Baseline](https://www.kaggle.com/code/yasunorim/diabetes-prediction-eda-baseline-s5e12) | LightGBM 5-fold CV, AUC 0.727 |
-| [Diabetes Rank-Based Ensemble](https://www.kaggle.com/code/yasunorim/diabetes-prediction-rank-based-ensemble) | Rank averaging for AUC optimization |
-| [Deep Past Cloud Workflow + TF-IDF Baseline](https://www.kaggle.com/code/yasunorim/deep-past-cloud-workflow-tfidf-baseline) | Akkadian→English TF-IDF baseline |
-| [Titanic Japanese Optuna Test](https://www.kaggle.com/code/yasunorim/titanic-japanese-optuna-test) | Titanic survival prediction with Optuna tuning |
-| [Matplotlib & Seaborn 日本語化テンプレート](https://www.kaggle.com/code/yasunorim/matplotlib-seaborn) | Kaggle環境の日本語フォント文字化け解消テンプレート |
+| [CAFA 6 Baseline](https://www.kaggle.com/code/yasunorim/baseline-with-regularization) | Protein function prediction (PyTorch MLP) |
+
+[All 14 notebooks →](https://www.kaggle.com/yasunorim/code)
 
 </details>
 
@@ -246,15 +199,12 @@ Full-stack web app for a high school baseball alumni association (<!--ob:ts_file
 </tr>
 </table>
 
-- **5-tier RBAC** (guest → viewer → member → editor → admin): Next.js Middleware + Supabase RLS + `useAuth()` hook — authorization at route, row, and component level
-- **Automated member pipeline**: Google Form → Apps Script → `repository_dispatch` → GitHub Actions auto-PR → merge → Supabase role sync. **Personal names never touch Git** (UUID + graduation year only)
-- **Custom CMS**: 8 editor pages + 5 inline edit components, venue map preview (live Google Maps confirmation), inline photo upload, soft delete (7-day trash + auto-purge), change history (DB triggers), and audit logs
-- **<!--ob:senseki-->681<!--/ob--> historical match records** (1955–present) with stable IDs, cross-source verification, dynamic sitemap, generation-based grouping (期/graduating class, newest-first), per-game + tournament photo management, URL auto-linking in announcements
-- **UX features**: Unsaved change warning (click capture phase + popstate + beforeunload), Web Share API with LINE fallback, Google Calendar one-tap registration, ripple tap feedback, page transitions, Suspense-based skeleton UI, LINE in-app browser detection (auto-redirect to external browser for OAuth)
-- **Weather forecast**: Auto-display weather on schedule detail pages (3 days before game). Venue master (10 stadiums with geocoded coordinates), standalone `/weather` page with expandable venue cards, hourly forecast strips, precipitation probability bars. Open-Meteo API (free), 30-min ISR cache
-- **Automated game detection**: Scrapes 2 sources (kyureki.com + hb-nippon.com) weekly, updates senseki.json, auto-creates PR for review
-- **In-app feedback form**: `/feedback` page with Google login, category/image upload (camera + gallery, client-side compression), auto-creates GitHub Issue with labels + GAS Gmail notification. Honeypot + IP rate limiting
-- **Security**: RLS on all 19 tables, `server-only` admin client, CODEOWNERS, branch protection, secret scanning, cookie consent gate, 60-min session timeout, structured JSON logging
+- **5-tier RBAC** (guest → admin): Next.js Middleware + Supabase RLS — authorization at route, row, and component level
+- **Automated member pipeline**: Google Form → Apps Script → GitHub Actions auto-PR → Supabase role sync. Personal names never touch Git
+- **Custom CMS**: 8 editor pages + 5 inline edit, soft delete (7-day trash + auto-purge), change history, audit logs
+- **<!--ob:senseki-->681<!--/ob--> match records** (1955–present): cross-source verification, generation-based grouping, per-game photo management
+- **UX**: Unsaved warning, Web Share + LINE fallback, Calendar registration, ripple feedback, Suspense skeleton UI, weather forecast (Open-Meteo, 10 venues), automated game detection (2 sources → auto-PR)
+- **Security**: RLS on all 19 tables, `server-only` admin, CODEOWNERS, branch protection, secret scanning, cookie consent, 60-min session timeout
 
 `Next.js 15 / TypeScript 5.8 / Tailwind CSS 4 / Supabase (PostgreSQL + Auth + Storage) / Vercel / GitHub Actions / Google Apps Script / GA4`
 
@@ -269,17 +219,8 @@ Full-stack web app for a high school baseball alumni association (<!--ob:ts_file
 <details>
 <summary>WBC 2026 Scouting Dashboard details (30 apps)</summary>
 
-**[WBC 2026 Scouting Dashboard](https://github.com/yasumorishima/wbc-scouting)** — Statcast-based scouting dashboards for all WBC 2026 teams, deployed on Streamlit Community Cloud.
-
-- **30 apps** across 19 countries — batters (17 countries) + pitchers (13 countries)
-- **Features:** Zone heatmaps, spray charts, pitch movement, count-by-count performance, LHP/RHP splits
-- **Data:** Baseball Savant Statcast via pybaseball, auto-fetched by GitHub Actions
-
-| Example | Link |
-|---|---|
-| USA Batters | [wbc-usa-batters.streamlit.app](https://wbc-usa-batters.streamlit.app/) |
-| Japan Pitchers | [wbc-japan-pitchers.streamlit.app](https://wbc-japan-pitchers.streamlit.app/) |
-| All 30 apps | [GitHub README](https://github.com/yasumorishima/wbc-scouting#-デプロイ済みアプリ一覧) |
+30 Statcast scouting apps across 19 countries (batters + pitchers). Zone heatmaps, spray charts, pitch movement, LHP/RHP splits. Auto-fetched via GitHub Actions.
+→ [USA Batters](https://wbc-usa-batters.streamlit.app/) / [Japan Pitchers](https://wbc-japan-pitchers.streamlit.app/) / [All 30 apps](https://github.com/yasumorishima/wbc-scouting#-デプロイ済みアプリ一覧)
 
 </details>
 
