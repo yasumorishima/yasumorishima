@@ -2,6 +2,8 @@
 Manufacturing Engineer & Data Analyst with <!-- CAREER_YEARS_START -->18<!-- CAREER_YEARS_END --> years of experience, specializing in data analysis, open source contribution, and business automation.
 (製造業にて<!-- CAREER_YEARS_JP_START -->18<!-- CAREER_YEARS_JP_END -->年の経験を持つエンジニア。データ分析・OSS貢献・業務自動化を専門としています)
 
+> **In Production**: [Minami Baseball OB](https://minami-baseball-ob.vercel.app/) — Full-stack alumni site with 10 active users (38 pages · 22 DB tables · 130 e2e tests · ¥0/mo running cost) | [Docs](https://github.com/yasumorishima/minami-baseball-ob-docs)
+
 ## 🌍 Realtime Open Data
 
 <table>
