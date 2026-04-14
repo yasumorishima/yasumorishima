@@ -91,7 +91,7 @@ Trunk rotation range vs pitch speed: r=0.425 (strongest). Contributed bug fix [P
 
 ## 🌐 Open Source Contributions
 
-<!-- OSS_STATS_START -->(62 PRs / 31 Merged)<!-- OSS_STATS_END --> across 26 repositories. See [oss-contributions](https://github.com/yasumorishima/oss-contributions) for full details.
+<!-- OSS_STATS_START -->(61 PRs / 31 Merged)<!-- OSS_STATS_END --> across 26 repositories. See [oss-contributions](https://github.com/yasumorishima/oss-contributions) for full details.
 
 <details>
 <summary>PR highlights (click to expand)</summary>
