@@ -4,6 +4,8 @@ Manufacturing Engineer & Data Analyst with <!-- CAREER_YEARS_START -->18<!-- CAR
 
 > **In Production**: [Minami Baseball OB](https://minami-baseball-ob.vercel.app/) — Full-stack alumni site with 10 active users (38 pages · 22 DB tables · 130 e2e tests · ¥0/mo running cost) | [Docs](https://github.com/yasumorishima/minami-baseball-ob-docs)
 
+[![Findy Skill Deviation](https://img.shields.io/badge/Findy_Skill_Deviation-65--69-blue)](https://findy-code.io/skills-share/f6fUT0vdoVeI4) <sub>2026-04-18時点: 69</sub>
+
 ## 🌍 Realtime Open Data
 
 <table>
