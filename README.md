@@ -71,6 +71,10 @@ Manufacturing Engineer & Data Analyst with <!-- CAREER_YEARS_START -->18<!-- CAR
 Trunk rotation range vs pitch speed: r=0.425 (strongest). Contributed bug fix [PR #384](https://github.com/pyomeca/ezc3d/pull/384) to ezc3d.
 [Article (JP)](https://zenn.dev/shogaku/articles/baseball-cv-skeleton-biomechanics) / [Article (EN)](https://dev.to/yasumorishima/3d-skeleton-detection-from-baseball-motion-capture-data-with-driveline-c3d-29ja)
 
+### Apps (in development)
+
+**[Amateur Baseball Scorebook OCR](https://github.com/yasumorishima/baseball-scorebook-ocr)** — Photo-to-stats pipeline for amateur team scorebooks. Moonshot: Claude Opus 4.7 Vision reading specialized Japanese scorebook notation (`4-3`, `F7`, diamond shading for basepath progression) end-to-end. Built for the [Built with Opus 4.7 Hackathon](https://cerebralvalley.ai/e/built-with-4-7-hackathon) (Apr 2026).
+
 ### Statcast Analysis
 
 <!-- MLB_STATS_START -->6 analyses<!-- MLB_STATS_END --> covering Japanese MLB pitchers and Ohtani batting data.
