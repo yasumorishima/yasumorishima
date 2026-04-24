@@ -73,7 +73,7 @@ Trunk rotation range vs pitch speed: r=0.425 (strongest). Contributed bug fix [P
 
 ### Apps (in development)
 
-**[Amateur Baseball Scorebook OCR](https://github.com/yasumorishima/baseball-scorebook-ocr)** — Photo-to-stats pipeline for amateur team scorebooks. Moonshot: Claude Opus 4.7 Vision reading specialized Japanese scorebook notation (`4-3`, `F7`, diamond shading for basepath progression) end-to-end. Built for the [Built with Opus 4.7 Hackathon](https://cerebralvalley.ai/e/built-with-4-7-hackathon) (Apr 2026).
+**[Amateur Baseball Scorebook OCR](https://github.com/yasumorishima/baseball-scorebook-ocr)** — Photo-to-stats pipeline for amateur team scorebooks. Moonshot: Claude Opus 4.7 Vision reading specialized Japanese scorebook notation (`4-3`, `F7`, diamond shading for basepath progression) end-to-end.
 
 ### Statcast Analysis
 
