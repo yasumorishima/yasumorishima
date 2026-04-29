@@ -199,7 +199,7 @@ Full-stack web app for a high school baseball alumni association (<!--ob:ts_file
 </tr>
 </table>
 
-5-tier RBAC (Middleware + RLS), automated member pipeline (Form → GAS → Actions → Supabase), <!--ob:senseki-->683<!--/ob--> match records (1955–present)
+5-tier RBAC (Middleware + RLS), automated member pipeline (Form → GAS → Actions → Supabase), <!--ob:senseki-->681<!--/ob--> match records (1955–present)
 
 <details>
 <summary>Architecture & features</summary>
@@ -207,7 +207,7 @@ Full-stack web app for a high school baseball alumni association (<!--ob:ts_file
 - **5-tier RBAC** (guest → admin): Next.js Middleware + Supabase RLS — authorization at route, row, and component level
 - **Automated member pipeline**: Google Form → Apps Script → GitHub Actions auto-PR → Supabase role sync. Personal names never touch Git
 - **Custom CMS**: 8 editor pages + 5 inline edit, soft delete (7-day trash + auto-purge), change history, audit logs
-- **<!--ob:senseki-->683<!--/ob--> match records** (1955–present): cross-source verification, generation-based grouping, per-game photo management
+- **<!--ob:senseki-->681<!--/ob--> match records** (1955–present): cross-source verification, generation-based grouping, per-game photo management
 - **UX**: Unsaved warning, Web Share + LINE fallback, Calendar registration, ripple feedback, Suspense skeleton UI, weather forecast (Open-Meteo, 10 venues), automated game detection (2 sources → auto-PR)
 - **Security**: RLS on all 19 tables, `server-only` admin, CODEOWNERS, branch protection, secret scanning, cookie consent, 60-min session timeout
 
