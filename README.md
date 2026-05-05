@@ -257,6 +257,7 @@ Full-stack web app for a high school baseball alumni association (<!--ob:ts_file
 |---|---|
 | **[ICP Learning Project](https://github.com/yasumorishima/ICP_kinyoku)** | Persistent counter dApp on Internet Computer (Motoko, dfx CLI) |
 | **[OpenClaw Twitter Bot](https://github.com/yasumorishima/raspi-baseball-bot)** | Raspberry Pi 5 + OpenClaw + Gemini API auto-tweet bot (stopped) — [Article (JP)](https://zenn.dev/shogaku/articles/raspi-baseball-bot-openclaw-gemini) |
+| **[Fire TV Cube via RPi5](https://github.com/yasumorishima/alexa-rpi5)** 🔒 | RPi5 から Fire TV Cube を操作する CLI: 任意 JP テキスト announce / 音声コマンド / 各種 watcher (USD/JPY 等) → Cube に音声通知。 chromium cookie + Alexa API 直叩き |
 
 <details>
 <summary>Past Projects</summary>
