@@ -266,7 +266,7 @@ Full-stack web app for a high school baseball alumni association (<!--ob:ts_file
 |---|---|
 | [GAS Calendar Tool](https://github.com/yasumorishima/gas-calendar-tool) | Batch calendar event registration with senior-friendly mobile UI |
 | [Dune Analytics](https://github.com/yasumorishima/dune-analytics) | On-chain data analysis — [JPYC Stablecoin Dashboard](https://dune.com/shogaku_toushi/jpyc-date) |
-| **selenium-to-playwright** 🔒 | Playwright browser automation: 20+ scripts (樂天/docomo/Yahoo/LINE/ICP) + night batch runner with auto GitHub Issues |
+| **[selenium-to-playwright](https://github.com/yasumorishima/selenium-to-playwright)** 🔒 | Playwright browser automation: 20+ scripts (樂天/docomo/Yahoo/LINE/ICP) + night batch runner with auto GitHub Issues |
 | [Archived Projects](https://github.com/yasumorishima/archived-projects) | Selenium automation, business workflow tools, etc. |
 
 </details>
