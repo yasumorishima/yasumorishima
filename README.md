@@ -3,6 +3,8 @@ Manufacturing Engineer & Data Analyst with <!-- CAREER_YEARS_START -->18<!-- CAR
 (製造業にて<!-- CAREER_YEARS_JP_START -->18<!-- CAREER_YEARS_JP_END -->年の経験を持つエンジニア。データ分析・OSS貢献・業務自動化を専門としています)
 
 > **In Production**: [Minami Baseball OB](https://minami-baseball-ob.vercel.app/) — Full-stack alumni site with 10 active users (38 pages · 22 DB tables · 130 e2e tests · ¥0/mo running cost) | [Docs](https://github.com/yasumorishima/minami-baseball-ob-docs)
+>
+> **In Development**: Yokohama Funnies — Amateur baseball team site (~30 members), forked from Minami Baseball OB. Schema includes scorebook OCR ingestion + 草野球 stats (打率/出塁率/長打率/ERA/WHIP) | [Docs](https://github.com/yasumorishima/yokohama-funnies-docs)
 
 [![Findy Skill Deviation](https://img.shields.io/badge/Findy_Skill_Deviation-65--69-blue)](https://findy-code.io/skills-share/f6fUT0vdoVeI4) <sub>2026-04-18時点: 69</sub>
 
@@ -214,6 +216,16 @@ Full-stack web app for a high school baseball alumni association (<!--ob:ts_file
 </details>
 
 `Next.js 15 / TypeScript 5.8 / Tailwind CSS 4 / Supabase (PostgreSQL + Auth + Storage) / Vercel / GitHub Actions / Google Apps Script / GA4`
+
+### Yokohama Funnies — Amateur Baseball Team Site (In Development)
+
+Companion site for an amateur baseball team (~30 members), forked from Minami Baseball OB. **[Technical Documentation](https://github.com/yasumorishima/yokohama-funnies-docs)**
+
+5-tier RBAC + Google OAuth + Supabase. Custom schema for amateur baseball: **players** (jersey/bats/throws/active-OB) / **at_bats** (16-value outcome incl. `1B`/`2B`/`3B`/`HR`/`BB`/`HBP`/`K`/`SF`/`SH`/`FC`/`E`/`GO`/`FO`/`LO`/`DP`) / **pitching_logs** (IP/H/R/ER/BB/K/win/loss/save/hold) / **attendances** (○/△/×). Aggregated views compute 打率 / 出塁率 / 長打率 / ERA / WHIP / K9.
+
+Data ingestion via paper scorebook OCR (companion repo `baseball-scorebook-ocr`, Claude Opus 4.7 Vision) + spreadsheet migration (transition period).
+
+`Next.js 15 / TypeScript 5.8 / Tailwind CSS 4 / Supabase / Vercel / GitHub Actions / Google Apps Script`
 
 ### Dashboards & Mobile
 
