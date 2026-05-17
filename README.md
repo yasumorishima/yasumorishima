@@ -8,6 +8,51 @@ Manufacturing Engineer & Data Analyst with <!-- CAREER_YEARS_START -->18<!-- CAR
 
 [![Findy Skill Deviation](https://img.shields.io/badge/Findy_Skill_Deviation-65--69-blue)](https://findy-code.io/skills-share/f6fUT0vdoVeI4) <sub>2026-04-18時点: 69</sub>
 
+## ⚾ Baseball Websites
+
+### [Minami Baseball OB](https://minami-baseball-ob.vercel.app/) — Alumni Association Site (In Production)
+
+Full-stack web app for a high school baseball alumni association (<!--ob:ts_files-->136<!--/ob--> files, <!--ob:loc-->~16100<!--/ob--> LOC). **[Technical Documentation](https://github.com/yasumorishima/minami-baseball-ob-docs)**
+
+<table>
+<tr>
+<td align="center"><b>PC (Light)</b></td>
+<td align="center"><b>Game Results</b></td>
+</tr>
+<tr>
+<td><a href="https://minami-baseball-ob.vercel.app/"><img src="https://raw.githubusercontent.com/yasumorishima/minami-baseball-ob-docs/main/screenshots/top-pc.png" width="420"></a></td>
+<td><img src="https://raw.githubusercontent.com/yasumorishima/minami-baseball-ob-docs/main/screenshots/results.png" width="420"></td>
+</tr>
+</table>
+
+5-tier RBAC (Middleware + RLS), automated member pipeline (Form → GAS → Actions → Supabase), <!--ob:senseki-->681<!--/ob--> match records (1955–present)
+
+<details>
+<summary>Architecture & features</summary>
+
+- **5-tier RBAC** (guest → admin): Next.js Middleware + Supabase RLS — authorization at route, row, and component level
+- **Automated member pipeline**: Google Form → Apps Script → GitHub Actions auto-PR → Supabase role sync. Personal names never touch Git
+- **Custom CMS**: 8 editor pages + 5 inline edit, soft delete (7-day trash + auto-purge), change history, audit logs
+- **<!--ob:senseki-->681<!--/ob--> match records** (1955–present): cross-source verification, generation-based grouping, per-game photo management
+- **UX**: Unsaved warning, Web Share + LINE fallback, Calendar registration, ripple feedback, Suspense skeleton UI, weather forecast (Open-Meteo, 10 venues), automated game detection (2 sources → auto-PR)
+- **Security**: RLS on all 19 tables, `server-only` admin, CODEOWNERS, branch protection, secret scanning, cookie consent, 60-min session timeout
+
+</details>
+
+`Next.js 15 / TypeScript 5.8 / Tailwind CSS 4 / Supabase (PostgreSQL + Auth + Storage) / Vercel / GitHub Actions / Google Apps Script / GA4`
+
+### Yokohama Funnies — Amateur Baseball Team Site (In Development)
+
+Companion site for an amateur baseball team (~30 members), forked from Minami Baseball OB. **[Technical Documentation](https://github.com/yasumorishima/yokohama-funnies-docs)**
+
+5-tier RBAC + Google OAuth + Supabase. Custom schema for amateur baseball: **players** (jersey/bats/throws/active-OB) / **at_bats** (16-value outcome incl. `1B`/`2B`/`3B`/`HR`/`BB`/`HBP`/`K`/`SF`/`SH`/`FC`/`E`/`GO`/`FO`/`LO`/`DP`) / **pitching_logs** (IP/H/R/ER/BB/K/win/loss/save/hold) / **attendances** (○/△/×). Aggregated views compute 打率 / 出塁率 / 長打率 / ERA / WHIP / K9.
+
+Data ingestion via paper scorebook OCR (companion repo `baseball-scorebook-ocr`, Claude Opus 4.7 Vision) + spreadsheet migration (transition period).
+
+`Next.js 15 / TypeScript 5.8 / Tailwind CSS 4 / Supabase / Vercel / GitHub Actions / Google Apps Script`
+
+---
+
 ## 🌍 Realtime Open Data
 
 <table>
@@ -20,8 +65,8 @@ Manufacturing Engineer & Data Analyst with <!-- CAREER_YEARS_START -->18<!-- CAR
 <td><a href="https://github.com/yasumorishima/hormuz-ship-tracker"><img src="https://raw.githubusercontent.com/yasumorishima/hormuz-ship-tracker/master/docs/screenshot.png" width="420"></a></td>
 </tr>
 <tr>
-<td>31 geophysical data sources → ML earthquake prediction (AUC 0.754, CSEP Molchan 0.981) + real-time monitoring dashboard</td>
-<td>AIS vessel tracking across the Persian Gulf & Gulf of Oman with land mask filtering</td>
+<td>31 geophysical data sources → ML earthquake prediction (AUC 0.754, CSEP Molchan 0.981) + real-time monitoring dashboard<br><br>⏸️ <b>Paused</b> — RPi5 SSD recovery (2026-05-16). Will resume after recovery.</td>
+<td>AIS vessel tracking across the Persian Gulf & Gulf of Oman with land mask filtering<br><br>🛑 <b>Stopped</b> — RPi5 SSD failure (2026-05-16).</td>
 </tr>
 </table>
 
@@ -184,50 +229,7 @@ Currently competing in [On Top of Pasketti](https://www.drivendata.org/competiti
 
 ---
 
-## 🌐 Web & Apps
-
-### [Minami Baseball OB](https://minami-baseball-ob.vercel.app/) — Alumni Association Site
-
-Full-stack web app for a high school baseball alumni association (<!--ob:ts_files-->136<!--/ob--> files, <!--ob:loc-->~16100<!--/ob--> LOC). **[Technical Documentation](https://github.com/yasumorishima/minami-baseball-ob-docs)**
-
-<table>
-<tr>
-<td align="center"><b>PC (Light)</b></td>
-<td align="center"><b>Game Results</b></td>
-</tr>
-<tr>
-<td><a href="https://minami-baseball-ob.vercel.app/"><img src="https://raw.githubusercontent.com/yasumorishima/minami-baseball-ob-docs/main/screenshots/top-pc.png" width="420"></a></td>
-<td><img src="https://raw.githubusercontent.com/yasumorishima/minami-baseball-ob-docs/main/screenshots/results.png" width="420"></td>
-</tr>
-</table>
-
-5-tier RBAC (Middleware + RLS), automated member pipeline (Form → GAS → Actions → Supabase), <!--ob:senseki-->681<!--/ob--> match records (1955–present)
-
-<details>
-<summary>Architecture & features</summary>
-
-- **5-tier RBAC** (guest → admin): Next.js Middleware + Supabase RLS — authorization at route, row, and component level
-- **Automated member pipeline**: Google Form → Apps Script → GitHub Actions auto-PR → Supabase role sync. Personal names never touch Git
-- **Custom CMS**: 8 editor pages + 5 inline edit, soft delete (7-day trash + auto-purge), change history, audit logs
-- **<!--ob:senseki-->681<!--/ob--> match records** (1955–present): cross-source verification, generation-based grouping, per-game photo management
-- **UX**: Unsaved warning, Web Share + LINE fallback, Calendar registration, ripple feedback, Suspense skeleton UI, weather forecast (Open-Meteo, 10 venues), automated game detection (2 sources → auto-PR)
-- **Security**: RLS on all 19 tables, `server-only` admin, CODEOWNERS, branch protection, secret scanning, cookie consent, 60-min session timeout
-
-</details>
-
-`Next.js 15 / TypeScript 5.8 / Tailwind CSS 4 / Supabase (PostgreSQL + Auth + Storage) / Vercel / GitHub Actions / Google Apps Script / GA4`
-
-### Yokohama Funnies — Amateur Baseball Team Site (In Development)
-
-Companion site for an amateur baseball team (~30 members), forked from Minami Baseball OB. **[Technical Documentation](https://github.com/yasumorishima/yokohama-funnies-docs)**
-
-5-tier RBAC + Google OAuth + Supabase. Custom schema for amateur baseball: **players** (jersey/bats/throws/active-OB) / **at_bats** (16-value outcome incl. `1B`/`2B`/`3B`/`HR`/`BB`/`HBP`/`K`/`SF`/`SH`/`FC`/`E`/`GO`/`FO`/`LO`/`DP`) / **pitching_logs** (IP/H/R/ER/BB/K/win/loss/save/hold) / **attendances** (○/△/×). Aggregated views compute 打率 / 出塁率 / 長打率 / ERA / WHIP / K9.
-
-Data ingestion via paper scorebook OCR (companion repo `baseball-scorebook-ocr`, Claude Opus 4.7 Vision) + spreadsheet migration (transition period).
-
-`Next.js 15 / TypeScript 5.8 / Tailwind CSS 4 / Supabase / Vercel / GitHub Actions / Google Apps Script`
-
-### Dashboards & Mobile
+## 📱 Dashboards & Mobile
 
 | App | Description | Link |
 |---|---|---|
