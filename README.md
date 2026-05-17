@@ -2,17 +2,13 @@
 Manufacturing Engineer & Data Analyst with <!-- CAREER_YEARS_START -->18<!-- CAREER_YEARS_END --> years of experience, specializing in data analysis, open source contribution, and business automation.
 (製造業にて<!-- CAREER_YEARS_JP_START -->18<!-- CAREER_YEARS_JP_END -->年の経験を持つエンジニア。データ分析・OSS貢献・業務自動化を専門としています)
 
-> **In Production**: [Minami Baseball OB](https://minami-baseball-ob.vercel.app/) — Full-stack alumni site with 10 active users (38 pages · 22 DB tables · 130 e2e tests · ¥0/mo running cost) | [Docs](https://github.com/yasumorishima/minami-baseball-ob-docs)
->
-> **In Development**: Yokohama Funnies — Amateur baseball team site (~30 members), forked from Minami Baseball OB. Schema includes scorebook OCR ingestion + 草野球 stats (打率/出塁率/長打率/ERA/WHIP) | [Docs](https://github.com/yasumorishima/yokohama-funnies-docs)
-
 [![Findy Skill Deviation](https://img.shields.io/badge/Findy_Skill_Deviation-65--69-blue)](https://findy-code.io/skills-share/f6fUT0vdoVeI4) <sub>2026-04-18時点: 69</sub>
 
 ## ⚾ Baseball Websites
 
 ### [Minami Baseball OB](https://minami-baseball-ob.vercel.app/) — Alumni Association Site (In Production)
 
-Full-stack web app for a high school baseball alumni association (<!--ob:ts_files-->136<!--/ob--> files, <!--ob:loc-->~16100<!--/ob--> LOC). **[Technical Documentation](https://github.com/yasumorishima/minami-baseball-ob-docs)**
+Full-stack web app for a high school baseball alumni association — <!--ob:active_users-->10<!--/ob--> active users · <!--ob:pages-->38<!--/ob--> pages · <!--ob:db_tables-->22<!--/ob--> DB tables · <!--ob:e2e_tests-->130<!--/ob--> e2e tests · <!--ob:cost-->¥0<!--/ob-->/mo running cost (<!--ob:ts_files-->136<!--/ob--> files, <!--ob:loc-->~16100<!--/ob--> LOC). **[Technical Documentation](https://github.com/yasumorishima/minami-baseball-ob-docs)**
 
 <table>
 <tr>
