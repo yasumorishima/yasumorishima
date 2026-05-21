@@ -41,6 +41,17 @@ Full-stack web app for a high school baseball alumni association — <!--ob:acti
 
 Companion site for an amateur baseball team (~30 members), forked from Minami Baseball OB. **[Technical Documentation](https://github.com/yasumorishima/yokohama-funnies-docs)**
 
+<table>
+<tr>
+<td align="center"><b>PC (Light)</b></td>
+<td align="center"><b>Game Results</b></td>
+</tr>
+<tr>
+<td><a href="https://yokohama-funnies.vercel.app/"><img src="https://raw.githubusercontent.com/yasumorishima/yokohama-funnies-docs/main/screenshots/top-pc.png" width="420"></a></td>
+<td><img src="https://raw.githubusercontent.com/yasumorishima/yokohama-funnies-docs/main/screenshots/results.png" width="420"></td>
+</tr>
+</table>
+
 5-tier RBAC + Google OAuth + Supabase. Custom schema for amateur baseball: **players** (jersey/bats/throws/active-OB) / **at_bats** (16-value outcome incl. `1B`/`2B`/`3B`/`HR`/`BB`/`HBP`/`K`/`SF`/`SH`/`FC`/`E`/`GO`/`FO`/`LO`/`DP`) / **pitching_logs** (IP/H/R/ER/BB/K/win/loss/save/hold) / **attendances** (○/△/×). Aggregated views compute 打率 / 出塁率 / 長打率 / ERA / WHIP / K9.
 
 Data ingestion via paper scorebook OCR (companion repo `baseball-scorebook-ocr`, Claude Opus 4.7 Vision) + spreadsheet migration (transition period).
