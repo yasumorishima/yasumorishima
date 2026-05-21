@@ -37,7 +37,7 @@ Full-stack web app for a high school baseball alumni association — <!--ob:acti
 
 `Next.js 15 / TypeScript 5.8 / Tailwind CSS 4 / Supabase (PostgreSQL + Auth + Storage) / Vercel / GitHub Actions / Google Apps Script / GA4`
 
-### Yokohama Funnies — Amateur Baseball Team Site (In Development)
+### [Yokohama Funnies](https://yokohama-funnies.vercel.app/) — Amateur Baseball Team Site (In Development)
 
 Companion site for an amateur baseball team (~30 members), forked from Minami Baseball OB. **[Technical Documentation](https://github.com/yasumorishima/yokohama-funnies-docs)**
 
