@@ -37,7 +37,7 @@ Full-stack web app for a high school baseball alumni association — <!--ob:acti
 
 `Next.js 15 / TypeScript 5.8 / Tailwind CSS 4 / Supabase (PostgreSQL + Auth + Storage) / Vercel / GitHub Actions / Google Apps Script / GA4`
 
-### [Yokohama Funnies](https://yokohama-funnies.vercel.app/) — Amateur Baseball Team Site (In Development)
+### [Yokohama Funnies](https://yokohama-funnies.vercel.app/) — Amateur Baseball Team Site (Public Beta)
 
 Companion site for an amateur baseball team (~30 members), forked from Minami Baseball OB. **[Technical Documentation](https://github.com/yasumorishima/yokohama-funnies-docs)**
 
@@ -52,9 +52,9 @@ Companion site for an amateur baseball team (~30 members), forked from Minami Ba
 </tr>
 </table>
 
-5-tier RBAC + Google OAuth + Supabase. Custom schema for amateur baseball: **players** (jersey/bats/throws/active-OB) / **at_bats** (16-value outcome incl. `1B`/`2B`/`3B`/`HR`/`BB`/`HBP`/`K`/`SF`/`SH`/`FC`/`E`/`GO`/`FO`/`LO`/`DP`) / **pitching_logs** (IP/H/R/ER/BB/K/win/loss/save/hold) / **attendances** (○/△/×). Aggregated views compute 打率 / 出塁率 / 長打率 / ERA / WHIP / K9.
+5-tier RBAC + Google OAuth + Supabase. Custom schema for amateur baseball: **players** (jersey/bats/throws/active-OB/team_role/is_guest/photo_path/comment) / **game_player_batting** (per-game 14 cols: PA/AB/H/2B/3B/HR/RBI/BB+HB/SF/SB/K) / **game_player_pitching** (per-game IP/R/H/K/BB/W/L) / **attendances** (○/△/×) / **players_public** view (anon-readable roster, sensitive cols filtered). Aggregated views + client-side season filter compute 打率 / 出塁率 / 長打率 / OPS / ERA / WHIP / K9.
 
-Data ingestion via paper scorebook OCR (companion repo `baseball-scorebook-ocr`, Claude Opus 4.7 Vision) + spreadsheet migration (transition period).
+Data ingestion via paper scorebook OCR (companion repo `baseball-scorebook-ocr`, Claude Opus 4.7 Vision) + spreadsheet migration (transition period) + editor-facing manual input UI (`/edit/game-stats`) with side-by-side scorebook image + per-player stat grid. Public top page exposes a No. 06 ROSTER section (photo + jersey + role + comment grid) via `players_public` view. Editors can upload scorebook images directly from the result page.
 
 `Next.js 15 / TypeScript 5.8 / Tailwind CSS 4 / Supabase / Vercel / GitHub Actions / Google Apps Script`
 
