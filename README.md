@@ -32,6 +32,7 @@ Full-stack web app for a high school baseball alumni association — <!--ob:acti
 - **<!--ob:senseki-->681<!--/ob--> match records** (1955–present): cross-source verification, generation-based grouping, per-game photo management
 - **UX**: Unsaved warning, Web Share + LINE fallback, Calendar registration, ripple feedback, Suspense skeleton UI, weather forecast (Open-Meteo, 10 venues), automated game detection (2 sources → auto-PR)
 - **Security**: RLS on all 22 tables (16 main + 6 history), `server-only` admin, CODEOWNERS, branch protection, secret scanning, cookie consent, 60-min session timeout
+- **Silent-fail monitoring**: Hourly health-check workflow probes the full member-request + feedback pipeline (Vercel proxy / dispatch chain / GAS time trigger / gas-issue-form secret match / role-sync recency), with dual-channel alerts (GitHub Actions email + GAS Gmail). Built after a 1-month silent outage where a Form trigger lost its OAuth grant went unnoticed
 
 </details>
 
