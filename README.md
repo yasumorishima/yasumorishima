@@ -57,6 +57,8 @@ Companion site for an amateur baseball team (~30 members), forked from Minami Ba
 
 Data ingestion via paper scorebook OCR (companion repo `baseball-scorebook-ocr`, Claude Opus 4.7 Vision) + spreadsheet migration (transition period) + editor-facing manual input UI (`/edit/game-stats`) with side-by-side scorebook image + per-player stat grid. Public top page exposes a No. 06 ROSTER section (photo + jersey + role + comment grid) via `players_public` view. Editors can upload scorebook images directly from the result page.
 
+Membership & feedback automation: Google Form / in-app form → Apps Script → Vercel proxy → GitHub App auto-creates an issue and emails the admin. Actions run on a separate **public** repo to avoid the private repo's Actions quota. An hourly health-check workflow probes every notification path (Vercel proxy, dispatch ack, GAS heartbeat, feedback webhook secret) and alerts by email on any silent failure.
+
 `Next.js 15 / TypeScript 5.8 / Tailwind CSS 4 / Supabase / Vercel / GitHub Actions / Google Apps Script`
 
 ---
