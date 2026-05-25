@@ -42,17 +42,6 @@ Full-stack web app for a high school baseball alumni association — <!--ob:acti
 
 Companion site for an amateur baseball team, forked from Minami Baseball OB — <!--fn:players-->23<!--/fn-->-player roster · <!--fn:pages-->43<!--/fn--> pages · <!--fn:db_tables-->24<!--/fn--> DB tables · <!--fn:e2e_tests-->18<!--/fn--> e2e tests · <!--fn:cost-->¥0<!--/fn-->/mo running cost (<!--fn:ts_files-->146<!--/fn--> files, <!--fn:loc-->~16500<!--/fn--> LOC). **[Technical Documentation](https://github.com/yasumorishima/yokohama-funnies-docs)**
 
-<table>
-<tr>
-<td align="center"><b>PC (Light)</b></td>
-<td align="center"><b>Game Results</b></td>
-</tr>
-<tr>
-<td><a href="https://yokohama-funnies.vercel.app/"><img src="https://raw.githubusercontent.com/yasumorishima/yokohama-funnies-docs/main/screenshots/top-pc.png" width="420"></a></td>
-<td><img src="https://raw.githubusercontent.com/yasumorishima/yokohama-funnies-docs/main/screenshots/results.png" width="420"></td>
-</tr>
-</table>
-
 5-tier RBAC (Middleware + RLS), PR-based member approval (Form → GAS → Actions auto-PR → merge → role sync), custom amateur-baseball stats schema (per-game batting / pitching / attendance) with scorebook-OCR + manual-input ingestion
 
 <details>
