@@ -40,7 +40,7 @@ Full-stack web app for a high school baseball alumni association — <!--ob:acti
 
 ### [Yokohama Funnies](https://yokohama-funnies.vercel.app/) — Amateur Baseball Team Site (Public Beta)
 
-Companion site for an amateur baseball team, forked from Minami Baseball OB — 23-player roster · 43 pages · 24 DB tables · 18 e2e tests · ¥0/mo running cost (146 files, ~16500 LOC). **[Technical Documentation](https://github.com/yasumorishima/yokohama-funnies-docs)**
+Companion site for an amateur baseball team, forked from Minami Baseball OB — <!--fn:players-->23<!--/fn-->-player roster · <!--fn:pages-->43<!--/fn--> pages · <!--fn:db_tables-->24<!--/fn--> DB tables · <!--fn:e2e_tests-->18<!--/fn--> e2e tests · <!--fn:cost-->¥0<!--/fn-->/mo running cost (<!--fn:ts_files-->146<!--/fn--> files, <!--fn:loc-->~16500<!--/fn--> LOC). **[Technical Documentation](https://github.com/yasumorishima/yokohama-funnies-docs)**
 
 <table>
 <tr>
