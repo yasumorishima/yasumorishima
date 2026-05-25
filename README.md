@@ -53,13 +53,20 @@ Companion site for an amateur baseball team, forked from Minami Baseball OB — 
 </tr>
 </table>
 
-5-tier RBAC + Google OAuth + Supabase. Custom schema for amateur baseball: **players** (jersey/bats/throws/active-OB/team_role/is_guest/photo_path/comment) / **game_player_batting** (per-game 14 cols: PA/AB/H/2B/3B/HR/RBI/BB+HB/SF/SB/K) / **game_player_pitching** (per-game IP/R/H/K/BB/W/L) / **attendances** (○/△/×) / **players_public** view (anon-readable roster, sensitive cols filtered). Aggregated views + client-side season filter compute 打率 / 出塁率 / 長打率 / OPS / ERA / WHIP / K9.
+5-tier RBAC (Middleware + RLS), PR-based member approval (Form → GAS → Actions auto-PR → merge → role sync), custom amateur-baseball stats schema (per-game batting / pitching / attendance) with scorebook-OCR + manual-input ingestion
 
-Data ingestion via paper scorebook OCR (companion repo `baseball-scorebook-ocr`, Claude Opus 4.7 Vision) + spreadsheet migration (transition period) + editor-facing manual input UI (`/edit/game-stats`) with side-by-side scorebook image + per-player stat grid. Public top page exposes a No. 06 ROSTER section (photo + jersey + role + comment grid) via `players_public` view. Editors can upload scorebook images directly from the result page.
+<details>
+<summary>Architecture & features</summary>
 
-Membership automation (identical topology to Minami): Google Form → Apps Script → Vercel proxy → GitHub App auto-creates an **approval PR** editing a roles allowlist (`config/members.yml`); merging it triggers a polling role-sync to Supabase plus an approval email to the member — approve by merge. Feedback: in-app form → GitHub App auto-issues + admin email. Actions run on a separate **public** repo to avoid the private repo's Actions quota. An hourly health-check workflow probes every notification path (Vercel proxy, dispatch ack, GAS heartbeat, feedback webhook secret) and alerts by email on any silent failure.
+- **5-tier RBAC** (guest → admin): Next.js Middleware + Supabase RLS — authorization at route, row, and component level (Google OAuth)
+- **PR-based member approval** (same topology as Minami): Google Form → Apps Script → Vercel proxy → GitHub App auto-creates an approval PR editing a roles allowlist (`config/members.yml`); merging triggers a polling role-sync to Supabase + an approval email to the member — approve by merge. Personal data stays minimal in Git
+- **Amateur-baseball stats schema**: `players` (jersey / bats / throws / is_guest / photo / comment), per-game `game_player_batting` (14 cols) + `game_player_pitching`, `attendances` (○/△/×); aggregated views + client-side season filter compute 打率 / 出塁率 / 長打率 / OPS / ERA / WHIP / K9
+- **Stat ingestion**: paper scorebook OCR (companion repo `baseball-scorebook-ocr`, Claude Opus 4.7 Vision) + spreadsheet migration + editor manual-input UI (`/edit/game-stats`, scorebook image side-by-side + per-player grid); editors upload scorebook images straight from the result page
+- **Custom CMS / UX**: dedicated + inline editor pages, soft delete (7-day trash + auto-purge), change history, audit logs, public No. 06 ROSTER section (photo + jersey + role + comment) via `players_public` view, Open-Meteo weather forecast with WBGT heat-stress display
+- **Security**: Supabase RLS on all tables, anon-readable roster view with sensitive columns filtered, server-only admin, gitleaks secret scanning, notifications isolated on a separate public Actions repo
+- **Silent-fail monitoring**: hourly health-check workflow probes every notification path (Vercel proxy / dispatch ack / GAS heartbeat / feedback webhook secret) with email alerts on any silent failure
 
-Operational parity with Minami: 5-tier RBAC (Next.js Middleware + Supabase RLS), soft delete (7-day trash + auto-purge) with change history + audit logs, inline + dedicated editor pages, Open-Meteo weather forecast with WBGT heat-stress display, and monthly auto-updated repository stats.
+</details>
 
 `Next.js 15 / TypeScript 5.8 / Tailwind CSS 4 / Supabase / Vercel / GitHub Actions / Google Apps Script`
 
