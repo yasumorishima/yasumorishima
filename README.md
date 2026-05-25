@@ -40,7 +40,7 @@ Full-stack web app for a high school baseball alumni association — <!--ob:acti
 
 ### [Yokohama Funnies](https://yokohama-funnies.vercel.app/) — Amateur Baseball Team Site (Public Beta)
 
-Companion site for an amateur baseball team (~30 members), forked from Minami Baseball OB. **[Technical Documentation](https://github.com/yasumorishima/yokohama-funnies-docs)**
+Companion site for an amateur baseball team, forked from Minami Baseball OB — 23-player roster · 43 pages · 24 DB tables · 18 e2e tests · ¥0/mo running cost (146 files, ~16500 LOC). **[Technical Documentation](https://github.com/yasumorishima/yokohama-funnies-docs)**
 
 <table>
 <tr>
@@ -57,7 +57,9 @@ Companion site for an amateur baseball team (~30 members), forked from Minami Ba
 
 Data ingestion via paper scorebook OCR (companion repo `baseball-scorebook-ocr`, Claude Opus 4.7 Vision) + spreadsheet migration (transition period) + editor-facing manual input UI (`/edit/game-stats`) with side-by-side scorebook image + per-player stat grid. Public top page exposes a No. 06 ROSTER section (photo + jersey + role + comment grid) via `players_public` view. Editors can upload scorebook images directly from the result page.
 
-Membership & feedback automation: Google Form / in-app form → Apps Script → Vercel proxy → GitHub App auto-creates an issue and emails the admin. Actions run on a separate **public** repo to avoid the private repo's Actions quota. An hourly health-check workflow probes every notification path (Vercel proxy, dispatch ack, GAS heartbeat, feedback webhook secret) and alerts by email on any silent failure.
+Membership automation (identical topology to Minami): Google Form → Apps Script → Vercel proxy → GitHub App auto-creates an **approval PR** editing a roles allowlist (`config/members.yml`); merging it triggers a polling role-sync to Supabase plus an approval email to the member — approve by merge. Feedback: in-app form → GitHub App auto-issues + admin email. Actions run on a separate **public** repo to avoid the private repo's Actions quota. An hourly health-check workflow probes every notification path (Vercel proxy, dispatch ack, GAS heartbeat, feedback webhook secret) and alerts by email on any silent failure.
+
+Operational parity with Minami: 5-tier RBAC (Next.js Middleware + Supabase RLS), soft delete (7-day trash + auto-purge) with change history + audit logs, inline + dedicated editor pages, Open-Meteo weather forecast with WBGT heat-stress display, and monthly auto-updated repository stats.
 
 `Next.js 15 / TypeScript 5.8 / Tailwind CSS 4 / Supabase / Vercel / GitHub Actions / Google Apps Script`
 
