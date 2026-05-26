@@ -32,7 +32,7 @@ Full-stack web app for a high school baseball alumni association — <!--ob:acti
 - **<!--ob:senseki-->681<!--/ob--> match records** (1955–present): cross-source verification, generation-based grouping, per-game photo management
 - **UX**: Unsaved warning, Web Share + LINE fallback, Calendar registration, ripple feedback, Suspense skeleton UI, weather forecast (Open-Meteo, 10 venues), automated game detection (2 sources → auto-PR)
 - **Security**: RLS on all 22 tables (16 main + 6 history), `server-only` admin, CODEOWNERS, branch protection, secret scanning, cookie consent, 60-min session timeout
-- **Silent-fail monitoring**: Hourly health-check workflow probes the full member-request + feedback pipeline (Vercel proxy / dispatch chain / GAS time trigger / gas-issue-form secret match / role-sync recency), with dual-channel alerts (GitHub Actions email + GAS Gmail). Built after a 1-month silent outage where a Form trigger lost its OAuth grant went unnoticed
+- **Silent-fail monitoring**: Hourly health-check workflow probes the full member-request + feedback pipeline (Vercel proxy / dispatch chain / GAS time trigger / gas-issue-form secret match / role-sync recency), plus member-request/sync-roles workflow-run failure and sync-roles liveness (cron-stall) detection that auto-opens a tracking GitHub issue and auto-closes it on recovery, with dual-channel alerts (GitHub Actions email + GAS Gmail). Built after a 1-month silent outage where a Form trigger lost its OAuth grant went unnoticed
 
 </details>
 
@@ -53,7 +53,7 @@ Companion site for an amateur baseball team, forked from Minami Baseball OB — 
 - **Stat ingestion**: paper scorebook OCR (companion repo `baseball-scorebook-ocr`, Claude Opus 4.7 Vision) + spreadsheet migration + editor manual-input UI (`/edit/game-stats`, scorebook image side-by-side + per-player grid); editors upload scorebook images straight from the result page
 - **Custom CMS / UX**: dedicated + inline editor pages, soft delete (7-day trash + auto-purge), change history, audit logs, public No. 06 ROSTER section (photo + jersey + role + comment) via `players_public` view, Open-Meteo weather forecast with WBGT heat-stress display
 - **Security**: Supabase RLS on all tables, anon-readable roster view with sensitive columns filtered, server-only admin, gitleaks secret scanning, notifications isolated on a separate public Actions repo
-- **Silent-fail monitoring**: hourly health-check workflow probes every notification path (Vercel proxy / dispatch ack / GAS heartbeat / feedback webhook secret) with email alerts on any silent failure
+- **Silent-fail monitoring**: hourly health-check workflow probes every notification path (Vercel proxy / dispatch ack / GAS heartbeat / feedback webhook secret) plus member-request/sync-roles workflow-run failure and sync-roles liveness detection (auto-opens/closes a GitHub issue), with email alerts on any silent failure
 
 </details>
 
