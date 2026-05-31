@@ -2,7 +2,7 @@
 Manufacturing Engineer & Data Analyst with <!-- CAREER_YEARS_START -->18<!-- CAREER_YEARS_END --> years of experience, specializing in data analysis, open source contribution, and business automation.
 (製造業にて<!-- CAREER_YEARS_JP_START -->18<!-- CAREER_YEARS_JP_END -->年の経験を持つエンジニア。データ分析・OSS貢献・業務自動化を専門としています)
 
-[![Findy Skill Deviation](https://img.shields.io/badge/Findy_Skill_Deviation-65--69-blue)](https://findy-code.io/skills-share/f6fUT0vdoVeI4) <sub>2026-04-18時点: 69</sub>
+[![Findy Skill Deviation](https://img.shields.io/badge/Findy_Skill_Deviation-73.0-blue)](https://findy-code.io/skills-share/f6fUT0vdoVeI4) <sub>2026-06-01時点: 73.0</sub>
 
 ## ⚾ Baseball Websites
 
