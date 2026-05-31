@@ -73,7 +73,7 @@ Companion site for an amateur baseball team, forked from Minami Baseball OB — 
 <td><a href="https://github.com/yasumorishima/hormuz-ship-tracker"><img src="https://raw.githubusercontent.com/yasumorishima/hormuz-ship-tracker/master/docs/screenshot.png" width="420"></a></td>
 </tr>
 <tr>
-<td>31 geophysical data sources → ML earthquake prediction (AUC 0.754, CSEP Molchan 0.981) + real-time monitoring dashboard<br><br>⏸️ <b>Paused</b> — RPi5 SSD recovery (2026-05-16). Will resume after recovery.</td>
+<td>31 geophysical data sources → ML earthquake prediction (AUC 0.754, CSEP Molchan 0.981) + real-time monitoring dashboard</td>
 <td>AIS vessel tracking across the Persian Gulf & Gulf of Oman with land mask filtering<br><br>🛑 <b>Stopped</b> — RPi5 SSD failure (2026-05-16).</td>
 </tr>
 </table>
