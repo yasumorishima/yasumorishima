@@ -8,7 +8,7 @@ Manufacturing Engineer & Data Analyst with <!-- CAREER_YEARS_START -->18<!-- CAR
 
 ### [Minami Baseball OB](https://minami-baseball-ob.vercel.app/) — Alumni Association Site (In Production)
 
-Full-stack web app for a high school baseball alumni association — <!--ob:active_users-->9<!--/ob--> active users · <!--ob:pages-->43<!--/ob--> pages · <!--ob:db_tables-->22<!--/ob--> DB tables · <!--ob:e2e_tests-->18<!--/ob--> e2e tests · <!--ob:cost-->¥0<!--/ob-->/mo running cost (<!--ob:ts_files-->147<!--/ob--> files, <!--ob:loc-->~16800<!--/ob--> LOC). **[Technical Documentation](https://github.com/yasumorishima/minami-baseball-ob-docs)**
+Full-stack web app for a high school baseball alumni association — <!--ob:active_users-->9<!--/ob--> active users · <!--ob:pages-->43<!--/ob--> pages · <!--ob:db_tables-->22<!--/ob--> DB tables · <!--ob:e2e_tests-->18<!--/ob--> e2e tests · <!--ob:cost-->¥0<!--/ob-->/mo running cost (<!--ob:ts_files-->148<!--/ob--> files, <!--ob:loc-->~17000<!--/ob--> LOC). **[Technical Documentation](https://github.com/yasumorishima/minami-baseball-ob-docs)**
 
 <table>
 <tr>
