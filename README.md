@@ -233,7 +233,7 @@ Civic tech projects for political transparency & citizen participation in Japan.
 ### DrivenData
 
 **[DrivenData Competitions](https://github.com/yasumorishima/drivendata-comp)** — Automated pipeline: GitHub Actions + GPU training + GPU→CPU fallback.
-Currently competing in [On Top of Pasketti](https://www.drivendata.org/competitions/309/) (Children's ASR, $120K prize, Wav2Vec2 CTC).
+Most recently competed in [On Top of Pasketti](https://www.drivendata.org/competitions/309/) (Children's ASR, $120K prize, Wav2Vec2 CTC; submission deadline 2026-04-06).
 
 ---
 
