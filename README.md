@@ -73,14 +73,14 @@ Companion site for an amateur baseball team, forked from Minami Baseball OB — 
 <td><a href="https://github.com/yasumorishima/hormuz-ship-tracker"><img src="https://raw.githubusercontent.com/yasumorishima/hormuz-ship-tracker/master/docs/screenshot.png" width="420"></a></td>
 </tr>
 <tr>
-<td>31 geophysical data sources → ML earthquake prediction (AUC 0.754, CSEP Molchan 0.981) + real-time monitoring dashboard</td>
+<td>31 geophysical data sources → ML earthquake prediction (walk-forward AUC ~0.80 via ConvLSTM, CSEP Molchan 0.981) + real-time monitoring dashboard</td>
 <td>AIS vessel tracking across the Persian Gulf & Gulf of Oman with land mask filtering<br><br>🛑 <b>Stopped</b> — RPi5 SSD failure (2026-05-16).</td>
 </tr>
 </table>
 
 `Real-time API / WebSocket → SQLite → FastAPI + Leaflet.js (dark theme)` — [All projects](https://github.com/yasumorishima/realtime-open-data)
 
-**[Japan Geohazard Monitor](https://github.com/yasumorishima/japan-geohazard-monitor)** — Earthquake prediction research: 76 features from 25+ sources (USGS, Earthdata, INTERMAGNET, NMDB, NOAA, IOC), walk-forward HistGBT + stacking, BigQuery data platform (216K rows). Weekly automated CI pipeline on GitHub Actions.
+**[Japan Geohazard Monitor](https://github.com/yasumorishima/japan-geohazard-monitor)** — Earthquake prediction research: 85 features from 25+ sources (USGS, Earthdata, INTERMAGNET, NMDB, NOAA, IOC); walk-forward HistGBT + elastic-net + ConvLSTM (best walk-forward AUC ~0.80 on a Kaggle T4), data published as a public Hugging Face dataset. Weekly automated CI pipeline on GitHub Actions.
 
 ---
 
