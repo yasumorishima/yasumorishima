@@ -93,8 +93,8 @@ Companion site for an amateur baseball team, forked from Minami Baseball OB — 
 | **[NPB Season Prediction](https://github.com/yasumorishima/npb-prediction)** | Bayesian ensemble (Marcel 35% + Stan/Ridge 40% + ML 25%) + Monte Carlo team simulation + 24 foreign player individual projections | [Live](https://npb-prediction.streamlit.app/) |
 | **[NPB 2021 Backtest](https://github.com/yasumorishima/npb-2021-backtest)** | Could Bayesian model predict Yakult & Orix last→champion? 25 foreign players with FanGraphs data | [Analysis](https://github.com/yasumorishima/npb-2021-backtest) |
 | **[MLB Win Probability Engine](https://github.com/yasumorishima/mlb-win-probability)** | 3-engine ensemble WP (Normal + Empirical + LightGBM) + Gemini AI commentary | [Live](https://mlb-wp-engine.streamlit.app/) |
-| **[Baseball MLOps Pipeline](https://github.com/yasumorishima/baseball-mlops)** | Statcast × GCP MLOps: 5-model ensemble + BQML, weekly auto-retrained on BigQuery + Cloud Run | [Live](https://baseball-mlops.streamlit.app/) |
-| **[MLB Data Pipeline](https://github.com/yasumorishima/mlb-data-pipeline)** | Shared BigQuery data platform — FanGraphs + Savant + Statcast for all baseball analytics projects | — |
+| **[Baseball MLOps Pipeline](https://github.com/yasumorishima/baseball-mlops)** | Statcast MLOps: 5-model ensemble — weekly auto-retrain paused (BigQuery retired 2026-04, data layer being rebuilt on Hugging Face) | [Live](https://baseball-mlops.streamlit.app/) |
+| **[MLB Data Pipeline](https://github.com/yasumorishima/mlb-data-pipeline)** | Shared data platform — FanGraphs + Savant + Statcast published as a public Hugging Face dataset, weekly auto-refresh via GitHub Actions | [HF Dataset](https://huggingface.co/datasets/yasumorishima/mlb-stats) |
 
 <details>
 <summary>Prediction accuracy & details</summary>
@@ -192,7 +192,7 @@ Civic tech projects for political transparency & citizen participation in Japan.
 
 <!-- KAGGLE_COMP_STATS_START -->Notebooks Expert | 🥉 14 Bronze Notebook Medals<!-- KAGGLE_COMP_STATS_END -->
 
-**Active:** [Deep Past](https://www.kaggle.com/competitions/deep-past-initiative-machine-translation) (Akkadian→English) / [BirdCLEF+ 2026](https://www.kaggle.com/competitions/birdclef-2026) (Bird Sound Recognition)
+**Active:** [Stanford RNA 3D Folding 2](https://www.kaggle.com/competitions/stanford-rna-3d-folding-2) (RNA structure prediction) / NIR Moisture Prediction (SIGNATE, wood spectroscopy) — [BirdCLEF+ 2026](https://www.kaggle.com/competitions/birdclef-2026) finished 2026-06
 
 <details>
 <summary>Bronze Medal Notebooks (14)</summary>
@@ -299,7 +299,7 @@ Most recently competed in [On Top of Pasketti](https://www.drivendata.org/compet
 | Category | Technologies |
 | --- | --- |
 | **Data Analysis & ML** | Python, pandas, scikit-learn, LightGBM, XGBoost, CatBoost, PyTorch, matplotlib, seaborn, DuckDB, W&B |
-| **Data Platform** | Google BigQuery (8 datasets, 96+ tables — baseball, geohazard, ship tracking), BigQuery ML, Cloud Run, Grafana |
+| **Data Platform** | Hugging Face Datasets (MLB / NPB / geohazard — public, auto-refreshed via GitHub Actions), SQLite, ~~BigQuery + BQML + Cloud Run + Grafana~~ (retired 2026-04) |
 | **Data Sources** | Baseball Savant (Statcast), pybaseball, USGS, NASA Earthdata, AIS |
 | **Web & Dashboards** | Streamlit, Next.js, TypeScript, Supabase, Vercel, shadcn/ui |
 | **Mobile App** | Flutter, Dart, Hive, Google AdMob |
