@@ -211,7 +211,7 @@ Civic tech projects for political transparency & citizen participation in Japan.
 
 ### Kaggle Datasets
 
-<!-- KAGGLE_DS_STATS_START -->19 published MLB datasets<!-- KAGGLE_DS_STATS_END -->
+<!-- KAGGLE_DS_STATS_START -->22 published MLB datasets<!-- KAGGLE_DS_STATS_END -->
 
 | Dataset | Description |
 |---------|-------------|
