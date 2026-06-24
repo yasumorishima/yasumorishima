@@ -192,7 +192,7 @@ Civic tech projects for political transparency & citizen participation in Japan.
 
 <!-- KAGGLE_COMP_STATS_START -->Notebooks Expert | 🥉 14 Bronze Notebook Medals<!-- KAGGLE_COMP_STATS_END -->
 
-**Active:** [Playground Series S6E6 - Stellar Classification](https://www.kaggle.com/competitions/playground-series-s6e6) (macro-F1, public LB 0.95944 via two-stage pseudo-label distillation) / [Stanford RNA 3D Folding 2](https://www.kaggle.com/competitions/stanford-rna-3d-folding-2) (RNA structure prediction) / NIR Moisture Prediction (SIGNATE, wood spectroscopy) — [BirdCLEF+ 2026](https://www.kaggle.com/competitions/birdclef-2026) finished 2026-06
+**Active:** [ROGII Wellbore Geology Prediction](https://www.kaggle.com/competitions/rogii-wellbore-geology-prediction) ($50K, wellbore TVT regression — public LB 7.311, rank 480/3589 top 13.4%) / [Playground Series S6E6 - Stellar Classification](https://www.kaggle.com/competitions/playground-series-s6e6) (macro-F1, public LB 0.95944 via two-stage pseudo-label distillation) / NIR Moisture Prediction (SIGNATE, wood spectroscopy) — [Stanford RNA 3D Folding 2](https://www.kaggle.com/competitions/stanford-rna-3d-folding-2) & [BirdCLEF+ 2026](https://www.kaggle.com/competitions/birdclef-2026) finished 2026-06
 
 <details>
 <summary>Bronze Medal Notebooks (14)</summary>
