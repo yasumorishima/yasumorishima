@@ -152,7 +152,7 @@ Trunk rotation range vs pitch speed: r=0.425 (strongest). Contributed bug fix [P
 
 ## 🌐 Open Source Contributions
 
-<!-- OSS_STATS_START -->(69 PRs / 35 Merged)<!-- OSS_STATS_END --> across 32 repositories. See [oss-contributions](https://github.com/yasumorishima/oss-contributions) for full details.
+<!-- OSS_STATS_START -->(71 PRs / 35 Merged)<!-- OSS_STATS_END --> across 32 repositories. See [oss-contributions](https://github.com/yasumorishima/oss-contributions) for full details.
 
 <details>
 <summary>PR highlights (click to expand)</summary>
@@ -169,7 +169,7 @@ Trunk rotation range vs pitch speed: r=0.425 (strongest). Contributed bug fix [P
 | **jldbc/pybaseball** | [#498-504](https://github.com/jldbc/pybaseball) | Bug fixes & documentation |
 
 <details>
-<summary>team-mirai — Civic Tech OSS (<!-- TEAM_MIRAI_STATS_START -->21 PRs (11 Merged / 2 Open / 8 Closed)<!-- TEAM_MIRAI_STATS_END -->)</summary>
+<summary>team-mirai — Civic Tech OSS (<!-- TEAM_MIRAI_STATS_START -->22 PRs (11 Merged / 3 Open / 8 Closed)<!-- TEAM_MIRAI_STATS_END -->)</summary>
 
 Civic tech projects for political transparency & citizen participation in Japan. Next.js / TypeScript / Supabase / Vitest.
 
@@ -211,7 +211,7 @@ Civic tech projects for political transparency & citizen participation in Japan.
 
 ### Kaggle Datasets
 
-<!-- KAGGLE_DS_STATS_START -->24 published MLB datasets<!-- KAGGLE_DS_STATS_END -->
+<!-- KAGGLE_DS_STATS_START -->26 published MLB datasets<!-- KAGGLE_DS_STATS_END -->
 
 | Dataset | Description |
 |---------|-------------|
