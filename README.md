@@ -8,7 +8,7 @@ Manufacturing Engineer & Data Analyst with <!-- CAREER_YEARS_START -->18<!-- CAR
 
 ### [Minami Baseball OB](https://minami-baseball-ob.vercel.app/) — Alumni Association Site (In Production)
 
-Full-stack web app for a high school baseball alumni association — <!--ob:active_users-->9<!--/ob--> active users · <!--ob:pages-->43<!--/ob--> pages · <!--ob:db_tables-->22<!--/ob--> DB tables · <!--ob:e2e_tests-->18<!--/ob--> e2e tests · <!--ob:cost-->¥0<!--/ob-->/mo running cost (<!--ob:ts_files-->148<!--/ob--> files, <!--ob:loc-->~17000<!--/ob--> LOC). **[Technical Documentation](https://github.com/yasumorishima/minami-baseball-ob-docs)**
+Full-stack web app for a high school baseball alumni association — <!--ob:active_users-->11<!--/ob--> active users · <!--ob:pages-->43<!--/ob--> pages · <!--ob:db_tables-->23<!--/ob--> DB tables · <!--ob:e2e_tests-->18<!--/ob--> e2e tests · <!--ob:cost-->¥0<!--/ob-->/mo running cost (<!--ob:ts_files-->149<!--/ob--> files, <!--ob:loc-->~17300<!--/ob--> LOC). **[Technical Documentation](https://github.com/yasumorishima/minami-baseball-ob-docs)**
 
 <table>
 <tr>
@@ -40,7 +40,7 @@ Full-stack web app for a high school baseball alumni association — <!--ob:acti
 
 ### [Yokohama Funnies](https://yokohama-funnies.vercel.app/) — Amateur Baseball Team Site (In Production)
 
-Companion site for an amateur baseball team, forked from Minami Baseball OB — <!--fn:players-->23<!--/fn-->-player roster · <!--fn:pages-->43<!--/fn--> pages · <!--fn:db_tables-->24<!--/fn--> DB tables · <!--fn:e2e_tests-->18<!--/fn--> e2e tests · <!--fn:cost-->¥0<!--/fn-->/mo running cost (<!--fn:ts_files-->146<!--/fn--> files, <!--fn:loc-->~16500<!--/fn--> LOC). **[Technical Documentation](https://github.com/yasumorishima/yokohama-funnies-docs)**
+Companion site for an amateur baseball team, forked from Minami Baseball OB — <!--fn:players-->23<!--/fn-->-player roster · <!--fn:pages-->43<!--/fn--> pages · <!--fn:db_tables-->26<!--/fn--> DB tables · <!--fn:e2e_tests-->18<!--/fn--> e2e tests · <!--fn:cost-->¥0<!--/fn-->/mo running cost (<!--fn:ts_files-->146<!--/fn--> files, <!--fn:loc-->~16900<!--/fn--> LOC). **[Technical Documentation](https://github.com/yasumorishima/yokohama-funnies-docs)**
 
 5-tier RBAC (Middleware + RLS), PR-based member approval (Form → GAS → Actions auto-PR → merge → role sync), custom amateur-baseball stats schema (per-game batting / pitching / attendance) with scorebook-OCR + manual-input ingestion
 
