@@ -42,7 +42,7 @@ Full-stack web app for a high school baseball alumni association — <!--ob:acti
 
 Companion site for an amateur baseball team, forked from Minami Baseball OB — <!--fn:players-->23<!--/fn-->-player roster · <!--fn:pages-->43<!--/fn--> pages · <!--fn:db_tables-->26<!--/fn--> DB tables · <!--fn:e2e_tests-->18<!--/fn--> e2e tests · <!--fn:cost-->¥0<!--/fn-->/mo running cost (<!--fn:ts_files-->146<!--/fn--> files, <!--fn:loc-->~16900<!--/fn--> LOC). **[Technical Documentation](https://github.com/yasumorishima/yokohama-funnies-docs)**
 
-5-tier RBAC (Middleware + RLS), PR-based member approval (Form → GAS → Actions auto-PR → merge → role sync), custom amateur-baseball stats schema (per-game batting / pitching / attendance) with scorebook-OCR + manual-input ingestion
+5-tier RBAC (Middleware + RLS), PR-based member approval (Form → GAS → Actions auto-PR → merge → role sync), custom amateur-baseball stats schema (per-game batting / pitching / attendance) with manual-input + spreadsheet-migration ingestion
 
 <details>
 <summary>Architecture & features</summary>
@@ -50,7 +50,7 @@ Companion site for an amateur baseball team, forked from Minami Baseball OB — 
 - **5-tier RBAC** (guest → admin): Next.js Middleware + Supabase RLS — authorization at route, row, and component level (Google OAuth)
 - **PR-based member approval** (same topology as Minami): Google Form → Apps Script → Vercel proxy → GitHub App auto-creates an approval PR editing a roles allowlist (`config/members.yml`); merging triggers a polling role-sync to Supabase + an approval email to the member — approve by merge. Personal data stays minimal in Git
 - **Amateur-baseball stats schema**: `players` (jersey / bats / throws / is_guest / photo / comment), per-game `game_player_batting` (14 cols) + `game_player_pitching`, `attendances` (○/△/×); aggregated views + client-side season filter compute 打率 / 出塁率 / 長打率 / OPS / ERA / WHIP / K9
-- **Stat ingestion**: paper scorebook OCR (companion repo `baseball-scorebook-ocr`, Claude Opus 4.7 Vision) + spreadsheet migration + editor manual-input UI (`/edit/game-stats`, scorebook image side-by-side + per-player grid); editors upload scorebook images straight from the result page
+- **Stat ingestion**: spreadsheet migration + editor manual-input UI (`/edit/game-stats`, scorebook image side-by-side + per-player grid); editors upload scorebook images straight from the result page
 - **Custom CMS / UX**: dedicated + inline editor pages, soft delete (7-day trash + auto-purge), change history, audit logs, public No. 06 ROSTER section (photo + jersey + role + comment) via `players_public` view, Open-Meteo weather forecast with WBGT heat-stress display
 - **Security**: Supabase RLS on all tables, anon-readable roster view with sensitive columns filtered, server-only admin, gitleaks secret scanning, notifications isolated on a separate public Actions repo
 - **Silent-fail monitoring**: hourly health-check workflow probes every notification path (Vercel proxy / dispatch ack / GAS heartbeat / feedback webhook secret) plus member-request/sync-roles workflow-run failure and sync-roles liveness detection (auto-opens/closes a GitHub issue), with email alerts on any silent failure
@@ -128,7 +128,7 @@ Trunk rotation range vs pitch speed: r=0.425 (strongest). Contributed bug fix [P
 
 ### Apps (in development)
 
-**[Amateur Baseball Scorebook OCR](https://github.com/yasumorishima/baseball-scorebook-ocr)** — Photo-to-stats pipeline for amateur team scorebooks. Moonshot: Claude Opus 4.7 Vision reading specialized Japanese scorebook notation (`4-3`, `F7`, diamond shading for basepath progression) end-to-end.
+**[Amateur Baseball Scorebook OCR](https://github.com/yasumorishima/baseball-scorebook-ocr)** *(WIP — paused)* — Photo-to-stats pipeline for amateur team scorebooks. Moonshot: Claude Opus 4.7 Vision reading specialized Japanese scorebook notation (`4-3`, `F7`, diamond shading for basepath progression) end-to-end.
 
 ### Statcast Analysis
 
