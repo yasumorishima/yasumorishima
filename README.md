@@ -126,9 +126,9 @@ Companion site for an amateur baseball team, forked from Minami Baseball OB — 
 Trunk rotation range vs pitch speed: r=0.425 (strongest). Contributed bug fix [PR #384](https://github.com/pyomeca/ezc3d/pull/384) to ezc3d.
 [Article (JP)](https://zenn.dev/shogaku/articles/baseball-cv-skeleton-biomechanics) / [Article (EN)](https://dev.to/yasumorishima/3d-skeleton-detection-from-baseball-motion-capture-data-with-driveline-c3d-29ja)
 
-### Apps (in development)
+### Handwritten Scorebook OCR 🔒 *(private R&D, active)*
 
-**[Amateur Baseball Scorebook OCR](https://github.com/yasumorishima/baseball-scorebook-ocr)** *(WIP — paused)* — Photo-to-stats pipeline for amateur team scorebooks. Moonshot: Claude Opus 4.7 Vision reading specialized Japanese scorebook notation (`4-3`, `F7`, diamond shading for basepath progression) end-to-end.
+**Amateur Baseball Scorebook Reader** — reads handwritten Japanese paper scorebooks (紙スコアブック) from photos into structured at-bat data. No paid APIs, no cloud OCR: deterministic computer vision (OpenCV on a Raspberry Pi 5) fused with a game-logic constraint solver that only accepts readings consistent with legal base-running. Recognition of the hardest mark class went from ~30% (template matching alone) to ~80% pooled with the constraint layer, measured on 6 fully hand-transcribed ground-truth sheets — and every sheet transcribed after the model was frozen doubles as a held-out generalization test first. The repository is private (the method is the product); happy to talk about it.
 
 ### Statcast Analysis
 
