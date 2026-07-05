@@ -128,7 +128,7 @@ Trunk rotation range vs pitch speed: r=0.425 (strongest). Contributed bug fix [P
 
 ### [Handwritten Scorebook OCR](https://github.com/yasumorishima/baseball-scorebook-ocr) 🔒 *(private R&D, active)*
 
-**Amateur Baseball Scorebook Reader** — reads handwritten Japanese paper scorebooks (紙スコアブック) from photos into structured at-bat data. No paid APIs, no cloud OCR: deterministic computer vision (OpenCV on a Raspberry Pi 5) fused with a game-logic constraint solver that only accepts readings consistent with legal base-running. Recognition of the hardest mark class went from ~30% (template matching alone) to ~80% pooled with the constraint layer, measured on 6 fully hand-transcribed ground-truth sheets — and every sheet transcribed after the model was frozen doubles as a held-out generalization test first. The repository is private (the method is the product); happy to talk about it.
+**Amateur Baseball Scorebook Reader** — reads handwritten Japanese paper scorebooks (紙スコアブック) from photos into structured at-bat data. No paid APIs, no cloud OCR: deterministic computer vision (OpenCV on a Raspberry Pi 5) fused with a game-logic constraint solver that only accepts readings consistent with legal base-running. Recognition of the hardest mark class went from ~30% (template matching alone) to **83% pooled** with the constraint layer, measured on **16 fully hand-transcribed ground-truth sheets** — and every sheet transcribed after the model was frozen doubles as a held-out generalization test first (fourteen consecutive held-out sheets so far, one of them read perfectly). The repository is private (the method is the product); happy to talk about it.
 
 ### Statcast Analysis
 
