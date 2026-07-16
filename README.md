@@ -192,7 +192,7 @@ Civic tech projects for political transparency & citizen participation in Japan.
 
 <!-- KAGGLE_COMP_STATS_START -->Notebooks Expert | 🥉 14 Bronze Notebook Medals<!-- KAGGLE_COMP_STATS_END -->
 
-**Active:** [ROGII Wellbore Geology Prediction](https://www.kaggle.com/competitions/rogii-wellbore-geology-prediction) ($50K, wellbore TVT regression — public LB 7.311, rank 480/3589 top 13.4%) / **SIGNATE AI Engineering Challenge** (NTT Data — LLM / RAG / agentic retrieval over a messy corporate drive, ¥1.2M prize pool, Jul–Aug 2026) — finished 2026-06: [Playground Series S6E6 - Stellar Classification](https://www.kaggle.com/competitions/playground-series-s6e6) (macro-F1, public LB 0.95944), NIR Moisture Prediction (SIGNATE, wood spectroscopy), [Stanford RNA 3D Folding 2](https://www.kaggle.com/competitions/stanford-rna-3d-folding-2) & [BirdCLEF+ 2026](https://www.kaggle.com/competitions/birdclef-2026)
+**Active:** [ROGII Wellbore Geology Prediction](https://www.kaggle.com/competitions/rogii-wellbore-geology-prediction) ($50K, wellbore TVT regression — public LB 7.311, rank 480/3589 top 13.4%) / **SIGNATE AI Engineering Challenge** (NTT Data — LLM / RAG / agentic retrieval over a messy corporate drive, ¥1.2M prize pool, Jul–Aug 2026) / **SIGNATE NEDO Challenge — Baggage-Loading Optimization** (3D bin packing for airline ULD containers, hybrid offline+online packing agent, ¥15M prize pool, Jul–Oct 2026) — finished 2026-06: [Playground Series S6E6 - Stellar Classification](https://www.kaggle.com/competitions/playground-series-s6e6) (macro-F1, public LB 0.95944), NIR Moisture Prediction (SIGNATE, wood spectroscopy), [Stanford RNA 3D Folding 2](https://www.kaggle.com/competitions/stanford-rna-3d-folding-2) & [BirdCLEF+ 2026](https://www.kaggle.com/competitions/birdclef-2026)
 
 <details>
 <summary>Bronze Medal Notebooks (14)</summary>
@@ -243,7 +243,7 @@ Most recently competed in [On Top of Pasketti](https://www.drivendata.org/compet
 |---|---|---|
 | **[MLB Bat Tracking Dashboard](https://github.com/yasumorishima/mlb-bat-tracking-dashboard)** | Leaderboard, Player Comparison, Team Lineup Builder. Powered by savant-extras | [Live](https://yasumorishima-mlb-bat-tracking.streamlit.app/) |
 | **[WBC 2026 Scouting Dashboard](https://github.com/yasumorishima/wbc-scouting)** | 30 Statcast apps across 19 countries. Zone heatmaps, spray charts, pitch movement | [Live](https://wbc-scouting-usa-batters.streamlit.app/) |
-| **[Daily Diary](https://github.com/yasumorishima/diary-app-flutter)** | Flutter mobile app, 5 languages, offline-first, biometric app lock, daily reminder, Android Auto Backup, AdMob | [Google Play](https://play.google.com/store/apps/details?id=com.diary.daily) |
+| **[Daily Diary](https://github.com/yasumorishima/diary-app-flutter)** | Flutter mobile app, 10 languages, offline-first, biometric app lock, daily reminder, Android Auto Backup, AdMob | [Google Play](https://play.google.com/store/apps/details?id=com.diary.daily) |
 
 <details>
 <summary>WBC 2026 Scouting Dashboard details (30 apps)</summary>
