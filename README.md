@@ -185,7 +185,7 @@ Private repo (the method is the product) — public technical write-up: [basebal
 | **jldbc/pybaseball** | [#498-504](https://github.com/jldbc/pybaseball) | Bug fixes & documentation |
 
 <details>
-<summary>team-mirai — Civic Tech OSS (<!-- TEAM_MIRAI_STATS_START -->22 PRs (12 Merged / 2 Open / 8 Closed)<!-- TEAM_MIRAI_STATS_END -->)</summary>
+<summary>team-mirai — Civic Tech OSS (<!-- TEAM_MIRAI_STATS_START -->23 PRs (12 Merged / 3 Open / 8 Closed)<!-- TEAM_MIRAI_STATS_END -->)</summary>
 
 Civic tech projects for political transparency & citizen participation in Japan. Next.js / TypeScript / Supabase / Vitest.
 
