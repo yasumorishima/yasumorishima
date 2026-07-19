@@ -19,6 +19,7 @@ TEAM_MIRAI_REPOS = {
     "team-mirai-volunteer/action-board": "action-board",
     "team-mirai-volunteer/fact-checker": "fact-checker",
     "team-mirai/marumie": "marumie",
+    "team-mirai/mirai-gikai": "mirai-gikai",
     "team-mirai-volunteer/post-checker": "post-checker",
 }
 
