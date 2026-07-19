@@ -32,7 +32,10 @@ Full-stack web app for a high school baseball alumni association — <!--ob:acti
 - **<!--ob:senseki-->681<!--/ob--> match records** (1955–present): cross-source verification, generation-based grouping, per-game photo management
 - **UX**: Unsaved warning, Web Share + LINE fallback, Calendar registration, ripple feedback, Suspense skeleton UI, weather forecast (Open-Meteo, 10 venues), automated game detection (2 sources → auto-PR)
 - **Security**: RLS on all 22 tables (16 main + 6 history), `server-only` admin, CODEOWNERS, branch protection, secret scanning, cookie consent, 60-min session timeout
-- **Silent-fail monitoring**: Hourly health-check workflow probes the full member-request + feedback pipeline (Vercel proxy / dispatch chain / GAS time trigger / gas-issue-form secret match / role-sync recency), plus member-request/sync-roles workflow-run failure and sync-roles liveness (cron-stall) detection that auto-opens a tracking GitHub issue and auto-closes it on recovery, with dual-channel alerts (GitHub Actions email + GAS Gmail). Built after a 1-month silent outage where a Form trigger lost its OAuth grant went unnoticed
+- **Silent-fail monitoring** — built after a 1-month silent outage (a Form trigger silently lost its OAuth grant):
+  - Hourly health-check probes the full member-request + feedback pipeline (Vercel proxy / dispatch chain / GAS time trigger / gas-issue-form secret match / role-sync recency)
+  - Workflow-run failure + sync-roles liveness (cron-stall) detection auto-opens a tracking GitHub issue and auto-closes it on recovery
+  - Dual-channel alerts: GitHub Actions email + GAS Gmail
 
 </details>
 
@@ -53,7 +56,9 @@ Companion site for an amateur baseball team, forked from Minami Baseball OB — 
 - **Stat ingestion**: spreadsheet migration + editor manual-input UI (`/edit/game-stats`, scorebook image side-by-side + per-player grid); editors upload scorebook images straight from the result page
 - **Custom CMS / UX**: dedicated + inline editor pages, soft delete (7-day trash + auto-purge), change history, audit logs, public No. 06 ROSTER section (photo + jersey + role + comment) via `players_public` view, Open-Meteo weather forecast with WBGT heat-stress display
 - **Security**: Supabase RLS on all tables, anon-readable roster view with sensitive columns filtered, server-only admin, gitleaks secret scanning, notifications isolated on a separate public Actions repo
-- **Silent-fail monitoring**: hourly health-check workflow probes every notification path (Vercel proxy / dispatch ack / GAS heartbeat / feedback webhook secret) plus member-request/sync-roles workflow-run failure and sync-roles liveness detection (auto-opens/closes a GitHub issue), with email alerts on any silent failure
+- **Silent-fail monitoring**:
+  - Hourly health-check probes every notification path (Vercel proxy / dispatch ack / GAS heartbeat / feedback webhook secret)
+  - Workflow-run failure + sync-roles liveness detection auto-opens/closes a GitHub issue, with email alerts on any silent failure
 
 </details>
 
@@ -80,7 +85,11 @@ Companion site for an amateur baseball team, forked from Minami Baseball OB — 
 
 `Real-time API / WebSocket → SQLite → FastAPI + Leaflet.js (dark theme)` — [All projects](https://github.com/yasumorishima/realtime-open-data)
 
-**[Japan Geohazard Monitor](https://github.com/yasumorishima/japan-geohazard-monitor)** — Earthquake prediction research: 85 features from 25+ sources (USGS, Earthdata, INTERMAGNET, NMDB, NOAA, IOC); walk-forward HistGBT + elastic-net + ConvLSTM (best walk-forward AUC ~0.80 on a Kaggle T4), data published as a public Hugging Face dataset. Weekly automated CI pipeline on GitHub Actions.
+**[Japan Geohazard Monitor](https://github.com/yasumorishima/japan-geohazard-monitor)** — Earthquake prediction research
+
+- **85 features from 25+ sources** — USGS, NASA Earthdata, INTERMAGNET, NMDB, NOAA, IOC
+- **Walk-forward evaluation** — HistGBT + elastic-net + ConvLSTM, best walk-forward AUC ~0.80 (Kaggle T4)
+- **Open data & automation** — features published as a public Hugging Face dataset, weekly CI pipeline on GitHub Actions
 
 ---
 
@@ -128,7 +137,14 @@ Trunk rotation range vs pitch speed: r=0.425 (strongest). Contributed bug fix [P
 
 ### [Handwritten Scorebook OCR](https://github.com/yasumorishima/baseball-scorebook-ocr) 🔒 *(private R&D, active)*
 
-**Amateur Baseball Scorebook Reader** — reads handwritten Japanese paper scorebooks (紙スコアブック) from photos into structured at-bat data. No paid APIs, no cloud OCR: deterministic computer vision (OpenCV on a Raspberry Pi 5) fused with a game-logic constraint solver that only accepts readings consistent with legal base-running. Recognition of the hardest mark class went from 52% (template matching alone) to **82% pooled** with the constraint layer, measured on **27 fully hand-transcribed ground-truth sheets (the complete archive, now growing live -- the latest game was transcribed the day it was played)** — and every sheet transcribed after the model was frozen doubles as a held-out generalization test first (twenty-five consecutive held-out sheets so far, some of them read perfectly). The 2026 season batting stats of my team are compiled from this ground truth. The repository is private (the method is the product) — public technical write-up: [baseball-scorebook-ocr-docs](https://github.com/yasumorishima/baseball-scorebook-ocr-docs) (JP).
+**Amateur Baseball Scorebook Reader** — reads handwritten Japanese paper scorebooks (紙スコアブック) from photos into structured at-bat data. **52% → 82%** on the hardest mark class, evaluated on **27 hand-transcribed ground-truth sheets**.
+
+- **No paid APIs, no cloud OCR** — deterministic computer vision (OpenCV on a Raspberry Pi 5)
+- **Game-logic constraint solver** — only accepts readings consistent with legal base-running; fused with template matching it lifted the hardest mark class from 52% to **82% pooled**
+- **Honest, live evaluation** — the ground-truth archive is complete and still growing (the latest game was transcribed the day it was played); every new sheet serves as a **held-out generalization test** before joining the pool — 25 consecutive held-out sheets so far, some read perfectly
+- **Real output** — my team's 2026 season batting stats are compiled from this ground truth
+
+Private repo (the method is the product) — public technical write-up: [baseball-scorebook-ocr-docs](https://github.com/yasumorishima/baseball-scorebook-ocr-docs) (JP)
 
 ### Statcast Analysis
 
@@ -192,7 +208,12 @@ Civic tech projects for political transparency & citizen participation in Japan.
 
 <!-- KAGGLE_COMP_STATS_START -->Notebooks Expert | 🥉 14 Bronze Notebook Medals<!-- KAGGLE_COMP_STATS_END -->
 
-**Active:** [ROGII Wellbore Geology Prediction](https://www.kaggle.com/competitions/rogii-wellbore-geology-prediction) ($50K, wellbore TVT regression — public LB 7.311, rank 1406/5063) / **SIGNATE AI Engineering Challenge** (NTT Data — LLM / RAG / agentic retrieval over a messy corporate drive, ¥1.2M prize pool, Jul–Aug 2026) / **SIGNATE NEDO Challenge — Baggage-Loading Optimization** (3D bin packing for airline ULD containers, hybrid offline+online packing agent, ¥15M prize pool, Jul–Oct 2026) — finished 2026-06: [Playground Series S6E6 - Stellar Classification](https://www.kaggle.com/competitions/playground-series-s6e6) (macro-F1, private LB 0.95939), NIR Moisture Prediction (SIGNATE, wood spectroscopy), [Stanford RNA 3D Folding 2](https://www.kaggle.com/competitions/stanford-rna-3d-folding-2) & [BirdCLEF+ 2026](https://www.kaggle.com/competitions/birdclef-2026)
+**Active:**
+- [ROGII Wellbore Geology Prediction](https://www.kaggle.com/competitions/rogii-wellbore-geology-prediction) — $50K, wellbore TVT regression (public LB 7.311, rank 1406/5063)
+- **SIGNATE AI Engineering Challenge** — NTT Data, LLM / RAG / agentic retrieval over a messy corporate drive (¥1.2M prize pool, Jul–Aug 2026)
+- **SIGNATE NEDO Challenge — Baggage-Loading Optimization** — 3D bin packing for airline ULD containers, hybrid offline+online packing agent (¥15M prize pool, Jul–Oct 2026)
+
+**Finished 2026:** [Playground Series S6E6 - Stellar Classification](https://www.kaggle.com/competitions/playground-series-s6e6) (macro-F1, private LB 0.95939) · NIR Moisture Prediction (SIGNATE, wood spectroscopy) · [Stanford RNA 3D Folding 2](https://www.kaggle.com/competitions/stanford-rna-3d-folding-2) · [BirdCLEF+ 2026](https://www.kaggle.com/competitions/birdclef-2026)
 
 <details>
 <summary>Bronze Medal Notebooks (14)</summary>
