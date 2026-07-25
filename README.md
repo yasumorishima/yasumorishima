@@ -4,6 +4,26 @@ Manufacturing Engineer & Data Analyst with <!-- CAREER_YEARS_START -->18<!-- CAR
 
 [![Findy Skill Deviation](https://img.shields.io/badge/Findy_Skill_Deviation-73.0-blue)](https://findy-code.io/skills-share/f6fUT0vdoVeI4) <sub>2026-06-01時点: 73.0</sub>
 
+## 🤖 Robotics / Embedded
+
+### [stackchan-lab](https://github.com/yasumorishima/stackchan-lab) — M5 スタックちゃん 開発記録 (Active)
+
+M5Stack 公式スタックちゃん（`M5STACK-K151` = CoreS3 + FEETECH SCS0009 シリアルサーボ ×2）の開発記録とツール。
+
+開封直後、スマートフォンアプリでのペアリングが `No devices found` で完了しない問題に当たりました。権限や再スキャンでは解決せず、**USB シリアルのログを取ることで「BLE 接続とハンドシェイクは成立しており、止まっているのはアプリ側の応答検証段階」だと特定**。原因は出荷時ファームが 9 バージョン古いことで、しかも **新ファームは OTA → OTA には Wi-Fi → Wi-Fi 設定にはペアリング** という循環のため、USB 書き込み以外に更新経路がない状態でした。
+
+<details>
+<summary>技術的な要点</summary>
+
+- **切り分けはログで行う** — アプリの `No devices found` は実態と異なる表示だった。`NimBLE: connection established` → `Config data received {"cmd":"handshake"}` → `Config notification sent` までは成功しており、探索ではなく検証の失敗と判明
+- **M5Burner (GUI) を使わない更新経路** — ファームウェア配信 API が公開されているため、公式バイナリの取得から書き込みまで CLI で完結できる（[手順](https://github.com/yasumorishima/stackchan-lab/blob/main/docs/firmware-flash.md) / [スクリプト](https://github.com/yasumorishima/stackchan-lab/blob/main/tools/flash-official-firmware.ps1)）。`esptool` は Python 不要の単体実行ファイルを使用
+- **自前ビルドでは解決しない** — 公開ソースのハンドシェイク実装はスタブ（weak シンボル）で、公式バイナリが必要という構造を確認
+- **ハードウェアの制約も実装から確認** — ファームは AXP2101 の充電電流を 700mA に設定するため、500mA 上限の PC USB ポートでは充電が始まらない
+
+</details>
+
+`ESP32-S3 / ESP-IDF / NimBLE / esptool / PowerShell`
+
 ## ⚾ Baseball Websites
 
 ### [Minami Baseball OB](https://minami-baseball-ob.vercel.app/) — Alumni Association Site (In Production)
@@ -302,7 +322,6 @@ Most recently competed in [On Top of Pasketti](https://www.drivendata.org/compet
 | **[ICP Learning Project](https://github.com/yasumorishima/ICP_kinyoku)** | Persistent counter dApp on Internet Computer (Motoko, dfx CLI) |
 | **[OpenClaw Twitter Bot](https://github.com/yasumorishima/raspi-baseball-bot)** | Raspberry Pi 5 + OpenClaw + Gemini API auto-tweet bot (stopped) — [Article (JP)](https://zenn.dev/shogaku/articles/raspi-baseball-bot-openclaw-gemini) |
 | **[alexa-rpi5](https://github.com/yasumorishima/alexa-rpi5)** 🔒 | RPi5 ↔ Fire TV Cube 操作 hub (Echo speaker 不要環境)。 cube wrapper + watchers + integrations、 機能詳細は repo README 参照 |
-| **[stackchan-lab](https://github.com/yasumorishima/stackchan-lab)** | M5 スタックちゃん (M5STACK-K151 / CoreS3) の開発記録。アプリのペアリングが `No devices found` で止まる原因を BLE のシリアルログから特定（出荷時ファームが古い）→ M5Burner 不要の USB ファーム更新手順とスクリプトを公開 |
 
 <details>
 <summary>Past Projects</summary>
