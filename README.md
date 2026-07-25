@@ -16,7 +16,7 @@ M5Stack 公式スタックちゃん（`M5STACK-K151` = CoreS3 + FEETECH SCS0009 
 <summary>技術的な要点</summary>
 
 - **切り分けはログで行う** — アプリの `No devices found` は実態と異なる表示だった。`NimBLE: connection established` → `Config data received {"cmd":"handshake"}` → `Config notification sent` までは成功しており、探索ではなく検証の失敗と判明
-- **M5Burner (GUI) を使わない更新経路** — ファームウェア配信 API が公開されているため、公式バイナリの取得から書き込みまで CLI で完結できる（[手順](https://github.com/yasumorishima/stackchan-lab/blob/main/docs/firmware-flash.md) / [スクリプト](https://github.com/yasumorishima/stackchan-lab/blob/main/tools/flash-official-firmware.ps1)）。`esptool` は Python 不要の単体実行ファイルを使用
+- **M5Burner (GUI) を使わない更新経路** — ファームウェア配信 API が公開されているため、公式バイナリの取得から書き込みまで CLI で完結できる（[手順](https://github.com/yasumorishima/stackchan-lab/blob/main/docs/setup/firmware-flash.md) / [スクリプト](https://github.com/yasumorishima/stackchan-lab/blob/main/tools/flash-official-firmware.ps1)）。`esptool` は Python 不要の単体実行ファイルを使用
 - **自前ビルドでは解決しない** — 公開ソースのハンドシェイク実装はスタブ（weak シンボル）で、公式バイナリが必要という構造を確認
 - **ハードウェアの制約も実装から確認** — ファームは AXP2101 の充電電流を 700mA に設定するため、500mA 上限の PC USB ポートでは充電が始まらない
 
