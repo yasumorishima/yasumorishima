@@ -22,7 +22,27 @@ M5Stack 公式スタックちゃん（`M5STACK-K151` = CoreS3 + FEETECH SCS0009 
 
 </details>
 
-`ESP32-S3 / ESP-IDF / NimBLE / esptool / PowerShell`
+続けて、標準の音声アシスタント（発話が中国のサーバーへ送られる構成）から、手元の Raspberry Pi 5 へ接続先を移しています。ファームウェアは公式バイナリのままで、NVS の設定だけで接続先を変えられる構造を確認し、OTA と WebSocket を受けるサーバーを実装しました。**音声認識と読み上げはローカルで完結**し、本体が持っている道具（MCP のツール）も呼び出せます。
+
+<details>
+<summary>技術的な要点</summary>
+
+- **音声認識のバックエンドは実測で選定** — 合成した 12 文を本体と同じ Opus（16kHz / 60ms）に通してから認識させ、文字誤り率と RTF（音声長に対する処理時間）で比較しました
+
+  | バックエンド | CER | RTF |
+  | --- | --- | --- |
+  | sherpa-onnx + ReazonSpeech k2 v2 (int8) | 4.3% | 0.16 |
+  | Vosk small-ja 0.22 | 11.3% | 1.05 |
+  | faster-whisper small (int8) | 1.4% | 2.48 |
+
+  精度が最も高いのは faster-whisper ですが、RTF 2.48 では 2.5 秒の発話に 6 秒かかり会話になりません。sherpa-onnx の誤りは「明日 → あした」のような表記差だけで意味が通るため、これを既定にしました
+- **受信ループの中で待たない** — 発話処理を WebSocket の受信ループ内で待つと、自分が投げたツール呼び出しの応答を読めず、10 秒のタイムアウトに落ちます。別タスクに切り出して 8ms で返るようになりました
+- **道具の呼び出しは MCP 経由** — 本体が MCP サーバー、サーバー側がクライアントという構成で、接続直後に `initialize` と `tools/list`、応答生成が関数呼び出しを返したら `tools/call` を送ります（[実装](https://github.com/yasumorishima/stackchan-lab/tree/main/server)）
+- **読み上げは文ごとに合成** — 次の文は再生中に裏で作るので、最初の音が出るまで 2.2〜2.5 秒です
+
+</details>
+
+`ESP32-S3 / ESP-IDF / esptool / Python / asyncio / sherpa-onnx / VOICEVOX / MCP`
 
 ## ⚾ Baseball Websites
 
