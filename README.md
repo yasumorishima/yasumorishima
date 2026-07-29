@@ -235,7 +235,7 @@ Civic tech projects for political transparency & citizen participation in Japan.
 |---|---|
 | **action-board** | [48 unit tests](https://github.com/team-mirai-volunteer/action-board/pull/1969), [RPC tests](https://github.com/team-mirai-volunteer/action-board/pull/1869), [breadcrumb nav](https://github.com/team-mirai-volunteer/action-board/pull/1849), [cache fix](https://github.com/team-mirai-volunteer/action-board/pull/1845) + 5 more |
 | **marumie** | [Category filter total](https://github.com/team-mirai/marumie/pull/1141) |
-| **mirai-gikai** | [Supabase CLI v2.106 seed permission fix](https://github.com/team-mirai/mirai-gikai/pull/930) |
+| **mirai-gikai** | [Supabase CLI v2.106 seed permission fix](https://github.com/team-mirai/mirai-gikai/pull/930), [Safari/iOS ruby spacing fix](https://github.com/team-mirai/mirai-gikai/pull/932) |
 | **post-checker** | [Timezone fix](https://github.com/team-mirai-volunteer/post-checker/pull/34) |
 | **fact-checker** | [X API investigation](https://github.com/team-mirai-volunteer/fact-checker/issues/69#issuecomment-3811711591) + 5 PRs |
 
