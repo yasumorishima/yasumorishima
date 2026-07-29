@@ -6,39 +6,41 @@ Manufacturing Engineer & Data Analyst with <!-- CAREER_YEARS_START -->18<!-- CAR
 
 ## 🤖 Robotics / Embedded
 
-### [stackchan-lab](https://github.com/yasumorishima/stackchan-lab) — M5 スタックちゃん 開発記録 (Active)
+### [stackchan-lab](https://github.com/yasumorishima/stackchan-lab) — M5 Stack-chan Development Log (Active)
 
-M5Stack 公式スタックちゃん（`M5STACK-K151` = CoreS3 + FEETECH SCS0009 シリアルサーボ ×2）の開発記録とツール。
+Development log and tooling for the official M5Stack Stack-chan (`M5STACK-K151` — CoreS3 + 2× FEETECH SCS0009 serial servos).
 
-開封直後、スマートフォンアプリでのペアリングが `No devices found` で完了しない問題に当たりました。権限や再スキャンでは解決せず、**USB シリアルのログを取ることで「BLE 接続とハンドシェイクは成立しており、止まっているのはアプリ側の応答検証段階」だと特定**。原因は出荷時ファームが 9 バージョン古いことで、しかも **新ファームは OTA → OTA には Wi-Fi → Wi-Fi 設定にはペアリング** という循環のため、USB 書き込み以外に更新経路がない状態でした。
+Straight out of the box, pairing from the companion app never completed — it only reported `No devices found`. Permissions and rescans changed nothing. **Reading the USB serial log showed that the BLE connection and the handshake both succeeded, which placed the failure in the app's response-verification stage rather than in discovery.** The cause was factory firmware nine releases behind, and the update path was circular — **new firmware needs OTA → OTA needs Wi-Fi → Wi-Fi setup needs pairing** — leaving USB flashing as the only way in.
 
 <details>
-<summary>技術的な要点</summary>
+<summary>Technical highlights</summary>
 
-- **切り分けはログで行う** — アプリの `No devices found` は実態と異なる表示だった。`NimBLE: connection established` → `Config data received {"cmd":"handshake"}` → `Config notification sent` までは成功しており、探索ではなく検証の失敗と判明
-- **M5Burner (GUI) を使わない更新経路** — ファームウェア配信 API が公開されているため、公式バイナリの取得から書き込みまで CLI で完結できる（[手順](https://github.com/yasumorishima/stackchan-lab/blob/main/docs/setup/firmware-flash.md) / [スクリプト](https://github.com/yasumorishima/stackchan-lab/blob/main/tools/flash-official-firmware.ps1)）。`esptool` は Python 不要の単体実行ファイルを使用
-- **自前ビルドでは解決しない** — 公開ソースのハンドシェイク実装はスタブ（weak シンボル）で、公式バイナリが必要という構造を確認
-- **ハードウェアの制約も実装から確認** — ファームは AXP2101 の充電電流を 700mA に設定するため、500mA 上限の PC USB ポートでは充電が始まらない
+- **Diagnose from the log, not from the message** — `No devices found` did not describe what was actually happening. `NimBLE: connection established` → `Config data received {"cmd":"handshake"}` → `Config notification sent` all succeeded, which located the failure in verification rather than scanning
+- **Firmware update without the M5Burner GUI** — the firmware distribution API is public, so fetching the official binary and flashing it can be done entirely from the CLI ([steps](https://github.com/yasumorishima/stackchan-lab/blob/main/docs/setup/firmware-flash.md) / [script](https://github.com/yasumorishima/stackchan-lab/blob/main/tools/flash-official-firmware.ps1)). `esptool` is used as a standalone executable, so no Python installation is required
+- **Building from source does not help** — the handshake implementation in the public source is a stub (a weak symbol that the official build overrides), so an official binary is required
+- **Hardware limits read off the firmware** — the firmware sets the AXP2101 charge current to 700mA, so a 500mA PC USB port never starts charging
 
 </details>
 
-続けて、標準の音声アシスタント（発話が中国のサーバーへ送られる構成）から、手元の Raspberry Pi 5 へ接続先を移しています。ファームウェアは公式バイナリのままで、NVS の設定だけで接続先を変えられる構造を確認し、OTA と WebSocket を受けるサーバーを実装しました。**音声認識と読み上げはローカルで完結**し、本体が持っている道具（MCP のツール）も呼び出せます。
+The stock voice assistant sends speech to servers in China, so the device was pointed at a Raspberry Pi 5 on the local network instead. The firmware stays the official binary — only an NVS setting changes the destination — and a server that answers OTA and WebSocket was implemented. **Speech recognition and synthesis run entirely locally**, and the tools the device itself exposes (over MCP) can be called.
 
 <details>
-<summary>技術的な要点</summary>
+<summary>Technical highlights</summary>
 
-- **音声認識のバックエンドは実測で選定** — 合成した 12 文を本体と同じ Opus（16kHz / 60ms）に通してから認識させ、文字誤り率と RTF（音声長に対する処理時間）で比較しました
+- **The speech-recognition backend was chosen by measurement** — 12 synthesized sentences were passed through the same Opus path as the device (16kHz / 60ms) before recognition, then compared by character error rate and RTF (processing time relative to audio length)
 
-  | バックエンド | CER | RTF |
+  | Backend | CER | RTF |
   | --- | --- | --- |
   | sherpa-onnx + ReazonSpeech k2 v2 (int8) | 4.3% | 0.16 |
   | Vosk small-ja 0.22 | 11.3% | 1.05 |
   | faster-whisper small (int8) | 1.4% | 2.48 |
 
-  精度が最も高いのは faster-whisper ですが、RTF 2.48 では 2.5 秒の発話に 6 秒かかり会話になりません。sherpa-onnx の誤りは「明日 → あした」のような表記差だけで意味が通るため、これを既定にしました
-- **受信ループの中で待たない** — 発話処理を WebSocket の受信ループ内で待つと、自分が投げたツール呼び出しの応答を読めず、10 秒のタイムアウトに落ちます。別タスクに切り出して 8ms で返るようになりました
-- **道具の呼び出しは MCP 経由** — 本体が MCP サーバー、サーバー側がクライアントという構成で、接続直後に `initialize` と `tools/list`、応答生成が関数呼び出しを返したら `tools/call` を送ります（[実装](https://github.com/yasumorishima/stackchan-lab/tree/main/server)）
-- **読み上げは文ごとに合成** — 次の文は再生中に裏で作るので、最初の音が出るまで 2.2〜2.5 秒です
+  faster-whisper is the most accurate, but at RTF 2.48 a 2.5-second utterance takes 6 seconds, which is not a conversation. The sherpa-onnx errors are orthographic only (明日 → あした) and never change the meaning, so it became the default
+- **Never await inside the receive loop** — awaiting utterance handling there leaves the server unable to read the reply to its own tool call, which then times out after 10 seconds. Moving it to a separate task brought that to 8ms
+- **Tools are called over MCP** — the device is the MCP server and this server is the client: `initialize` and `tools/list` right after connect, then `tools/call` whenever the model returns a function call ([implementation](https://github.com/yasumorishima/stackchan-lab/tree/main/server))
+- **Synthesis runs per sentence** — the next sentence is synthesized in the background during playback, so the first audio arrives in 2.2–2.5 seconds
+- **Never put a changing value in the system prompt** — chat templates render the tool definitions *after* the system message, so a per-minute timestamp there discards the cached prefix and re-processes ~250 tokens of tool definitions every turn. A/B over the same utterances measured **35.1s vs 7.8s per round trip** (96 vs 360 tokens reused). The timestamp now rides on the latest user message instead
+- **Keep the tool round trip in the history** — storing only the final sentence made the model answer an elliptical follow-up (“and how about Tottori?”) with invented numbers instead of calling the tool again. Persisting the `tool_calls` and their results fixed it, with trimming that never separates a `tool` message from its `tool_calls`
 
 </details>
 
