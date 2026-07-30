@@ -58,6 +58,10 @@ The stock voice assistant sends speech to servers in China, so the device was po
 
 </details>
 
+### [rpi5-infra](https://github.com/yasumorishima/rpi5-infra) 🔒 *(private, config record)*
+
+Configuration record for the Raspberry Pi 5 that hosts the robot's server — firewall rules, systemd units, cron entries, listening ports, and an inventory of what is actually running. Kept so the box can be rebuilt after an SD failure, and so a change like opening a port leaves a trace. Secrets are deliberately absent: unit files reference their `EnvironmentFile` without containing values, and credential files are excluded.
+
 `ESP32-S3 / ESP-IDF / esptool / Python / asyncio / sherpa-onnx / VOICEVOX / MCP`
 
 ## ⚾ Baseball Websites
