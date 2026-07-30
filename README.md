@@ -38,6 +38,20 @@ The stock voice assistant sends speech to servers in China, so the device was po
   faster-whisper is the most accurate, but at RTF 2.48 a 2.5-second utterance takes 6 seconds, which is not a conversation. The sherpa-onnx errors are orthographic only (明日 → あした) and never change the meaning, so it became the default
 - **Never await inside the receive loop** — awaiting utterance handling there leaves the server unable to read the reply to its own tool call, which then times out after 10 seconds. Moving it to a separate task brought that to 8ms
 - **Tools are called over MCP** — the device is the MCP server and this server is the client: `initialize` and `tools/list` right after connect, then `tools/call` whenever the model returns a function call ([implementation](https://github.com/yasumorishima/stackchan-lab/tree/main/server))
+- **Putting the clock in the system prompt threw away the prompt cache on every turn** — tool definitions render *after* the system message in the chat template, so a timestamp that changes by the minute invalidates them too. Measured on the same exchange: **35.1s versus 7.8s** per round trip. The timestamp moved to the user turn instead
+- **Pressing the model harder made it stop calling tools** — when a follow-up like "then how about Tottori?" dropped the date argument, marking that argument `required` (or asking for it in prose) made the 3B model **skip the tool entirely and invent the numbers**, down to 1 call in 9. The pressure was removed and the server now resolves the omission itself: a date word in the utterance, else the date asked about moments earlier, else today — with a 180-second limit so a half-hour-old "tomorrow" is never carried into a fresh question
+- **Every added instruction cost tool-calling accuracy**, so the shape of the reply is enforced in code rather than requested in prose (3 runs per case, same probe)
+
+  | System prompt | Tool calls | Within 2 sentences |
+  | --- | --- | --- |
+  | none | 7/9 | 3/9 |
+  | previous wording | 4/9 | 6/9 |
+  | with instructions added | 1/9 | 8/9 |
+  | trimmed + enforced in code | 7/9 | 9/9 spoken |
+
+  The prompt now carries only what code cannot enforce — use the tools, do not invent facts — while sentence count and length are trimmed before speaking
+- **It keeps talking with the internet unplugged** — recognition and synthesis were already local, so only response generation needed a second path. It falls back to a local model on the far end's problems (401/403/429/5xx, refused connections, timeouts) but never on 400/404/422, which mean the request itself was malformed. While the primary is down it is not retried on every turn, since one utterance calls it twice and the robot would sit silent through both timeouts. The fallback is verified without running any inference, using a throwaway OpenAI-compatible server in the test itself
+- **A bigger model was not the answer** — the same probe on a 7B scored worse than the 3B and mixed in nonsense tokens, and on an 8GB Raspberry Pi it filled swap until sshd could no longer complete a handshake. The host was never down, which is worth knowing: a TCP connect that succeeds but stalls before the banner means starvation, not an outage
 - **Synthesis runs per sentence** — the next sentence is synthesized in the background during playback, so the first audio arrives in 2.2–2.5 seconds
 - **Never put a changing value in the system prompt** — chat templates render the tool definitions *after* the system message, so a per-minute timestamp there discards the cached prefix and re-processes ~250 tokens of tool definitions every turn. A/B over the same utterances measured **35.1s vs 7.8s per round trip** (96 vs 360 tokens reused). The timestamp now rides on the latest user message instead
 - **Keep the tool round trip in the history** — storing only the final sentence made the model answer an elliptical follow-up (“and how about Tottori?”) with invented numbers instead of calling the tool again. Persisting the `tool_calls` and their results fixed it, with trimming that never separates a `tool` message from its `tool_calls`
