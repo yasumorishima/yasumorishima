@@ -150,6 +150,7 @@ Companion site for an amateur baseball team, forked from Minami Baseball OB — 
 - **85 features from 25+ sources** — USGS, NASA Earthdata, INTERMAGNET, NMDB, NOAA, IOC
 - **Walk-forward evaluation** — HistGBT + elastic-net + ConvLSTM, best walk-forward AUC ~0.80 (Kaggle T4)
 - **Open data & automation** — features published as a public Hugging Face dataset, weekly CI pipeline on GitHub Actions
+- **Co-seismic InSAR** — 2026 Kumamoto M7.1 measured from open Sentinel-1 on ASF HyP3: line-of-sight displacement −21.7 to +15.0 cm and a coherence-change damage proxy ([method, figures and caveats](https://github.com/yasumorishima/japan-geohazard-monitor/tree/master/research/kumamoto2026_insar))
 
 ---
 
