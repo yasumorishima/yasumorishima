@@ -243,6 +243,7 @@ Private repo (the method is the product) — public technical write-up: [basebal
 | **line/line-bot-mcp-server** | [#369](https://github.com/line/line-bot-mcp-server/pull/369) | Add get_follower_ids tool |
 | **pyomeca/ezc3d** | [#384](https://github.com/pyomeca/ezc3d/pull/384) | Fix `__eq__` early return bug |
 | **codeforjapan/mapprint** | [#556](https://github.com/codeforjapan/mapprint/pull/556) | Share buttons on the disaster print map |
+| **codeforjapan/mapprint** | [#564](https://github.com/codeforjapan/mapprint/pull/564) | Deterministic list order on the printable map |
 | **optuna/optuna** | — | Hyperparameter optimization framework |
 | **pandas-dev/pandas** | — | Data analysis library |
 | **jldbc/pybaseball** | [#498-504](https://github.com/jldbc/pybaseball) | Bug fixes & documentation |
