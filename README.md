@@ -18,7 +18,6 @@ Straight out of the box, pairing from the companion app never completed — it o
 - **Diagnose from the log, not from the message** — `No devices found` did not describe what was actually happening. `NimBLE: connection established` → `Config data received {"cmd":"handshake"}` → `Config notification sent` all succeeded, which located the failure in verification rather than scanning
 - **Firmware update without the M5Burner GUI** — the firmware distribution API is public, so fetching the official binary and flashing it can be done entirely from the CLI ([steps](https://github.com/yasumorishima/stackchan-lab/blob/main/docs/setup/firmware-flash.md) / [script](https://github.com/yasumorishima/stackchan-lab/blob/main/tools/flash-official-firmware.ps1)). `esptool` is used as a standalone executable, so no Python installation is required
 - **Building from source does not help** — the handshake implementation in the public source is a stub (a weak symbol that the official build overrides), so an official binary is required
-- **Hardware limits read off the firmware** — the firmware sets the AXP2101 charge current to 700mA, so a 500mA PC USB port never starts charging
 
 </details>
 
@@ -58,11 +57,13 @@ The stock voice assistant sends speech to servers in China, so the device was po
 
 </details>
 
+The full round trip now runs against the real device: speech is recognized on the Pi, answered by a hosted 120B model (SAKURA internet's free inference tier), and spoken back about two seconds after the speaker stops. Getting there surfaced a lesson worth keeping: the device had silently kept talking to its stock server because a hand-appended NVS entry left the key field padded with `0xFF` instead of `0x00` — CRC, span, and state bits all valid, invisible to the custom parser that wrote it, but permanently missed by ESP-IDF's hash-index lookup. **Espressif's own `nvs_partition_tool` exposed it in one dump, which is the argument for never trusting only your own parser.** Latency came down by measuring, not guessing: the largest term was synthesis time growing with sentence length (a timestamp the model echoed into one reply stretched first-audio to 12 seconds), so the reply is now cleaned, the first chunk is kept short, and synthesis switched to Open JTalk at 0.27s per sentence.
+
 ### [rpi5-infra](https://github.com/yasumorishima/rpi5-infra) 🔒 *(private, config record)*
 
 Configuration record for the Raspberry Pi 5 that hosts the robot's server — firewall rules, systemd units, cron entries, listening ports, and an inventory of what is actually running. Kept so the box can be rebuilt after an SD failure, and so a change like opening a port leaves a trace. Secrets are deliberately absent: unit files reference their `EnvironmentFile` without containing values, and credential files are excluded.
 
-`ESP32-S3 / ESP-IDF / esptool / Python / asyncio / sherpa-onnx / VOICEVOX / MCP`
+`ESP32-S3 / ESP-IDF / esptool / Python / asyncio / sherpa-onnx / Open JTalk / MCP`
 
 ## ⚾ Baseball Websites
 
