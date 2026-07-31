@@ -230,7 +230,7 @@ Private repo (the method is the product) — public technical write-up: [basebal
 
 ## 🌐 Open Source Contributions
 
-<!-- OSS_STATS_START -->(78 PRs / 41 Merged)<!-- OSS_STATS_END --> across 36 repositories. See [oss-contributions](https://github.com/yasumorishima/oss-contributions) for full details.
+<!-- OSS_STATS_START -->(80 PRs / 42 Merged)<!-- OSS_STATS_END --> across 36 repositories. See [oss-contributions](https://github.com/yasumorishima/oss-contributions) for full details.
 
 <details>
 <summary>PR highlights (click to expand)</summary>
