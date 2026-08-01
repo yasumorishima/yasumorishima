@@ -8,26 +8,39 @@ Manufacturing Engineer & Data Analyst with <!-- CAREER_YEARS_START -->18<!-- CAR
 
 ### [stackchan-lab](https://github.com/yasumorishima/stackchan-lab) — M5 Stack-chan Development Log (Active)
 
-Official M5Stack Stack-chan (`M5STACK-K151`), moved off the stock cloud assistant onto a self-hosted stack on a Raspberry Pi 5.
+Official M5Stack Stack-chan (`M5STACK-K151`) moved off its stock cloud assistant onto a self-hosted stack on a Raspberry Pi 5 - 13 server-side tools · 11 device tools over MCP · ~2s from end of speech to first audio · stock firmware, unmodified
 
-| | |
+<details>
+<summary>How the voice loop runs</summary>
+
+| Stage | |
 | --- | --- |
 | Speech in | sherpa-onnx / ReazonSpeech, on the Pi |
-| Reply | hosted 120B model |
-| Speech out | Open JTalk, on the Pi |
-| Latency | ~2s from end of speech to first audio |
-| Tools | 13 server-side + 11 the device exposes over MCP |
-| Firmware | official binary, unmodified |
+| Reply | hosted 120B model, free tier |
+| Speech out | Open JTalk, on the Pi (0.27s per sentence) |
+| Tools | weather, FX, indices, crypto, NHK headlines, JMA quake / warning / typhoon, heat index, train delays, on-this-day, moon and sun, free-tier quota |
+| Device tools | camera, head angles, LED, volume, screen, battery - called through the same function-call array |
 
-| What it cost to learn | |
+</details>
+
+<details>
+<summary>What went wrong, and what it turned out to be</summary>
+
+| Symptom | Cause |
 | --- | --- |
-| Pairing failed as `No devices found` | Factory firmware nine releases behind; OTA needs Wi-Fi, Wi-Fi setup needs pairing, so USB was the only way in |
-| Device kept talking to the stock server | A hand-appended NVS entry padded its key with `0xFF` instead of `0x00` - valid CRC, invisible to my own parser, permanently missed by ESP-IDF |
-| Killed at 7GB RSS, twice | A VAD that starts counting at speech never fires on an always-streaming mic |
-| Speech played in slow motion | Not the network - the synthesizer stretches a pause-free run past 34 morae (measured); the splitter now estimates morae rather than counting characters |
-| Asking the prompt for shorter replies | Cost tool calls, 7/9 to 1/9 on the same probe. Shape is enforced in code instead |
+| Pairing failed as `No devices found` | Factory firmware nine releases behind. OTA needs Wi-Fi, Wi-Fi setup needs pairing - USB was the only way in |
+| Device kept talking to the stock server | A hand-appended NVS entry padded its key with `0xFF` instead of `0x00`: valid CRC, invisible to my own parser, permanently missed by ESP-IDF |
+| OOM-killed at 7GB RSS, twice | A VAD that starts counting at speech never fires on an always-streaming mic |
+| Speech played in slow motion | Not the network. The synthesizer stretches a pause-free run past ~34 morae, so the splitter now estimates morae instead of counting characters |
+| The tail of every reply dragged | Open JTalk pads ~0.58s of silence after each synthesis - 27-56% of a short reply was silence |
+| Unnatural Japanese | The model spaces its numbers, and `3 000` is read digit by digit. Spaces after digits are closed before synthesis |
+| Asking the prompt to keep replies short | Cost tool calls, 7/9 to 1/9 on the same probe. Shape is enforced in code instead |
 
-Write-up, measurements and tests: [stackchan-lab](https://github.com/yasumorishima/stackchan-lab#readme).
+</details>
+
+Write-up, measurements and tests: [stackchan-lab](https://github.com/yasumorishima/stackchan-lab#readme)
+
+`M5Stack CoreS3 (ESP32-S3) / Raspberry Pi 5 / Python (aiohttp, WebSocket) / sherpa-onnx + ReazonSpeech / Open JTalk / MCP / Opus`
 
 ### [rpi5-infra](https://github.com/yasumorishima/rpi5-infra) 🔒 *(private, config record)*
 
