@@ -8,24 +8,26 @@ Manufacturing Engineer & Data Analyst with <!-- CAREER_YEARS_START -->18<!-- CAR
 
 ### [stackchan-lab](https://github.com/yasumorishima/stackchan-lab) — M5 Stack-chan Development Log (Active)
 
-Development log and tooling for the official M5Stack Stack-chan (`M5STACK-K151` - CoreS3 + 2x FEETECH SCS0009 serial servos).
+Official M5Stack Stack-chan (`M5STACK-K151`), moved off the stock cloud assistant onto a self-hosted stack on a Raspberry Pi 5.
 
-Out of the box the companion app only reported `No devices found`. The USB serial log showed the BLE connection and the handshake both succeeding, which placed the failure in the app's verification stage rather than in discovery: the factory firmware was nine releases behind. The update path was circular - new firmware needs OTA, OTA needs Wi-Fi, Wi-Fi setup needs pairing - so it was flashed over USB from the CLI, using the public firmware distribution API instead of the M5Burner GUI.
+| | |
+| --- | --- |
+| Speech in | sherpa-onnx / ReazonSpeech, on the Pi |
+| Reply | hosted 120B model |
+| Speech out | Open JTalk, on the Pi |
+| Latency | ~2s from end of speech to first audio |
+| Tools | 13 server-side + 11 the device exposes over MCP |
+| Firmware | official binary, unmodified |
 
-The stock assistant sends speech to servers in China, so the device now talks to a Raspberry Pi 5 on the local network instead; the firmware stays the official binary and only an NVS setting changes the destination. Recognition and synthesis run on the Pi, generation runs on a hosted 120B model, and the reply is spoken about two seconds after the speaker stops. The server answers with thirteen tools of its own alongside the tools the device exposes over MCP, from weather and exchange rates to the JMA earthquake and typhoon feeds.
+| What it cost to learn | |
+| --- | --- |
+| Pairing failed as `No devices found` | Factory firmware nine releases behind; OTA needs Wi-Fi, Wi-Fi setup needs pairing, so USB was the only way in |
+| Device kept talking to the stock server | A hand-appended NVS entry padded its key with `0xFF` instead of `0x00` - valid CRC, invisible to my own parser, permanently missed by ESP-IDF |
+| Killed at 7GB RSS, twice | A VAD that starts counting at speech never fires on an always-streaming mic |
+| Speech played in slow motion | Not the network - the synthesizer stretches a pause-free run past 34 morae (measured); the splitter now estimates morae rather than counting characters |
+| Asking the prompt for shorter replies | Cost tool calls, 7/9 to 1/9 on the same probe. Shape is enforced in code instead |
 
-<details>
-<summary>Technical highlights</summary>
-
-- **The device had silently kept talking to its stock server** - a hand-appended NVS entry left the key field padded with `0xFF` instead of `0x00`. CRC, span and state bits were all valid and the custom parser that wrote it saw nothing wrong, but ESP-IDF's hash-index lookup misses such a key permanently. Espressif's own `nvs_partition_tool` exposed it in one dump, which is the argument for never trusting only your own parser
-- **A VAD that starts counting at speech never fires on an always-streaming mic** - ambient audio accumulated unboundedly and the process was OOM-killed at 7GB RSS, twice, while conversations still "worked" thanks to systemd restarts. Buffered time is now counted regardless of speech, and a probe proves the buffer is dropped at exactly 15.0s
-- **Speech that played in slow motion was the synthesizer, not the network** - server pacing measured healthy across every logged utterance, while Open JTalk's duration model degrades once a pause-free run grows too long, stretching voiced audio rather than inserting silence. What predicts it is the number of morae in one pause-free run - healthy to 33, degraded from 35, measured - and not the character count, so the splitter now estimates how many morae a run will be spoken as rather than counting characters
-- **Every added system-prompt instruction cost tool-calling accuracy** - 7/9 tool calls with no instructions against 1/9 once they were added, measured over the same utterances - so the shape of the reply is enforced in code rather than requested in prose
-- **A changing value in the system prompt discards the cached prefix** - chat templates render tool definitions after the system message, so a per-minute timestamp there re-processed ~250 tokens every turn: 35.1s against 7.8s per round trip
-
-Measurements, source cross-checks and the full write-up live in the [repository README](https://github.com/yasumorishima/stackchan-lab#readme).
-
-</details>
+Write-up, measurements and tests: [stackchan-lab](https://github.com/yasumorishima/stackchan-lab#readme).
 
 ### [rpi5-infra](https://github.com/yasumorishima/rpi5-infra) 🔒 *(private, config record)*
 
