@@ -44,9 +44,19 @@ Write-up, measurements and tests: [stackchan-lab](https://github.com/yasumorishi
 
 ### [rpi5-infra](https://github.com/yasumorishima/rpi5-infra) 🔒 *(private, config record)*
 
-Configuration record for the Raspberry Pi 5 that hosts the robot's server — firewall rules, systemd units, cron entries, listening ports, and an inventory of what is actually running. Kept so the box can be rebuilt after an SD failure, and so a change like opening a port leaves a trace. Secrets are deliberately absent: unit files reference their `EnvironmentFile` without containing values, and credential files are excluded.
+Configuration record for the Raspberry Pi 5 that hosts the robot's server, kept so the box can be rebuilt after an SD failure and so a change like opening a port leaves a trace.
 
-`ESP32-S3 / ESP-IDF / esptool / Python / asyncio / sherpa-onnx / Open JTalk / MCP`
+<details>
+<summary>What it records, and what it deliberately leaves out</summary>
+
+| | |
+| --- | --- |
+| Recorded | firewall rules, systemd units, cron entries, listening ports, an inventory of what is actually running |
+| Left out | secrets - unit files reference their `EnvironmentFile` without containing values, and credential files are excluded |
+
+</details>
+
+`Raspberry Pi OS / systemd / ufw / cron / Tailscale`
 
 ## ⚾ Baseball Websites
 
@@ -131,10 +141,15 @@ Companion site for an amateur baseball team, forked from Minami Baseball OB — 
 
 **[Japan Geohazard Monitor](https://github.com/yasumorishima/japan-geohazard-monitor)** — Earthquake prediction research
 
+<details>
+<summary>Data sources, evaluation and the Kumamoto InSAR result</summary>
+
 - **85 features from 25+ sources** — USGS, NASA Earthdata, INTERMAGNET, NMDB, NOAA, IOC
 - **Walk-forward evaluation** — HistGBT + elastic-net + ConvLSTM, best walk-forward AUC ~0.80 (Kaggle T4)
 - **Open data & automation** — features published as a public Hugging Face dataset, weekly CI pipeline on GitHub Actions
 - **Co-seismic InSAR** — 2026 Kumamoto M7.1 measured from open Sentinel-1 on ASF HyP3: line-of-sight displacement −21.7 to +15.0 cm and a coherence-change damage proxy ([method, figures and caveats](https://github.com/yasumorishima/japan-geohazard-monitor/tree/master/research/kumamoto2026_insar))
+
+</details>
 
 ---
 
@@ -184,10 +199,15 @@ Trunk rotation range vs pitch speed: r=0.425 (strongest). Contributed bug fix [P
 
 **Amateur Baseball Scorebook Reader** — reads handwritten Japanese paper scorebooks (紙スコアブック) from photos into structured at-bat data. **76% → 93%** on the hardest mark class, evaluated on **29 hand-transcribed ground-truth sheets**.
 
+<details>
+<summary>How it reads the sheets, and how it is evaluated</summary>
+
 - **No paid APIs, no cloud OCR** — deterministic computer vision (OpenCV on a Raspberry Pi 5)
 - **Game-logic constraint solver** — only accepts readings consistent with legal base-running; fused with template matching it lifted the hardest mark class from 76% to **93% pooled**
 - **Honest, live evaluation** — the ground-truth archive is complete and still growing (the latest game was transcribed the day it was played); every new sheet serves as a **held-out generalization test** before joining the pool — 27 consecutive held-out sheets so far, some read perfectly
 - **Real output** — my team's 2026 season batting stats are compiled from this ground truth
+
+</details>
 
 Private repo (the method is the product) — public technical write-up: [baseball-scorebook-ocr-docs](https://github.com/yasumorishima/baseball-scorebook-ocr-docs) (JP)
 
