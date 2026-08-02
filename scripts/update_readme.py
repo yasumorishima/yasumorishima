@@ -57,7 +57,7 @@ def parse_oss_summary(text: str) -> list[dict]:
     """Parse the summary table from oss-contributions README."""
     entries = []
     for m in re.finditer(
-        r"\| \[(\w[\w-]*)\]\(https://github\.com/([^)]+)\) \|"
+        r"\| \[([^]]+)\]\(https://github\.com/([^)]+)\) \|"
         r" ([^|]+) \| (\d+) \| (\d+) \| (\d+) \| (\d+) \|",
         text,
     ):
