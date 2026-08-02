@@ -8,7 +8,7 @@ Manufacturing Engineer & Data Analyst with <!-- CAREER_YEARS_START -->18<!-- CAR
 
 ### [stackchan-lab](https://github.com/yasumorishima/stackchan-lab) — M5 Stack-chan Development Log (Active)
 
-Official M5Stack Stack-chan (`M5STACK-K151`) moved off its stock cloud assistant onto a self-hosted stack on a Raspberry Pi 5 - 14 server-side tools · 11 device tools over MCP · ~2s from end of speech to first audio · stock firmware, unmodified
+Official M5Stack Stack-chan (`M5STACK-K151`) moved off its stock cloud assistant onto a self-hosted stack on a Raspberry Pi 5 - 15 server-side tools · 11 device tools over MCP · ~2s from end of speech to first audio · stock firmware, unmodified
 
 <details>
 <summary>How the voice loop runs</summary>
@@ -18,7 +18,7 @@ Official M5Stack Stack-chan (`M5STACK-K151`) moved off its stock cloud assistant
 | Speech in | sherpa-onnx / ReazonSpeech, on the Pi |
 | Reply | hosted 120B model, free tier |
 | Speech out | Open JTalk, on the Pi (0.27s per sentence) |
-| Tools | weather, FX, indices, crypto, NHK headlines, JMA quake / warning / typhoon, heat index, train delays, on-this-day, moon and sun, free-tier quota, fuel surcharge |
+| Tools | weather, FX, indices, crypto, NHK headlines, JMA quake / warning / typhoon, heat index, train delays, on-this-day, moon and sun, free-tier quota, fuel surcharge, travel advisories |
 | Device tools | camera, head angles, LED, volume, screen, battery - called through the same function-call array |
 
 </details>
