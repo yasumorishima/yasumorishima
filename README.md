@@ -37,6 +37,7 @@ Official M5Stack Stack-chan (`M5STACK-K151`) moved off its stock cloud assistant
 | Speech came out chopped mid-word | The model answered with a comma-less list, so the splitter fell back to counting characters - and its guard protected digits and Latin but not kanji compounds or a number and its unit |
 | Asking the prompt to keep replies short | Cost tool calls, 7/9 to 1/9 on the same probe. Shape is enforced in code instead |
 | Nothing could interrupt a long answer | The listening window was opened on an estimate of what the device still had buffered, and closed 0.5-1.1s before the device said it had started listening. It waits for that signal now |
+| Questions came back as different sentences | The device sends its whole listening buffer - 18s of it around a one-word question - and all of that reached the recogniser. Trimming to the speech and levelling it halved the error rate |
 
 </details>
 
