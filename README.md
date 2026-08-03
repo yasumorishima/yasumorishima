@@ -235,7 +235,7 @@ Private repo (the method is the product) — public technical write-up: [basebal
 
 ## 🌐 Open Source Contributions
 
-<!-- OSS_STATS_START -->(84 PRs / 43 Merged)<!-- OSS_STATS_END --> across 39 repositories. See [oss-contributions](https://github.com/yasumorishima/oss-contributions) for full details.
+<!-- OSS_STATS_START -->(85 PRs / 43 Merged)<!-- OSS_STATS_END --> across 39 repositories. See [oss-contributions](https://github.com/yasumorishima/oss-contributions) for full details.
 
 <details>
 <summary>PR highlights (click to expand)</summary>
@@ -257,7 +257,7 @@ Private repo (the method is the product) — public technical write-up: [basebal
 | **jldbc/pybaseball** | [#498-504](https://github.com/jldbc/pybaseball) | Bug fixes & documentation |
 
 <details>
-<summary>team-mirai — Civic Tech OSS (<!-- TEAM_MIRAI_STATS_START -->25 PRs (14 Merged / 3 Open / 8 Closed)<!-- TEAM_MIRAI_STATS_END -->)</summary>
+<summary>team-mirai — Civic Tech OSS (<!-- TEAM_MIRAI_STATS_START -->26 PRs (14 Merged / 4 Open / 8 Closed)<!-- TEAM_MIRAI_STATS_END -->)</summary>
 
 Civic tech projects for political transparency & citizen participation in Japan. Next.js / TypeScript / Supabase / Vitest.
 
