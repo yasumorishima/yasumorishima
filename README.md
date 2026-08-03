@@ -8,7 +8,7 @@ Manufacturing Engineer & Data Analyst with <!-- CAREER_YEARS_START -->18<!-- CAR
 
 ### [stackchan-lab](https://github.com/yasumorishima/stackchan-lab) — M5 Stack-chan Development Log (Active)
 
-Official M5Stack Stack-chan (`M5STACK-K151`) moved off its stock cloud assistant onto a self-hosted stack on a Raspberry Pi 5 - 15 server-side tools · 11 device tools over MCP · ~2s from end of speech to first audio · stock firmware, unmodified
+Official M5Stack Stack-chan (`M5STACK-K151`) moved off its stock cloud assistant onto a self-hosted stack on a Raspberry Pi 5 - 18 server-side tools · 11 device tools over MCP · ~2s from end of speech to first audio · stock firmware, unmodified
 
 <details>
 <summary>How the voice loop runs</summary>
@@ -18,9 +18,9 @@ Official M5Stack Stack-chan (`M5STACK-K151`) moved off its stock cloud assistant
 | Speech in | sherpa-onnx / ReazonSpeech, on the Pi |
 | Reply | hosted 120B model, free tier |
 | Speech out | Open JTalk, on the Pi (0.27s per sentence) |
-| Tools | weather, FX, indices, crypto, NHK headlines, JMA quake / warning / typhoon, heat index, train delays, on-this-day, moon and sun, free-tier quota, fuel surcharge, travel advisories |
+| Tools | weather, FX, indices, crypto, NHK headlines, JMA quake / warning / typhoon, heat index, train delays, on-this-day, moon and sun, fuel surcharge, travel advisories, baseball scores and standings, roster notices, cheer-song lyrics |
 | Device tools | camera, head angles, LED, volume, screen, battery - called through the same function-call array |
-| Interrupting | the device sends no mic while it is playing, so the server opens 0.4s listening windows at silent points, every ~6s of a long answer |
+| Interrupting | the device sends no mic while it is playing, so the server stops the audio and listens at a silent point |
 
 </details>
 
@@ -32,11 +32,11 @@ Official M5Stack Stack-chan (`M5STACK-K151`) moved off its stock cloud assistant
 | Pairing failed as `No devices found` | Factory firmware nine releases behind. OTA needs Wi-Fi, Wi-Fi setup needs pairing - USB was the only way in |
 | Device kept talking to the stock server | A hand-appended NVS entry padded its key with `0xFF` instead of `0x00`: valid CRC, invisible to my own parser, permanently missed by ESP-IDF |
 | OOM-killed at 7GB RSS, twice | A VAD that starts counting at speech never fires on an always-streaming mic |
-| Speech played in slow motion | Not length. The same 30 morae read fine as nonsense words but break in a real sentence, and one comma puts it right - so the server measures seconds-per-mora after synthesis and re-splits whatever came out slow |
+| Speech played in slow motion | Not length - the same 30 morae read fine as nonsense but break in a real sentence, and one comma puts it right. The server times each synthesis and re-splits what came out slow |
 | The tail of every reply dragged | Open JTalk pads ~0.58s of silence after each synthesis - 27-56% of a short reply was silence |
-| Unnatural Japanese | The model spaces its numbers, and `3 000` is read digit by digit. Spaces after digits are closed before synthesis |
-| Speech came out chopped mid-word | The model answered with a comma-less list, so the splitter had no legal cut point and fell back to counting characters - and the guard only protected digits and Latin, not kanji compounds or a number and its unit |
+| Speech came out chopped mid-word | The model answered with a comma-less list, so the splitter fell back to counting characters - and its guard protected digits and Latin but not kanji compounds or a number and its unit |
 | Asking the prompt to keep replies short | Cost tool calls, 7/9 to 1/9 on the same probe. Shape is enforced in code instead |
+| Nothing could interrupt a long answer | The listening window was opened on an estimate of what the device still had buffered, and closed 0.5-1.1s before the device said it had started listening. It waits for that signal now |
 
 </details>
 
@@ -99,7 +99,7 @@ Full-stack web app for a high school baseball alumni association — <!--ob:acti
 
 ### [Yokohama Funnies](https://yokohama-funnies.vercel.app/) — Amateur Baseball Team Site (In Production)
 
-Companion site for an amateur baseball team, forked from Minami Baseball OB — <!--fn:players-->23<!--/fn-->-player roster · <!--fn:pages-->48<!--/fn--> pages · <!--fn:db_tables-->31<!--/fn--> DB tables · <!--fn:e2e_tests-->18<!--/fn--> e2e tests · <!--fn:cost-->¥0<!--/fn-->/mo running cost (<!--fn:ts_files-->165<!--/fn--> files, <!--fn:loc-->~19600<!--/fn--> LOC). **[Technical Documentation](https://github.com/yasumorishima/yokohama-funnies-docs)**
+Companion site for an amateur baseball team, forked from Minami Baseball OB — <!--fn:players-->23<!--/fn-->-player roster · <!--fn:pages-->47<!--/fn--> pages · <!--fn:db_tables-->31<!--/fn--> DB tables · <!--fn:e2e_tests-->18<!--/fn--> e2e tests · <!--fn:cost-->¥0<!--/fn-->/mo running cost (<!--fn:ts_files-->155<!--/fn--> files, <!--fn:loc-->~18000<!--/fn--> LOC). **[Technical Documentation](https://github.com/yasumorishima/yokohama-funnies-docs)**
 
 5-tier RBAC (Middleware + RLS), PR-based member approval (Form → GAS → Actions auto-PR → merge → role sync), custom amateur-baseball stats schema (per-game batting / pitching / attendance) with manual-input + spreadsheet-migration ingestion
 
@@ -107,7 +107,7 @@ Companion site for an amateur baseball team, forked from Minami Baseball OB — 
 <summary>Architecture & features</summary>
 
 - **5-tier RBAC** (guest → admin): Next.js Middleware + Supabase RLS — authorization at route, row, and component level (Google OAuth)
-- **PR-based member approval** (same topology as Minami): Google Form → Apps Script → Vercel proxy → GitHub App auto-creates an approval PR adding a per-member role file (`config/members/<uid>.yml`); merging triggers a polling role-sync to Supabase + an approval email to the member — approve by merge. Personal data stays minimal in Git
+- **PR-based member approval** (same topology as Minami): Google Form → Apps Script → Vercel proxy → GitHub App auto-creates an approval PR editing a roles allowlist (`config/members.yml`); merging triggers a polling role-sync to Supabase + an approval email to the member — approve by merge. Personal data stays minimal in Git
 - **Amateur-baseball stats schema**: `players` (jersey / bats / throws / is_guest / photo / comment), per-game `game_player_batting` (14 cols) + `game_player_pitching`, `attendances` (○/△/×); aggregated views + client-side season filter compute 打率 / 出塁率 / 長打率 / OPS / ERA / WHIP / K9
 - **Stat ingestion**: spreadsheet migration + editor manual-input UI (`/edit/game-stats`, scorebook image side-by-side + per-player grid); editors upload scorebook images straight from the result page
 - **Custom CMS / UX**: dedicated + inline editor pages, soft delete (7-day trash + auto-purge), change history, audit logs, public No. 06 ROSTER section (photo + jersey + role + comment) via `players_public` view, Open-Meteo weather forecast with WBGT heat-stress display
