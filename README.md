@@ -20,6 +20,7 @@ Official M5Stack Stack-chan (`M5STACK-K151`) moved off its stock cloud assistant
 | Speech out | Open JTalk, on the Pi (0.27s per sentence) |
 | Tools | weather, FX, indices, crypto, NHK headlines, JMA quake / warning / typhoon, heat index, train delays, on-this-day, moon and sun, free-tier quota, fuel surcharge, travel advisories |
 | Device tools | camera, head angles, LED, volume, screen, battery - called through the same function-call array |
+| Interrupting | the device sends no mic while it is playing, so the server opens 0.4s listening windows at silent points, every ~6s of a long answer |
 
 </details>
 
@@ -34,6 +35,7 @@ Official M5Stack Stack-chan (`M5STACK-K151`) moved off its stock cloud assistant
 | Speech played in slow motion | Not length. The same 30 morae read fine as nonsense words but break in a real sentence, and one comma puts it right - so the server measures seconds-per-mora after synthesis and re-splits whatever came out slow |
 | The tail of every reply dragged | Open JTalk pads ~0.58s of silence after each synthesis - 27-56% of a short reply was silence |
 | Unnatural Japanese | The model spaces its numbers, and `3 000` is read digit by digit. Spaces after digits are closed before synthesis |
+| Speech came out chopped mid-word | The model answered with a comma-less list, so the splitter had no legal cut point and fell back to counting characters - and the guard only protected digits and Latin, not kanji compounds or a number and its unit |
 | Asking the prompt to keep replies short | Cost tool calls, 7/9 to 1/9 on the same probe. Shape is enforced in code instead |
 
 </details>
