@@ -8,7 +8,7 @@ Manufacturing Engineer & Data Analyst with <!-- CAREER_YEARS_START -->18<!-- CAR
 
 ### [stackchan-lab](https://github.com/yasumorishima/stackchan-lab) — M5 Stack-chan Development Log (Active)
 
-Official M5Stack Stack-chan (`M5STACK-K151`) moved off its stock cloud assistant onto a self-hosted stack on a Raspberry Pi 5 - 18 server-side tools · 11 device tools over MCP · ~2s from end of speech to first audio · stock firmware, unmodified
+Official M5Stack Stack-chan (`M5STACK-K151`) moved off its stock cloud assistant onto a self-hosted stack on a Raspberry Pi 5 - 19 server-side tools · 11 device tools over MCP · ~2s from end of speech to first audio · stock firmware, unmodified
 
 <details>
 <summary>How the voice loop runs</summary>
@@ -18,8 +18,9 @@ Official M5Stack Stack-chan (`M5STACK-K151`) moved off its stock cloud assistant
 | Speech in | sherpa-onnx / ReazonSpeech, on the Pi |
 | Reply | hosted 120B model, free tier |
 | Speech out | Open JTalk, on the Pi (0.27s per sentence) |
-| Tools | weather, FX, indices, crypto, NHK headlines, JMA quake / warning / typhoon, heat index, train delays, on-this-day, moon and sun, fuel surcharge, travel advisories, baseball scores and standings, roster notices, cheer-song lyrics |
+| Tools | weather, FX, indices, crypto, NHK headlines, JMA quake / warning / typhoon, heat index, train delays, on-this-day, moon and sun, fuel surcharge, travel advisories, baseball scores and standings, roster notices, cheer-song lyrics and singing them |
 | Device tools | camera, head angles, LED, volume, screen, battery - called through the same function-call array |
+| Singing | it sings the cheer songs. Nobody publishes the tunes, so they are worked out from a recording - 0.5-1.0 of a semitone from the original |
 | Interrupting | the device sends no mic while it is playing, so the server stops the audio and listens at a silent point |
 
 </details>
@@ -38,6 +39,7 @@ Official M5Stack Stack-chan (`M5STACK-K151`) moved off its stock cloud assistant
 | Asking the prompt to keep replies short | Cost tool calls, 7/9 to 1/9 on the same probe. Shape is enforced in code instead |
 | Nothing could interrupt a long answer | The listening window was opened on an estimate of what the device still had buffered, and closed 0.5-1.1s before the device said it had started listening. It waits for that signal now |
 | Questions came back as different sentences | The device sends its whole listening buffer - 18s of it around a one-word question - and all of that reached the recogniser. Trimming to the speech and levelling it halved the error rate |
+| It could only sing the 2017 squad | The one set of recordings I found overlapped the words the club publishes today by three entries. Another page on the same site had this season's players, and the ones who inherited an older player's tune can borrow that recording |
 
 </details>
 
