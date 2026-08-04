@@ -100,7 +100,7 @@ Full-stack web app for a high school baseball alumni association — <!--ob:acti
 
 ### [Yokohama Funnies](https://yokohama-funnies.vercel.app/) — Amateur Baseball Team Site (In Production)
 
-Companion site for an amateur baseball team, forked from Minami Baseball OB — <!--fn:players-->23<!--/fn-->-player roster · <!--fn:pages-->47<!--/fn--> pages · <!--fn:db_tables-->31<!--/fn--> DB tables · <!--fn:e2e_tests-->18<!--/fn--> e2e tests · <!--fn:cost-->¥0<!--/fn-->/mo running cost (<!--fn:ts_files-->155<!--/fn--> files, <!--fn:loc-->~18000<!--/fn--> LOC). **[Technical Documentation](https://github.com/yasumorishima/yokohama-funnies-docs)**
+Companion site for an amateur baseball team, forked from Minami Baseball OB — <!--fn:players-->23<!--/fn-->-player roster · <!--fn:pages-->48<!--/fn--> pages · <!--fn:db_tables-->31<!--/fn--> DB tables · <!--fn:e2e_tests-->18<!--/fn--> e2e tests · <!--fn:cost-->¥0<!--/fn-->/mo running cost (<!--fn:ts_files-->165<!--/fn--> files, <!--fn:loc-->~19600<!--/fn--> LOC). **[Technical Documentation](https://github.com/yasumorishima/yokohama-funnies-docs)**
 
 5-tier RBAC (Middleware + RLS), PR-based member approval (Form → GAS → Actions auto-PR → merge → role sync), custom amateur-baseball stats schema (per-game batting / pitching / attendance) with manual-input + spreadsheet-migration ingestion
 
@@ -108,7 +108,7 @@ Companion site for an amateur baseball team, forked from Minami Baseball OB — 
 <summary>Architecture & features</summary>
 
 - **5-tier RBAC** (guest → admin): Next.js Middleware + Supabase RLS — authorization at route, row, and component level (Google OAuth)
-- **PR-based member approval** (same topology as Minami): Google Form → Apps Script → Vercel proxy → GitHub App auto-creates an approval PR editing a roles allowlist (`config/members.yml`); merging triggers a polling role-sync to Supabase + an approval email to the member — approve by merge. Personal data stays minimal in Git
+- **PR-based member approval** (same topology as Minami): Google Form → Apps Script → Vercel proxy → GitHub App auto-creates an approval PR adding a per-member role file (`config/members/<uid>.yml`); merging triggers a polling role-sync to Supabase + an approval email to the member — approve by merge. Personal data stays minimal in Git
 - **Amateur-baseball stats schema**: `players` (jersey / bats / throws / is_guest / photo / comment), per-game `game_player_batting` (14 cols) + `game_player_pitching`, `attendances` (○/△/×); aggregated views + client-side season filter compute 打率 / 出塁率 / 長打率 / OPS / ERA / WHIP / K9
 - **Stat ingestion**: spreadsheet migration + editor manual-input UI (`/edit/game-stats`, scorebook image side-by-side + per-player grid); editors upload scorebook images straight from the result page
 - **Custom CMS / UX**: dedicated + inline editor pages, soft delete (7-day trash + auto-purge), change history, audit logs, public No. 06 ROSTER section (photo + jersey + role + comment) via `players_public` view, Open-Meteo weather forecast with WBGT heat-stress display
