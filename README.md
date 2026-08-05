@@ -252,6 +252,7 @@ Private repo (the method is the product) — public technical write-up: [basebal
 | **codeforjapan/mapprint** | [#556](https://github.com/codeforjapan/mapprint/pull/556) | Share buttons on the disaster print map |
 | **codeforjapan/mapprint** | [#564](https://github.com/codeforjapan/mapprint/pull/564) | Deterministic list order on the printable map |
 | **codeforjapan/mapprint** | [#563](https://github.com/codeforjapan/mapprint/pull/563) | 2026 Kumamoto earthquake paper map |
+| **codeforjapan/BirdXplorer** | [#281](https://github.com/codeforjapan/BirdXplorer/pull/281) | Statement timeouts for the Community Notes API |
 | **openclimatefix/graph_weather** | [#241](https://github.com/openclimatefix/graph_weather/pull/241) | Restore CI: torch pinned to match the PyG wheels it loads |
 | **openclimatefix/graph_weather** | [#242](https://github.com/openclimatefix/graph_weather/pull/242) | MOSAIC block-sparse attention, from the paper |
 | **optuna/optuna** | — | Hyperparameter optimization framework |
