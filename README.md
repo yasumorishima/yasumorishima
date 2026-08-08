@@ -8,7 +8,7 @@ Manufacturing Engineer & Data Analyst with <!-- CAREER_YEARS_START -->18<!-- CAR
 
 ### [stackchan-lab](https://github.com/yasumorishima/stackchan-lab) — M5 Stack-chan Development Log (Active)
 
-Official M5Stack Stack-chan (`M5STACK-K151`) moved off its stock cloud assistant onto a self-hosted stack on a Raspberry Pi 5 - 19 server-side tools · 11 device tools over MCP · ~2s from end of speech to first audio · stock firmware, unmodified
+Official M5Stack Stack-chan (`M5STACK-K151`) moved off its stock cloud assistant onto a self-hosted stack on a Raspberry Pi 5 - 19 server-side tools · 11 device tools over MCP · sings 16 cheer songs · speaks while the model is still writing · stock firmware, unmodified
 
 <details>
 <summary>How the voice loop runs</summary>
@@ -17,10 +17,11 @@ Official M5Stack Stack-chan (`M5STACK-K151`) moved off its stock cloud assistant
 | --- | --- |
 | Speech in | sherpa-onnx / ReazonSpeech, on the Pi |
 | Reply | hosted 120B model, free tier |
-| Speech out | Open JTalk, on the Pi (0.27s per sentence) |
+| Speech out | Open JTalk, on the Pi (0.27s per sentence), shaped for a speaker that cannot reproduce bass |
 | Tools | weather, FX, indices, crypto, NHK headlines, JMA quake / warning / typhoon, heat index, train delays, on-this-day, moon and sun, fuel surcharge, travel advisories, baseball scores and standings, roster notices, cheer-song lyrics, singing a cheer song |
 | Device tools | camera, head angles, LED, volume, screen, battery - called through the same function-call array |
 | Interrupting | the device sends no mic while it is playing, so the server stops the audio and listens at a silent point |
+| Latency | the reply is spoken sentence by sentence as it streams, and only the utterance that just ended is sent to the recogniser |
 
 </details>
 
@@ -40,6 +41,9 @@ Official M5Stack Stack-chan (`M5STACK-K151`) moved off its stock cloud assistant
 | Questions came back as different sentences | The device sends its whole listening buffer - 18s of it around a one-word question - and all of that reached the recogniser. Trimming to the speech and levelling it halved the error rate |
 | It sang the cheer songs, and they were unlistenable | Taken out twice. Both times my measurements passed and it still was not a tune, so the bar was wrong rather than the singing |
 | The rhythm would not come back, whatever I changed | The wall was the ruler. Against a real recording, comparing sound to sound has a floor of 142-680ms: singing at the onsets of the recording itself, which cannot be wrong as rhythm, still reads that, and every difference I had been reading between methods sat inside it. Measured by times against times, with a random control beside it, the notes now land 20-60ms from the onsets against 55-105ms for random - and it sings |
+
+| Conversation sounded quieter than the singing | Not level - band. The singing voice puts over 90% of its energy above 500Hz; the speaking voice puts 73-84% below it, where a speaker this small reproduces nothing. Matching the level in the band that is actually audible fixed what matching the overall level could not |
+| Songs from the game score came out with the wrong rhythm | Three faults at once: a beat line grazing a note split it in two, a note crossing a bar line was counted twice, and lyrics were fitted to the whole tune at once so one misread note moved which syllable is held. The score labels its own notes, so counting those against what was read settles each case |
 
 </details>
 
