@@ -250,16 +250,12 @@ Private repo (the method is the product) — public technical write-up: [basebal
 | Repository | PR | Description |
 |---|---|---|
 | **dfinity/icp-js-core** | [#1270](https://github.com/dfinity/icp-js-core/pull/1270) | Improve Candid decode error messages |
-| **dfinity/icp-js-core** | [#1277](https://github.com/dfinity/icp-js-core/pull/1277) | Deduplicate parallel fetchSubnetKeys |
-| **dfinity/pic-js** | [#235](https://github.com/dfinity/pic-js/pull/235) | Add fetchCanisterLogs() method |
 | **line/line-bot-mcp-server** | [#369](https://github.com/line/line-bot-mcp-server/pull/369) | Add get_follower_ids tool |
 | **pyomeca/ezc3d** | [#384](https://github.com/pyomeca/ezc3d/pull/384) | Fix `__eq__` early return bug |
 | **codeforjapan/mapprint** | [#556](https://github.com/codeforjapan/mapprint/pull/556) | Share buttons on the disaster print map |
 | **codeforjapan/mapprint** | [#564](https://github.com/codeforjapan/mapprint/pull/564) | Deterministic list order on the printable map |
 | **codeforjapan/mapprint** | [#563](https://github.com/codeforjapan/mapprint/pull/563) | 2026 Kumamoto earthquake paper map |
 | **codeforjapan/BirdXplorer** | [#281](https://github.com/codeforjapan/BirdXplorer/pull/281) | Statement timeouts for the Community Notes API |
-| **openclimatefix/graph_weather** | [#241](https://github.com/openclimatefix/graph_weather/pull/241) | Restore CI: torch pinned to match the PyG wheels it loads |
-| **openclimatefix/graph_weather** | [#242](https://github.com/openclimatefix/graph_weather/pull/242) | MOSAIC block-sparse attention, from the paper |
 | **hotosm/openaerialmap** | [#289](https://github.com/hotosm/openaerialmap/pull/289) | Stop the STAC ingester dropping the wrong record when an entry fails |
 | **optuna/optuna** | — | Hyperparameter optimization framework |
 | **pandas-dev/pandas** | — | Data analysis library |
@@ -273,9 +269,7 @@ Civic tech projects for political transparency & citizen participation in Japan.
 | Repository | Highlights |
 |---|---|
 | **action-board** | [48 unit tests](https://github.com/team-mirai-volunteer/action-board/pull/1969), [RPC tests](https://github.com/team-mirai-volunteer/action-board/pull/1869), [breadcrumb nav](https://github.com/team-mirai-volunteer/action-board/pull/1849), [cache fix](https://github.com/team-mirai-volunteer/action-board/pull/1845) + 5 more |
-| **marumie** | [Category filter total](https://github.com/team-mirai/marumie/pull/1141) |
 | **mirai-gikai** | [Supabase CLI v2.106 seed permission fix](https://github.com/team-mirai/mirai-gikai/pull/930), [Safari/iOS ruby spacing fix](https://github.com/team-mirai/mirai-gikai/pull/932) |
-| **post-checker** | [Timezone fix](https://github.com/team-mirai-volunteer/post-checker/pull/34) |
 | **fact-checker** | [X API investigation](https://github.com/team-mirai-volunteer/fact-checker/issues/69#issuecomment-3811711591) + 5 PRs |
 
 </details>
