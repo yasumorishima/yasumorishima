@@ -260,6 +260,7 @@ Private repo (the method is the product) — public technical write-up: [basebal
 | **codeforjapan/BirdXplorer** | [#281](https://github.com/codeforjapan/BirdXplorer/pull/281) | Statement timeouts for the Community Notes API |
 | **openclimatefix/graph_weather** | [#241](https://github.com/openclimatefix/graph_weather/pull/241) | Restore CI: torch pinned to match the PyG wheels it loads |
 | **openclimatefix/graph_weather** | [#242](https://github.com/openclimatefix/graph_weather/pull/242) | MOSAIC block-sparse attention, from the paper |
+| **hotosm/openaerialmap** | [#289](https://github.com/hotosm/openaerialmap/pull/289) | Stop the STAC ingester dropping the wrong record when an entry fails |
 | **optuna/optuna** | — | Hyperparameter optimization framework |
 | **pandas-dev/pandas** | — | Data analysis library |
 | **jldbc/pybaseball** | [#498-504](https://github.com/jldbc/pybaseball) | Bug fixes & documentation |
