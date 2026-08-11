@@ -258,6 +258,7 @@ Private repo (the method is the product) — public technical write-up: [basebal
 | **codeforjapan/BirdXplorer** | [#281](https://github.com/codeforjapan/BirdXplorer/pull/281) | Statement timeouts for the Community Notes API |
 | **hotosm/openaerialmap** | [#289](https://github.com/hotosm/openaerialmap/pull/289) | Stop the STAC ingester dropping the wrong record when an entry fails |
 | **apache/fineract-backoffice-ui** | [#321](https://github.com/apache/fineract-backoffice-ui/pull/321) | Translate the accounting screen titles and tooltips |
+| **daisy/MathCAT** | [#665](https://github.com/daisy/MathCAT/pull/665) | Fix chemistry assertions that could never fail |
 | **optuna/optuna** | — | Hyperparameter optimization framework |
 | **pandas-dev/pandas** | — | Data analysis library |
 | **jldbc/pybaseball** | [#498-504](https://github.com/jldbc/pybaseball) | Bug fixes & documentation |
