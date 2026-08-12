@@ -263,6 +263,7 @@ Private repo (the method is the product) — public technical write-up: [basebal
 | **project-inclusive/OpenFisca-Japan** | [#479](https://github.com/project-inclusive/OpenFisca-Japan/pull/479) | Add the vocational training benefit for single-parent families to Japan's welfare rules engine |
 | **project-inclusive/OpenFisca-Japan** | [#480](https://github.com/project-inclusive/OpenFisca-Japan/pull/480) | Add the housing security benefit to Japan's welfare rules engine |
 | **project-inclusive/OpenFisca-Japan** | [#481](https://github.com/project-inclusive/OpenFisca-Japan/pull/481) | Add the welfare loan fund for single-parent families and widows to Japan's welfare rules engine |
+| **project-inclusive/OpenFisca-Japan** | [#482](https://github.com/project-inclusive/OpenFisca-Japan/pull/482) | Add the school-cost assistance eligibility check to Japan's welfare rules engine |
 | **optuna/optuna** | — | Hyperparameter optimization framework |
 | **pandas-dev/pandas** | — | Data analysis library |
 | **jldbc/pybaseball** | [#498-504](https://github.com/jldbc/pybaseball) | Bug fixes & documentation |
