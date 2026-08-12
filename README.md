@@ -383,7 +383,7 @@ Most recently competed in [On Top of Pasketti](https://www.drivendata.org/compet
 
 | Project | Description |
 |---|---|
-| **[ICP Learning Project](https://github.com/yasumorishima/ICP_kinyoku)** | Persistent counter dApp on Internet Computer (Motoko, dfx CLI) |
+| **[Kimaru](https://github.com/yasumorishima/icp-counter-learning)** | Tamper-evident scheduling polls, fully on-chain on the Internet Computer (Motoko + asset canister, 12 languages, no login) — [Live](https://iqjbc-7aaaa-aaaaj-qnnsa-cai.icp0.io/) |
 | **[OpenClaw Twitter Bot](https://github.com/yasumorishima/raspi-baseball-bot)** | Raspberry Pi 5 + OpenClaw + Gemini API auto-tweet bot (stopped) — [Article (JP)](https://zenn.dev/shogaku/articles/raspi-baseball-bot-openclaw-gemini) |
 | **[alexa-rpi5](https://github.com/yasumorishima/alexa-rpi5)** 🔒 | RPi5 ↔ Fire TV Cube 操作 hub (Echo speaker 不要環境)。 cube wrapper + watchers + integrations、 機能詳細は repo README 参照 |
 
