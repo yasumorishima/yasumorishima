@@ -349,7 +349,7 @@ Most recently competed in [On Top of Pasketti](https://www.drivendata.org/compet
 |---|---|---|
 | **[MLB Bat Tracking Dashboard](https://github.com/yasumorishima/mlb-bat-tracking-dashboard)** | Leaderboard, Player Comparison, Team Lineup Builder. Powered by savant-extras | [Live](https://yasumorishima-mlb-bat-tracking.streamlit.app/) |
 | **[WBC 2026 Scouting Dashboard](https://github.com/yasumorishima/wbc-scouting)** | 30 Statcast apps across 19 countries. Zone heatmaps, spray charts, pitch movement | [Live](https://wbc-scouting-usa-batters.streamlit.app/) |
-| **[Daily Diary](https://github.com/yasumorishima/diary-app-flutter)** | Flutter mobile app, 10 languages, offline-first, biometric app lock, daily reminder, Android Auto Backup, AdMob. Settings links out to the Sansuu/Shogi/Coding site (Japanese locale only) | [Google Play](https://play.google.com/store/apps/details?id=com.diary.daily) |
+| **[Daily Diary](https://github.com/yasumorishima/diary-app-flutter)** | Flutter mobile app, 10 languages, offline-first, biometric app lock, daily reminder, Android Auto Backup, AdMob · links to Sansuu/Shogi/Coding (ja only) | [Google Play](https://play.google.com/store/apps/details?id=com.diary.daily) |
 | **[Fire Tablet Google Play Helper](https://github.com/yasumorishima/yasumorishima.github.io/tree/main/fire-gapps)** | Detects Fire OS from the browser UA, then lists the four required APKs in install order with step gating and saved progress | [Live](https://yasumorishima.github.io/fire-gapps/) |
 
 <details>
@@ -384,7 +384,7 @@ Most recently competed in [On Top of Pasketti](https://www.drivendata.org/compet
 
 | Project | Description |
 |---|---|
-| **[Sansuu, Shogi & Coding](https://github.com/yasumorishima/icp-counter-learning)** | Three modes for kids, fully on the Internet Computer: arithmetic for Japanese elementary school (grades 1-6, 36 topics), single-player shogi, and a card-based coding adventure (20 stages across 4 worlds — sequence, loops, conditionals, functions). The shogi rules are cross-checked against an OSS engine (tsshogi) on every push — move generation matches published perft counts up to 19,861,490 nodes, and impasse (jishogi) and perpetual check are handled. Every coding stage ships a reference program that the test suite executes, so a stage that cannot be cleared never ships. Works offline, and every record stays on the child's own device — no ads, no sign-up, no server — [Live](https://iqjbc-7aaaa-aaaaj-qnnsa-cai.icp0.io/) |
+| **[Sansuu, Shogi & Coding](https://github.com/yasumorishima/icp-counter-learning)** | Three modes for kids on the Internet Computer: arithmetic (36 topics) · shogi · card-based coding (20 stages). Shogi rules cross-checked against tsshogi, perft to 19,861,490 nodes. Offline · on-device records · no ads — [Live](https://iqjbc-7aaaa-aaaaj-qnnsa-cai.icp0.io/) |
 | **[OpenClaw Twitter Bot](https://github.com/yasumorishima/raspi-baseball-bot)** | Raspberry Pi 5 + OpenClaw + Gemini API auto-tweet bot (stopped) — [Article (JP)](https://zenn.dev/shogaku/articles/raspi-baseball-bot-openclaw-gemini) |
 | **[alexa-rpi5](https://github.com/yasumorishima/alexa-rpi5)** 🔒 | RPi5 ↔ Fire TV Cube 操作 hub (Echo speaker 不要環境)。 cube wrapper + watchers + integrations、 機能詳細は repo README 参照 |
 
