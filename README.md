@@ -384,7 +384,7 @@ Most recently competed in [On Top of Pasketti](https://www.drivendata.org/compet
 
 | Project | Description |
 |---|---|
-| **[Sansuu, Shogi & Coding](https://github.com/yasumorishima/icp-counter-learning)** | Three modes for kids on the Internet Computer: arithmetic (36 topics) · shogi · card-based coding (20 stages). Shogi rules cross-checked against tsshogi, perft to 19,861,490 nodes. Offline · on-device records · no ads — [Live](https://iqjbc-7aaaa-aaaaj-qnnsa-cai.icp0.io/) |
+| **[Sansuu, Shogi & Sora](https://github.com/yasumorishima/icp-counter-learning)** | Three modes on the Internet Computer: arithmetic (36 topics) · shogi · **sora**, a planetarium drawing the real sky for any place and time — 8,404 stars to mag 6.5, constellations, the Milky Way, the Moon and the planets, all computed in the browser with no network. Positions match Meeus' worked examples to 1e-6° and JPL Horizons to 4.4′ worst case; shogi rules cross-checked against tsshogi, perft to 19,861,490 nodes. Offline · on-device records · no ads — [Live](https://iqjbc-7aaaa-aaaaj-qnnsa-cai.icp0.io/) |
 | **[OpenClaw Twitter Bot](https://github.com/yasumorishima/raspi-baseball-bot)** | Raspberry Pi 5 + OpenClaw + Gemini API auto-tweet bot (stopped) — [Article (JP)](https://zenn.dev/shogaku/articles/raspi-baseball-bot-openclaw-gemini) |
 | **[alexa-rpi5](https://github.com/yasumorishima/alexa-rpi5)** 🔒 | RPi5 ↔ Fire TV Cube 操作 hub (Echo speaker 不要環境)。 cube wrapper + watchers + integrations、 機能詳細は repo README 参照 |
 
