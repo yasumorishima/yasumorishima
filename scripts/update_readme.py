@@ -492,7 +492,7 @@ def main():
         (str(bronze), "Kaggle notebook medals", f"bronze, {kaggle_title}"),
         (str(config.get("dataset_silver", 0)), "Kaggle dataset medals", "silver"),
         (str(config.get("production_sites", 0)), "web apps in production",
-         "no running cost"),
+         "on Vercel and the Internet Computer"),
     ]
     for path in dashboard.write(tiles, date.today().isoformat()):
         print(f"  Wrote {path.name}")
