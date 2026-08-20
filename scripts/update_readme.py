@@ -381,7 +381,7 @@ def main():
     # At-a-glance dashboard (self-hosted SVG, no third-party badge service)
     # Fail closed: if a source was unreachable the README keeps its old numbers,
     # so the card must keep its old numbers too rather than publish zeros.
-    if not OSS_TOTALS or dataset_count is None:
+    if not OSS_TOTALS:
         print("Skipping dashboard: incomplete stats this run")
         return
 
@@ -392,7 +392,6 @@ def main():
         (str(OSS_TOTALS.get("repos", 0)), "upstream repositories", "contributed to"),
         (str(bronze), "Kaggle notebook medals", f"bronze, {kaggle_title}"),
         (str(config.get("dataset_silver", 0)), "Kaggle dataset medals", "silver"),
-        (str(dataset_count), "public Kaggle datasets", "MLB and competition data"),
         (str(config.get("pypi_packages", 0)), "PyPI packages", "published and maintained"),
         (str(config.get("production_sites", 0)), "web apps in production",
          "no running cost"),

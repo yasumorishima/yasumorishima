@@ -72,9 +72,16 @@ def render(tiles: list[tuple[str, str, str]], updated: str, theme: str) -> str:
         f' fill="{c["muted"]}">updated {esc(updated)}</text>',
     ]
 
+    last_row = len(tiles) % COLS or COLS
+
     for i, (value, label, sub) in enumerate(tiles):
-        tx = round(PAD + (i % COLS) * (tile_w + GAP), 1)
-        ty = HEADER + (i // COLS) * (TILE_H + GAP)
+        col, row = i % COLS, i // COLS
+        # A short final row is centred, so a 7-tile card does not read as a gap.
+        indent = 0.0
+        if row == rows - 1 and last_row < COLS:
+            indent = (COLS - last_row) * (tile_w + GAP) / 2
+        tx = round(PAD + indent + col * (tile_w + GAP), 1)
+        ty = HEADER + row * (TILE_H + GAP)
         out.append(
             f'<rect x="{tx}" y="{ty}" width="{round(tile_w, 1)}" height="{TILE_H}"'
             f' rx="8" fill="{c["tile"]}" stroke="{c["border"]}"/>'
