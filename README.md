@@ -434,7 +434,6 @@ Most recently competed in [On Top of Pasketti](https://www.drivendata.org/compet
 **Stencil mask and manufacturing method thereof (ステンシルマスク及びその製造方法)**
 * **Patent No:** 6307851 (特許第6307851号)
 * **Role:** Inventor (発明者)
-* **Assignee:** Toppan Printing Co., Ltd.
 * **Link:** [Google Patents (JP6307851B2)](https://patents.google.com/patent/JP6307851B2/ja)
 
 ---
