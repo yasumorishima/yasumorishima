@@ -293,15 +293,18 @@ def get_actions_activity() -> dict | None:
             return None
         rows = [x.split("\t") for x in out.split("\n") if x]
         # Page on the raw count: filtering first would end the loop early.
-        repos += [r[:2] for r in rows if r[2] == "false" and r[3] == "false"]
+        # Public only: the counts must not depend on which private repositories
+        # a given token happens to reach, and a visitor cannot see them anyway.
+        repos += [
+            r[:2] for r in rows
+            if r[1] == "false" and r[2] == "false" and r[3] == "false"
+        ]
         if len(rows) < 100:
             break
         page += 1
 
-    if not repos or not any(r[1] == "true" for r in repos):
-        # A token that cannot see the private repositories would undercount
-        # every number below, so publish nothing rather than a wrong figure.
-        print("  Repo listing looks incomplete, skipping activity stats", file=sys.stderr)
+    if not repos:
+        print("  Repo listing empty, skipping activity stats", file=sys.stderr)
         return None
 
     active = scheduled = runs = 0
@@ -483,7 +486,7 @@ def main():
         (str(OSS_TOTALS.get("repos", 0)), "upstream repositories", "contributed to"),
         (str(config.get("pypi_packages", 0)), "PyPI packages", "published and maintained"),
         (f"{activity['active_workflows']:,}", "active workflows",
-         f"across {activity['repos']} repositories"),
+         f"across {activity['repos']} public repositories"),
         (f"{activity['scheduled']:,}", "of them on a schedule", "fired on cron this month"),
         (f"{activity['runs_30d']:,}", "workflow runs", "in the last 30 days"),
         (str(bronze), "Kaggle notebook medals", f"bronze, {kaggle_title}"),

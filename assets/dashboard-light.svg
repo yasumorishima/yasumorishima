@@ -18,13 +18,13 @@
 <rect x="16.0" y="132" width="274.7" height="76" rx="8" fill="#f6f8fa" stroke="#d0d7de"/>
 <text x="30.0" y="168" font-size="27" font-weight="700" fill="#0969da">136</text>
 <text x="30.0" y="186" font-size="12" fill="#1f2328">active workflows</text>
-<text x="30.0" y="201" font-size="11" fill="#59636e">across 53 repositories</text>
+<text x="30.0" y="201" font-size="11" fill="#59636e">across 52 public repositories</text>
 <rect x="302.7" y="132" width="274.7" height="76" rx="8" fill="#f6f8fa" stroke="#d0d7de"/>
 <text x="316.7" y="168" font-size="27" font-weight="700" fill="#0969da">23</text>
 <text x="316.7" y="186" font-size="12" fill="#1f2328">of them on a schedule</text>
 <text x="316.7" y="201" font-size="11" fill="#59636e">fired on cron this month</text>
 <rect x="589.3" y="132" width="274.7" height="76" rx="8" fill="#f6f8fa" stroke="#d0d7de"/>
-<text x="603.3" y="168" font-size="27" font-weight="700" fill="#0969da">6,902</text>
+<text x="603.3" y="168" font-size="27" font-weight="700" fill="#0969da">6,905</text>
 <text x="603.3" y="186" font-size="12" fill="#1f2328">workflow runs</text>
 <text x="603.3" y="201" font-size="11" fill="#59636e">in the last 30 days</text>
 <rect x="16.0" y="220" width="274.7" height="76" rx="8" fill="#f6f8fa" stroke="#d0d7de"/>
