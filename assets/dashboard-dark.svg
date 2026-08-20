@@ -1,34 +1,42 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="880" height="224" viewBox="0 0 880 224" role="img" aria-label="At a glance metrics">
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="312" viewBox="0 0 880 312" role="img" aria-label="At a glance metrics">
 <style>text{font-family:ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif}</style>
-<rect x="0.5" y="0.5" width="879" height="223" rx="10" fill="#0d1117" stroke="#30363d"/>
+<rect x="0.5" y="0.5" width="879" height="311" rx="10" fill="#0d1117" stroke="#30363d"/>
 <text x="20" y="30" font-size="15" font-weight="600" fill="#e6edf3">At a glance</text>
 <text x="860" y="30" font-size="11" text-anchor="end" fill="#8b949e">updated 2026-08-20</text>
-<rect x="16.0" y="44" width="203.0" height="76" rx="8" fill="#161b22" stroke="#30363d"/>
+<rect x="16.0" y="44" width="274.7" height="76" rx="8" fill="#161b22" stroke="#30363d"/>
 <text x="30.0" y="80" font-size="27" font-weight="700" fill="#58a6ff">101</text>
 <text x="30.0" y="98" font-size="12" fill="#e6edf3">open-source pull requests</text>
 <text x="30.0" y="113" font-size="11" fill="#8b949e">54 merged</text>
-<rect x="231.0" y="44" width="203.0" height="76" rx="8" fill="#161b22" stroke="#30363d"/>
-<text x="245.0" y="80" font-size="27" font-weight="700" fill="#58a6ff">46</text>
-<text x="245.0" y="98" font-size="12" fill="#e6edf3">upstream repositories</text>
-<text x="245.0" y="113" font-size="11" fill="#8b949e">contributed to</text>
-<rect x="446.0" y="44" width="203.0" height="76" rx="8" fill="#161b22" stroke="#30363d"/>
-<text x="460.0" y="80" font-size="27" font-weight="700" fill="#58a6ff">15</text>
-<text x="460.0" y="98" font-size="12" fill="#e6edf3">Kaggle notebook medals</text>
-<text x="460.0" y="113" font-size="11" fill="#8b949e">bronze, Notebooks Expert</text>
-<rect x="661.0" y="44" width="203.0" height="76" rx="8" fill="#161b22" stroke="#30363d"/>
-<text x="675.0" y="80" font-size="27" font-weight="700" fill="#58a6ff">2</text>
-<text x="675.0" y="98" font-size="12" fill="#e6edf3">Kaggle dataset medals</text>
-<text x="675.0" y="113" font-size="11" fill="#8b949e">silver</text>
-<rect x="123.5" y="132" width="203.0" height="76" rx="8" fill="#161b22" stroke="#30363d"/>
-<text x="137.5" y="168" font-size="27" font-weight="700" fill="#58a6ff">6</text>
-<text x="137.5" y="186" font-size="12" fill="#e6edf3">PyPI packages</text>
-<text x="137.5" y="201" font-size="11" fill="#8b949e">published and maintained</text>
-<rect x="338.5" y="132" width="203.0" height="76" rx="8" fill="#161b22" stroke="#30363d"/>
-<text x="352.5" y="168" font-size="27" font-weight="700" fill="#58a6ff">2</text>
-<text x="352.5" y="186" font-size="12" fill="#e6edf3">web apps in production</text>
-<text x="352.5" y="201" font-size="11" fill="#8b949e">no running cost</text>
-<rect x="553.5" y="132" width="203.0" height="76" rx="8" fill="#161b22" stroke="#30363d"/>
-<text x="567.5" y="168" font-size="27" font-weight="700" fill="#58a6ff">1</text>
-<text x="567.5" y="186" font-size="12" fill="#e6edf3">granted patent</text>
-<text x="567.5" y="201" font-size="11" fill="#8b949e">JP 6307851</text>
+<rect x="302.7" y="44" width="274.7" height="76" rx="8" fill="#161b22" stroke="#30363d"/>
+<text x="316.7" y="80" font-size="27" font-weight="700" fill="#58a6ff">46</text>
+<text x="316.7" y="98" font-size="12" fill="#e6edf3">upstream repositories</text>
+<text x="316.7" y="113" font-size="11" fill="#8b949e">contributed to</text>
+<rect x="589.3" y="44" width="274.7" height="76" rx="8" fill="#161b22" stroke="#30363d"/>
+<text x="603.3" y="80" font-size="27" font-weight="700" fill="#58a6ff">6</text>
+<text x="603.3" y="98" font-size="12" fill="#e6edf3">PyPI packages</text>
+<text x="603.3" y="113" font-size="11" fill="#8b949e">published and maintained</text>
+<rect x="16.0" y="132" width="274.7" height="76" rx="8" fill="#161b22" stroke="#30363d"/>
+<text x="30.0" y="168" font-size="27" font-weight="700" fill="#58a6ff">177</text>
+<text x="30.0" y="186" font-size="12" fill="#e6edf3">active workflows</text>
+<text x="30.0" y="201" font-size="11" fill="#8b949e">across 72 repositories</text>
+<rect x="302.7" y="132" width="274.7" height="76" rx="8" fill="#161b22" stroke="#30363d"/>
+<text x="316.7" y="168" font-size="27" font-weight="700" fill="#58a6ff">28</text>
+<text x="316.7" y="186" font-size="12" fill="#e6edf3">of them on a schedule</text>
+<text x="316.7" y="201" font-size="11" fill="#8b949e">fired on cron this month</text>
+<rect x="589.3" y="132" width="274.7" height="76" rx="8" fill="#161b22" stroke="#30363d"/>
+<text x="603.3" y="168" font-size="27" font-weight="700" fill="#58a6ff">7,149</text>
+<text x="603.3" y="186" font-size="12" fill="#e6edf3">workflow runs</text>
+<text x="603.3" y="201" font-size="11" fill="#8b949e">in the last 30 days</text>
+<rect x="16.0" y="220" width="274.7" height="76" rx="8" fill="#161b22" stroke="#30363d"/>
+<text x="30.0" y="256" font-size="27" font-weight="700" fill="#58a6ff">15</text>
+<text x="30.0" y="274" font-size="12" fill="#e6edf3">Kaggle notebook medals</text>
+<text x="30.0" y="289" font-size="11" fill="#8b949e">bronze, Notebooks Expert</text>
+<rect x="302.7" y="220" width="274.7" height="76" rx="8" fill="#161b22" stroke="#30363d"/>
+<text x="316.7" y="256" font-size="27" font-weight="700" fill="#58a6ff">2</text>
+<text x="316.7" y="274" font-size="12" fill="#e6edf3">Kaggle dataset medals</text>
+<text x="316.7" y="289" font-size="11" fill="#8b949e">silver</text>
+<rect x="589.3" y="220" width="274.7" height="76" rx="8" fill="#161b22" stroke="#30363d"/>
+<text x="603.3" y="256" font-size="27" font-weight="700" fill="#58a6ff">2</text>
+<text x="603.3" y="274" font-size="12" fill="#e6edf3">web apps in production</text>
+<text x="603.3" y="289" font-size="11" fill="#8b949e">no running cost</text>
 </svg>

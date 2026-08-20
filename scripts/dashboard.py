@@ -52,9 +52,19 @@ def esc(value: object) -> str:
     )
 
 
+def columns_for(count: int) -> int:
+    """Choose 4 or 3 columns, whichever leaves the last row least ragged."""
+    def waste(cols):
+        rows = (count + cols - 1) // cols
+        return (rows * cols - count, rows)
+
+    return min((4, 3), key=waste)
+
+
 def render(tiles: list[tuple[str, str, str]], updated: str, theme: str) -> str:
     """Render one themed card. tiles is a list of (value, label, sub)."""
     c = THEMES[theme]
+    COLS = columns_for(len(tiles))
     rows = (len(tiles) + COLS - 1) // COLS
     tile_w = (WIDTH - 2 * PAD - (COLS - 1) * GAP) / COLS
     height = int(HEADER + rows * TILE_H + (rows - 1) * GAP + PAD)

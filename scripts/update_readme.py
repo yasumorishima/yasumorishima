@@ -8,7 +8,7 @@ import re
 import subprocess
 import sys
 import tempfile
-from datetime import date
+from datetime import date, timedelta
 from pathlib import Path
 
 import requests
@@ -31,6 +31,24 @@ COMPETITIONS_REPO = "yasumorishima/kaggle-competitions"
 
 # Filled in by sync_oss_stats() so the dashboard reuses the same numbers.
 OSS_TOTALS: dict[str, int] = {}
+
+
+def gh_env() -> dict:
+    """Cross-repo reads need the PAT: the workflow token only sees this repo."""
+    env = dict(os.environ)
+    pat = env.get("CROSS_REPO_PAT")
+    if pat:
+        env["GH_TOKEN"] = pat
+    return env
+
+
+def run_env(cmd: list[str], env: dict) -> str | None:
+    result = subprocess.run(
+        cmd, capture_output=True, text=True, timeout=120, env=env
+    )
+    if result.returncode != 0:
+        return None
+    return result.stdout.strip()
 
 
 def run(cmd: list[str]) -> str:
@@ -252,6 +270,75 @@ def get_kaggle_dataset_count() -> int | None:
     return count if count > 0 else None
 
 
+def get_actions_activity() -> dict | None:
+    """Count the automation that actually runs: workflows, cron, runs per month.
+
+    Everything here is measured, not declared: a workflow counts as scheduled
+    only if it really fired on `schedule` in the window, and disabled workflows
+    are left out.
+    """
+    env = gh_env()
+    since = (date.today() - timedelta(days=30)).isoformat()
+
+    repos = []
+    page = 1
+    while True:
+        out = run_env([
+            "gh", "api",
+            f"user/repos?per_page=100&affiliation=owner&page={page}",
+            "--jq", '.[] | [.full_name, (.private|tostring),'
+                    ' (.fork|tostring), (.archived|tostring)] | @tsv',
+        ], env)
+        if out is None:
+            return None
+        rows = [x.split("\t") for x in out.split("\n") if x]
+        # Page on the raw count: filtering first would end the loop early.
+        repos += [r[:2] for r in rows if r[2] == "false" and r[3] == "false"]
+        if len(rows) < 100:
+            break
+        page += 1
+
+    if not repos or not any(r[1] == "true" for r in repos):
+        # A token that cannot see the private repositories would undercount
+        # every number below, so publish nothing rather than a wrong figure.
+        print("  Repo listing looks incomplete, skipping activity stats", file=sys.stderr)
+        return None
+
+    active = scheduled = runs = 0
+    for full, _private in repos:
+        out = run_env([
+            "gh", "api", f"repos/{full}/actions/workflows?per_page=100",
+            "--jq", '.workflows[] | select(.state == "active") | .id',
+        ], env)
+        ids = [x for x in (out or "").split("\n") if x]
+        active += len(ids)
+
+        n = run_env([
+            "gh", "api",
+            f"repos/{full}/actions/runs?created=%3E%3D{since}&per_page=1",
+            "--jq", ".total_count",
+        ], env)
+        if n and n.isdigit():
+            runs += int(n)
+
+        for wid in ids:
+            c = run_env([
+                "gh", "api",
+                f"repos/{full}/actions/workflows/{wid}/runs"
+                f"?event=schedule&created=%3E%3D{since}&per_page=1",
+                "--jq", ".total_count",
+            ], env)
+            if c and c.isdigit() and int(c) > 0:
+                scheduled += 1
+
+    return {
+        "repos": len(repos),
+        "active_workflows": active,
+        "scheduled": scheduled,
+        "runs_30d": runs,
+    }
+
+
 def get_mlb_analysis_count() -> int | None:
     output = run([
         "gh", "api",
@@ -378,10 +465,14 @@ def main():
     README.write_text(readme, encoding="utf-8")
     print("Profile README.md updated.")
 
+    print("Measuring GitHub Actions activity...")
+    activity = get_actions_activity()
+    print(f"  Activity: {activity}")
+
     # At-a-glance dashboard (self-hosted SVG, no third-party badge service)
     # Fail closed: if a source was unreachable the README keeps its old numbers,
     # so the card must keep its old numbers too rather than publish zeros.
-    if not OSS_TOTALS:
+    if not OSS_TOTALS or activity is None:
         print("Skipping dashboard: incomplete stats this run")
         return
 
@@ -390,12 +481,15 @@ def main():
         (str(OSS_TOTALS.get("prs", 0)), "open-source pull requests",
          f"{OSS_TOTALS.get('merged', 0)} merged"),
         (str(OSS_TOTALS.get("repos", 0)), "upstream repositories", "contributed to"),
+        (str(config.get("pypi_packages", 0)), "PyPI packages", "published and maintained"),
+        (f"{activity['active_workflows']:,}", "active workflows",
+         f"across {activity['repos']} repositories"),
+        (f"{activity['scheduled']:,}", "of them on a schedule", "fired on cron this month"),
+        (f"{activity['runs_30d']:,}", "workflow runs", "in the last 30 days"),
         (str(bronze), "Kaggle notebook medals", f"bronze, {kaggle_title}"),
         (str(config.get("dataset_silver", 0)), "Kaggle dataset medals", "silver"),
-        (str(config.get("pypi_packages", 0)), "PyPI packages", "published and maintained"),
         (str(config.get("production_sites", 0)), "web apps in production",
          "no running cost"),
-        (str(config.get("patents", 0)), "granted patent", "JP 6307851"),
     ]
     for path in dashboard.write(tiles, date.today().isoformat()):
         print(f"  Wrote {path.name}")
