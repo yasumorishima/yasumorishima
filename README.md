@@ -14,7 +14,7 @@ Manufacturing Engineer & Data Analyst with <!-- CAREER_YEARS_START -->18<!-- CAR
   <img alt="At a glance: open-source, competition, package and career metrics" src="https://raw.githubusercontent.com/yasumorishima/yasumorishima/main/assets/dashboard-light.svg">
 </picture>
 
-**Jump to** — [Robotics](#-robotics--embedded) · [Baseball websites](#-baseball-websites) · [Realtime open data](#-realtime-open-data) · [Baseball analytics](#-baseball-analytics) · [Open source](#-open-source-contributions) · [Competitions](#-data--competitions) · [Dashboards and mobile](#-dashboards--mobile) · [PyPI](#-pypi-packages) · [Learning projects](#-learning-projects) · [Tech stack](#-tech-stack) · [Career](#-career) · [Patents](#-patents) · [Contact](#-contact--blog)
+**Jump to** — [Robotics](#-robotics--embedded) · [Baseball websites](#-baseball-websites) · [Realtime open data](#-realtime-open-data) · [Baseball analytics](#-baseball-analytics) · [Open source](#-open-source-contributions) · [Competitions](#-data--competitions) · [Dashboards and mobile](#-dashboards--mobile) · [PyPI](#-pypi-packages) · [Learning projects](#-learning-projects) · [Tech stack](#️-tech-stack) · [Career](#-career) · [Patents](#-patents) · [Contact](#-contact--blog)
 
 ## 🤖 Robotics / Embedded
 
