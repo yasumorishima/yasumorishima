@@ -1,4 +1,8 @@
 {
   "kaggle_title": "Notebooks Expert",
-  "notebook_bronze": 14
+  "notebook_bronze": 15,
+  "dataset_silver": 2,
+  "pypi_packages": 6,
+  "production_sites": 2,
+  "patents": 1
 }

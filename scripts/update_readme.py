@@ -11,6 +11,10 @@ import tempfile
 from datetime import date
 from pathlib import Path
 
+import requests
+
+import dashboard
+
 ROOT = Path(__file__).resolve().parent.parent
 README = ROOT / "README.md"
 CONFIG = ROOT / "config.json"
@@ -24,6 +28,9 @@ TEAM_MIRAI_REPOS = {
 }
 
 COMPETITIONS_REPO = "yasumorishima/kaggle-competitions"
+
+# Filled in by sync_oss_stats() so the dashboard reuses the same numbers.
+OSS_TOTALS: dict[str, int] = {}
 
 
 def run(cmd: list[str]) -> str:
@@ -123,6 +130,8 @@ def sync_oss_stats(readme: str, oss_text: str) -> str:
     total_merged = sum(e["merged"] for e in summary)
     repo_count = len(summary)
 
+    OSS_TOTALS.update(prs=total_prs, merged=total_merged, repos=repo_count)
+
     oss_marker_text = f"({total_prs} PRs / {total_merged} Merged)"
     readme = replace_marker(readme, "OSS_STATS", oss_marker_text)
     readme = re.sub(
@@ -206,12 +215,40 @@ def kaggle_cmd() -> list[str]:
         return [sys.executable, "-m", "kaggle"]
 
 
+def kaggle_auth() -> tuple[str, str] | None:
+    """Credentials from ~/.kaggle/kaggle.json, falling back to env vars."""
+    creds = Path.home() / ".kaggle" / "kaggle.json"
+    if creds.exists():
+        data = json.loads(creds.read_text(encoding="utf-8"))
+        return data["username"], data["key"]
+    user = os.environ.get("KAGGLE_USERNAME")
+    key = os.environ.get("KAGGLE_KEY")
+    return (user, key) if user and key else None
+
+
 def get_kaggle_dataset_count() -> int | None:
-    output = run([*kaggle_cmd(), "datasets", "list", "--user", "yasunorim", "--csv"])
-    if not output:
+    """Count *public* datasets only.
+
+    The CLI listing returns private datasets as well, which is how the README
+    came to claim 28 "published" datasets while only 8 of them were public.
+    """
+    auth = kaggle_auth()
+    if auth is None:
+        print("  No credentials, skipping dataset count", file=sys.stderr)
         return None
-    lines = output.strip().split("\n")
-    count = len(lines) - 1
+    try:
+        resp = requests.get(
+            "https://www.kaggle.com/api/v1/datasets/list",
+            params={"user": "yasunorim", "pageSize": 100},
+            auth=auth,
+            timeout=60,
+        )
+        resp.raise_for_status()
+        items = resp.json()
+    except Exception as exc:
+        print(f"  Dataset list failed: {exc}", file=sys.stderr)
+        return None
+    count = sum(1 for d in items if not d.get("isPrivate", False))
     return count if count > 0 else None
 
 
@@ -240,6 +277,7 @@ def update_bronze_in_text(text: str, bronze: int) -> str:
     text = re.sub(
         r"Bronze Medal Notebooks \(\d+\)", f"Bronze Medal Notebooks ({bronze})", text
     )
+    text = re.sub(r"All \d+ notebooks", f"All {bronze} notebooks", text)
     return text
 
 
@@ -310,7 +348,7 @@ def main():
     print(f"  Datasets: {dataset_count}")
     if dataset_count is not None:
         readme = replace_marker(
-            readme, "KAGGLE_DS_STATS", f"{dataset_count} published MLB datasets"
+            readme, "KAGGLE_DS_STATS", f"{dataset_count} public datasets"
         )
     else:
         print("  Skipping Kaggle dataset update (API unavailable)")
@@ -320,11 +358,7 @@ def main():
     print(f"  Bronze notebooks (from config.json): {bronze}")
     kaggle_comp_text = f"{kaggle_title} | \U0001f949 {bronze} Bronze Notebook Medals"
     readme = replace_marker(readme, "KAGGLE_COMP_STATS", kaggle_comp_text)
-    readme = re.sub(
-        r"<summary>All Bronze Medal Notebooks \(\d+\)</summary>",
-        f"<summary>All Bronze Medal Notebooks ({bronze})</summary>",
-        readme,
-    )
+    readme = update_bronze_in_text(readme, bronze)
 
     # MLB analysis count
     print("Fetching MLB analysis count...")
@@ -343,6 +377,30 @@ def main():
 
     README.write_text(readme, encoding="utf-8")
     print("Profile README.md updated.")
+
+    # At-a-glance dashboard (self-hosted SVG, no third-party badge service)
+    # Fail closed: if a source was unreachable the README keeps its old numbers,
+    # so the card must keep its old numbers too rather than publish zeros.
+    if not OSS_TOTALS or dataset_count is None:
+        print("Skipping dashboard: incomplete stats this run")
+        return
+
+    print("Rendering dashboard...")
+    tiles = [
+        (str(OSS_TOTALS.get("prs", 0)), "open-source pull requests",
+         f"{OSS_TOTALS.get('merged', 0)} merged"),
+        (str(OSS_TOTALS.get("repos", 0)), "upstream repositories", "contributed to"),
+        (str(bronze), "notebook medals", kaggle_title),
+        (str(dataset_count), "public datasets",
+         f"{config.get('dataset_silver', 0)} silver"),
+        (str(config.get("pypi_packages", 0)), "PyPI packages", "published and maintained"),
+        (str(config.get("production_sites", 0)), "web apps in production",
+         "no running cost"),
+        (str(config.get("patents", 0)), "granted patent", "JP 6307851"),
+        (str(career_years), "years in manufacturing", "semiconductor and quality"),
+    ]
+    for path in dashboard.write(tiles, date.today().isoformat()):
+        print(f"  Wrote {path.name}")
 
     # Cross-repo: kaggle-competitions
     print("\nUpdating kaggle-competitions README...")

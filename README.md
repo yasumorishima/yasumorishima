@@ -4,6 +4,18 @@ Manufacturing Engineer & Data Analyst with <!-- CAREER_YEARS_START -->18<!-- CAR
 
 [![Findy Skill Deviation](https://img.shields.io/badge/Findy_Skill_Deviation-73.0-blue)](https://findy-code.io/skills-share/f6fUT0vdoVeI4) <sub>2026-06-01時点: 73.0</sub>
 
+[![Kaggle](https://img.shields.io/badge/Kaggle-Notebooks%20Expert-20BEFF?logo=kaggle&logoColor=white)](https://www.kaggle.com/yasunorim)
+[![Zenn](https://img.shields.io/badge/Zenn-JP%20articles-3EA8FF?logo=zenn&logoColor=white)](https://zenn.dev/shogaku)
+[![DEV.to](https://img.shields.io/badge/DEV.to-EN%20articles-0A0A0A?logo=devdotto&logoColor=white)](https://dev.to/yasumorishima)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-profile-0A66C2?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/morishima-yasunori-b70229241)
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/yasumorishima/yasumorishima/main/assets/dashboard-dark.svg">
+  <img alt="At a glance: open-source, competition, package and career metrics" src="https://raw.githubusercontent.com/yasumorishima/yasumorishima/main/assets/dashboard-light.svg">
+</picture>
+
+**Jump to** — [Robotics](#-robotics--embedded) · [Baseball websites](#-baseball-websites) · [Realtime open data](#-realtime-open-data) · [Baseball analytics](#-baseball-analytics) · [Open source](#-open-source-contributions) · [Competitions](#-data--competitions) · [Dashboards and mobile](#-dashboards--mobile) · [PyPI](#-pypi-packages) · [Learning projects](#-learning-projects) · [Tech stack](#-tech-stack) · [Career](#-career) · [Patents](#-patents) · [Contact](#-contact--blog)
+
 ## 🤖 Robotics / Embedded
 
 ### [stackchan-lab](https://github.com/yasumorishima/stackchan-lab) — M5 Stack-chan Development Log (Active)
@@ -34,16 +46,10 @@ Official M5Stack Stack-chan (`M5STACK-K151`) moved off its stock cloud assistant
 | Device kept talking to the stock server | A hand-appended NVS entry padded its key with `0xFF` instead of `0x00`: valid CRC, invisible to my own parser, permanently missed by ESP-IDF |
 | OOM-killed at 7GB RSS, twice | A VAD that starts counting at speech never fires on an always-streaming mic |
 | Speech played in slow motion | Not length - the same 30 morae read fine as nonsense but break in a real sentence, and one comma puts it right. The server times each synthesis and re-splits what came out slow |
-| The tail of every reply dragged | Open JTalk pads ~0.58s of silence after each synthesis - 27-56% of a short reply was silence |
-| Speech came out chopped mid-word | The model answered with a comma-less list, so the splitter fell back to counting characters - and its guard protected digits and Latin but not kanji compounds or a number and its unit |
-| Asking the prompt to keep replies short | Cost tool calls, 7/9 to 1/9 on the same probe. Shape is enforced in code instead |
-| Nothing could interrupt a long answer | The listening window was opened on an estimate of what the device still had buffered, and closed 0.5-1.1s before the device said it had started listening. It waits for that signal now |
-| Questions came back as different sentences | The device sends its whole listening buffer - 18s of it around a one-word question - and all of that reached the recogniser. Trimming to the speech and levelling it halved the error rate |
-| It sang the cheer songs, and they were unlistenable | Taken out twice. Both times my measurements passed and it still was not a tune, so the bar was wrong rather than the singing |
 | The rhythm would not come back, whatever I changed | The wall was the ruler. Against a real recording, comparing sound to sound has a floor of 142-680ms: singing at the onsets of the recording itself, which cannot be wrong as rhythm, still reads that, and every difference I had been reading between methods sat inside it. Measured by times against times, with a random control beside it, the notes now land 20-60ms from the onsets against 55-105ms for random - and it sings |
-
 | Conversation sounded quieter than the singing | Not level - band. The singing voice puts over 90% of its energy above 500Hz; the speaking voice puts 73-84% below it, where a speaker this small reproduces nothing. Matching the level in the band that is actually audible fixed what matching the overall level could not |
-| Songs from the game score came out with the wrong rhythm | Three faults at once: a beat line grazing a note split it in two, a note crossing a bar line was counted twice, and lyrics were fitted to the whole tune at once so one misread note moved which syllable is held. The score labels its own notes, so counting those against what was read settles each case |
+
+More of the same, with the measurements behind each, is in the [server notes](https://github.com/yasumorishima/stackchan-lab/tree/main/server#readme).
 
 </details>
 
@@ -67,11 +73,13 @@ Configuration record for the Raspberry Pi 5 that hosts the robot's server, kept 
 
 `Raspberry Pi OS / systemd / ufw / cron / Tailscale`
 
+---
+
 ## ⚾ Baseball Websites
 
 ### [Minami Baseball OB](https://minami-baseball-ob.vercel.app/) — Alumni Association Site (In Production)
 
-Full-stack web app for a high school baseball alumni association — <!--ob:active_users-->11<!--/ob--> active users · <!--ob:pages-->44<!--/ob--> pages · <!--ob:db_tables-->23<!--/ob--> DB tables · <!--ob:e2e_tests-->19<!--/ob--> e2e tests · <!--ob:cost-->¥0<!--/ob-->/mo running cost (<!--ob:ts_files-->156<!--/ob--> files, <!--ob:loc-->~18200<!--/ob--> LOC). **[Technical Documentation](https://github.com/yasumorishima/minami-baseball-ob-docs)**
+Full-stack web app for a high school baseball alumni association — <!--ob:active_users-->11<!--/ob--> active users · <!--ob:pages-->44<!--/ob--> pages · <!--ob:db_tables-->23<!--/ob--> DB tables · <!--ob:e2e_tests-->19<!--/ob--> e2e tests · <!--ob:cost-->¥0<!--/ob-->/mo running cost (<!--ob:ts_files-->157<!--/ob--> files, <!--ob:loc-->~22000<!--/ob--> LOC). **[Technical Documentation](https://github.com/yasumorishima/minami-baseball-ob-docs)**
 
 <table>
 <tr>
@@ -84,7 +92,7 @@ Full-stack web app for a high school baseball alumni association — <!--ob:acti
 </tr>
 </table>
 
-5-tier RBAC (Middleware + RLS), automated member pipeline (Form → GAS → Actions → Supabase), <!--ob:senseki-->681<!--/ob--> match records (1955–present)
+5-tier RBAC (Middleware + RLS), automated member pipeline (Form → GAS → Actions → Supabase), <!--ob:senseki-->686<!--/ob--> match records (1955–present)
 
 <details>
 <summary>Architecture & features</summary>
@@ -92,9 +100,9 @@ Full-stack web app for a high school baseball alumni association — <!--ob:acti
 - **5-tier RBAC** (guest → admin): Next.js Middleware + Supabase RLS — authorization at route, row, and component level
 - **Automated member pipeline**: Google Form → Apps Script → GitHub Actions auto-PR → Supabase role sync. Personal names never touch Git
 - **Custom CMS**: 9 editor pages + 5 inline edit, soft delete (7-day trash + auto-purge), change history, audit logs
-- **<!--ob:senseki-->681<!--/ob--> match records** (1955–present): cross-source verification, generation-based grouping, per-game photo management
+- **<!--ob:senseki-->686<!--/ob--> match records** (1955–present): cross-source verification, generation-based grouping, per-game photo management
 - **UX**: Unsaved warning, Web Share + LINE fallback, Calendar registration, ripple feedback, Suspense skeleton UI, weather forecast (Open-Meteo, 10 venues), automated game detection (2 sources → auto-PR)
-- **Security**: RLS on all 22 tables (16 main + 6 history), `server-only` admin, CODEOWNERS, branch protection, secret scanning, cookie consent, 60-min session timeout
+- **Security**: RLS on all 23 tables (17 main + 6 history), `server-only` admin, CODEOWNERS, branch protection, secret scanning, cookie consent, 60-min session timeout
 - **Silent-fail monitoring** — built after a 1-month silent outage (a Form trigger silently lost its OAuth grant):
   - Hourly health-check probes the full member-request + feedback pipeline (Vercel proxy / dispatch chain / GAS time trigger / gas-issue-form secret match / role-sync recency)
   - Workflow-run failure + sync-roles liveness (cron-stall) detection auto-opens a tracking GitHub issue and auto-closes it on recovery
@@ -291,17 +299,15 @@ Civic tech projects for political transparency & citizen participation in Japan.
 
 ### Kaggle
 
-<!-- KAGGLE_COMP_STATS_START -->Notebooks Expert | 🥉 14 Bronze Notebook Medals<!-- KAGGLE_COMP_STATS_END -->
+<!-- KAGGLE_COMP_STATS_START -->Notebooks Expert | 🥉 15 Bronze Notebook Medals<!-- KAGGLE_COMP_STATS_END -->
 
 **Active:**
-- [ROGII Wellbore Geology Prediction](https://www.kaggle.com/competitions/rogii-wellbore-geology-prediction) — $50K, wellbore TVT regression (public LB 7.311, rank 1406/5063)
-- **SIGNATE AI Engineering Challenge** — NTT Data, LLM / RAG / agentic retrieval over a messy corporate drive (¥1.2M prize pool, Jul–Aug 2026)
 - **SIGNATE NEDO Challenge — Baggage-Loading Optimization** — 3D bin packing for airline ULD containers, hybrid offline+online packing agent (¥15M prize pool, Jul–Oct 2026)
 
-**Finished 2026:** [Playground Series S6E6 - Stellar Classification](https://www.kaggle.com/competitions/playground-series-s6e6) (macro-F1, private LB 0.95939) · NIR Moisture Prediction (SIGNATE, wood spectroscopy) · [Stanford RNA 3D Folding 2](https://www.kaggle.com/competitions/stanford-rna-3d-folding-2) · [BirdCLEF+ 2026](https://www.kaggle.com/competitions/birdclef-2026)
+**Finished 2026:** [ROGII Wellbore Geology](https://www.kaggle.com/competitions/rogii-wellbore-geology-prediction) ($50K wellbore TVT regression, closed 2026-08-05 — public LB 7.311, final public rank 2545/6125) · [Playground Series S6E6 - Stellar Classification](https://www.kaggle.com/competitions/playground-series-s6e6) (macro-F1, private LB 0.95939) · NIR Moisture Prediction (SIGNATE, wood spectroscopy) · [Stanford RNA 3D Folding 2](https://www.kaggle.com/competitions/stanford-rna-3d-folding-2) · [BirdCLEF+ 2026](https://www.kaggle.com/competitions/birdclef-2026)
 
 <details>
-<summary>Bronze Medal Notebooks (14)</summary>
+<summary>Bronze Medal Notebooks (15)</summary>
 
 | Notebook | Topic |
 |----------|-------|
@@ -311,13 +317,13 @@ Civic tech projects for political transparency & citizen participation in Japan.
 | [NFL Geometric Rules Baseline](https://www.kaggle.com/code/yasunorim/geometric-rules-baseline-2-921-rmse-no-ml) | Physics-based rules, No ML, RMSE 2.921 |
 | [CAFA 6 Baseline](https://www.kaggle.com/code/yasunorim/baseline-with-regularization) | Protein function prediction (PyTorch MLP) |
 
-[All 14 notebooks →](https://www.kaggle.com/yasunorim/code)
+[All 15 notebooks →](https://www.kaggle.com/yasunorim/code)
 
 </details>
 
 ### Kaggle Datasets
 
-<!-- KAGGLE_DS_STATS_START -->28 published MLB datasets<!-- KAGGLE_DS_STATS_END -->
+<!-- KAGGLE_DS_STATS_START -->8 public datasets<!-- KAGGLE_DS_STATS_END -->
 
 | Dataset | Description |
 |---------|-------------|
@@ -325,7 +331,7 @@ Civic tech projects for political transparency & citizen participation in Japan.
 | 🥈 [WBC 2026 Scouting](https://www.kaggle.com/datasets/yasunorim/wbc-2026-scouting) | 306 players, 20 countries |
 
 <details>
-<summary>Other datasets (4)</summary>
+<summary>Other datasets (6)</summary>
 
 | Dataset | Description |
 |---------|-------------|
@@ -333,6 +339,8 @@ Civic tech projects for political transparency & citizen participation in Japan.
 | [Japanese MLB Players Statcast (2015-2025)](https://www.kaggle.com/datasets/yasunorim/japan-mlb-pitchers-batters-statcast) | 34 Japanese MLB players, 174k pitches+hits |
 | [MLB Pitcher Arsenal Evolution (2020-2025)](https://www.kaggle.com/datasets/yasunorim/mlb-pitcher-arsenal-2020-2025) | 4,253 pitcher-seasons, 111 metrics |
 | [MLB Statcast + Bat Tracking (2024-2025)](https://www.kaggle.com/datasets/yasunorim/mlb-statcast-bat-tracking-2024-2025) | Combined Statcast + bat tracking data |
+| [XC BirdCLEF 2026 Target Recordings (URLs)](https://www.kaggle.com/datasets/yasunorim/xc-birdclef-2026-target-urls) | Xeno-canto source URLs for the 2026 target species |
+| [BEATs iter3+ AS2M Pretrained](https://www.kaggle.com/datasets/yasunorim/beats-pretrained) | Audio-tagging checkpoint mirrored for offline notebooks |
 
 </details>
 
@@ -386,7 +394,7 @@ Most recently competed in [On Top of Pasketti](https://www.drivendata.org/compet
 |---|---|
 | **[Sansuu, Shogi & Sora](https://github.com/yasumorishima/icp-counter-learning)** | Three modes on the Internet Computer: arithmetic (36 topics) · shogi · **sora**, a planetarium drawing the real sky for any place and time. English/Japanese, offline, records on-device — [Live](https://iqjbc-7aaaa-aaaaj-qnnsa-cai.icp0.io/) |
 | **[OpenClaw Twitter Bot](https://github.com/yasumorishima/raspi-baseball-bot)** | Raspberry Pi 5 + OpenClaw + Gemini API auto-tweet bot (stopped) — [Article (JP)](https://zenn.dev/shogaku/articles/raspi-baseball-bot-openclaw-gemini) |
-| **[alexa-rpi5](https://github.com/yasumorishima/alexa-rpi5)** 🔒 | RPi5 ↔ Fire TV Cube 操作 hub (Echo speaker 不要環境)。 cube wrapper + watchers + integrations、 機能詳細は repo README 参照 |
+| **[alexa-rpi5](https://github.com/yasumorishima/alexa-rpi5)** 🔒 | Raspberry Pi 5 to Fire TV Cube control hub for a house with no Echo speaker: cube wrapper, watchers and integrations (details in the repo README) |
 
 <details>
 <summary>Past Projects</summary>
