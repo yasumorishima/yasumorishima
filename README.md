@@ -425,7 +425,7 @@ Most recently competed in [On Top of Pasketti](https://www.drivendata.org/compet
 ---
 
 ## 📈 Career
-* **2024 - Present:** Quality Management @ Marubun Corporation (丸文株式会社)
+* **2024 - Present:** Quality Management @ Marubun Corporation
 * **2008 - 2024:** Semiconductor Manufacturing Process Engineer (半導体製造プロセスエンジニア)
 
 ---
@@ -434,7 +434,7 @@ Most recently competed in [On Top of Pasketti](https://www.drivendata.org/compet
 **Stencil mask and manufacturing method thereof (ステンシルマスク及びその製造方法)**
 * **Patent No:** 6307851 (特許第6307851号)
 * **Role:** Inventor (発明者)
-* **Assignee:** Toppan Printing Co., Ltd. (凸版印刷株式会社)
+* **Assignee:** Toppan Printing Co., Ltd.
 * **Link:** [Google Patents (JP6307851B2)](https://patents.google.com/patent/JP6307851B2/ja)
 
 ---
