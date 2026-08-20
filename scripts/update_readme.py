@@ -390,14 +390,13 @@ def main():
         (str(OSS_TOTALS.get("prs", 0)), "open-source pull requests",
          f"{OSS_TOTALS.get('merged', 0)} merged"),
         (str(OSS_TOTALS.get("repos", 0)), "upstream repositories", "contributed to"),
-        (str(bronze), "notebook medals", kaggle_title),
-        (str(dataset_count), "public datasets",
-         f"{config.get('dataset_silver', 0)} silver"),
+        (str(bronze), "notebook medals", f"bronze, {kaggle_title}"),
+        (str(config.get("dataset_silver", 0)), "dataset medals", "silver"),
+        (str(dataset_count), "public datasets", "on Kaggle"),
         (str(config.get("pypi_packages", 0)), "PyPI packages", "published and maintained"),
         (str(config.get("production_sites", 0)), "web apps in production",
          "no running cost"),
         (str(config.get("patents", 0)), "granted patent", "JP 6307851"),
-        (str(career_years), "years in manufacturing", "semiconductor and quality"),
     ]
     for path in dashboard.write(tiles, date.today().isoformat()):
         print(f"  Wrote {path.name}")
