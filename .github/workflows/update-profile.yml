@@ -1,8 +1,6 @@
 name: Update Profile README
 
 on:
-  repository_dispatch:
-    types: [oss-refresh-complete]
   push:
     paths:
       - 'config.json'
