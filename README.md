@@ -393,7 +393,7 @@ Most recently competed in [On Top of Pasketti](https://www.drivendata.org/compet
 
 | Project | Description |
 |---|---|
-| **[Sansuu, Shogi & Sora](https://github.com/yasumorishima/icp-counter-learning)** | Three modes on the Internet Computer: arithmetic (36 topics) · shogi · **sora**, a planetarium drawing the real sky for any place and time. English/Japanese, offline, records on-device — [Live](https://iqjbc-7aaaa-aaaaj-qnnsa-cai.icp0.io/) |
+| **[Sansuu, Shogi & Sora](https://github.com/yasumorishima/icp-counter-learning)** | Four modes on the Internet Computer: arithmetic (36 topics) · shogi · **sora**, a planetarium drawing the real sky for any place and time · **play**, six games a three-year-old can finish without reading a word. English/Japanese, offline, records on-device — [Live](https://iqjbc-7aaaa-aaaaj-qnnsa-cai.icp0.io/) |
 | **[OpenClaw Twitter Bot](https://github.com/yasumorishima/raspi-baseball-bot)** | Raspberry Pi 5 + OpenClaw + Gemini API auto-tweet bot (stopped) — [Article (JP)](https://zenn.dev/shogaku/articles/raspi-baseball-bot-openclaw-gemini) |
 | **[alexa-rpi5](https://github.com/yasumorishima/alexa-rpi5)** 🔒 | Raspberry Pi 5 to Fire TV Cube control hub for a house with no Echo speaker: cube wrapper, watchers and integrations (details in the repo README) |
 
