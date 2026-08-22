@@ -303,6 +303,7 @@ Civic tech projects for political transparency & citizen participation in Japan.
 
 **Active:**
 - **SIGNATE NEDO Challenge — Baggage-Loading Optimization** — 3D bin packing for airline ULD containers, hybrid offline+online packing agent (¥15M prize pool, Jul–Oct 2026)
+- **[Kaggriculture](https://www.kaggle.com/competitions/kaggriculture)** — two-player farm-economy simulation, scored by ladder rating rather than by money ($50K prize pool, to 2026-09-30). Agent and its measurement harness in [`kaggle-competitions/kaggriculture`](https://github.com/yasumorishima/kaggle-competitions/tree/main/kaggriculture)
 
 **Finished 2026:** [ROGII Wellbore Geology](https://www.kaggle.com/competitions/rogii-wellbore-geology-prediction) ($50K wellbore TVT regression, closed 2026-08-05 — public LB 7.311, final public rank 2545/6125) · [Playground Series S6E6 - Stellar Classification](https://www.kaggle.com/competitions/playground-series-s6e6) (macro-F1, private LB 0.95939) · NIR Moisture Prediction (SIGNATE, wood spectroscopy) · [Stanford RNA 3D Folding 2](https://www.kaggle.com/competitions/stanford-rna-3d-folding-2) · [BirdCLEF+ 2026](https://www.kaggle.com/competitions/birdclef-2026)
 
