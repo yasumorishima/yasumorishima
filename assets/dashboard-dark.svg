@@ -2,9 +2,9 @@
 <style>text{font-family:ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif}</style>
 <rect x="0.5" y="0.5" width="879" height="311" rx="10" fill="#0d1117" stroke="#30363d"/>
 <text x="20" y="30" font-size="15" font-weight="600" fill="#e6edf3">At a glance</text>
-<text x="860" y="30" font-size="11" text-anchor="end" fill="#8b949e">updated 2026-08-20</text>
+<text x="860" y="30" font-size="11" text-anchor="end" fill="#8b949e">updated 2026-08-24</text>
 <rect x="16.0" y="44" width="274.7" height="76" rx="8" fill="#161b22" stroke="#30363d"/>
-<text x="30.0" y="80" font-size="27" font-weight="700" fill="#58a6ff">101</text>
+<text x="30.0" y="80" font-size="27" font-weight="700" fill="#58a6ff">102</text>
 <text x="30.0" y="98" font-size="12" fill="#e6edf3">open-source pull requests</text>
 <text x="30.0" y="113" font-size="11" fill="#8b949e">54 merged</text>
 <rect x="302.7" y="44" width="274.7" height="76" rx="8" fill="#161b22" stroke="#30363d"/>
@@ -16,7 +16,7 @@
 <text x="603.3" y="98" font-size="12" fill="#e6edf3">PyPI packages</text>
 <text x="603.3" y="113" font-size="11" fill="#8b949e">published and maintained</text>
 <rect x="16.0" y="132" width="274.7" height="76" rx="8" fill="#161b22" stroke="#30363d"/>
-<text x="30.0" y="168" font-size="27" font-weight="700" fill="#58a6ff">136</text>
+<text x="30.0" y="168" font-size="27" font-weight="700" fill="#58a6ff">143</text>
 <text x="30.0" y="186" font-size="12" fill="#e6edf3">active workflows</text>
 <text x="30.0" y="201" font-size="11" fill="#8b949e">across 52 public repositories</text>
 <rect x="302.7" y="132" width="274.7" height="76" rx="8" fill="#161b22" stroke="#30363d"/>
@@ -24,7 +24,7 @@
 <text x="316.7" y="186" font-size="12" fill="#e6edf3">of them on a schedule</text>
 <text x="316.7" y="201" font-size="11" fill="#8b949e">fired on cron this month</text>
 <rect x="589.3" y="132" width="274.7" height="76" rx="8" fill="#161b22" stroke="#30363d"/>
-<text x="603.3" y="168" font-size="27" font-weight="700" fill="#58a6ff">6,907</text>
+<text x="603.3" y="168" font-size="27" font-weight="700" fill="#58a6ff">7,740</text>
 <text x="603.3" y="186" font-size="12" fill="#e6edf3">workflow runs</text>
 <text x="603.3" y="201" font-size="11" fill="#8b949e">in the last 30 days</text>
 <rect x="16.0" y="220" width="274.7" height="76" rx="8" fill="#161b22" stroke="#30363d"/>
