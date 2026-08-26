@@ -148,7 +148,7 @@ Companion site for an amateur baseball team, forked from Minami Baseball OB — 
 <td><a href="https://github.com/yasumorishima/hormuz-ship-tracker"><img src="https://raw.githubusercontent.com/yasumorishima/hormuz-ship-tracker/master/docs/screenshot.png" width="420"></a></td>
 </tr>
 <tr>
-<td>31 geophysical data sources → ML earthquake prediction (walk-forward AUC ~0.80 via ConvLSTM, CSEP Molchan 0.981) + real-time monitoring dashboard</td>
+<td>31 geophysical data sources → ML earthquake prediction (walk-forward pooled AUC 0.907 over 37 windows; +0.005 per window over a climatology fitted on the same rows) + real-time monitoring dashboard</td>
 <td>AIS vessel tracking across the Persian Gulf & Gulf of Oman with land mask filtering<br><br>🛑 <b>Stopped</b> — RPi5 SSD failure (2026-05-16).</td>
 </tr>
 </table>
@@ -161,7 +161,9 @@ Companion site for an amateur baseball team, forked from Minami Baseball OB — 
 <summary>Data sources, evaluation and the Kumamoto InSAR result</summary>
 
 - **85 features from 25+ sources** — USGS, NASA Earthdata, INTERMAGNET, NMDB, NOAA, IOC
-- **Walk-forward evaluation** — HistGBT + elastic-net + ConvLSTM, best walk-forward AUC ~0.80 (Kaggle T4)
+- **Walk-forward evaluation** — a HistGBT ensemble on a 1° grid, scored on 3,004,835 rows across 37 windows from 1989 to 2026: pooled AUC 0.907, Brier skill +0.080.
+- **What that number is and is not** — most of it is geography. A climatology fitted on the same rows reaches 0.902 on its own, so the part that is forecast rather than base rate is +0.005 per window, positive in 92% of windows. Reading the figure without its climatology overstates it.
+- **How rounds are judged** — every round is pre-registered before it runs, its scripts are frozen by checksum, and the result is compared against permutation floors rather than against zero. Null results are logged in the same place as the positive ones ([research log](https://github.com/yasumorishima/japan-geohazard-monitor/blob/master/RESEARCH-LOG.md))
 - **Open data & automation** — features published as a public Hugging Face dataset, weekly CI pipeline on GitHub Actions
 - **Co-seismic InSAR** — 2026 Kumamoto M7.1 measured from open Sentinel-1 on ASF HyP3: line-of-sight displacement −21.7 to +15.0 cm and a coherence-change damage proxy ([method, figures and caveats](https://github.com/yasumorishima/japan-geohazard-monitor/tree/master/research/kumamoto2026_insar))
 
