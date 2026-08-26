@@ -428,6 +428,8 @@ Most recently competed in [On Top of Pasketti](https://www.drivendata.org/compet
 ## 📈 Career
 * **2024 - Present:** Quality Management @ Marubun Corporation
 * **2008 - 2024:** Semiconductor Manufacturing Process Engineer (半導体製造プロセスエンジニア)
+  * **2008 - 2014:** Toppan Printing
+  * **2014 - 2017:** Toshiba → Toshiba Memory (now Kioxia)
 
 ---
 
