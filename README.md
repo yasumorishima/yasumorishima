@@ -426,17 +426,17 @@ Most recently competed in [On Top of Pasketti](https://www.drivendata.org/compet
 ---
 
 ## 📈 Career
-* **2024 - Present:** Quality Management @ Marubun Corporation
-* **2008 - 2024:** Semiconductor Manufacturing Process Engineer (半導体製造プロセスエンジニア)
+* **2024 - Present:** Quality Management @ a semiconductor distributor
+* **2008 - 2024:** Semiconductor Manufacturing Process Engineer
   * **2008 - 2014:** Toppan Printing
   * **2014 - 2017:** Toshiba → Toshiba Memory (now Kioxia)
 
 ---
 
 ## 🏆 Patents
-**Stencil mask and manufacturing method thereof (ステンシルマスク及びその製造方法)**
-* **Patent No:** 6307851 (特許第6307851号)
-* **Role:** Inventor (発明者)
+**Stencil mask and manufacturing method thereof**
+* **Patent No:** 6307851
+* **Role:** Inventor
 * **Link:** [Google Patents (JP6307851B2)](https://patents.google.com/patent/JP6307851B2/ja)
 
 ---
