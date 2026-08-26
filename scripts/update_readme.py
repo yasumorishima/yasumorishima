@@ -462,7 +462,6 @@ def main():
     # Career years (started 2008)
     career_years = date.today().year - 2008
     readme = replace_marker(readme, "CAREER_YEARS", str(career_years))
-    readme = replace_marker(readme, "CAREER_YEARS_JP", str(career_years))
     print(f"  Career years: {career_years}")
 
     README.write_text(readme, encoding="utf-8")
