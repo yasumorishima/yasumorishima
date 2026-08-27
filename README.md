@@ -359,7 +359,7 @@ Most recently competed in [On Top of Pasketti](https://www.drivendata.org/compet
 |---|---|---|
 | **[MLB Bat Tracking Dashboard](https://github.com/yasumorishima/mlb-bat-tracking-dashboard)** | Leaderboard, Player Comparison, Team Lineup Builder. Powered by savant-extras | [Live](https://yasumorishima-mlb-bat-tracking.streamlit.app/) |
 | **[WBC 2026 Scouting Dashboard](https://github.com/yasumorishima/wbc-scouting)** | 30 Statcast apps across 19 countries. Zone heatmaps, spray charts, pitch movement | [Live](https://wbc-scouting-usa-batters.streamlit.app/) |
-| **[Daily Diary](https://github.com/yasumorishima/diary-app-flutter)** | Flutter mobile app, 10 languages, offline-first, biometric app lock, daily reminder, Android Auto Backup, AdMob · links to Sansuu/Shogi/Sora (ja only) | [Google Play](https://play.google.com/store/apps/details?id=com.diary.daily) |
+| **[Daily Diary](https://github.com/yasumorishima/diary-app-flutter)** | Flutter mobile app, 10 languages, offline-first, biometric app lock, daily reminder, Android Auto Backup, AdMob · **screen-reader support** (TalkBack/VoiceOver labels, selected state, live-region save celebration) · links to Sansuu/Shogi/Sora (ja only) | [Google Play](https://play.google.com/store/apps/details?id=com.diary.daily) |
 | **[Fire Tablet Google Play Helper](https://github.com/yasumorishima/yasumorishima.github.io/tree/main/fire-gapps)** | Detects Fire OS from the browser UA, then lists the four required APKs in install order with step gating and saved progress | [Live](https://yasumorishima.github.io/fire-gapps/) |
 
 <details>
@@ -394,7 +394,7 @@ Most recently competed in [On Top of Pasketti](https://www.drivendata.org/compet
 
 | Project | Description |
 |---|---|
-| **[Sansuu, Shogi & Sora](https://github.com/yasumorishima/icp-counter-learning)** | Four modes on the Internet Computer: arithmetic (36 topics) · shogi · **sora**, a planetarium drawing the real sky for any place and time · **play**, six toddler games — moles, balloons, spoken picture words, fish, finger drawing and sound bars — none of which asks the child to read a letter. English/Japanese, offline, records on-device — [Live](https://iqjbc-7aaaa-aaaaj-qnnsa-cai.icp0.io/) |
+| **[Sansuu, Shogi & Sora](https://github.com/yasumorishima/icp-counter-learning)** | Four modes on the Internet Computer: arithmetic (36 topics) · shogi · **sora**, a planetarium drawing the real sky for any place and time · **play**, six toddler games — moles, balloons, spoken picture words, fish, finger drawing and sound bars — none of which asks the child to read a letter. **Usable without sight** — the sky is spoken (direction in degrees, altitude, nearest object) and every game answers the screen reader and the keyboard. English/Japanese, offline, records on-device — [Live](https://iqjbc-7aaaa-aaaaj-qnnsa-cai.icp0.io/) |
 | **[OpenClaw Twitter Bot](https://github.com/yasumorishima/raspi-baseball-bot)** | Raspberry Pi 5 + OpenClaw + Gemini API auto-tweet bot (stopped) — [Article (JP)](https://zenn.dev/shogaku/articles/raspi-baseball-bot-openclaw-gemini) |
 | **[alexa-rpi5](https://github.com/yasumorishima/alexa-rpi5)** 🔒 | Raspberry Pi 5 to Fire TV Cube control hub for a house with no Echo speaker: cube wrapper, watchers and integrations (details in the repo README) |
 
