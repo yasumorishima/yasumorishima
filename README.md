@@ -169,15 +169,16 @@ Companion site for an amateur baseball team, forked from Minami Baseball OB — 
 
 </details>
 
-**[Japan Wildlife Sightings](https://github.com/yasumorishima/japan-wildlife-sightings)** — Bear and wildlife sighting open data, normalized
+**[Japan Wildlife Sightings](https://github.com/yasumorishima/japan-wildlife-sightings)** — Bear and wildlife sighting open data, normalized · [map](https://yasumorishima.github.io/japan-wildlife-sightings/)
 
 <details>
 <summary>Why it exists, what is collected, and what is withheld</summary>
 
 - **The data is public but incompatible** — prefectures publish bear, boar and deer sightings as CKAN CSV, ArcGIS Survey123, Google My Maps KML, Excel or PDF. The Ministry of the Environment publishes monthly totals as PDF only, so no nationwide point dataset exists. The aggregators that do exist are closed.
-- **19 sources, 72,127 records** in one schema (70,143 with coordinates), rebuilt daily on GitHub Actions and checked by a validator that counts coordinates, dates and duplicate ids.
-- **Only what the terms allow is published** — 33,843 records from sources that state CC BY (Akita, Kyoto, Hokkaido, Ishikari). Every other source ships as a fetcher, not as data, with the licence wording quoted in [docs/licenses.md](https://github.com/yasumorishima/japan-wildlife-sightings/blob/main/docs/licenses.md).
-- **Finding the data is most of the work** — prefecture pages often link only a PDF while a public ArcGIS layer sits behind the map (Toyama 4,614 records, Fukushima 4,491). Of the PDF-only prefectures, measuring them showed most publish monthly totals rather than per-incident rows.
+- **21 sources, 72,976 records** in one schema (70,241 with coordinates), rebuilt daily on GitHub Actions and checked by a validator that counts coordinates, dates and duplicate ids.
+- **Only what the terms allow is published** — 33,941 records from sources that state CC BY (Akita, Kyoto, Hokkaido, Ishikari, Kamisunagawa). Every other source ships as a fetcher, not as data, with the licence wording quoted in [docs/licenses.md](https://github.com/yasumorishima/japan-wildlife-sightings/blob/main/docs/licenses.md).
+- **Finding the data is most of the work** — a prefecture page often links only a PDF while a public ArcGIS layer sits behind its map (Toyama 4,614 records, Fukushima 4,491). Most PDF-only prefectures publish monthly totals rather than per-incident rows; the two that don't are parsed back, one by layout and one by glyph coordinates.
+- **A map, not just a file** — MapLibre GL JS over GSI tiles, GSI aerial photography and NASA GIBS VIIRS imagery from the previous day. Library and glyphs are vendored, so the page depends on no external CDN.
 
 </details>
 
