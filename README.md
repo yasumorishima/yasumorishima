@@ -175,8 +175,8 @@ Companion site for an amateur baseball team, forked from Minami Baseball OB — 
 <summary>Why it exists, what is collected, and what is withheld</summary>
 
 - **The data is public but incompatible** — prefectures publish bear, boar and deer sightings as CKAN CSV, ArcGIS Survey123, Google My Maps KML, Excel or PDF. The Ministry of the Environment publishes monthly totals as PDF only, so no nationwide point dataset exists. The aggregators that do exist are closed.
-- **23 sources, 75,824 records** in one schema (73,042 with coordinates), rebuilt daily on GitHub Actions and checked by a validator that counts coordinates, dates and duplicate ids.
-- **Only what the terms allow is published** — 36,671 records from sources that state CC BY or PDL 1.0 (Akita, Kyoto, Yamaguchi, Sapporo, Muroran, Ishikari, Kamisunagawa). Every other source ships as a fetcher, not as data, with the licence wording quoted in [docs/licenses.md](https://github.com/yasumorishima/japan-wildlife-sightings/blob/main/docs/licenses.md).
+- **27 sources, 79,394 records** in one schema (75,743 with coordinates), rebuilt daily on GitHub Actions and checked by a validator that counts coordinates, dates and duplicate ids.
+- **Only what the terms allow is published** — 40,241 records from sources that state CC BY or PDL 1.0 (Akita, Kyoto, Ishikawa, Kanazawa, Yamaguchi, Sapporo, Muroran, Ishikari, Kamisunagawa). Every other source ships as a fetcher, not as data, with the licence wording quoted in [docs/licenses.md](https://github.com/yasumorishima/japan-wildlife-sightings/blob/main/docs/licenses.md).
 - **Finding the data is most of the work** — a prefecture page often links only a PDF while a public ArcGIS layer sits behind its map (Toyama 4,614 records, Fukushima 4,491). Most PDF-only prefectures publish monthly totals rather than per-incident rows; the two that don't are parsed back, one by layout and one by glyph coordinates.
 - **A map, not just a file** — MapLibre GL JS over GSI tiles, GSI aerial photography and NASA GIBS VIIRS imagery from the previous day. Library and glyphs are vendored, so the page depends on no external CDN.
 
