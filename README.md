@@ -175,8 +175,8 @@ Companion site for an amateur baseball team, forked from Minami Baseball OB — 
 <summary>Why it exists, what is collected, and what is withheld</summary>
 
 - **The data is public but incompatible** — prefectures publish bear, boar and deer sightings as CKAN CSV, ArcGIS Survey123, Google My Maps KML, Excel or PDF. The Ministry of the Environment publishes monthly totals as PDF only, so no nationwide point dataset exists. The aggregators that do exist are closed.
-- **21 sources, 72,976 records** in one schema (70,241 with coordinates), rebuilt daily on GitHub Actions and checked by a validator that counts coordinates, dates and duplicate ids.
-- **Only what the terms allow is published** — 33,941 records from sources that state CC BY (Akita, Kyoto, Hokkaido, Ishikari, Kamisunagawa). Every other source ships as a fetcher, not as data, with the licence wording quoted in [docs/licenses.md](https://github.com/yasumorishima/japan-wildlife-sightings/blob/main/docs/licenses.md).
+- **22 sources, 74,256 records** in one schema (71,474 with coordinates), rebuilt daily on GitHub Actions and checked by a validator that counts coordinates, dates and duplicate ids.
+- **Only what the terms allow is published** — 35,171 records from sources that state CC BY (Akita, Kyoto, Yamaguchi, Hokkaido, Ishikari, Kamisunagawa). Every other source ships as a fetcher, not as data, with the licence wording quoted in [docs/licenses.md](https://github.com/yasumorishima/japan-wildlife-sightings/blob/main/docs/licenses.md).
 - **Finding the data is most of the work** — a prefecture page often links only a PDF while a public ArcGIS layer sits behind its map (Toyama 4,614 records, Fukushima 4,491). Most PDF-only prefectures publish monthly totals rather than per-incident rows; the two that don't are parsed back, one by layout and one by glyph coordinates.
 - **A map, not just a file** — MapLibre GL JS over GSI tiles, GSI aerial photography and NASA GIBS VIIRS imagery from the previous day. Library and glyphs are vendored, so the page depends on no external CDN.
 
