@@ -281,6 +281,7 @@ Private repo (the method is the product) — public technical write-up: [basebal
 | **hotosm/openaerialmap** | [#289](https://github.com/hotosm/openaerialmap/pull/289) | Stop the STAC ingester dropping the wrong record when an entry fails |
 | **apache/fineract-backoffice-ui** | [#321](https://github.com/apache/fineract-backoffice-ui/pull/321) | Translate the accounting screen titles and tooltips |
 | **daisy/MathCAT** | [#665](https://github.com/daisy/MathCAT/pull/665) | Fix chemistry assertions that could never fail |
+| **daisy/MathCAT** | [#720-726](https://github.com/daisy/MathCAT/pull/720) | Japanese speech rules: fractions in Japanese word order, exponents, negative numbers, roots, geometry terms, brackets, large operators |
 | **PHPOffice/PHPPresentation** | [#897](https://github.com/PHPOffice/PHPPresentation/pull/897) | Fix PHP 8.4/8.5 static analysis by fixing 144 findings instead of ignoring them |
 | **project-inclusive/OpenFisca-Japan** | [#479](https://github.com/project-inclusive/OpenFisca-Japan/pull/479) | Add the vocational training benefit for single-parent families to Japan's welfare rules engine |
 | **project-inclusive/OpenFisca-Japan** | [#480](https://github.com/project-inclusive/OpenFisca-Japan/pull/480) | Add the housing security benefit to Japan's welfare rules engine |
