@@ -228,7 +228,7 @@ Trunk rotation range vs pitch speed: r=0.425 (strongest). Contributed bug fix [P
 
 ### [Handwritten Scorebook OCR](https://github.com/yasumorishima/baseball-scorebook-ocr) 🔒 *(private R&D, active)*
 
-**Amateur Baseball Scorebook Reader** — reads handwritten Japanese paper scorebooks (紙スコアブック) from photos into structured at-bat data. **76% → 93%** on the hardest mark class, evaluated on **31 hand-transcribed ground-truth sheets**.
+**Amateur Baseball Scorebook Reader** — reads handwritten Japanese paper scorebooks (紙スコアブック) from photos into structured at-bat data. **76% → 93%** on the hardest mark class, evaluated on **31 hand-transcribed ground-truth sheets** — and **84%** with every recognition done in-house (the 93% is measured with three facts handed over from the transcript; only two ruling-line facts are still handed over at all).
 
 <details>
 <summary>How it reads the sheets, and how it is evaluated</summary>
@@ -237,6 +237,7 @@ Trunk rotation range vs pitch speed: r=0.425 (strongest). Contributed bug fix [P
 - **Game-logic constraint solver** — only accepts readings consistent with legal base-running; fused with template matching it lifted the hardest mark class from 76% to **93% pooled**
 - **Honest, live evaluation** — the ground-truth archive is complete and still growing (the latest game was transcribed the day it was played); every new sheet serves as a **held-out generalization test** before joining the pool — 29 consecutive held-out sheets so far, some read perfectly
 - **Real output** — my team's 2026 season batting stats are compiled from this ground truth
+- **Nulls are measured and published too** — the write-up records what did not work and why, and the ceiling is measured before the work is attempted: most recently eight ways to stop spurious marks from pinning the wrong batter, all null, against a measured ceiling of +14 corners
 
 </details>
 
