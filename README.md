@@ -229,7 +229,7 @@ Trunk rotation range vs pitch speed: r=0.425 (strongest). Contributed bug fix [P
 
 ### [Handwritten Scorebook OCR](https://github.com/yasumorishima/baseball-scorebook-ocr) 🔒 *(private R&D, active)*
 
-**Amateur Baseball Scorebook Reader** — reads handwritten Japanese paper scorebooks (紙スコアブック) from photos into structured at-bat data. **76% → 93%** on the hardest mark class, evaluated on **31 hand-transcribed ground-truth sheets** — and **83%** with every recognition done in-house (the 93% is measured with three facts handed over from the transcript; one ruling-line fact is still handed over at all, down from two on 2026-09-03 when the leadoff ledger was priced by deleting it and found to cost nothing on the staged run).
+**Amateur Baseball Scorebook Reader** — reads handwritten Japanese paper scorebooks (紙スコアブック) from photos into structured at-bat data. **76% → 93%** on the hardest mark class, evaluated on **31 hand-transcribed ground-truth sheets** — and **83%** with every recognition done in-house. As of 2026-09-05 **no ruling-line fact is handed over at all**: which column is which inning is now cut from the paper itself, scoring **92%**, after the ordinal gate that demanded each inning read exactly {I, II, III} was replaced by a price — a gate loses the truth on 28 sheets of 31, a price loses none.
 
 <details>
 <summary>How it reads the sheets, and how it is evaluated</summary>
