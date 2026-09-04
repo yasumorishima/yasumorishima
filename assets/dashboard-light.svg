@@ -2,11 +2,11 @@
 <style>text{font-family:ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif}</style>
 <rect x="0.5" y="0.5" width="879" height="311" rx="10" fill="#ffffff" stroke="#d0d7de"/>
 <text x="20" y="30" font-size="15" font-weight="600" fill="#1f2328">At a glance</text>
-<text x="860" y="30" font-size="11" text-anchor="end" fill="#59636e">updated 2026-09-02</text>
+<text x="860" y="30" font-size="11" text-anchor="end" fill="#59636e">updated 2026-09-04</text>
 <rect x="16.0" y="44" width="274.7" height="76" rx="8" fill="#f6f8fa" stroke="#d0d7de"/>
-<text x="30.0" y="80" font-size="27" font-weight="700" fill="#0969da">120</text>
+<text x="30.0" y="80" font-size="27" font-weight="700" fill="#0969da">123</text>
 <text x="30.0" y="98" font-size="12" fill="#1f2328">open-source pull requests</text>
-<text x="30.0" y="113" font-size="11" fill="#59636e">70 merged</text>
+<text x="30.0" y="113" font-size="11" fill="#59636e">73 merged</text>
 <rect x="302.7" y="44" width="274.7" height="76" rx="8" fill="#f6f8fa" stroke="#d0d7de"/>
 <text x="316.7" y="80" font-size="27" font-weight="700" fill="#0969da">49</text>
 <text x="316.7" y="98" font-size="12" fill="#1f2328">upstream repositories</text>
