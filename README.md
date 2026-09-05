@@ -229,7 +229,7 @@ Trunk rotation range vs pitch speed: r=0.425 (strongest). Contributed bug fix [P
 
 ### [Handwritten Scorebook OCR](https://github.com/yasumorishima/baseball-scorebook-ocr) 🔒 *(private R&D, active)*
 
-**Amateur Baseball Scorebook Reader** — reads handwritten Japanese paper scorebooks (紙スコアブック) from photos into structured at-bat data. **76% → 93%** on the hardest mark class, evaluated on **31 hand-transcribed ground-truth sheets** — and **83%** with every recognition done in-house. As of 2026-09-05 **no ruling-line fact is handed over at all**: which column is which inning is now cut from the paper itself, scoring **92%**, after the ordinal gate that demanded each inning read exactly {I, II, III} was replaced by a price — a gate loses the truth on 28 sheets of 31, a price loses none.
+**Amateur Baseball Scorebook Reader** — reads handwritten Japanese paper scorebooks (紙スコアブック) from photos into structured at-bat data. **76% → 93%** on the hardest mark class, evaluated on **31 hand-transcribed ground-truth sheets** — and **82%** with every recognition done in-house AND **no ruling-line fact handed over at all** — as of 2026-09-05 which column is which inning is cut from the paper itself, after the ordinal gate that demanded each inning read exactly {I, II, III} was replaced by a price (a gate loses the truth on 28 sheets of 31; a price loses none). The last hard gate in the model — *an inning holds at most three batter outs* — turned out to sit on the least reliable input the pipeline has; letting it be outbid instead is worth **36 corners** where the out/reach call is made in-house, and takes the price of dropping the ruling lines from 43 corners to **4**.
 
 <details>
 <summary>How it reads the sheets, and how it is evaluated</summary>
@@ -238,7 +238,8 @@ Trunk rotation range vs pitch speed: r=0.425 (strongest). Contributed bug fix [P
 - **Game-logic constraint solver** — only accepts readings consistent with legal base-running; fused with template matching it lifted the hardest mark class from 76% to **93% pooled**
 - **Honest, live evaluation** — the ground-truth archive is complete and still growing (the latest game was transcribed the day it was played); every new sheet serves as a **held-out generalization test** before joining the pool — 29 consecutive held-out sheets so far, some read perfectly
 - **Real output** — my team's 2026 season batting stats are compiled from this ground truth
-- **Nulls are measured and published too** — the write-up records what did not work and why, and the ceiling is measured before the work is attempted: most recently eight ways to stop spurious marks from pinning the wrong batter, all null, against a measured ceiling of +14 corners
+- **Nulls are measured and published too** — the write-up records what did not work and why, and the ceiling is measured before the work is attempted: eight ways to stop spurious marks from pinning the wrong batter, all null against a measured ceiling of +14 corners; and most recently four declared next steps of which three are null, including one where the design defeated itself — a gate turned into a price, but compared first, which is the same thing as a gate
+- **Corrections are published as loudly as results** — an adversarial design review found that the diagnostic behind one claim had been run without the flag it was describing, so the number meant something else; re-measuring it properly is what produced the 36-corner gain above
 
 </details>
 
