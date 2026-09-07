@@ -176,12 +176,13 @@ Companion site for an amateur baseball team, forked from Minami Baseball OB — 
 | --- | --- | --- |
 | Aim the readout at *large* mainshocks (M6.0) | +0.0027 | floored |
 | Replace the fitted readout with a per-cell rate counted from past events alone — no model, no feature columns | +0.0086 | floored; beats the fitted version by +0.0059 |
-| Smooth that rate toward its neighbours | +0.0029 | floored on the retake. The first attempt passed on the run and failed its own frozen verifier: the contract fixed the kernel's separation only as a great-circle distance, and a regular lattice puts hundreds of cell pairs within a billionth of a degree of its hard cutoff |
-| Bend the kernel into an ellipse along the local axis of past events | +0.00045 | null. Undecided against a floor that shuffles widths only among cells with the same neighbour count |
-| Build the rival arm instead of a third floor | +0.00047 | a width set from the neighbour count alone, carrying no seismic quantity, cannot be told apart — a statement about the smoother at the edge of the studied region, not about the earth |
-| Measure what an edge cell's kernel actually does | +0.00127 | only on the quarter of negatives sharing a window with a positive; it fails on the other three quarters. The gain is a reordering of active cells, not a better rate estimate — the frozen prediction said the opposite, and *correction* is withdrawn |
+| Smooth that rate toward its neighbours | +0.0029 | floored on the retake. The first attempt passed on the run and failed its own frozen verifier: the contract defined the kernel's separation only as a great-circle distance, and the one formula it did name sat inside a gate; a regular lattice puts hundreds of cell pairs within a billionth of a degree of its hard cutoff |
+| Bend the kernel into an ellipse along the local axis of past events | it loses | the control turned across the axis gains instead |
+| A width that varies per cell, with no direction in it | +0.00045 | null when the strength is chosen causally; +0.00045 is a strength the contract disclosed up front as picked after seeing it win, and it comes second of ten against a floor that shuffles widths only among cells with the same neighbour count, so the two explanations stay undecided |
+| Build the rival arm instead of a third floor *(sizing: no contract, no floor)* | +0.00047 | a width set from the neighbour count alone, carrying no seismic quantity, cannot be told apart — a statement about the smoother at the edge of the studied region, not about the earth |
+| Measure what an edge cell's kernel actually does *(sizing; its control worlds are the previous round's own)* | +0.00127 | only on the quarter of negatives sharing a window with a positive; it fails on the other three quarters. The gain is a reordering of active cells, not a better rate estimate — the frozen prediction said the opposite, and *correction* is withdrawn |
 
-- **What none of that establishes** — each verdict is rank one against five or nine permutation worlds, which is not a p-value; sizing saw the numbers before the contracts were frozen; event-by-event discrimination has not been demonstrated; magnitudes are not compared across catalogues, so none of it is a statement about Japan
+- **What none of that establishes** — each verdict is rank one against five or nine permutation worlds, which is not a p-value, and none is an independent estimate of its own size: sizing saw the numbers before the contracts were frozen, and the third row's shape was chosen after a different one failed. The last two rows are sizings, with no contract and no floor, whose rival arms were designed after seeing the round they rival. Event-by-event discrimination has not been demonstrated, and magnitudes are not compared across catalogues, so none of it is a statement about Japan
 - **Open data & automation** — features published as a public Hugging Face dataset, weekly CI pipeline on GitHub Actions
 - **Co-seismic InSAR** — 2026 Kumamoto M7.1 measured from open Sentinel-1 on ASF HyP3: line-of-sight displacement −21.7 to +15.0 cm and a coherence-change damage proxy ([method, figures and caveats](https://github.com/yasumorishima/japan-geohazard-monitor/tree/master/research/kumamoto2026_insar))
 
@@ -268,7 +269,7 @@ Reads handwritten Japanese paper scorebooks (紙スコアブック) from photos 
 | Change | Result |
 | --- | --- |
 | Which column is which inning: cut from the ledger, read off the paper | A gate demanding each inning read exactly {I, II, III} left the truth reachable on 3 sheets of 31; pricing it instead reaches all 31 |
-| The last hard gate — *an inning holds at most three batter outs* — allowed to be outbid | Worth 36 corners with every recognition in-house; the gap to reading the ruling lines back fell from 43 corners to 4 |
+| The last hard gate — *an inning holds at most three batter outs* — allowed to be outbid | Worth 36 corners where the out/reach call is made in-house, under a price order arrived at after the fact. With every recognition in-house as well, the gap to reading the ruling lines back falls from 43 corners to 4 |
 | Adversarial review of the diagnostic behind that claim | It had been run without the flag it was describing, so the number meant something else. Re-measuring properly is what produced the 36 above |
 | Nine ways to stop spurious marks pinning the wrong batter | All null, against a measured ceiling of +14 corners |
 
