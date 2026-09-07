@@ -389,6 +389,25 @@ Most recently competed in [On Top of Pasketti](https://www.drivendata.org/compet
 
 </details>
 
+### [icrc167-android](https://github.com/yasumorishima/icrc167-android) — Internet Identity login for native Android (Active)
+
+The relying-party side of ICRC-167, so an Android app can sign a user in with Internet Identity and then call canisters directly — no bridge server and no backend of its own. An iOS implementation exists; the Android counterpart did not.
+
+<details>
+<summary>Three things that were measured rather than assumed</summary>
+
+| Question | What the measurement said |
+| --- | --- |
+| Does the URL fragment survive an App Link hand-off? | It does — 379 bytes, matching SHA-256, over both delivery paths. The transport returns the delegation there and nowhere else, while `intent-filter` matching ignores the fragment entirely, so it was worth checking rather than assuming. The same run caught `Uri.getFragment()` percent-decoding the payload and inventing a parameter that was never sent |
+| Does the device test prove anything? | Not at first. The principal is derived from the root key in the response, so a passing positive case would have passed just as well with signature checking removed. The negative cases — an answer carrying somebody else's `state`, a signature that does not verify — are the test; the positive one only shows the parts still fit together |
+| Is the hash right? | The same function produced the bytes that get signed and the bytes that get verified, so it agreed with itself and with nothing else. It is now pinned to the worked request-id example published in the interface specification |
+
+</details>
+
+Not finished, and the README says so first: a real Internet Identity chain is rooted in a canister signature, which is not verified yet, so no genuine login completes.
+
+`Kotlin / Android (Custom Tabs, App Links, Keystore) / Ed25519 · ECDSA P-256 · SHA-256 / CBOR / GitHub Actions (JVM tests + emulator)`
+
 ---
 
 ## 📦 PyPI Packages
