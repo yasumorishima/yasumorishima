@@ -229,17 +229,31 @@ Trunk rotation range vs pitch speed: r=0.425 (strongest). Contributed bug fix [P
 
 ### [Handwritten Scorebook OCR](https://github.com/yasumorishima/baseball-scorebook-ocr) 🔒 *(private R&D, active)*
 
-**Amateur Baseball Scorebook Reader** — reads handwritten Japanese paper scorebooks (紙スコアブック) from photos into structured at-bat data. **76% → 93%** on the hardest mark class, evaluated on **31 hand-transcribed ground-truth sheets** — and **82%** with every recognition done in-house AND **no ruling-line fact handed over at all** (that one uses a price order chosen after seeing the result and is not the shipped default, which scores 71% in the same configuration) — as of 2026-09-05 which column is which inning is cut from the paper itself, after the ordinal gate that demanded each inning read exactly {I, II, III} was replaced by a price (a gate leaves the truth reachable on 3 sheets of 31; a price leaves it reachable on all 31). The last hard gate in the model — *an inning holds at most three batter outs* — turned out to sit on the least reliable input it still has; letting it be outbid instead is worth **36 corners** where the out/reach call is made in-house, and brings the fully in-house corpus to within **4** corners of the same corpus reading the ruling lines back (it was 43 before; the ruling-line run has no split and so no such order to match).
+Reads handwritten Japanese paper scorebooks (紙スコアブック) from photos into structured at-bat data — no paid API, no cloud OCR · deterministic OpenCV on a Raspberry Pi 5 · a base-running constraint solver decides what the marks mean · graded on 31 hand-transcribed sheets
 
 <details>
-<summary>How it reads the sheets, and how it is evaluated</summary>
+<summary>Where it stands</summary>
 
-- **No paid APIs, no cloud OCR** — deterministic computer vision (OpenCV on a Raspberry Pi 5)
-- **Game-logic constraint solver** — only accepts readings consistent with legal base-running; fused with template matching it lifted the hardest mark class from 76% to **93% pooled**
-- **Honest, live evaluation** — the ground-truth archive is complete and still growing (the latest game was transcribed the day it was played); every new sheet serves as a **held-out generalization test** before joining the pool — 29 consecutive held-out sheets so far, some read perfectly
-- **Real output** — my team's 2026 season batting stats are compiled from this ground truth
-- **Nulls are measured and published too** — the write-up records what did not work and why, and the ceiling is measured before the work is attempted: nine ways to stop spurious marks from pinning the wrong batter, all null against a measured ceiling of +14 corners; and most recently four declared next steps of which three are null, including one where the design defeated itself — a gate turned into a price, but compared first, which is the same thing as a gate
-- **Corrections are published as loudly as results** — an adversarial design review found that the diagnostic behind one claim had been run without the flag it was describing, so the number meant something else; re-measuring it properly is what produced the 36-corner gain above
+| Configuration | Score |
+| --- | --- |
+| Grid facts handed over (shipped default) | 331 / 356 = **93%** |
+| No grid fact handed over at all | 328 / 356 = 92% |
+| ...and every recognition in-house as well | 252 / 356 = 71% shipped; 291 = 82% under a price order chosen after seeing the result |
+| Hardest mark class: template matching alone → fused with the solver | 76% → **93%** |
+| Consecutive held-out sheets — each new game is graded before it joins the pool | 29 |
+| Real output | my team's 2026 season batting stats are compiled from this ground truth |
+
+</details>
+
+<details>
+<summary>What the last rounds changed</summary>
+
+| Change | Result |
+| --- | --- |
+| Which column is which inning: cut from the ledger, read off the paper | A gate demanding each inning read exactly {I, II, III} left the truth reachable on 3 sheets of 31; pricing it instead reaches all 31 |
+| The last hard gate — *an inning holds at most three batter outs* — allowed to be outbid | Worth 36 corners with every recognition in-house; the gap to reading the ruling lines back fell from 43 corners to 4 |
+| Adversarial review of the diagnostic behind that claim | It had been run without the flag it was describing, so the number meant something else. Re-measuring properly is what produced the 36 above |
+| Nine ways to stop spurious marks pinning the wrong batter | All null, against a measured ceiling of +14 corners |
 
 </details>
 
