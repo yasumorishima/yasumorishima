@@ -426,19 +426,20 @@ Most recently competed in [On Top of Pasketti](https://www.drivendata.org/compet
 The relying-party side of ICRC-167, so an Android app can sign a user in with Internet Identity and then call canisters directly — no bridge server and no backend of its own. An iOS implementation exists; the Android counterpart did not.
 
 <details>
-<summary>Three things that were measured rather than assumed</summary>
+<summary>Four things that were measured rather than assumed</summary>
 
 | Question | What the measurement said |
 | --- | --- |
 | Does the URL fragment survive an App Link hand-off? | It does — 379 bytes, matching SHA-256, over both delivery paths. The transport returns the delegation there and nowhere else, while `intent-filter` matching ignores the fragment entirely, so it was worth checking rather than assuming. The same run caught `Uri.getFragment()` percent-decoding the payload and inventing a parameter that was never sent |
 | Does the device test prove anything? | Not at first. The principal is derived from the root key in the response, so a passing positive case would have passed just as well with signature checking removed. The negative cases — an answer carrying somebody else's `state`, a signature that does not verify — are the test; the positive one only shows the parts still fit together |
 | Is the hash right? | The same function produced the bytes that get signed and the bytes that get verified, so it agreed with itself and with nothing else. It is now pinned to the worked request-id example published in the interface specification |
+| Do the negative tests reach the check they are named for? | Twice, no. Deleting the certificate signature check left every test green, and so did replacing the pairing equation with `return true` — every negative case altered a byte of a compressed point, so it died at the decoder or the subgroup check first. Both are pinned now by cases where only the step under test can decide, and the mutation was pushed to CI to confirm rather than reasoned about |
 
 </details>
 
-Not finished, and the README says so first: a real Internet Identity chain is rooted in a canister signature, which is not verified yet, so no genuine login completes.
+Canister signatures verify now, so a whole chain can be checked; what is left is a round trip with a real passkey on a device. One rule needed the live network to settle it: the specification says a delegation must state its subnet's type, no canister signature in the public record carries it, and a certificate fetched from `id.ai` does — the vectors are simply older than the rule.
 
-`Kotlin / Android (Custom Tabs, App Links, Keystore) / Ed25519 · ECDSA P-256 · SHA-256 / CBOR / GitHub Actions (JVM tests + emulator)`
+`Kotlin / Android (Custom Tabs, App Links, Keystore) / BLS12-381 · Ed25519 · ECDSA P-256 · SHA-256 / CBOR / GitHub Actions (JVM tests + emulator)`
 
 ---
 
