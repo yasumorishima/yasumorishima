@@ -426,7 +426,7 @@ Most recently competed in [On Top of Pasketti](https://www.drivendata.org/compet
 The relying-party side of ICRC-167, so an Android app can sign a user in with Internet Identity and then call canisters directly — no bridge server and no backend of its own. An iOS implementation exists; the Android counterpart did not.
 
 <details>
-<summary>Four things that were measured rather than assumed</summary>
+<summary>Five things that were measured rather than assumed</summary>
 
 | Question | What the measurement said |
 | --- | --- |
@@ -434,10 +434,11 @@ The relying-party side of ICRC-167, so an Android app can sign a user in with In
 | Does the device test prove anything? | Not at first. The principal is derived from the root key in the response, so a passing positive case would have passed just as well with signature checking removed. The negative cases — an answer carrying somebody else's `state`, a signature that does not verify — are the test; the positive one only shows the parts still fit together |
 | Is the hash right? | The same function produced the bytes that get signed and the bytes that get verified, so it agreed with itself and with nothing else. It is now pinned to the worked request-id example published in the interface specification |
 | Do the negative tests reach the check they are named for? | The pairing equation did not. Replacing it with `return true` left every test green, because each negative case altered a byte of a compressed point and so died at the decoder or the subgroup check first. It is pinned now by cases where only the equation can decide — with the mutation pushed to CI both before and after, rather than reasoned about |
+| Can the round trip be tested before Internet Identity is in the picture? | Yes, and that is what unblocked it. Any Ed25519 key may delegate, so a chain this repository signs for itself comes back from mainnet as the principal of the key that delegated — and the same chain, signed by the wrong key, is refused. The envelopes are pinned byte for byte to fixtures a separate implementation produced, so they are not the library agreeing with itself |
 
 </details>
 
-Canister signatures verify now, so a whole chain can be checked; what is left is a round trip with a real passkey on a device. One rule needed the live network to settle it: the specification says a delegation must state its subnet's type, no canister signature in the public record carries it, and a certificate fetched from `id.ai` does — the vectors are simply older than the rule.
+A chain can be checked from outside now, not only inside itself: the library makes the call, and a canister answers with the principal it sees. Two rules needed the live network to settle them. A delegation must state its subnet's type — no canister signature in the public record carries it and a certificate fetched from `id.ai` does, so the published vectors are simply older than the rule. And a query response *can* be authenticated, against node keys read in a separate request; this does not check that yet, which is why the round trip is written up as trusting the node that answered rather than as proof. What is left is a real passkey on a device.
 
 `Kotlin / Android (Custom Tabs, App Links, Keystore) / BLS12-381 · Ed25519 · ECDSA P-256 · SHA-256 / CBOR / GitHub Actions (JVM tests + emulator)`
 
