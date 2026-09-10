@@ -426,7 +426,7 @@ Most recently competed in [On Top of Pasketti](https://www.drivendata.org/compet
 The relying-party side of ICRC-167, so an Android app can sign a user in with Internet Identity and then call canisters directly — no bridge server and no backend of its own. An iOS implementation exists; the Android counterpart did not.
 
 <details>
-<summary>Six things that were measured rather than assumed</summary>
+<summary>Seven things that were measured rather than assumed</summary>
 
 | Question | What the measurement said |
 | --- | --- |
@@ -436,10 +436,11 @@ The relying-party side of ICRC-167, so an Android app can sign a user in with In
 | Do the negative tests reach the check they are named for? | The pairing equation did not. Replacing it with `return true` left every test green, because each negative case altered a byte of a compressed point and so died at the decoder or the subgroup check first. It is pinned now by cases where only the equation can decide — with the mutation pushed to CI both before and after, rather than reasoned about |
 | Can the round trip be tested before Internet Identity is in the picture? | Yes — any Ed25519 key may delegate, so a chain signed here comes back from mainnet as the principal that delegated, and the same chain signed by the wrong key is refused |
 | Do the published test vectors settle the rules? | Not all of them. A delegation must state its subnet's type; no canister signature in the public record carries it and a certificate fetched from `id.ai` does — the vectors are simply older than the rule |
+| Does verifying the certificate bind the answer to the canister? | Not on its own. The canister-range check runs only when the certificate is delegated; an undelegated one verifies to the root key without ever looking at the canister, and the root state tree holds the node keys of every subnet. One genuine certificate would otherwise let any node answer for anything, so the binding is made explicitly |
 
 </details>
 
-A chain can be checked from outside now, not only against itself: the library makes the call and a canister answers with the principal it sees — as far as the node that answered is honest, since verifying the response signature is not implemented yet. What is left is a real passkey on a device.
+A chain can be checked from outside now, not only against itself: the library makes the call, a canister answers with the principal it sees, and the node signature on that answer is verified to the network root key. What is left is a real passkey on a device.
 
 `Kotlin / Android (Custom Tabs, App Links, Keystore) / BLS12-381 · Ed25519 · ECDSA P-256 · SHA-256 / CBOR / GitHub Actions (JVM tests + emulator)`
 
