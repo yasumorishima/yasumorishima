@@ -440,7 +440,7 @@ The relying-party side of ICRC-167, so an Android app can sign a user in with In
 
 </details>
 
-A chain can be checked from outside now, not only against itself: the library makes the call, a canister answers with the principal it sees, and the node signature on that answer is verified to the network root key. What is left is a real passkey on a device.
+A demo app is out: it signs in with Internet Identity, asks a canister who it sees, checks the node signature, and prints PASS or FAIL. Until 2026-09-11 the default verifier refused every real chain; what is left is a real passkey on a device.
 
 `Kotlin / Android (Custom Tabs, App Links, Keystore) / BLS12-381 · Ed25519 · ECDSA P-256 · SHA-256 / CBOR / GitHub Actions (JVM tests + emulator)`
 
