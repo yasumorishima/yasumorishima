@@ -258,11 +258,11 @@ Reads handwritten Japanese paper scorebooks (紙スコアブック) from photos 
 
 | Configuration | Score |
 | --- | --- |
-| Grid facts handed over (shipped default) | 331 / 356 = **93%** |
-| No grid fact handed over at all | 328 / 356 = 92% |
-| ...and every recognition in-house as well | 252 / 356 = 71% shipped; 291 = 82% under a price order chosen after seeing the result |
+| Grid facts handed over (shipped default) | 366 / 396 = **92%** |
+| No grid fact handed over at all | 363 / 396 = 92% |
+| ...and every recognition in-house as well | 330 / 396 = 83% with the ledger kept; the no-ledger pair was 252 / 356 = 71% shipped and 291 = 82% under a price order chosen after seeing the result, both on the older 31-sheet pool |
 | Hardest mark class: template matching alone → fused with the solver | 76% → **93%** |
-| Consecutive held-out sheets — each new game is graded before it joins the pool | 29 |
+| Consecutive held-out sheets — each new game is graded before it joins the pool | 31 |
 | Real output | my team's 2026 season batting stats are compiled from this ground truth |
 
 </details>
