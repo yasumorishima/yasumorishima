@@ -444,7 +444,7 @@ The relying-party side of ICRC-167, so an Android app can sign a user in with In
 
 </details>
 
-A demo app is out, built to sign in with Internet Identity, ask a canister who it sees, check the node signature and print PASS or FAIL; it has not yet met a real passkey. Until 2026-09-11 the default verifier refused every real chain.
+A demo app is out, built to sign in with Internet Identity, ask a canister who it sees, check the node signature and print PASS or FAIL; on 2026-09-14 it signed in on a real phone with a real passkey and printed three PASSes, after the lifetime check stopped refusing Internet Identity's 30-day outer hop. Until 2026-09-11 the default verifier refused every real chain.
 
 `Kotlin / Android (Custom Tabs, App Links, Keystore) / BLS12-381 · Ed25519 · ECDSA P-256 · SHA-256 / CBOR / GitHub Actions (JVM tests + emulator)`
 
