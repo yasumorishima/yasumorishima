@@ -360,7 +360,7 @@ Civic tech projects for political transparency & citizen participation in Japan.
 <!-- KAGGLE_COMP_STATS_START -->Notebooks Expert | 🥉 15 Bronze Notebook Medals<!-- KAGGLE_COMP_STATS_END -->
 
 **Active:**
-- **SIGNATE NEDO Challenge — Baggage-Loading Optimization** — 3D bin packing for airline ULD containers, hybrid offline+online packing agent (¥15M prize pool, Jul–Oct 2026) — public score 43.44 as of 2026-09-06, scored on fill rate, centre of gravity, stability under shaking and placement of priority/soft cargo
+- **SIGNATE NEDO Challenge — Baggage-Loading Optimization** — 3D bin packing for airline ULD containers, hybrid offline+online packing agent (¥15M prize pool, Jul–Oct 2026) — public score 47.55 as of 2026-09-16, scored on fill rate, centre of gravity, stability under shaking and placement of priority/soft cargo — the last gains came from putting priority bags in slots nothing can ever cover (ceiling clearance below the thinnest bag), but only where that does not place them higher than the move they replace
 - **5th Air Combat AI Challenge** (SIGNATE, run by Japan's Acquisition, Technology & Logistics Agency) — behaviour-decision agents for a 4-fighter plus 1 escorted-aircraft engagement in the organiser's simulator · Glicko-2 rating over agent-vs-agent matches · entries stay private until the contest closes (¥1.92M prize pool, to 2026-12-04)
 - **[Kaggriculture](https://www.kaggle.com/competitions/kaggriculture)** — two-player farm-economy simulation, scored by ladder rating rather than by money ($50K prize pool, to 2026-09-30). Agent and its measurement harness in [`kaggle-competitions/kaggriculture`](https://github.com/yasumorishima/kaggle-competitions/tree/main/kaggriculture)
 
