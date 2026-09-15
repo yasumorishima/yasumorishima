@@ -446,7 +446,7 @@ The relying-party side of ICRC-167, so an Android app can sign a user in with In
 
 </details>
 
-A demo app is out, built to sign in with Internet Identity, ask a canister who it sees, check the node signature and print PASS or FAIL; on 2026-09-14 it signed in on a real phone with a real passkey and printed three PASSes, after the lifetime check stopped refusing Internet Identity's 30-day outer hop. Until 2026-09-11 the default verifier refused every real chain. The next day, in Chrome, Edge and Brave (all Chromium 153), the passkey prompt did not come for Internet Identity's credential list while Google Play services logged `Transport smart-card not supported`; the same list with `internal` and `hybrid` transports went through in one run. Reported as [dfinity/internet-identity#4334](https://github.com/dfinity/internet-identity/issues/4334).
+A demo app is out, built to sign in with Internet Identity, ask a canister who it sees, check the node signature and print PASS or FAIL; on 2026-09-14 it signed in on a real phone with a real passkey and printed three PASSes, after the lifetime check stopped refusing Internet Identity's 30-day outer hop. Until 2026-09-11 the default verifier refused every real chain. On 2026-09-15, in Chrome, Edge and Brave (all Chromium 153), the passkey prompt did not come for Internet Identity's credential list while Google Play services logged `Transport smart-card not supported`; the same list with `internal` and `hybrid` transports went through in one run. Reported as [dfinity/internet-identity#4334](https://github.com/dfinity/internet-identity/issues/4334).
 
 `Kotlin / Android (Custom Tabs, App Links, Keystore) / BLS12-381 · Ed25519 · ECDSA P-256 · SHA-256 / CBOR / GitHub Actions (JVM tests + emulator)`
 
