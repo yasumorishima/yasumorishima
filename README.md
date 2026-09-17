@@ -255,7 +255,7 @@ Trunk rotation range vs pitch speed: r=0.425 (strongest). Contributed bug fix [P
 
 ### [Handwritten Scorebook OCR](https://github.com/yasumorishima/baseball-scorebook-ocr) 🔒 *(private R&D, active)*
 
-Reads handwritten Japanese paper scorebooks (紙スコアブック) from photos into structured at-bat data — no paid API, no cloud OCR · deterministic OpenCV on a Raspberry Pi 5 · a base-running constraint solver decides what the marks mean · graded on 31 hand-transcribed sheets
+Reads handwritten Japanese paper scorebooks (紙スコアブック) from photos into structured at-bat data — no paid API, no cloud OCR · deterministic OpenCV on a Raspberry Pi 5 · a base-running constraint solver decides what the marks mean · graded on 33 hand-transcribed sheets
 
 <details>
 <summary>Where it stands</summary>
@@ -264,7 +264,8 @@ Reads handwritten Japanese paper scorebooks (紙スコアブック) from photos 
 | --- | --- |
 | Grid facts handed over (shipped default) | 366 / 396 = **92%** |
 | No grid fact handed over at all | 363 / 396 = 92% |
-| ...and every recognition in-house as well | 330 / 396 = 83% with the ledger kept; the no-ledger pair was 252 / 356 = 71% shipped and 291 = 82% under a price order chosen after seeing the result, both on the older 31-sheet pool |
+| ...and every recognition in-house as well | 330 / 396 = 83% with the ledger kept, **283 / 396 = 71%** with no ledger at all |
+| A price order picked after seeing the result, re-judged on two sheets it never saw | **refuted** -- 30 vs 34 on those forty corners, last of the four places the term can take, and 28 vs 29 with every recogniser on; its +28 across the corpus sits on the sheets that chose it. Shipping default unchanged |
 | Hardest mark class: template matching alone → fused with the solver | 76% → **93%** |
 | Consecutive held-out sheets — each new game is graded before it joins the pool | 31 |
 | Real output | my team's 2026 season batting stats are compiled from this ground truth |
