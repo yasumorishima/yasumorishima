@@ -149,7 +149,7 @@ Companion site for an amateur baseball team, forked from Minami Baseball OB — 
 </tr>
 <tr>
 <td>31 geophysical data sources → ML earthquake prediction (walk-forward pooled AUC 0.907 over 37 windows; +0.005 per window over a climatology fitted on the same rows) + real-time monitoring dashboard</td>
-<td>AIS vessel tracking across the Persian Gulf &amp; Gulf of Oman with land mask filtering. Collection, storage and a browser-side <a href="https://yasumorishima.github.io/hormuz-ship-tracker/">map</a> run on GitHub Actions and a Hugging Face dataset — no machine of my own<br><br>⚠️ <b>The upstream feed has no receivers in this water</b> — measured 2026-09-16: 19,261 positions worldwide in 180 s, none inside the strait. The collector keeps running, so it resumes by itself if coverage returns.</td>
+<td>Vessel tracking across the Persian Gulf &amp; Gulf of Oman. Collection, storage and a browser-side <a href="https://yasumorishima.github.io/hormuz-ship-tracker/">map</a> run on GitHub Actions and a Hugging Face dataset — no machine of my own<br><br>⚠️ <b>The AIS feed has no receivers in this water</b> — 12,312 vessels worldwide in 180 s on 2026-09-16 and 9,547 on 2026-09-17, none inside the strait. That collector keeps running in case coverage returns.<br><br>🛰️ <b>Sentinel-1 radar now watches the same water</b>, about once every two days, with no account needed. Checked against the project's own AIS archive: 24 of the 24 vessels AIS placed in scored water were found within 300 m — recall only; precision is not measurable from that data.</td>
 </tr>
 </table>
 
