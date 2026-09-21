@@ -237,7 +237,7 @@ Companion site for an amateur baseball team, forked from Minami Baseball OB — 
 
 | System | Key Metric | Articles |
 |--------|-----------|----------|
-| **NPB 2026** | 8-yr backtest wOBA MAE .0498, 97% prob. of beating Marcel. 10K Monte Carlo sims | [JP](https://zenn.dev/shogaku/articles/npb-bayes-integration-production) / [EN](https://dev.to/yasumorishima/adding-bayesian-ensemble-monte-carlo-to-an-npb-prediction-app-58po) |
+| **NPB 2026** | First true out-of-sample test (predictions frozen 2026-03-23, scored at 95% of the season): beats a constant floor and last-year persistence, but the Bayes+ML layer is indistinguishable from Marcel alone (hitter OPS MAE +0.00095 ± 0.00086, pitcher ERA −0.024 ± 0.015). Intervals were uniformly too wide (80%/95% coverage .954/.992 against nominal .80/.95); σ is being made a function of playing time. 8-yr backtest wOBA MAE .0498 | [JP](https://zenn.dev/shogaku/articles/npb-bayes-integration-production) / [EN](https://dev.to/yasumorishima/adding-bayesian-ensemble-monte-carlo-to-an-npb-prediction-app-58po) |
 | **NPB 2021 Backtest** | MAE 10.7W — Yakult & Orix last→champion driven by JP player breakouts, not foreign players | [Repo](https://github.com/yasumorishima/npb-2021-backtest) |
 | **MLB WP Engine** | 3-engine ensemble, 367K+ play states (2015–2024), inverse-Brier weighted + Isotonic calibration | [Live](https://mlb-wp-engine.streamlit.app/) |
 | **Baseball MLOps** | Batter wOBA MAE .0287 (Marcel: .0326) / Pitcher xFIP MAE 0.483 (Marcel: 0.558) | [Live](https://baseball-mlops.streamlit.app/) |
