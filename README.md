@@ -13,7 +13,7 @@ Manufacturing Engineer & Data Analyst with <!-- CAREER_YEARS_START -->18<!-- CAR
   <img alt="At a glance: open-source, GitHub Actions automation, Kaggle and package metrics" src="https://raw.githubusercontent.com/yasumorishima/yasumorishima/main/assets/dashboard-light.svg">
 </picture>
 
-**Jump to** — [Robotics](#-robotics--embedded) · [Baseball websites](#-baseball-websites) · [Realtime open data](#-realtime-open-data) · [Baseball analytics](#-baseball-analytics) · [Open source](#-open-source-contributions) · [Competitions](#-data--competitions) · [Dashboards and mobile](#-dashboards--mobile) · [PyPI](#-pypi-packages) · [Learning projects](#-learning-projects) · [Tech stack](#️-tech-stack) · [Career](#-career) · [Patents](#-patents) · [Contact](#-contact--blog)
+**Jump to** — [Robotics](#-robotics--embedded) · [Baseball websites](#-baseball-websites) · [Realtime open data](#-realtime-open-data) · [Baseball analytics](#-baseball-analytics) · [Document OCR](#-document-ocr) · [Open source](#-open-source-contributions) · [Competitions](#-data--competitions) · [Dashboards and mobile](#-dashboards--mobile) · [PyPI](#-pypi-packages) · [Learning projects](#-learning-projects) · [Tech stack](#️-tech-stack) · [Career](#-career) · [Patents](#-patents) · [Contact](#-contact--blog)
 
 ## 🤖 Robotics / Embedded
 
@@ -314,6 +314,61 @@ Private repo (the method is the product) — public technical write-up: [basebal
 </details>
 
 ---
+
+## 🧾 Document OCR
+
+Deterministic document readers — nothing is sent to a cloud OCR or a generative model, and the same page always reads back the same. The handwritten side lives under Baseball Analytics: [Handwritten Scorebook OCR](#handwritten-scorebook-ocr) 🔒.
+
+### [Business-Form PDF Extraction](https://github.com/yasumorishima/form-ocr-lab) 🔒 *(private R&D, active)*
+
+Turns supplier PDFs into the spreadsheet a back-office system can ingest — with **no generative model anywhere in the read path**, because one invented unit price is a wrong receivable. Same PDF in, same bytes out, every time · standard library only (nothing is installable on the target machines) · it reconciles against the total the form itself prints.
+
+<details>
+<summary>Why not a generative OCR</summary>
+
+Measured on a dense 56 × 5 alphanumeric part-number grid:
+
+| Check | Result |
+| --- | --- |
+| The same number read across two passes | prefixes swap between runs; `Q`↔`0`, case flips, digit counts drift |
+| Two-pass agreement on the worst page | about half — **majority voting does not converge** |
+| Where the two methods disagreed | **every mismatch was the generative side misreading** |
+| Duplicates it reported | 14 — all distinct parts it had misread. True duplicates: **0** |
+
+A generative reader is bad at exactly this shape of input: dense, uniform, alphanumeric, and unforgiving. The fix is not a better prompt — it is not giving it the job.
+
+</details>
+
+<details>
+<summary>How it reads instead</summary>
+
+| Layer | What it does |
+| --- | --- |
+| Opening the file | raw PDF bytes, standard library only — both legacy xref tables and xref streams |
+| Ambiguous digit boundaries | every candidate split is tried; only the one where **qty × unit price = amount** survives |
+| Rows and columns | taken from the **printed ruling lines** and the header, never from coordinate thresholds — so uneven row heights, values wrapped across two lines, and rows continuing onto the next page all behave the same |
+| Pages that are neither text nor raster | outlined glyphs are rendered, clustered by shape, labelled **once** by eye, then the strings are rebuilt — zero OCR jitter, fully reproducible |
+| Document types | three of them, told apart from the structure of the file itself; the operator's three steps never change |
+| Output | as-is. If the form prints the same part twice, it comes out twice; if there is no list to read, it says so and stops instead of writing an empty sheet |
+
+</details>
+
+<details>
+<summary>What it was graded against</summary>
+
+| Check | Result |
+| --- | --- |
+| Full-row, full-column reconciliation against independently keyed human data, 3 months | 269 / 229 / 855 rows — **exact match** |
+| The one mismatch | the **human data** was wrong — a unit price keyed as 0 where that row's own quantity and amount imply 3.20, and the form prints 3.20. Confirmed with the owning department; the tool keeps the form as truth |
+| Vector-grid corpus | **2,526** parts, 0 duplicates, order-sensitive |
+| Regression method | the previously shipped engine is pulled back out of the distributed notebook and re-run on the same PDFs — byte-level diff, not eyeballing |
+| Bugs with no reproducing case in the corpus | synthesised the byte sequence that triggers them, showed old-breaks / new-holds, then shipped |
+| Corrections logged against my own earlier conclusions | **3** — including "this document has no part list", which was my own parser truncating the page early |
+
+</details>
+
+Private repo (the method is the product). What is kept there is the method and the judgement calls — no customer documents, no counterparty names.
+
 
 ## 🌐 Open Source Contributions
 
