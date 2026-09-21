@@ -372,7 +372,7 @@ Private repo (the method is the product). What is kept there is the method and t
 
 ## 🌐 Open Source Contributions
 
-<!-- OSS_STATS_START -->(129 PRs / 82 Merged)<!-- OSS_STATS_END --> across 49 repositories. See [oss-contributions](https://github.com/yasumorishima/oss-contributions) for full details.
+<!-- OSS_STATS_START -->(133 PRs / 86 Merged)<!-- OSS_STATS_END --> across 49 repositories. See [oss-contributions](https://github.com/yasumorishima/oss-contributions) for full details.
 
 <details>
 <summary>PR highlights (click to expand)</summary>
