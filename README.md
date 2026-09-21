@@ -262,6 +262,30 @@ Companion site for an amateur baseball team, forked from Minami Baseball OB — 
 Trunk rotation range vs pitch speed: r=0.425 (strongest). Contributed bug fix [PR #384](https://github.com/pyomeca/ezc3d/pull/384) to ezc3d.
 [Article (JP)](https://zenn.dev/shogaku/articles/baseball-cv-skeleton-biomechanics) / [Article (EN)](https://dev.to/yasumorishima/3d-skeleton-detection-from-baseball-motion-capture-data-with-driveline-c3d-29ja)
 
+### Statcast Analysis
+
+<!-- MLB_STATS_START -->6 analyses<!-- MLB_STATS_END --> covering Japanese MLB pitchers and Ohtani batting data.
+
+<details>
+<summary>All analyses (6)</summary>
+
+| Analysis | Key Finding | Article |
+|----------|-------------|---------|
+| **Kikuchi Slider Revolution (2019-2025)** | SL 17%→37% after Astros trade | [Zenn](https://zenn.dev/shogaku/articles/kikuchi-slider-revolution-2019-2025) / [DEV.to](https://dev.to/yasumorishima/yusei-kikuchis-pitching-evolution-a-statcast-analysis-2019-2025-2a4a) / [Kaggle](https://www.kaggle.com/code/yasunorim/kikuchi-slider-revolution-2019-2025) |
+| **Senga Ghost Fork (2023-2025)** | FO whiff rate 58%→39%, decline pre-injury | [Zenn](https://zenn.dev/shogaku/articles/senga-ghost-fork-analysis-2023-2025) / [DEV.to](https://dev.to/yasumorishima/kodai-sengas-ghost-fork-analyzed-with-statcast-data-2023-2025-1k1d) / [Kaggle](https://www.kaggle.com/code/yasunorim/senga-ghost-fork-analysis-2023-2025) |
+| **Imanaga 2nd Year (2024-2025)** | 3-pitch concentration (97%), 1st TTO xwOBA .505 | [Zenn](https://zenn.dev/shogaku/articles/imanaga-2nd-year-analysis-2024-2025) / [DEV.to](https://dev.to/yasumorishima/shota-imanagas-sophomore-year-what-statcast-data-reveals-2024-2025-235) / [Kaggle](https://www.kaggle.com/code/yasunorim/imanaga-rookie-to-sophomore-pitching) |
+| **Darvish Evolution (2021-2025)** | SL/ST halved, CU became putaway pitch | [Zenn](https://zenn.dev/shogaku/articles/darvish-pitching-evolution-2021-2025) / [DEV.to](https://dev.to/yasumorishima/yu-darvishs-pitching-evolution-2021-2025-a-statcast-data-analysis-fij) / [Kaggle](https://www.kaggle.com/code/yasunorim/darvish-pitching-evolution) |
+| **Ohtani Spray Chart** | spraychart() one-liner vs matplotlib manual | [Zenn](https://zenn.dev/shogaku/articles/pybaseball-spraychart-ohtani) |
+| **Ohtani Heatmap** | Stadium drawing + hit density heatmap | [Zenn](https://zenn.dev/shogaku/articles/matplotlib-baseball-heatmap) |
+
+</details>
+
+---
+
+## 🧾 Document OCR
+
+Two deterministic readers of documents nobody else could read — one handwritten, one printed. Neither sends a page to a cloud OCR or to a generative model, and the same page always reads back the same.
+
 ### [Handwritten Scorebook OCR](https://github.com/yasumorishima/baseball-scorebook-ocr) 🔒 *(private R&D, active)*
 
 Reads handwritten Japanese paper scorebooks (紙スコアブック) from photos into structured at-bat data — no paid API, no cloud OCR · deterministic OpenCV on a Raspberry Pi 5 · a base-running constraint solver decides what the marks mean · graded on 33 hand-transcribed sheets
@@ -294,30 +318,6 @@ Reads handwritten Japanese paper scorebooks (紙スコアブック) from photos 
 </details>
 
 Private repo (the method is the product) — public technical write-up: [baseball-scorebook-ocr-docs](https://github.com/yasumorishima/baseball-scorebook-ocr-docs) (JP)
-
-### Statcast Analysis
-
-<!-- MLB_STATS_START -->6 analyses<!-- MLB_STATS_END --> covering Japanese MLB pitchers and Ohtani batting data.
-
-<details>
-<summary>All analyses (6)</summary>
-
-| Analysis | Key Finding | Article |
-|----------|-------------|---------|
-| **Kikuchi Slider Revolution (2019-2025)** | SL 17%→37% after Astros trade | [Zenn](https://zenn.dev/shogaku/articles/kikuchi-slider-revolution-2019-2025) / [DEV.to](https://dev.to/yasumorishima/yusei-kikuchis-pitching-evolution-a-statcast-analysis-2019-2025-2a4a) / [Kaggle](https://www.kaggle.com/code/yasunorim/kikuchi-slider-revolution-2019-2025) |
-| **Senga Ghost Fork (2023-2025)** | FO whiff rate 58%→39%, decline pre-injury | [Zenn](https://zenn.dev/shogaku/articles/senga-ghost-fork-analysis-2023-2025) / [DEV.to](https://dev.to/yasumorishima/kodai-sengas-ghost-fork-analyzed-with-statcast-data-2023-2025-1k1d) / [Kaggle](https://www.kaggle.com/code/yasunorim/senga-ghost-fork-analysis-2023-2025) |
-| **Imanaga 2nd Year (2024-2025)** | 3-pitch concentration (97%), 1st TTO xwOBA .505 | [Zenn](https://zenn.dev/shogaku/articles/imanaga-2nd-year-analysis-2024-2025) / [DEV.to](https://dev.to/yasumorishima/shota-imanagas-sophomore-year-what-statcast-data-reveals-2024-2025-235) / [Kaggle](https://www.kaggle.com/code/yasunorim/imanaga-rookie-to-sophomore-pitching) |
-| **Darvish Evolution (2021-2025)** | SL/ST halved, CU became putaway pitch | [Zenn](https://zenn.dev/shogaku/articles/darvish-pitching-evolution-2021-2025) / [DEV.to](https://dev.to/yasumorishima/yu-darvishs-pitching-evolution-2021-2025-a-statcast-data-analysis-fij) / [Kaggle](https://www.kaggle.com/code/yasunorim/darvish-pitching-evolution) |
-| **Ohtani Spray Chart** | spraychart() one-liner vs matplotlib manual | [Zenn](https://zenn.dev/shogaku/articles/pybaseball-spraychart-ohtani) |
-| **Ohtani Heatmap** | Stadium drawing + hit density heatmap | [Zenn](https://zenn.dev/shogaku/articles/matplotlib-baseball-heatmap) |
-
-</details>
-
----
-
-## 🧾 Document OCR
-
-Deterministic document readers — nothing is sent to a cloud OCR or a generative model, and the same page always reads back the same. The handwritten side lives under Baseball Analytics: [Handwritten Scorebook OCR](#handwritten-scorebook-ocr) 🔒.
 
 ### [Business-Form PDF Extraction](https://github.com/yasumorishima/form-ocr-lab) 🔒 *(private R&D, active)*
 
