@@ -367,6 +367,23 @@ A generative reader is bad at exactly this shape of input: dense, uniform, alpha
 
 </details>
 
+<details>
+<summary>Rebuilding it from the write-up</summary>
+
+The engine cannot leave the machine it runs on, so the write-up is all that survives it — which makes rebuilding from those notes alone a fair test of whether the notes are any good. Standard library only, and graded **without a single real document**: the hard cases are synthesised instead — xref streams, object streams, a table whose row heights differ, a value wrapped across two lines at a hyphen, a row continuing onto the next page, a page whose characters are outlines rather than text.
+
+| Check | Result |
+| --- | --- |
+| Suites on the rebuild | **176 checks, 0 failures** — reading the file, placing ink on the page, tables from printed rules, glyph clustering |
+| Do the tests have teeth | every claim is paired with a mutation that must turn it red — **12** so far, plus the naive implementation is run alongside so you watch it fail first |
+| Reproducing the central claim | with glyph sizes mixed, a coordinate signature shatters into **54** groups and an exact raster signature into **30**, for **3** actual shapes; nearest-neighbour by Dice recovers exactly 3 |
+| Signature resolution | the margin between same-shape and different-shape is **not monotone** in resolution — one value sits on a knife edge at **+0.026** while its neighbours sit at +0.16 to +0.36. Picking "finer is better" would have landed on it |
+| A fixture that proved nothing | its first version was too clean — without per-instance vertex jitter, exact matching also recovered 3, so the claim it existed to test **could not fail**. Caught by a mutation that refused to go red |
+
+Not the production engine, and it says so: the glyph dictionary, the per-form field shapes and the constants you can only fit against real paper are all structurally absent. **It has never been run on a real document.**
+
+</details>
+
 Private repo (the method is the product). What is kept there is the method and the judgement calls — no customer documents, no counterparty names.
 
 
