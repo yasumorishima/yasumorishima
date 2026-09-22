@@ -374,13 +374,15 @@ The engine cannot leave the machine it runs on, so the write-up is all that surv
 
 | Check | Result |
 | --- | --- |
-| Suites on the rebuild | **370 checks, 0 failures** — reading the file, placing ink on the page, tables from printed rules, glyph clustering, and writing the spreadsheet back out |
-| Do the tests have teeth | every claim is paired with a mutation that must turn it red — **22** so far, plus the naive implementation is run alongside so you watch it fail first |
-| Counting the teeth from outside | hand-picked mutations only probe the breakages you thought of. A sweep that edits the source mechanically found **10 of 16 mutants surviving** a suite that was entirely green — including one that disabled the read-back check itself. Now **17 of 17 die** |
+| Suites on the rebuild | **513 checks, 0 failures** — reading the file, placing ink on the page, tables from printed rules, glyph clustering, writing the spreadsheet back out, and the end-to-end run |
+| Do the tests have teeth | every claim is paired with a mutation that must turn it red — **30** so far, plus the naive implementation is run alongside so you watch it fail first |
+| Counting the teeth from outside | hand-picked mutations only probe the breakages you thought of. A sweep that edits the source mechanically found **10 of 16 mutants surviving** a suite that was entirely green — including one that disabled the read-back check itself. On the next layer it was **26 of 32**. Now **38 of 38 die**, and a mutation that no longer applies is counted as a failure of the sweep rather than dropped from it |
 | Reproducing the central claim | with glyph sizes mixed, a coordinate signature shatters into **54** groups and an exact raster signature into **30**, for **3** actual shapes; nearest-neighbour by Dice recovers exactly 3 |
 | Signature resolution | the margin between same-shape and different-shape is **not monotone** in resolution — one value sits on a knife edge at **+0.026** while its neighbours sit at +0.16 to +0.36. Picking "finer is better" would have landed on it |
 | A round trip that cannot see its own mistake | whitespace survives a write-and-read-back even when the attribute that preserves it is missing, because an XML parser keeps the spaces anyway — the side that drops them is the spreadsheet. Verifying through your own reader cannot catch a departure from the format itself |
 | Escaping that overlaps | text carrying the format's own escape notation must be escaped first, and two such candidates can share a character. A regex substitution skips past the first match and silently loses the second |
+| An all-or-nothing gate that misses in the field | deciding a document's type on whether it carries *any* text at all flips on a single page-number fragment in the footer. The grid then reads as a table and a spreadsheet of **entirely empty cells** ships with no warning — the shape is right, so the reader concludes there was nothing to report this month. Real forms always carry a footer |
+| Damage that looks like nothing | one ruling line missed on page two silently merges two columns: a part number and its description land in one cell and the quantity moves one column left. Nothing in the parse reports a problem, so the check has to be that **column counts agree across pages** |
 | A fixture that proved nothing | its first version was too clean — without per-instance vertex jitter, exact matching also recovered 3, so the claim it existed to test **could not fail**. Caught by a mutation that refused to go red |
 
 Not the production engine, and it says so: the glyph dictionary, the per-form field shapes and the constants you can only fit against real paper are all structurally absent. **It has never been run on a real document.**
