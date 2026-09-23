@@ -203,7 +203,7 @@ Companion site for an amateur baseball team, forked from Minami Baseball OB — 
 | **[NPB 2021 Backtest](https://github.com/yasumorishima/npb-2021-backtest)** | Could Bayesian model predict Yakult & Orix last→champion? 25 foreign players with FanGraphs data | [Analysis](https://github.com/yasumorishima/npb-2021-backtest) |
 | **[MLB Win Probability Engine](https://github.com/yasumorishima/mlb-win-probability)** | 3-engine ensemble WP (Normal + Empirical + LightGBM) + Gemini AI commentary | [Live](https://mlb-wp-engine.streamlit.app/) |
 | **[Baseball MLOps Pipeline](https://github.com/yasumorishima/baseball-mlops)** | Statcast MLOps: 5-model ensemble — weekly auto-retrain paused (BigQuery retired 2026-04, data layer being rebuilt on Hugging Face) | [Live](https://baseball-mlops.streamlit.app/) |
-| **[MLB Data Pipeline](https://github.com/yasumorishima/mlb-data-pipeline)** | Shared data platform published as a public Hugging Face dataset. 11 Baseball Savant tables refresh weekly via GitHub Actions; the 3 FanGraphs tables are a frozen 2026-04 snapshot ending with the 2025 season, because the runner's address is blocked (measured again 2026-09-21). Pitch-level Statcast is manual-dispatch only | [HF Dataset](https://huggingface.co/datasets/yasumorishima/mlb-stats) |
+| **[MLB Data Pipeline](https://github.com/yasumorishima/mlb-data-pipeline)** | Public Hugging Face dataset with a card stating per table whether it is fresh. 12 Savant tables refresh weekly; the 3 FanGraphs tables are frozen at 2025 (the runner's address is blocked). Each run audits what it produced, publishes only what passed, and goes red otherwise | [HF Dataset](https://huggingface.co/datasets/yasumorishima/mlb-stats) |
 
 <details>
 <summary>Prediction accuracy & details</summary>
