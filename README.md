@@ -205,7 +205,7 @@ Companion site for an amateur baseball team, forked from Minami Baseball OB — 
 | **[Bayesian Aging Curve](https://github.com/yasumorishima/baseball-bayes)** | Pre-registered: does a Stan state-space aging model project next-season wOBA better than Marcel? Fitted on GitHub Actions from the dbt marts. 2025 result: indistinguishable from Marcel (both 95% intervals include 0) | [Repo](https://github.com/yasumorishima/baseball-bayes) |
 | **[MLB Win Probability Engine](https://github.com/yasumorishima/mlb-win-probability)** | 3-engine ensemble WP (Normal + Empirical + LightGBM) + Gemini AI commentary | [Live](https://mlb-wp-engine.streamlit.app/) |
 | **[Baseball MLOps Pipeline](https://github.com/yasumorishima/baseball-mlops)** | Statcast MLOps: 5-model ensemble — weekly auto-retrain paused (BigQuery retired 2026-04, data layer being rebuilt on Hugging Face) | [Live](https://baseball-mlops.streamlit.app/) |
-| **[MLB Data Pipeline](https://github.com/yasumorishima/mlb-data-pipeline)** | Public Hugging Face dataset; its card states per table whether it is fresh. 14 tables refresh weekly (12 Savant, 2 MLB Stats API); the 3 FanGraphs tables are frozen at 2025. Each run audits its output and never publishes a table that lost a season. dbt + DuckDB marts with enforced contracts on top, also built on a free BigQuery sandbox | [HF Dataset](https://huggingface.co/datasets/yasumorishima/mlb-stats) · [Dashboard](https://lookerstudio.google.com/reporting/9c1d9fa2-c796-45a0-85de-633a888c4fd9) |
+| **[MLB Data Pipeline](https://github.com/yasumorishima/mlb-data-pipeline)** | Public Hugging Face dataset; its card states per table whether it is fresh. 14 tables refresh weekly (12 Savant, 2 MLB Stats API); the 3 FanGraphs tables are frozen at 2025. No run publishes a table that lost a season. dbt + DuckDB marts with enforced contracts on top, also built on a free BigQuery sandbox | [HF Dataset](https://huggingface.co/datasets/yasumorishima/mlb-stats) · [Dashboard](https://lookerstudio.google.com/reporting/9c1d9fa2-c796-45a0-85de-633a888c4fd9) · [Tableau](https://public.tableau.com/app/profile/y.m7878/viz/MLBScoutingDashboard/Batters) |
 
 <details>
 <summary>Prediction accuracy & details</summary>
@@ -529,7 +529,7 @@ A demo app signs in with Internet Identity, asks a canister who it sees, checks 
 | **Web & Dashboards** | Streamlit, Next.js, TypeScript, Supabase, Vercel, shadcn/ui |
 | **Mobile App** | Flutter, Dart, Hive, Google AdMob |
 | **Automation & DevOps** | GitHub Actions, Google Apps Script, VBA, Power Query |
-| **Tools** | Claude Code, Kaggle, Google Colab, Excel, Looker Studio |
+| **Tools** | Claude Code, Kaggle, Google Colab, Excel, Looker Studio, Tableau Public |
 | **Manufacturing** | Statistical Quality Control, Process Engineering |
 
 ---
