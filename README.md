@@ -155,6 +155,8 @@ Companion site for an amateur baseball team, forked from Minami Baseball OB — 
 
 `Real-time API / WebSocket → SQLite → FastAPI + Leaflet.js (dark theme)` — [All projects](https://github.com/yasumorishima/realtime-open-data)
 
+**[Earth Vital Signs](https://github.com/yasumorishima/earth-vital-signs)** — sea ice, CO2 and other greenhouse gases, and ocean temperature from NOAA/NSIDC, rebuilt daily on GitHub Actions and published only after checks pass
+
 **[Japan Geohazard Monitor](https://github.com/yasumorishima/japan-geohazard-monitor)** — Earthquake prediction research
 
 <details>
