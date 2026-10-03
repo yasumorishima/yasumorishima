@@ -155,7 +155,7 @@ Companion site for an amateur baseball team, forked from Minami Baseball OB — 
 
 `Real-time API / WebSocket → SQLite → FastAPI + Leaflet.js (dark theme)` — [All projects](https://github.com/yasumorishima/realtime-open-data)
 
-**[Earth Vital Signs](https://github.com/yasumorishima/earth-vital-signs)** — sea ice, CO2 and other greenhouse gases, and ocean temperature from NOAA/NSIDC, rebuilt daily on GitHub Actions and published only after checks pass
+**[Earth Vital Signs](https://github.com/yasumorishima/earth-vital-signs)** — sea ice, CO2 and other greenhouse gases, sea and air temperature, daily El Niño and climate indices from NOAA/NSIDC/Copernicus, rebuilt daily on GitHub Actions and published only after checks pass
 
 **[Japan Geohazard Monitor](https://github.com/yasumorishima/japan-geohazard-monitor)** — Earthquake prediction research
 
@@ -425,7 +425,7 @@ Civic tech projects for political transparency & citizen participation in Japan.
 
 | Dataset | Description |
 |---------|-------------|
-| [Earth Vital Signs - Daily Climate Indicators](https://www.kaggle.com/datasets/yasunorim/earth-vital-signs-daily) | Sea ice, CO2, greenhouse gases and sea surface temperature, rebuilt daily on GitHub Actions ([repo](https://github.com/yasumorishima/earth-vital-signs)) |
+| [Earth Vital Signs - Daily Climate Indicators](https://www.kaggle.com/datasets/yasunorim/earth-vital-signs-daily) | Sea ice, CO2, sea and air temperature, El Niño and climate indices (8 files), rebuilt daily on GitHub Actions ([repo](https://github.com/yasumorishima/earth-vital-signs)) |
 | [ABS Challenges: Triple-A 2025 to MLB 2026](https://www.kaggle.com/datasets/yasunorim/mlb-abs-challenges-aaa-2025-to-mlb-2026) | 15 ABS challenge boards by MLBAM id, with per-player stats (211 columns) · Article [JP](https://qiita.com/ussu_ussu_ussu/items/57c5760b3f9917b3883f) / [EN](https://dev.to/yasumorishima/abs-challenges-from-triple-a-to-mlb-catchers-win-most-and-batters-who-dont-chase-win-more-499a) |
 | [Baseball Savant Leaderboards (2024-2025)](https://www.kaggle.com/datasets/yasunorim/baseball-savant-leaderboards-2024) | 15 leaderboards, 2 seasons combined |
 | [Japanese MLB Players Statcast (2015-2025)](https://www.kaggle.com/datasets/yasunorim/japan-mlb-pitchers-batters-statcast) | 34 Japanese MLB players, 174k pitches+hits |
