@@ -362,6 +362,8 @@ Private repo (the method is the product). What is kept there is the method and t
 | **project-inclusive/OpenFisca-Japan** | [#482](https://github.com/project-inclusive/OpenFisca-Japan/pull/482) | Add the school-cost assistance eligibility check to Japan's welfare rules engine |
 | **project-inclusive/OpenFisca-Japan** | [#483](https://github.com/project-inclusive/OpenFisca-Japan/pull/483) | Add the higher-education tuition and entrance-fee reduction to Japan's welfare rules engine |
 | **project-inclusive/OpenFisca-Japan** | [#484](https://github.com/project-inclusive/OpenFisca-Japan/pull/484) | Add the jobseeker support benefit paid during free vocational training to Japan's welfare rules engine |
+| **MobilityData/gtfs-validator** | [#2177](https://github.com/MobilityData/gtfs-validator/pull/2177) | Require stop IDs on transfers when `transfer_type` is empty |
+| **sugarlabs/musicblocks-v4** | [#774](https://github.com/sugarlabs/musicblocks-v4/pull/774) | Improve the block Palette interactions (cursors, titles) with tests |
 | **optuna/optuna** | — | Hyperparameter optimization framework |
 | **pandas-dev/pandas** | — | Data analysis library |
 | **jldbc/pybaseball** | [#498-504](https://github.com/jldbc/pybaseball) | Bug fixes & documentation |
