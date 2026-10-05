@@ -356,14 +356,10 @@ Private repo (the method is the product). What is kept there is the method and t
 | **daisy/MathCAT** | [#720-778](https://github.com/daisy/MathCAT/pull/720) | Japanese speech rules, 23 merged PRs: fractions in Japanese word order, exponents, roots, geometry terms, brackets, large operators, intervals, elementary functions, accents, symbol readings, nPk permutations, menclose marks and the navigation phrases that were still spoken in English |
 | **daisy/MathCAT** | [#746](https://github.com/daisy/MathCAT/pull/746) | Fix the Japanese navigation announcements a blind reader hears on every move, including four that stated the opposite of the truth at the edge of a table |
 | **PHPOffice/PHPPresentation** | [#897](https://github.com/PHPOffice/PHPPresentation/pull/897) | Fix PHP 8.4/8.5 static analysis by fixing 144 findings instead of ignoring them |
-| **project-inclusive/OpenFisca-Japan** | [#479](https://github.com/project-inclusive/OpenFisca-Japan/pull/479) | Add the vocational training benefit for single-parent families to Japan's welfare rules engine |
-| **project-inclusive/OpenFisca-Japan** | [#480](https://github.com/project-inclusive/OpenFisca-Japan/pull/480) | Add the housing security benefit to Japan's welfare rules engine |
-| **project-inclusive/OpenFisca-Japan** | [#481](https://github.com/project-inclusive/OpenFisca-Japan/pull/481) | Add the welfare loan fund for single-parent families and widows to Japan's welfare rules engine |
-| **project-inclusive/OpenFisca-Japan** | [#482](https://github.com/project-inclusive/OpenFisca-Japan/pull/482) | Add the school-cost assistance eligibility check to Japan's welfare rules engine |
-| **project-inclusive/OpenFisca-Japan** | [#483](https://github.com/project-inclusive/OpenFisca-Japan/pull/483) | Add the higher-education tuition and entrance-fee reduction to Japan's welfare rules engine |
-| **project-inclusive/OpenFisca-Japan** | [#484](https://github.com/project-inclusive/OpenFisca-Japan/pull/484) | Add the jobseeker support benefit paid during free vocational training to Japan's welfare rules engine |
+| **project-inclusive/OpenFisca-Japan** | [#479-484](https://github.com/project-inclusive/OpenFisca-Japan/pull/479) | Six benefits added to Japan's welfare rules engine: vocational training and loans for single parents, housing security, school costs, higher-education fees, jobseeker support |
 | **MobilityData/gtfs-validator** | [#2177](https://github.com/MobilityData/gtfs-validator/pull/2177) | Require stop IDs on transfers when `transfer_type` is empty |
 | **sugarlabs/musicblocks-v4** | [#774](https://github.com/sugarlabs/musicblocks-v4/pull/774) | Improve the block Palette interactions (cursors, titles) with tests |
+| **AtsushiSakai/PythonRobotics** | [#1408](https://github.com/AtsushiSakai/PythonRobotics/pull/1408) | Run the CI workflows on Python 3.14 |
 | **optuna/optuna** | — | Hyperparameter optimization framework |
 | **pandas-dev/pandas** | — | Data analysis library |
 | **jldbc/pybaseball** | [#498-504](https://github.com/jldbc/pybaseball) | Bug fixes & documentation |
