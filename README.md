@@ -157,6 +157,8 @@ Companion site for an amateur baseball team, forked from Minami Baseball OB — 
 
 **[Earth Vital Signs](https://github.com/yasumorishima/earth-vital-signs)** — sea ice, CO2 and other greenhouse gases, sea and air temperature, daily El Niño and climate indices from NOAA/NSIDC/Copernicus, rebuilt daily on GitHub Actions and published only after checks pass
 
+**[Japan Road Traffic](https://github.com/yasumorishima/japan-road-traffic)** — vehicle counts from about 2,000 national-highway counters in Japan (hourly nationwide, every 5 minutes in Kanto). The source keeps only one to three months, so GitHub Actions saves every day before it disappears
+
 **[Japan Geohazard Monitor](https://github.com/yasumorishima/japan-geohazard-monitor)** — Earthquake prediction research
 
 <details>
