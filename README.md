@@ -364,7 +364,7 @@ Private repo (the method is the product). What is kept there is the method and t
 | **AtsushiSakai/PythonRobotics** | [#1408](https://github.com/AtsushiSakai/PythonRobotics/pull/1408) | Run the CI workflows on Python 3.14 |
 | **optuna/optuna** | — | Hyperparameter optimization framework |
 | **pandas-dev/pandas** | — | Data analysis library |
-| **jldbc/pybaseball** | [#498-504](https://github.com/jldbc/pybaseball) | Bug fixes & documentation |
+| **jldbc/pybaseball** | [#514](https://github.com/jldbc/pybaseball/pull/514) | Bug fixes & pandas 3 compatibility |
 
 <details>
 <summary>team-mirai — Civic Tech OSS (<!-- TEAM_MIRAI_STATS_START -->26 PRs (14 Merged / 4 Open / 8 Closed)<!-- TEAM_MIRAI_STATS_END -->)</summary>
