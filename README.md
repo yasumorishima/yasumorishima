@@ -421,11 +421,12 @@ Civic tech projects for political transparency & citizen participation in Japan.
 | 🥈 [WBC 2026 Scouting](https://www.kaggle.com/datasets/yasunorim/wbc-2026-scouting) | 306 players, 20 countries |
 
 <details>
-<summary>Other datasets (8)</summary>
+<summary>Other datasets (9)</summary>
 
 | Dataset | Description |
 |---------|-------------|
 | [Earth Vital Signs - Daily Climate Indicators](https://www.kaggle.com/datasets/yasunorim/earth-vital-signs-daily) | Sea ice, CO2, sea and air temperature, El Niño and climate indices (8 files), rebuilt daily on GitHub Actions ([repo](https://github.com/yasumorishima/earth-vital-signs)) |
+| [Japan Road Traffic Volume (Hourly Archive)](https://www.kaggle.com/datasets/yasunorim/japan-road-traffic-volume) | Vehicle counts from about 2,000 national-highway counters, hourly nationwide and every 5 minutes in Kanto, saved daily on GitHub Actions before the source drops them ([repo](https://github.com/yasumorishima/japan-road-traffic)) |
 | [ABS Challenges: Triple-A 2025 to MLB 2026](https://www.kaggle.com/datasets/yasunorim/mlb-abs-challenges-aaa-2025-to-mlb-2026) | 15 ABS challenge boards by MLBAM id, with per-player stats (211 columns) · Article [JP](https://qiita.com/ussu_ussu_ussu/items/57c5760b3f9917b3883f) / [EN](https://dev.to/yasumorishima/abs-challenges-from-triple-a-to-mlb-catchers-win-most-and-batters-who-dont-chase-win-more-499a) |
 | [Baseball Savant Leaderboards (2024-2025)](https://www.kaggle.com/datasets/yasunorim/baseball-savant-leaderboards-2024) | 15 leaderboards, 2 seasons combined |
 | [Japanese MLB Players Statcast (2015-2025)](https://www.kaggle.com/datasets/yasunorim/japan-mlb-pitchers-batters-statcast) | 34 Japanese MLB players, 174k pitches+hits |
