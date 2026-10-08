@@ -270,6 +270,46 @@ def get_kaggle_dataset_count() -> int | None:
     return count if count > 0 else None
 
 
+def get_kaggle_medals() -> dict | None:
+    """Medal totals as Kaggle itself counts them on the public profile.
+
+    Medals follow live vote counts, so one can be lost after it was awarded
+    (a voter retracts or is removed). A number copied into config.json goes
+    stale silently -- the README claimed 15 bronze while Kaggle showed 14.
+    Returns None unless both counts are present, so a bad response never
+    overwrites the README with zeros.
+    """
+    try:
+        resp = requests.post(
+            "https://www.kaggle.com/api/i/users.ProfileService/GetProfile",
+            json={"userName": "yasunorim"},
+            timeout=60,
+        )
+        resp.raise_for_status()
+        summaries = resp.json().get("achievementSummaries", [])
+    except Exception as exc:
+        print(f"  Kaggle profile failed: {exc}", file=sys.stderr)
+        return None
+    by_type = {s.get("summaryType"): s for s in summaries}
+    notebooks = by_type.get("USER_ACHIEVEMENT_TYPE_NOTEBOOKS")
+    datasets = by_type.get("USER_ACHIEVEMENT_TYPE_DATASETS")
+    # Kaggle omits zero-valued counts, so a missing count can be a real 0;
+    # a summary without even its tier is hollow and must not publish 0.
+    if not (notebooks and notebooks.get("tier") and datasets and datasets.get("tier")):
+        print("  Kaggle profile lacks notebook/dataset summaries", file=sys.stderr)
+        return None
+    medals = {
+        "notebook_bronze": int(notebooks.get("totalBronzeMedals", 0)),
+        "dataset_silver": int(datasets.get("totalSilverMedals", 0)),
+    }
+    # Zero bronze would mean the summary came back hollow, not that every
+    # medal vanished: refuse rather than publish it.
+    if medals["notebook_bronze"] <= 0:
+        print(f"  Implausible medal counts {medals}, skipping", file=sys.stderr)
+        return None
+    return medals
+
+
 def get_actions_activity() -> dict | None:
     """Count the automation that actually runs: workflows, cron, runs per month.
 
@@ -422,7 +462,6 @@ def update_competitions_readme(bronze: int) -> None:
 
 def main():
     config = json.loads(CONFIG.read_text(encoding="utf-8"))
-    bronze = config.get("notebook_bronze", 0)
 
     readme = README.read_text(encoding="utf-8")
 
@@ -447,10 +486,16 @@ def main():
 
     # Kaggle competitions
     kaggle_title = config.get("kaggle_title", "Notebooks Expert")
-    print(f"  Bronze notebooks (from config.json): {bronze}")
-    kaggle_comp_text = f"{kaggle_title} | \U0001f949 {bronze} Bronze Notebook Medals"
-    readme = replace_marker(readme, "KAGGLE_COMP_STATS", kaggle_comp_text)
-    readme = update_bronze_in_text(readme, bronze)
+    print("Fetching Kaggle medal counts...")
+    medals = get_kaggle_medals()
+    print(f"  Medals: {medals}")
+    if medals is not None:
+        bronze = medals["notebook_bronze"]
+        kaggle_comp_text = f"{kaggle_title} | \U0001f949 {bronze} Bronze Notebook Medals"
+        readme = replace_marker(readme, "KAGGLE_COMP_STATS", kaggle_comp_text)
+        readme = update_bronze_in_text(readme, bronze)
+    else:
+        print("  Skipping medal update (Kaggle profile unavailable)")
 
     # MLB analysis count
     print("Fetching MLB analysis count...")
@@ -476,7 +521,7 @@ def main():
     # At-a-glance dashboard (self-hosted SVG, no third-party badge service)
     # Fail closed: if a source was unreachable the README keeps its old numbers,
     # so the card must keep its old numbers too rather than publish zeros.
-    if not OSS_TOTALS or activity is None:
+    if not OSS_TOTALS or activity is None or medals is None:
         print("Skipping dashboard: incomplete stats this run")
         return
 
@@ -490,8 +535,9 @@ def main():
          f"across {activity['repos']} public repositories"),
         (f"{activity['scheduled']:,}", "of them on a schedule", "fired on cron this month"),
         (f"{activity['runs_30d']:,}", "workflow runs", "in the last 30 days"),
-        (str(bronze), "Kaggle notebook medals", f"bronze, {kaggle_title}"),
-        (str(config.get("dataset_silver", 0)), "Kaggle dataset medals", "silver"),
+        (str(medals["notebook_bronze"]), "Kaggle notebook medals",
+         f"bronze, {kaggle_title}"),
+        (str(medals["dataset_silver"]), "Kaggle dataset medals", "silver"),
         (str(config.get("production_sites", 0)), "web apps in production",
          "on Vercel and the Internet Computer"),
     ]
@@ -501,7 +547,7 @@ def main():
     # Cross-repo: kaggle-competitions
     print("\nUpdating kaggle-competitions README...")
     try:
-        update_competitions_readme(bronze)
+        update_competitions_readme(medals["notebook_bronze"])
     except Exception as e:
         print(f"  WARNING: kaggle-competitions update failed: {e}", file=sys.stderr)
         print("  Continuing without kaggle-competitions update.")

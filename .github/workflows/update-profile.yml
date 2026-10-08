@@ -4,6 +4,9 @@ on:
   push:
     paths:
       - 'config.json'
+  schedule:
+    # Daily: medal counts follow live votes on Kaggle and can drop.
+    - cron: '17 21 * * *'
   workflow_dispatch:
     inputs:
       memo:
@@ -12,6 +15,11 @@ on:
 
 permissions:
   contents: write
+
+# The daily cron and a config.json push must not race each other's commit.
+concurrency:
+  group: update-profile
+  cancel-in-progress: false
 
 jobs:
   update:
@@ -50,5 +58,6 @@ jobs:
             echo "No changes to commit"
           else
             git commit -m "docs: update profile stats $(date -u +%Y-%m-%d)"
+            git pull --rebase
             git push
           fi
