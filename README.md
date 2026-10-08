@@ -449,15 +449,15 @@ Most recently competed in [On Top of Pasketti](https://www.drivendata.org/compet
 | App | Description | Link |
 |---|---|---|
 | **[MLB Bat Tracking Dashboard](https://github.com/yasumorishima/mlb-bat-tracking-dashboard)** | Leaderboard, Player Comparison, Team Lineup Builder. Powered by savant-extras | [Live](https://yasumorishima-mlb-bat-tracking.streamlit.app/) |
-| **[WBC 2026 Scouting Dashboard](https://github.com/yasumorishima/wbc-scouting)** | 30 Statcast apps across 19 countries. Zone heatmaps, spray charts, pitch movement | [Live](https://wbc-scouting-usa-batters.streamlit.app/) |
+| **[WBC 2026 Scouting Dashboard](https://github.com/yasumorishima/wbc-scouting)** | 37 Statcast apps across 19 countries. Zone heatmaps, spray charts, pitch movement | [Live](https://wbc-scouting-usa-batters.streamlit.app/) |
 | **[Daily Diary](https://github.com/yasumorishima/diary-app-flutter)** | Flutter mobile app, 10 languages, offline-first, biometric app lock, Android Auto Backup, AdMob · **screen-reader support**: every tappable control labelled for TalkBack, and CI fails the build if any ships unnamed, audits the real accessibility tree on an emulator and measures the spoken audio | [Google Play](https://play.google.com/store/apps/details?id=com.diary.daily) |
 | **[Fire Tablet Google Play Helper](https://github.com/yasumorishima/yasumorishima.github.io/tree/main/fire-gapps)** | Detects Fire OS from the browser UA, then lists the four required APKs in install order with step gating and saved progress | [Live](https://yasumorishima.github.io/fire-gapps/) |
 
 <details>
-<summary>WBC 2026 Scouting Dashboard details (30 apps)</summary>
+<summary>WBC 2026 Scouting Dashboard details (37 apps)</summary>
 
-30 Statcast scouting apps across 19 countries (batters + pitchers). Zone heatmaps, spray charts, pitch movement, LHP/RHP splits. Auto-fetched via GitHub Actions.
-→ [USA Batters](https://wbc-usa-batters.streamlit.app/) / [Japan Pitchers](https://wbc-japan-pitchers.streamlit.app/) / [All 30 apps](https://github.com/yasumorishima/wbc-scouting#-デプロイ済みアプリ一覧)
+37 Statcast scouting apps across 19 countries (batters + pitchers). Zone heatmaps, spray charts, pitch movement, LHP/RHP splits. Auto-fetched via GitHub Actions.
+→ [USA Batters](https://wbc-usa-batters.streamlit.app/) / [Japan Pitchers](https://wbc-japan-pitchers.streamlit.app/) / [All 37 apps](https://github.com/yasumorishima/wbc-scouting#-デプロイ済みアプリ一覧)
 
 </details>
 
