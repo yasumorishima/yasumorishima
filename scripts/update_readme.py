@@ -343,10 +343,12 @@ def get_actions_activity() -> dict | None:
 
 
 def get_mlb_analysis_count() -> int | None:
+    # every notebook in the repo, including analyses-2022-2024/ (merged from
+    # mlb-data-analysis); the notebooks/sql/ copies repeat other notebooks
     output = run([
         "gh", "api",
-        "repos/yasumorishima/mlb-statcast-visualization/contents",
-        "--jq", '[.[] | select(.name | endswith(".ipynb"))] | length',
+        "repos/yasumorishima/mlb-statcast-visualization/git/trees/HEAD?recursive=1",
+        "--jq", '[.tree[] | select(.path | endswith(".ipynb")) | select(.path | contains("/sql/") | not)] | length',
     ])
     try:
         count = int(output)
