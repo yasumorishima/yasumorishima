@@ -209,7 +209,7 @@ Companion site for an amateur baseball team, forked from Minami Baseball OB — 
 | **[Bayesian Aging Curve](https://github.com/yasumorishima/baseball-bayes)** | Pre-registered: does a Stan state-space aging model project next-season wOBA better than Marcel? Fitted on GitHub Actions from the dbt marts. 2025 result: indistinguishable from Marcel (both 95% intervals include 0) | [Repo](https://github.com/yasumorishima/baseball-bayes) |
 | **[Jev as a Baseball Prior](https://github.com/yasumorishima/jev-baseball)** | Pre-registered: can TypeSafe Jev, a decision-only model, forecast a hitter's next-season wOBA change zero-shot? It beats chance but loses to Marcel, worth about 20 to 50 fitted examples: right direction, far too little weight on big moves | [Repo](https://github.com/yasumorishima/jev-baseball) · Article [JP](https://qiita.com/ussu_ussu_ussu/items/cc28f711396515c1fb31) / [EN](https://dev.to/yasumorishima/asking-a-decision-only-ai-typesafe-jev-to-forecast-next-seasons-hitting-worth-about-20-to-50-360k) |
 | **[MLB Win Probability Engine](https://github.com/yasumorishima/mlb-win-probability)** | 3-engine ensemble WP (Normal + Empirical + LightGBM) + Gemini AI commentary | [Live](https://mlb-wp-engine.streamlit.app/) |
-| **[Baseball MLOps Pipeline](https://github.com/yasumorishima/baseball-mlops)** | Statcast MLOps: 5-model ensemble — weekly auto-retrain paused (BigQuery retired 2026-04, data layer being rebuilt on Hugging Face) | [Live](https://baseball-mlops.streamlit.app/) |
+| **[Baseball MLOps Pipeline](https://github.com/yasumorishima/baseball-mlops)** | Statcast MLOps: 5-model ensemble served from the W&B model registry; weekly retraining retired with BigQuery (2026-04), data now on Hugging Face | [Live](https://baseball-mlops.streamlit.app/) |
 | **[MLB Data Pipeline](https://github.com/yasumorishima/mlb-data-pipeline)** | Public Hugging Face dataset; its card states per table whether it is fresh. 14 tables refresh weekly (12 Savant, 2 MLB Stats API); the 3 FanGraphs tables are frozen at 2025. No run publishes a table that lost a season. dbt + DuckDB marts with enforced contracts on top, also built on a free BigQuery sandbox | [HF Dataset](https://huggingface.co/datasets/yasumorishima/mlb-stats) · [Dashboard](https://lookerstudio.google.com/reporting/9c1d9fa2-c796-45a0-85de-633a888c4fd9) · [Tableau](https://public.tableau.com/app/profile/y.m7878/viz/MLBScoutingDashboard/1) · Article [JP](https://zenn.dev/shogaku/articles/mlb-pitch-metric-reliability-memo) / [EN](https://dev.to/yasumorishima/does-a-pitchs-performance-carry-over-to-next-season-whiff-rate-vs-run-value-on-8022-mlb-pairs-bj) |
 
 <details>
@@ -247,16 +247,18 @@ Trunk rotation range vs pitch speed: r=0.425 (strongest). Contributed bug fix [P
 <!-- MLB_STATS_START -->11 analyses<!-- MLB_STATS_END --> covering Japanese MLB pitchers and Ohtani batting data.
 
 <details>
-<summary>All analyses (6)</summary>
+<summary>All analyses (11)</summary>
 
 | Analysis | Key Finding | Article |
 |----------|-------------|---------|
-| **Kikuchi Slider Revolution (2019-2025)** | SL 17%→37% after Astros trade | [Zenn](https://zenn.dev/shogaku/articles/kikuchi-slider-revolution-2019-2025) / [DEV.to](https://dev.to/yasumorishima/yusei-kikuchis-pitching-evolution-a-statcast-analysis-2019-2025-2a4a) / [Kaggle](https://www.kaggle.com/code/yasunorim/kikuchi-slider-revolution-2019-2025) |
-| **Senga Ghost Fork (2023-2025)** | FO whiff rate 58%→39%, decline pre-injury | [Zenn](https://zenn.dev/shogaku/articles/senga-ghost-fork-analysis-2023-2025) / [DEV.to](https://dev.to/yasumorishima/kodai-sengas-ghost-fork-analyzed-with-statcast-data-2023-2025-1k1d) / [Kaggle](https://www.kaggle.com/code/yasunorim/senga-ghost-fork-analysis-2023-2025) |
+| **Kikuchi Slider Revolution (2019-2025)** | SL 17%→37% after Astros trade | [Zenn](https://zenn.dev/shogaku/articles/kikuchi-slider-revolution-2019-2025) / [DEV.to](https://dev.to/yasumorishima/yusei-kikuchis-pitching-evolution-a-statcast-analysis-2019-2025-2a4a) / [Kaggle](https://www.kaggle.com/code/yasunorim/yusei-kikuchi-slider-revolution-2019-2025) |
+| **Senga Ghost Fork (2023-2025)** | FO whiff rate 58%→39%, decline pre-injury | [Zenn](https://zenn.dev/shogaku/articles/senga-ghost-fork-analysis-2023-2025) / [DEV.to](https://dev.to/yasumorishima/kodai-sengas-ghost-fork-analyzed-with-statcast-data-2023-2025-1k1d) / [Kaggle](https://www.kaggle.com/code/yasunorim/kodai-senga-ghost-fork-analysis-2023-2025) |
 | **Imanaga 2nd Year (2024-2025)** | 3-pitch concentration (97%), 1st TTO xwOBA .505 | [Zenn](https://zenn.dev/shogaku/articles/imanaga-2nd-year-analysis-2024-2025) / [DEV.to](https://dev.to/yasumorishima/shota-imanagas-sophomore-year-what-statcast-data-reveals-2024-2025-235) / [Kaggle](https://www.kaggle.com/code/yasunorim/imanaga-rookie-to-sophomore-pitching) |
-| **Darvish Evolution (2021-2025)** | SL/ST halved, CU became putaway pitch | [Zenn](https://zenn.dev/shogaku/articles/darvish-pitching-evolution-2021-2025) / [DEV.to](https://dev.to/yasumorishima/yu-darvishs-pitching-evolution-2021-2025-a-statcast-data-analysis-fij) / [Kaggle](https://www.kaggle.com/code/yasunorim/darvish-pitching-evolution) |
-| **Ohtani Spray Chart** | spraychart() one-liner vs matplotlib manual | [Zenn](https://zenn.dev/shogaku/articles/pybaseball-spraychart-ohtani) |
-| **Ohtani Heatmap** | Stadium drawing + hit density heatmap | [Zenn](https://zenn.dev/shogaku/articles/matplotlib-baseball-heatmap) |
+| **Darvish Evolution (2021-2025)** | SL/ST halved, CU became putaway pitch | [Zenn](https://zenn.dev/shogaku/articles/darvish-pitching-evolution-2021-2025) / [DEV.to](https://dev.to/yasumorishima/yu-darvishs-pitching-evolution-2021-2025-a-statcast-data-analysis-fij) / [Kaggle](https://www.kaggle.com/code/yasunorim/yu-darvish-pitching-evolution-2021-2025) |
+| **Ohtani Spray Chart** | pybaseball's spraychart() in one line | [Zenn](https://zenn.dev/shogaku/articles/pybaseball-spraychart-builtin) |
+| **Ohtani Heatmap** | Stadium drawn in matplotlib + hit density heatmap | [Zenn](https://zenn.dev/shogaku/articles/pybaseball-spraychart-matplotlib) |
+| **2022-2024 analyses (5)** | WBC 2023 Sandoval scouting, Ohtani batting 2022 / exit-velocity random forest / injury signs 2023, 2024 home-run race; SQL (DuckDB) versions alongside | [Folder](https://github.com/yasumorishima/mlb-statcast-visualization/tree/main/analyses-2022-2024) |
+| **2026 update** | The four pitchers' arsenals 2019-2026 as GIFs; every drawn row checked against Savant before drawing | [Folder](https://github.com/yasumorishima/mlb-statcast-visualization/tree/main/update-2026) |
 
 </details>
 
