@@ -244,7 +244,7 @@ Trunk rotation range vs pitch speed: r=0.425 (strongest). Contributed bug fix [P
 
 ### Statcast Analysis
 
-<!-- MLB_STATS_START -->6 analyses<!-- MLB_STATS_END --> covering Japanese MLB pitchers and Ohtani batting data.
+<!-- MLB_STATS_START -->11 analyses<!-- MLB_STATS_END --> covering Japanese MLB pitchers and Ohtani batting data.
 
 <details>
 <summary>All analyses (6)</summary>
@@ -387,7 +387,7 @@ Civic tech projects for political transparency & citizen participation in Japan.
 
 ### Kaggle
 
-<!-- KAGGLE_COMP_STATS_START -->Notebooks Expert | 🥉 15 Bronze Notebook Medals<!-- KAGGLE_COMP_STATS_END -->
+<!-- KAGGLE_COMP_STATS_START -->Notebooks Expert | 🥉 14 Bronze Notebook Medals<!-- KAGGLE_COMP_STATS_END -->
 
 **Active:**
 - **SIGNATE NEDO Challenge — Baggage-Loading Optimization** — 3D bin packing for airline ULD containers (¥15M prize pool, Jul–Oct 2026) · scored on fill, centre of gravity, stability and priority cargo · public score 51.33 (456 teams, top-10 cut 69.42)
@@ -397,7 +397,7 @@ Civic tech projects for political transparency & citizen participation in Japan.
 **Finished 2026:** [ROGII Wellbore Geology](https://www.kaggle.com/competitions/rogii-wellbore-geology-prediction) ($50K wellbore TVT regression, closed 2026-08-05 — public LB 7.311, final public rank 2545/6125) · [Playground Series S6E6 - Stellar Classification](https://www.kaggle.com/competitions/playground-series-s6e6) (macro-F1, private LB 0.95939) · NIR Moisture Prediction (SIGNATE, wood spectroscopy) · [Stanford RNA 3D Folding 2](https://www.kaggle.com/competitions/stanford-rna-3d-folding-2) · [BirdCLEF+ 2026](https://www.kaggle.com/competitions/birdclef-2026)
 
 <details>
-<summary>Bronze Medal Notebooks (15)</summary>
+<summary>Bronze Medal Notebooks (14)</summary>
 
 | Notebook | Topic |
 |----------|-------|
@@ -407,13 +407,13 @@ Civic tech projects for political transparency & citizen participation in Japan.
 | [NFL Geometric Rules Baseline](https://www.kaggle.com/code/yasunorim/geometric-rules-baseline-2-921-rmse-no-ml) | Physics-based rules, No ML, RMSE 2.921 |
 | [CAFA 6 Baseline](https://www.kaggle.com/code/yasunorim/baseline-with-regularization) | Protein function prediction (PyTorch MLP) |
 
-[All 15 notebooks →](https://www.kaggle.com/yasunorim/code)
+[All 14 notebooks →](https://www.kaggle.com/yasunorim/code)
 
 </details>
 
 ### Kaggle Datasets
 
-<!-- KAGGLE_DS_STATS_START -->10 public datasets<!-- KAGGLE_DS_STATS_END -->
+<!-- KAGGLE_DS_STATS_START -->11 public datasets<!-- KAGGLE_DS_STATS_END -->
 
 | Dataset | Description |
 |---------|-------------|
