@@ -515,7 +515,7 @@ A demo app signs in with Internet Identity, asks a canister who it sees, checks 
 | **[Sansuu, Shogi & Sora](https://github.com/yasumorishima/icp-counter-learning)** | Four modes on the Internet Computer: arithmetic (36 calculation + 31 word-problem topics, read aloud on request) · shogi · **sora**, a planetarium drawing the real sky for any place and time · **play**, six toddler games that ask the child to read nothing. **Usable without sight**, English/Japanese, offline, records on-device | [Live](https://iqjbc-7aaaa-aaaaj-qnnsa-cai.icp0.io/) |
 | **[OpenClaw Twitter Bot](https://github.com/yasumorishima/raspi-baseball-bot)** | Raspberry Pi 5 + OpenClaw + Gemini API auto-tweet bot (stopped) — [Article (JP)](https://zenn.dev/shogaku/articles/raspi-baseball-bot-openclaw-gemini) |
 | **[alexa-rpi5](https://github.com/yasumorishima/alexa-rpi5)** 🔒 | Raspberry Pi 5 to Fire TV Cube control hub for a house with no Echo speaker: cube wrapper, watchers and integrations (details in the repo README) |
-| **[Slide Decks with Claude Code](https://github.com/yasumorishima/slide-deck-with-claude-code)** 🔒 | Personal notes on having Claude Code build 16:9 HTML slides and their PDF to a corporate template: steps, component classes, an overflow checker run before handoff, and the pitfalls a checker cannot see (company names removed) |
+| **[Slide Decks with Claude Code](https://github.com/yasumorishima/slide-deck-with-claude-code)** 🔒 | Personal notes on having Claude Code build 16:9 HTML slides and their PDF from a fixed template: steps, component classes, an overflow check before handoff, and the pitfalls a checker cannot see |
 
 <details>
 <summary>Past Projects</summary>
