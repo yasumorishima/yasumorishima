@@ -285,6 +285,7 @@ Reads handwritten Japanese paper scorebooks (紙スコアブック) from photos 
 | A price order picked after seeing the result, re-judged on two sheets it never saw | **refuted** -- 30 vs 34 on those forty corners, and last of the four places the term can take. A later mutation sweep of the frozen checker put the weight at four corners rather than forty, and the incumbent takes all four. Shipping default unchanged |
 | Hardest mark class: template matching alone → fused with the solver | 76% → **93%** |
 | Consecutive held-out sheets — each new game is graded before it joins the pool | 31 |
+| A paid vision model (Claude Opus 5.5, one-off credit) on the same 396 corners | **370 / 396 = 93%** on sheets it never saw; handing its reads to the solver adds nothing. Details in the write-up |
 | Real output | my team's 2026 season batting stats are compiled from this ground truth |
 
 </details>
