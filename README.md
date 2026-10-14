@@ -281,7 +281,7 @@ Reads handwritten Japanese paper scorebooks (紙スコアブック) from photos 
 | --- | --- |
 | Grid facts handed over (shipped default) | 366 / 396 = **92%** |
 | No grid fact handed over at all | 363 / 396 = 92% |
-| ...and every recognition in-house as well | 330 / 396 = 83% with the ledger kept, **283 / 396 = 71%** with no ledger at all |
+| ...and every recognition in-house as well | 321 / 396 = 81% with the ledger kept, **283 / 396 = 71%** with no ledger at all |
 | A price order picked after seeing the result, re-judged on two sheets it never saw | **refuted** -- 30 vs 34 on those forty corners, and last of the four places the term can take. A later mutation sweep of the frozen checker put the weight at four corners rather than forty, and the incumbent takes all four. Shipping default unchanged |
 | Hardest mark class: template matching alone → fused with the solver | 76% → **93%** |
 | Consecutive held-out sheets — each new game is graded before it joins the pool | 31 |
