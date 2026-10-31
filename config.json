@@ -1,5 +1,25 @@
 {
   "kaggle_title": "Notebooks Expert",
   "pypi_packages": 6,
-  "production_sites": 3
+  "production_sites": 3,
+  "competition_ranks": [
+    {
+      "marker": "RANK_KAGGRICULTURE",
+      "source": "kaggle",
+      "slug": "kaggriculture",
+      "user": "yasunorim"
+    },
+    {
+      "marker": "RANK_ROGII",
+      "source": "kaggle",
+      "slug": "rogii-wellbore-geology-prediction",
+      "user": "yasunorim"
+    },
+    {
+      "marker": "RANK_NEDO",
+      "source": "signate",
+      "leaderboard": "54eb698257344d638111c73d49664ddb",
+      "public_key": "1dd6839a0a2e4a2ba40e433fcebb2d19"
+    }
+  ]
 }

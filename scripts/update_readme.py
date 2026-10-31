@@ -2,12 +2,15 @@
 and oss-contributions README (single source of truth for OSS stats)."""
 
 import base64
+import csv
+import io
 import json
 import os
 import re
 import subprocess
 import sys
 import tempfile
+import zipfile
 from datetime import date, timedelta
 from pathlib import Path
 
@@ -310,6 +313,108 @@ def get_kaggle_medals() -> dict | None:
     return medals
 
 
+# ---------- Competition ranks ----------
+
+
+def kaggle_rank(slug: str, user: str) -> tuple[int, int] | None:
+    """Our rank and the number of teams on a Kaggle leaderboard download.
+
+    The download is the public leaderboard, and the README labels each rank
+    to match. Any doubt returns None so the README keeps its old value.
+    """
+    with tempfile.TemporaryDirectory() as tmp:
+        result = subprocess.run(
+            kaggle_cmd() + ["competitions", "leaderboard", slug, "--download", "-p", tmp],
+            capture_output=True, text=True, timeout=300,
+        )
+        zips = list(Path(tmp).glob("*.zip"))
+        if result.returncode != 0 or len(zips) != 1:
+            print(f"  {slug}: leaderboard download failed {result.stderr[-300:]}", file=sys.stderr)
+            return None
+        with zipfile.ZipFile(zips[0]) as zf:
+            names = [n for n in zf.namelist() if n.endswith(".csv")]
+            if len(names) != 1:
+                print(f"  {slug}: unexpected archive {zf.namelist()}", file=sys.stderr)
+                return None
+            text = zf.read(names[0]).decode("utf-8-sig")
+    rows = list(csv.DictReader(io.StringIO(text)))
+    mine = [r for r in rows
+            if user in [u.strip() for u in (r.get("TeamMemberUserNames") or "").split(",")]]
+    if len(mine) != 1:
+        print(f"  {slug}: {len(mine)} rows for {user}", file=sys.stderr)
+        return None
+    rank, total = int(mine[0]["Rank"]), len(rows)
+    return (rank, total) if 1 <= rank <= total else None
+
+
+def signate_rank(leaderboard: str, public_key: str) -> tuple[int, int] | None:
+    """Our position and the team count on a published SIGNATE private board.
+
+    The board is read page by page (without fetch_count/fetch_offset the API
+    stops at 50 rows). Returns None until the private board is published.
+    """
+    base = f"https://api.competition.signate.jp/api/leaderboard/{leaderboard}"
+    try:
+        meta = requests.get(f"{base}/metadata", timeout=60)
+        meta.raise_for_status()
+        if not meta.json().get("is_private_evaluation_published"):
+            print(f"  SIGNATE {leaderboard}: private board not published yet")
+            return None
+        rows, total = [], None
+        for _ in range(200):  # 20,000 rows at most; never loop on a misbehaving API
+            if total is not None and len(rows) >= total:
+                break
+            resp = requests.get(
+                f"{base}/private_evaluation/list",
+                params={"fetch_count": 100, "fetch_offset": len(rows)}, timeout=60,
+            )
+            resp.raise_for_status()
+            data = resp.json()
+            total = int(data["total_count"])
+            page = data["leaderboard_list"]
+            if not page:
+                break
+            rows += page
+    except Exception as exc:
+        print(f"  SIGNATE {leaderboard}: {exc}", file=sys.stderr)
+        return None
+    if not rows or len(rows) != total:
+        print(f"  SIGNATE {leaderboard}: got {len(rows)} of {total} rows", file=sys.stderr)
+        return None
+    hits = [i for i, row in enumerate(rows, 1)
+            if any(m.get("public_key") == public_key for m in row.get("team_member_list") or [])]
+    if len(hits) != 1:
+        print(f"  SIGNATE {leaderboard}: {len(hits)} rows for our key", file=sys.stderr)
+        return None
+    return hits[0], total
+
+
+def update_ranks(readme: str, entries: list[dict]) -> str:
+    """Write each configured competition rank between its README markers."""
+    for e in entries:
+        # One bad board or config entry must not stop the rest of the daily update.
+        try:
+            marker = e["marker"]
+            if (f"<!-- {marker}_START -->" not in readme
+                    or f"<!-- {marker}_END -->" not in readme):
+                print(f"  WARNING: marker {marker} missing from README", file=sys.stderr)
+                continue
+            if e["source"] == "kaggle":
+                got = kaggle_rank(e["slug"], e["user"])
+            elif e["source"] == "signate":
+                got = signate_rank(e["leaderboard"], e["public_key"])
+            else:
+                print(f"  WARNING: unknown source {e['source']}", file=sys.stderr)
+                continue
+        except Exception as exc:
+            print(f"  WARNING: rank {e} failed: {exc!r}", file=sys.stderr)
+            continue
+        print(f"  {marker}: {got}")
+        if got is not None:
+            readme = replace_marker(readme, marker, f"{got[0]}/{got[1]}")
+    return readme
+
+
 def get_actions_activity() -> dict | None:
     """Count the automation that actually runs: workflows, cron, runs per month.
 
@@ -496,6 +601,10 @@ def main():
         readme = update_bronze_in_text(readme, bronze)
     else:
         print("  Skipping medal update (Kaggle profile unavailable)")
+
+    # Competition ranks (an old value stays when a board cannot be read)
+    print("Fetching competition ranks...")
+    readme = update_ranks(readme, config.get("competition_ranks", []))
 
     # MLB analysis count
     print("Fetching MLB analysis count...")
