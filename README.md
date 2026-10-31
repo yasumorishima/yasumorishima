@@ -424,12 +424,7 @@ Civic tech projects for political transparency & citizen participation in Japan.
 
 <!-- KAGGLE_COMP_STATS_START -->Notebooks Expert | 🥉 14 Bronze Notebook Medals<!-- KAGGLE_COMP_STATS_END -->
 
-**Active:**
-- **SIGNATE NEDO Challenge — Baggage-Loading Optimization** — 3D bin packing for airline ULD containers (¥15M prize pool, Jul–Oct 2026) · scored on fill, centre of gravity, stability and priority cargo · public score 51.33 (456 teams, top-10 cut 69.42)
-- **5th Air Combat AI Challenge** (SIGNATE, run by Japan's Acquisition, Technology & Logistics Agency) — behaviour-decision agents for a 4-fighter plus 1 escorted-aircraft engagement · Glicko-2 rating · entries stay private until it closes (¥1.92M, to 2026-12-04)
-- **[Kaggriculture](https://www.kaggle.com/competitions/kaggriculture)** — two-player farm-economy simulation, scored by ladder rating rather than by money ($50K prize pool, to 2026-09-30) · agent and measurement harness in [`kaggle-competitions/kaggriculture`](https://github.com/yasumorishima/kaggle-competitions/tree/main/kaggriculture)
-
-**Finished 2026:** [ROGII Wellbore Geology](https://www.kaggle.com/competitions/rogii-wellbore-geology-prediction) ($50K wellbore TVT regression, closed 2026-08-05 — public LB 7.311, final public rank 2545/6125) · [Playground Series S6E6 - Stellar Classification](https://www.kaggle.com/competitions/playground-series-s6e6) (macro-F1, private LB 0.95939) · NIR Moisture Prediction (SIGNATE, wood spectroscopy) · [Stanford RNA 3D Folding 2](https://www.kaggle.com/competitions/stanford-rna-3d-folding-2) · [BirdCLEF+ 2026](https://www.kaggle.com/competitions/birdclef-2026)
+**Finished 2026:** [Kaggriculture](https://www.kaggle.com/competitions/kaggriculture) ([agent](https://github.com/yasumorishima/kaggle-competitions/tree/main/kaggriculture), final rank 6047/10148) · [ROGII Wellbore Geology](https://www.kaggle.com/competitions/rogii-wellbore-geology-prediction) ($50K wellbore TVT regression, closed 2026-08-05 — public LB 7.311, final public rank 2545/6125) · [Playground Series S6E6 - Stellar Classification](https://www.kaggle.com/competitions/playground-series-s6e6) (macro-F1, private LB 0.95939) · [Stanford RNA 3D Folding 2](https://www.kaggle.com/competitions/stanford-rna-3d-folding-2) · [BirdCLEF+ 2026](https://www.kaggle.com/competitions/birdclef-2026)
 
 <details>
 <summary>Bronze Medal Notebooks (14)</summary>
@@ -471,6 +466,13 @@ Civic tech projects for political transparency & citizen participation in Japan.
 | [BEATs iter3+ AS2M Pretrained](https://www.kaggle.com/datasets/yasunorim/beats-pretrained) | Audio-tagging checkpoint mirrored for offline notebooks |
 
 </details>
+
+### SIGNATE
+
+**Active:**
+- **5th Air Combat AI Challenge** (run by Japan's Acquisition, Technology & Logistics Agency) — behaviour-decision agents for a 4-fighter plus 1 escorted-aircraft engagement · Glicko-2 rating · entries stay private until it closes (¥1.92M, to 2026-12-04)
+
+**Finished 2026:** NEDO Challenge — Baggage-Loading Optimization (3D bin packing for airline ULD containers, ¥15M, closed 2026-10-19 — final private rank 167/591, 64.330; finalists announced 2026-11-06) · NIR Moisture Prediction (wood spectroscopy)
 
 ### DrivenData
 
