@@ -13,7 +13,7 @@ Manufacturing Engineer & Data Analyst with <!-- CAREER_YEARS_START -->18<!-- CAR
   <img alt="At a glance: open-source, GitHub Actions automation, Kaggle and package metrics" src="https://raw.githubusercontent.com/yasumorishima/yasumorishima/main/assets/dashboard-light.svg">
 </picture>
 
-**Jump to** — [Robotics](#-robotics--embedded) · [Baseball websites](#-baseball-websites) · [Realtime open data](#-realtime-open-data) · [Baseball analytics](#-baseball-analytics) · [Document OCR](#-document-ocr) · [Open source](#-open-source-contributions) · [Competitions](#-data--competitions) · [Dashboards and mobile](#-dashboards--mobile) · [PyPI](#-pypi-packages) · [Learning projects](#-learning-projects) · [Tech stack](#️-tech-stack) · [Career](#-career) · [Patents](#-patents) · [Contact](#-contact--blog)
+**Jump to** — [Robotics](#-robotics--embedded) · [Baseball websites](#-baseball-websites) · [Baseball analytics](#-baseball-analytics) · [Realtime open data](#-realtime-open-data) · [Document OCR](#-document-ocr) · [Open source](#-open-source-contributions) · [Competitions](#-data--competitions) · [Mobile and web apps](#-mobile--web-apps) · [PyPI](#-pypi-packages) · [Learning projects](#-learning-projects) · [Tech stack](#️-tech-stack) · [Career](#-career) · [Patents](#-patents) · [Contact](#-contact--blog)
 
 ## 🤖 Robotics / Embedded
 
@@ -138,6 +138,101 @@ Companion site for an amateur baseball team, forked from Minami Baseball OB — 
 
 ---
 
+## ⚾ Baseball Analytics
+
+Laid out the way a club's data-science group works: game strategy, scouting and development, delivery to staff, MLOps, and unstructured data. Data is MLB Statcast (Hawk-Eye tracking) and public NPB stats, all on free tiers; forecasting claims are pre-registered against floors.
+
+### 1. Strategy & In-Game Decisions
+
+| Project | What it answers | Links |
+|---|---|---|
+| **[MLB Win Probability Engine](https://github.com/yasumorishima/mlb-win-probability)** | Win probability fitted to 915K Stats API plate appearances, with a pre-registered team-strength layer (Brier −0.0017 on held-out 2026) and a Claude bench coach. Pre-registered: does Claude predict stolen-base success better than a logistic model? No | [Live](https://mlb-wp-engine.streamlit.app/) · [Result](https://github.com/yasumorishima/mlb-win-probability/blob/master/research/steal_claude/RESULTS.md) |
+| **[NPB Team Simulation](https://github.com/yasumorishima/npb-prediction)** | Monte Carlo season simulation built on the player projections. Pre-registered 2026 scoring: median-wins MAE 5.83 beats the constant and last-year floors but not the Pythagorean one (5.82); win ranges too narrow | [Live](https://npb-prediction.streamlit.app/) · [Result](https://github.com/yasumorishima/npb-prediction/blob/main/data/backtest/2026_team_result.md) |
+| **[Pitch Shape × Swing Shape](https://github.com/yasumorishima/kaggle-datasets/tree/matchup-diag/pitch-swing-matchup)** *(in progress)* | Does the shape of a pitch meeting the shape of a swing (bat tracking) change the outcome beyond pitch quality? 2024→2025 development only: once pitch quality is controlled the gain is not separable from zero, while quality × pitch shape is clear. 2026 stays unread until the plan is frozen | [Plan & results](https://github.com/yasumorishima/kaggle-datasets/tree/matchup-diag/pitch-swing-matchup) |
+
+**Tracking-data player evaluation** — <!-- MLB_STATS_START -->11 analyses<!-- MLB_STATS_END --> of Japanese MLB pitchers and Ohtani's batting, from Statcast pitch data.
+
+<details>
+<summary>All analyses</summary>
+
+| Analysis | Key Finding | Article |
+|----------|-------------|---------|
+| **Kikuchi Slider Revolution (2019-2025)** | SL 17%→37% after Astros trade | [Zenn](https://zenn.dev/shogaku/articles/kikuchi-slider-revolution-2019-2025) / [DEV.to](https://dev.to/yasumorishima/yusei-kikuchis-pitching-evolution-a-statcast-analysis-2019-2025-2a4a) / [Kaggle](https://www.kaggle.com/code/yasunorim/yusei-kikuchi-slider-revolution-2019-2025) |
+| **Senga Ghost Fork (2023-2025)** | FO whiff rate 58%→39%, decline pre-injury | [Zenn](https://zenn.dev/shogaku/articles/senga-ghost-fork-analysis-2023-2025) / [DEV.to](https://dev.to/yasumorishima/kodai-sengas-ghost-fork-analyzed-with-statcast-data-2023-2025-1k1d) / [Kaggle](https://www.kaggle.com/code/yasunorim/kodai-senga-ghost-fork-analysis-2023-2025) |
+| **Imanaga 2nd Year (2024-2025)** | 3-pitch concentration (97%), 1st TTO xwOBA .505 | [Zenn](https://zenn.dev/shogaku/articles/imanaga-2nd-year-analysis-2024-2025) / [DEV.to](https://dev.to/yasumorishima/shota-imanagas-sophomore-year-what-statcast-data-reveals-2024-2025-235) / [Kaggle](https://www.kaggle.com/code/yasunorim/imanaga-rookie-to-sophomore-pitching) |
+| **Darvish Evolution (2021-2025)** | SL/ST halved, CU became putaway pitch | [Zenn](https://zenn.dev/shogaku/articles/darvish-pitching-evolution-2021-2025) / [DEV.to](https://dev.to/yasumorishima/yu-darvishs-pitching-evolution-2021-2025-a-statcast-data-analysis-fij) / [Kaggle](https://www.kaggle.com/code/yasunorim/yu-darvish-pitching-evolution-2021-2025) |
+| **Ohtani Spray Chart** | pybaseball's spraychart() in one line | [Zenn](https://zenn.dev/shogaku/articles/pybaseball-spraychart-builtin) |
+| **Ohtani Heatmap** | Stadium drawn in matplotlib + hit density heatmap | [Zenn](https://zenn.dev/shogaku/articles/pybaseball-spraychart-matplotlib) |
+| **2022-2024 analyses (5)** | WBC 2023 Sandoval scouting, Ohtani batting 2022 / exit-velocity random forest / injury signs 2023, 2024 home-run race; SQL (DuckDB) versions alongside | [Folder](https://github.com/yasumorishima/mlb-statcast-visualization/tree/main/analyses-2022-2024) |
+| **2026 update** | The four pitchers' arsenals 2019-2026 as GIFs; every drawn row checked against Savant before drawing | [Folder](https://github.com/yasumorishima/mlb-statcast-visualization/tree/main/update-2026) |
+
+</details>
+
+### 2. Scouting & Player Development
+
+| Project | What it answers | Links |
+|---|---|---|
+| **[NPB Season Prediction](https://github.com/yasumorishima/npb-prediction)** | Player projections: Bayesian ensemble (Marcel + Stan/Ridge + ML). First true out-of-sample test (frozen 2026-03-23): beats both floors, but adds nothing measurable over Marcel alone | [Live](https://npb-prediction.streamlit.app/) · Article [JP](https://zenn.dev/shogaku/articles/npb-bayes-integration-production) / [EN](https://dev.to/yasumorishima/adding-bayesian-ensemble-monte-carlo-to-an-npb-prediction-app-58po) |
+| **[NPB Foreign Player Study](https://github.com/yasumorishima/npb-foreign-statcast)** | Pre-registered: does MLB / Triple-A Statcast process data (xwOBA, whiff, CSW) predict a foreign player's first NPB season better than MLB results? First run null; 2026 arrivals frozen before the season ended | [Repo](https://github.com/yasumorishima/npb-foreign-statcast) |
+| **[Aging Curve & Development Tracker](https://github.com/yasumorishima/baseball-bayes)** | Stan state-space aging model: indistinguishable from Marcel on 2025. The same model tracks each hitter against his expected band; on unseen 2025, 10.2% fell outside the 90% band, more often above than below | [Repo](https://github.com/yasumorishima/baseball-bayes) · [Tracker](https://github.com/yasumorishima/baseball-bayes/tree/main/development) |
+| **[Which KPIs Carry Over](https://github.com/yasumorishima/mlb-data-pipeline)** | Which numbers repeat next season? Run value rebuilt from 5.98M pitches (99.2–99.7% match to Savant): luck and game context barely repeat, strikeout and walk skill does. Process (xwOBA) repeats better than results (wOBA) | Article [JP](https://qiita.com/ussu_ussu_ussu/items/81b75c0020bf2e1d84f3) / [EN](https://dev.to/yasumorishima/does-a-pitchs-performance-carry-over-to-next-season-whiff-rate-vs-run-value-on-8022-mlb-pairs-bj) |
+| **[Player Condition Monitoring](https://github.com/yasumorishima/kaggle-datasets#4-mlb-statcast--bat-tracking-2024-2026)** | Pre-registered across every MLB pitcher and hitter: drift from a player's own normal before the IL was not supported, but a pitcher's last outing before an arm IL is slow (AUC 0.61; confirmed on unseen 2021-23 vs long rests, 0.57) | [Ohtani](https://www.kaggle.com/code/yasunorim/ohtani-2026-could-the-slump-be-seen-early) / [All hitters](https://www.kaggle.com/code/yasunorim/ohtani-2026-pattern-across-every-mlb-hitter) / [Anomaly](https://www.kaggle.com/code/yasunorim/do-hitters-drift-from-normal-before-the-il) |
+| **[Jev as a Baseball Prior](https://github.com/yasumorishima/jev-baseball)** | Pre-registered: can TypeSafe Jev, a decision-only model, forecast a hitter's next-season wOBA change zero-shot? Beats chance, loses to Marcel (worth about 20 to 50 fitted examples) | Article [JP](https://qiita.com/ussu_ussu_ussu/items/cc28f711396515c1fb31) / [EN](https://dev.to/yasumorishima/asking-a-decision-only-ai-typesafe-jev-to-forecast-next-seasons-hitting-worth-about-20-to-50-360k) |
+
+<details>
+<summary>Prediction accuracy & details</summary>
+
+| System | Key Metric | Articles |
+|--------|-----------|----------|
+| **NPB 2026** | First true out-of-sample test (frozen 2026-03-23, scored at 95% of the season): beats both floors, but the Bayes+ML layer is indistinguishable from Marcel alone (hitter OPS MAE +0.00095 ± 0.00086). Intervals were uniformly too wide; σ is now a function of playing time, moving provisional coverage to .84/.95 and .85/.98 against nominal .80/.95 | [JP](https://zenn.dev/shogaku/articles/npb-bayes-integration-production) / [EN](https://dev.to/yasumorishima/adding-bayesian-ensemble-monte-carlo-to-an-npb-prediction-app-58po) |
+| **NPB 2026 Teams** | Pre-registered scoring of the March team forecast: median-wins MAE 5.83 beats the constant and last-year floors but not the Pythagorean one (5.82); 80% / 95% win ranges covered 6 and 9 of 12 teams, too narrow | [Result](https://github.com/yasumorishima/npb-prediction/blob/main/data/backtest/2026_team_result.md) |
+| **NPB 2021 Backtest** | MAE **10.90W** (corrected 2026-09-22; the repo long printed 10.7W, which its own per-team table does not reproduce) — Yakult & Orix last→champion driven by JP player breakouts, not foreign players | [Repo](https://github.com/yasumorishima/npb-prediction/tree/main/research/2021-backtest) |
+| **MLB WP Engine** | Held-out 2026: Brier 0.158 (old engine 0.160); about 3 points high in the 0.3–0.5 band | [Live](https://mlb-wp-engine.streamlit.app/) |
+| **Baseball MLOps** | Batter wOBA MAE .0287 (Marcel: .0326) / Pitcher xFIP MAE 0.483 (Marcel: 0.558) | [Live](https://baseball-mlops.streamlit.app/) |
+
+</details>
+
+### 3. Delivery to Staff: Dashboards & Apps
+
+| Tool | For whom / what | Links |
+|---|---|---|
+| **Scouting dashboards** | Looker Studio and Tableau Public on the dbt marts: leaderboards, pitch reliability, and which metrics carry over; on-screen counts checked against SQL (Looker) and the CSV snapshot (Tableau) | [Looker](https://lookerstudio.google.com/reporting/9c1d9fa2-c796-45a0-85de-633a888c4fd9) · [Tableau](https://public.tableau.com/app/profile/y.m7878/viz/MLBScoutingDashboard/1) |
+| **[WBC 2026 Scouting](https://github.com/yasumorishima/wbc-scouting)** | 37 Statcast apps across 19 countries: zone heatmaps, spray charts, pitch movement, LHP/RHP splits; every app smoke-tested in CI | [USA Batters](https://wbc-usa-batters.streamlit.app/) / [Japan Pitchers](https://wbc-japan-pitchers.streamlit.app/) / [All 37](https://github.com/yasumorishima/wbc-scouting#-デプロイ済みアプリ一覧) |
+| **[MLB Bat Tracking Dashboard](https://github.com/yasumorishima/mlb-bat-tracking-dashboard)** | Leaderboard, player comparison, team lineup builder | [Live](https://yasumorishima-mlb-bat-tracking.streamlit.app/) |
+| **Amateur team stats** | Per-game batting and pitching for a real amateur team, read from its paper scorebooks and shown to the players ([Yokohama Funnies](#yokohama-funnies--amateur-baseball-team-site-in-production) above) | [Site](https://yokohama-funnies.vercel.app/) |
+
+### 4. MLOps & Data Platform
+
+| Project | What it does | Links |
+|---|---|---|
+| **[MLB Data Pipeline](https://github.com/yasumorishima/mlb-data-pipeline)** | Public Hugging Face dataset; its card states per table whether it is fresh. 14 tables refresh weekly (12 Savant, 2 MLB Stats API); the 3 FanGraphs tables are frozen at 2025. No run publishes a table that lost a season. dbt + DuckDB marts with enforced contracts on top, also built on a free BigQuery sandbox | [HF Dataset](https://huggingface.co/datasets/yasumorishima/mlb-stats) |
+| **[Baseball MLOps Pipeline](https://github.com/yasumorishima/baseball-mlops)** | Statcast MLOps: 5-model ensemble served from the W&B model registry; weekly retraining retired with BigQuery (2026-04), data now on Hugging Face | [Live](https://baseball-mlops.streamlit.app/) |
+| **[savant-extras](https://github.com/yasumorishima/savant-extras)** | PyPI package for Baseball Savant leaderboards; checks the returned season, since Savant silently answers unknown parameters with the current one | [PyPI](https://pypi.org/project/savant-extras/) |
+| **Gated Kaggle datasets** | Statcast + bat tracking 2024-2026 (2.14M pitches) and ABS challenges, rebuilt on GitHub Actions and published only when every count gate passes ([Kaggle Datasets](#kaggle-datasets) below) | [Statcast](https://www.kaggle.com/datasets/yasunorim/mlb-statcast-bat-tracking-2024-2025) |
+
+### 5. Unstructured Data: Vision & Language
+
+**[Baseball Skeleton Analysis](https://github.com/yasumorishima/baseball-cv)** — 3D skeleton visualization from Driveline OpenBiomechanics C3D data
+
+<table>
+<tr>
+<td align="center"><b>Pitching Skeleton (3D C3D)</b></td>
+<td align="center"><b>Hitting Skeleton (3D C3D)</b></td>
+</tr>
+<tr>
+<td><img src="https://raw.githubusercontent.com/yasumorishima/baseball-cv/master/data/output/skeleton_pitching_anim.gif" width="400"></td>
+<td><img src="https://raw.githubusercontent.com/yasumorishima/baseball-cv/master/data/output/skeleton_hitting_anim.gif" width="400"></td>
+</tr>
+</table>
+
+Trunk rotation range vs pitch speed: r=0.425 (strongest). Contributed bug fix [PR #384](https://github.com/pyomeca/ezc3d/pull/384) to ezc3d.
+[Article (JP)](https://zenn.dev/shogaku/articles/baseball-cv-skeleton-biomechanics) / [Article (EN)](https://dev.to/yasumorishima/3d-skeleton-detection-from-baseball-motion-capture-data-with-driveline-c3d-29ja)
+
+- **Handwritten scorebook reading** — photos of paper scorebooks to plate appearances ([Document OCR](#-document-ocr) below)
+- **[Ask the marts in Japanese](https://github.com/yasumorishima/stackchan-lab/blob/ccr-1f7a3de6-j2ux4j/server/mlb_ask.py)** — Stack-chan turns a spoken MLB question into one checked, read-only DuckDB query over the dbt marts (running on the robot since 2026-10-31; code on a branch until merged)
+
+---
+
 ## 🌍 Realtime Open Data
 
 <table>
@@ -194,75 +289,6 @@ Companion site for an amateur baseball team, forked from Minami Baseball OB — 
 - **Only what the terms allow is published** — 40,241 records from sources that state CC BY or PDL 1.0 (Akita, Kyoto, Ishikawa, Kanazawa, Yamaguchi, Sapporo, Muroran, Ishikari, Kamisunagawa). Every other source ships as a fetcher, not as data, with the licence wording quoted in [docs/licenses.md](https://github.com/yasumorishima/japan-wildlife-sightings/blob/main/docs/licenses.md).
 - **Finding the data is most of the work** — a prefecture page often links only a PDF while a public ArcGIS layer sits behind its map (Toyama 4,614 records, Fukushima 4,491). Most PDF-only prefectures publish monthly totals rather than per-incident rows; the two that don't are parsed back, one by layout and one by glyph coordinates.
 - **A map, not just a file** — MapLibre GL JS over GSI tiles, GSI aerial photography and NASA GIBS VIIRS imagery from the previous day. Library and glyphs are vendored, so the page depends on no external CDN.
-
-</details>
-
----
-
-## ⚾ Baseball Analytics
-
-### Prediction Systems
-
-| Project | Description | Demo |
-|---|---|---|
-| **[NPB Season Prediction](https://github.com/yasumorishima/npb-prediction)** | Bayesian ensemble (Marcel 35% + Stan/Ridge 40% + ML 25%) + Monte Carlo team simulation + 24 foreign player individual projections | [Live](https://npb-prediction.streamlit.app/) |
-| **[NPB 2021 Backtest](https://github.com/yasumorishima/npb-prediction/tree/main/research/2021-backtest)** | Could Bayesian model predict Yakult & Orix last→champion? 25 foreign players with FanGraphs data | [Analysis](https://github.com/yasumorishima/npb-prediction/tree/main/research/2021-backtest) |
-| **[NPB Foreign Player Study](https://github.com/yasumorishima/npb-foreign-statcast)** | Pre-registered: does MLB Statcast process data (xwOBA, whiff, CSW) predict a foreign player's first NPB season better than MLB results? First run null; 2026 arrivals frozen before the season ends | [Repo](https://github.com/yasumorishima/npb-foreign-statcast) |
-| **[Bayesian Aging Curve](https://github.com/yasumorishima/baseball-bayes)** | Pre-registered: does a Stan state-space aging model project next-season wOBA better than Marcel? Fitted on GitHub Actions from the dbt marts. 2025 result: indistinguishable from Marcel (both 95% intervals include 0) | [Repo](https://github.com/yasumorishima/baseball-bayes) |
-| **[Jev as a Baseball Prior](https://github.com/yasumorishima/jev-baseball)** | Pre-registered: can TypeSafe Jev, a decision-only model, forecast a hitter's next-season wOBA change zero-shot? It beats chance but loses to Marcel, worth about 20 to 50 fitted examples: right direction, far too little weight on big moves | [Repo](https://github.com/yasumorishima/jev-baseball) · Article [JP](https://qiita.com/ussu_ussu_ussu/items/cc28f711396515c1fb31) / [EN](https://dev.to/yasumorishima/asking-a-decision-only-ai-typesafe-jev-to-forecast-next-seasons-hitting-worth-about-20-to-50-360k) |
-| **[MLB Win Probability Engine](https://github.com/yasumorishima/mlb-win-probability)** | WP fitted to 915K Stats API plate appearances, plus a Claude bench coach. Pre-registered: does Claude predict stolen-base success better than a logistic model? No | [Live](https://mlb-wp-engine.streamlit.app/) · [Result](https://github.com/yasumorishima/mlb-win-probability/blob/master/research/steal_claude/RESULTS.md) |
-| **[Baseball MLOps Pipeline](https://github.com/yasumorishima/baseball-mlops)** | Statcast MLOps: 5-model ensemble served from the W&B model registry; weekly retraining retired with BigQuery (2026-04), data now on Hugging Face | [Live](https://baseball-mlops.streamlit.app/) |
-| **[MLB Data Pipeline](https://github.com/yasumorishima/mlb-data-pipeline)** | Public Hugging Face dataset; its card states per table whether it is fresh. 14 tables refresh weekly (12 Savant, 2 MLB Stats API); the 3 FanGraphs tables are frozen at 2025. No run publishes a table that lost a season. dbt + DuckDB marts with enforced contracts on top, also built on a free BigQuery sandbox | [HF Dataset](https://huggingface.co/datasets/yasumorishima/mlb-stats) · [Dashboard](https://lookerstudio.google.com/reporting/9c1d9fa2-c796-45a0-85de-633a888c4fd9) · [Tableau](https://public.tableau.com/app/profile/y.m7878/viz/MLBScoutingDashboard/1) · Article [JP](https://zenn.dev/shogaku/articles/mlb-pitch-metric-reliability-memo) / [EN](https://dev.to/yasumorishima/does-a-pitchs-performance-carry-over-to-next-season-whiff-rate-vs-run-value-on-8022-mlb-pairs-bj) |
-
-<details>
-<summary>Prediction accuracy & details</summary>
-
-| System | Key Metric | Articles |
-|--------|-----------|----------|
-| **NPB 2026** | First true out-of-sample test (frozen 2026-03-23, scored at 95% of the season): beats both floors, but the Bayes+ML layer is indistinguishable from Marcel alone (hitter OPS MAE +0.00095 ± 0.00086). Intervals were uniformly too wide; σ is now a function of playing time, moving provisional coverage to .84/.95 and .85/.98 against nominal .80/.95 | [JP](https://zenn.dev/shogaku/articles/npb-bayes-integration-production) / [EN](https://dev.to/yasumorishima/adding-bayesian-ensemble-monte-carlo-to-an-npb-prediction-app-58po) |
-| **NPB 2026 Teams** | Pre-registered scoring of the March team forecast: median-wins MAE 5.83 beats the constant and last-year floors but not the Pythagorean one (5.82); 80% / 95% win ranges covered 6 and 9 of 12 teams, too narrow | [Result](https://github.com/yasumorishima/npb-prediction/blob/main/data/backtest/2026_team_result.md) |
-| **NPB 2021 Backtest** | MAE **10.90W** (corrected 2026-09-22; the repo long printed 10.7W, which its own per-team table does not reproduce) — Yakult & Orix last→champion driven by JP player breakouts, not foreign players | [Repo](https://github.com/yasumorishima/npb-prediction/tree/main/research/2021-backtest) |
-| **MLB WP Engine** | Held-out 2026: Brier 0.158 (old engine 0.160); about 3 points high in the 0.3–0.5 band | [Live](https://mlb-wp-engine.streamlit.app/) |
-| **Baseball MLOps** | Batter wOBA MAE .0287 (Marcel: .0326) / Pitcher xFIP MAE 0.483 (Marcel: 0.558) | [Live](https://baseball-mlops.streamlit.app/) |
-
-</details>
-
-### Biomechanics
-
-**[Baseball Skeleton Analysis](https://github.com/yasumorishima/baseball-cv)** — 3D skeleton visualization from Driveline OpenBiomechanics C3D data
-
-<table>
-<tr>
-<td align="center"><b>Pitching Skeleton (3D C3D)</b></td>
-<td align="center"><b>Hitting Skeleton (3D C3D)</b></td>
-</tr>
-<tr>
-<td><img src="https://raw.githubusercontent.com/yasumorishima/baseball-cv/master/data/output/skeleton_pitching_anim.gif" width="400"></td>
-<td><img src="https://raw.githubusercontent.com/yasumorishima/baseball-cv/master/data/output/skeleton_hitting_anim.gif" width="400"></td>
-</tr>
-</table>
-
-Trunk rotation range vs pitch speed: r=0.425 (strongest). Contributed bug fix [PR #384](https://github.com/pyomeca/ezc3d/pull/384) to ezc3d.
-[Article (JP)](https://zenn.dev/shogaku/articles/baseball-cv-skeleton-biomechanics) / [Article (EN)](https://dev.to/yasumorishima/3d-skeleton-detection-from-baseball-motion-capture-data-with-driveline-c3d-29ja)
-
-### Statcast Analysis
-
-<!-- MLB_STATS_START -->11 analyses<!-- MLB_STATS_END --> covering Japanese MLB pitchers and Ohtani batting data.
-
-<details>
-<summary>All analyses (11)</summary>
-
-| Analysis | Key Finding | Article |
-|----------|-------------|---------|
-| **Kikuchi Slider Revolution (2019-2025)** | SL 17%→37% after Astros trade | [Zenn](https://zenn.dev/shogaku/articles/kikuchi-slider-revolution-2019-2025) / [DEV.to](https://dev.to/yasumorishima/yusei-kikuchis-pitching-evolution-a-statcast-analysis-2019-2025-2a4a) / [Kaggle](https://www.kaggle.com/code/yasunorim/yusei-kikuchi-slider-revolution-2019-2025) |
-| **Senga Ghost Fork (2023-2025)** | FO whiff rate 58%→39%, decline pre-injury | [Zenn](https://zenn.dev/shogaku/articles/senga-ghost-fork-analysis-2023-2025) / [DEV.to](https://dev.to/yasumorishima/kodai-sengas-ghost-fork-analyzed-with-statcast-data-2023-2025-1k1d) / [Kaggle](https://www.kaggle.com/code/yasunorim/kodai-senga-ghost-fork-analysis-2023-2025) |
-| **Imanaga 2nd Year (2024-2025)** | 3-pitch concentration (97%), 1st TTO xwOBA .505 | [Zenn](https://zenn.dev/shogaku/articles/imanaga-2nd-year-analysis-2024-2025) / [DEV.to](https://dev.to/yasumorishima/shota-imanagas-sophomore-year-what-statcast-data-reveals-2024-2025-235) / [Kaggle](https://www.kaggle.com/code/yasunorim/imanaga-rookie-to-sophomore-pitching) |
-| **Darvish Evolution (2021-2025)** | SL/ST halved, CU became putaway pitch | [Zenn](https://zenn.dev/shogaku/articles/darvish-pitching-evolution-2021-2025) / [DEV.to](https://dev.to/yasumorishima/yu-darvishs-pitching-evolution-2021-2025-a-statcast-data-analysis-fij) / [Kaggle](https://www.kaggle.com/code/yasunorim/yu-darvish-pitching-evolution-2021-2025) |
-| **Ohtani 2026 early warning** | Could the slump be seen early? Pre-registered tests on every MLB hitter: neither a bat-speed drop (RR 1.30) nor drift from his own normal over 20 parameters (AUC 0.49) precedes the IL; a pitcher's last outing before an arm IL is slow (AUC 0.61; confirmed on unseen 2021-23 vs long rests, 0.57) | [Notebook](https://www.kaggle.com/code/yasunorim/ohtani-2026-could-the-slump-be-seen-early) / [All hitters](https://www.kaggle.com/code/yasunorim/ohtani-2026-pattern-across-every-mlb-hitter) / [Anomaly](https://www.kaggle.com/code/yasunorim/do-hitters-drift-from-normal-before-the-il) / [Pitchers](https://github.com/yasumorishima/kaggle-datasets#4-mlb-statcast--bat-tracking-2024-2026) |
-| **Ohtani Spray Chart** | pybaseball's spraychart() in one line | [Zenn](https://zenn.dev/shogaku/articles/pybaseball-spraychart-builtin) |
-| **Ohtani Heatmap** | Stadium drawn in matplotlib + hit density heatmap | [Zenn](https://zenn.dev/shogaku/articles/pybaseball-spraychart-matplotlib) |
-| **2022-2024 analyses (5)** | WBC 2023 Sandoval scouting, Ohtani batting 2022 / exit-velocity random forest / injury signs 2023, 2024 home-run race; SQL (DuckDB) versions alongside | [Folder](https://github.com/yasumorishima/mlb-statcast-visualization/tree/main/analyses-2022-2024) |
-| **2026 update** | The four pitchers' arsenals 2019-2026 as GIFs; every drawn row checked against Savant before drawing | [Folder](https://github.com/yasumorishima/mlb-statcast-visualization/tree/main/update-2026) |
 
 </details>
 
@@ -451,22 +477,13 @@ Most recently competed in [On Top of Pasketti](https://www.drivendata.org/compet
 
 ---
 
-## 📱 Dashboards & Mobile
+## 📱 Mobile & Web Apps
 
 | App | Description | Link |
 |---|---|---|
-| **[MLB Bat Tracking Dashboard](https://github.com/yasumorishima/mlb-bat-tracking-dashboard)** | Leaderboard, Player Comparison, Team Lineup Builder. Powered by savant-extras | [Live](https://yasumorishima-mlb-bat-tracking.streamlit.app/) |
-| **[WBC 2026 Scouting Dashboard](https://github.com/yasumorishima/wbc-scouting)** | 37 Statcast apps across 19 countries. Zone heatmaps, spray charts, pitch movement | [Live](https://wbc-scouting-usa-batters.streamlit.app/) |
 | **[Daily Diary](https://github.com/yasumorishima/diary-app-flutter)** | Flutter mobile app, 10 languages, offline-first, biometric app lock, Android Auto Backup, AdMob · **screen-reader support**: every tappable control labelled for TalkBack, and CI fails the build if any ships unnamed, audits the real accessibility tree on an emulator and measures the spoken audio | [Google Play](https://play.google.com/store/apps/details?id=com.diary.daily) |
 | **[Fire Tablet Google Play Helper](https://github.com/yasumorishima/yasumorishima.github.io/tree/main/fire-gapps)** | Detects Fire OS from the browser UA, then lists the four required APKs in install order with step gating and saved progress | [Live](https://yasumorishima.github.io/fire-gapps/) |
 
-<details>
-<summary>WBC 2026 Scouting Dashboard details (37 apps)</summary>
-
-37 Statcast scouting apps across 19 countries (batters + pitchers). Zone heatmaps, spray charts, pitch movement, LHP/RHP splits. Auto-fetched via GitHub Actions.
-→ [USA Batters](https://wbc-usa-batters.streamlit.app/) / [Japan Pitchers](https://wbc-japan-pitchers.streamlit.app/) / [All 37 apps](https://github.com/yasumorishima/wbc-scouting#-デプロイ済みアプリ一覧)
-
-</details>
 
 ### [icrc167-android](https://github.com/yasumorishima/icrc167-android) — Internet Identity login for native Android (Active)
 
