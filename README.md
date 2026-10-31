@@ -229,7 +229,7 @@ Trunk rotation range vs pitch speed: r=0.425 (strongest). Contributed bug fix [P
 [Article (JP)](https://zenn.dev/shogaku/articles/baseball-cv-skeleton-biomechanics) / [Article (EN)](https://dev.to/yasumorishima/3d-skeleton-detection-from-baseball-motion-capture-data-with-driveline-c3d-29ja)
 
 - **Handwritten scorebook reading** — photos of paper scorebooks to plate appearances ([Document OCR](#-document-ocr) below)
-- **[Ask the marts in Japanese](https://github.com/yasumorishima/stackchan-lab/blob/ccr-1f7a3de6-j2ux4j/server/mlb_ask.py)** — Stack-chan turns a spoken MLB question into one checked, read-only DuckDB query over the dbt marts (running on the robot since 2026-10-31; code on a branch until merged)
+- **[Ask the marts in Japanese](https://github.com/yasumorishima/stackchan-lab/blob/main/server/mlb_ask.py)** — Stack-chan turns a spoken MLB question into one checked, read-only DuckDB query over the dbt marts (running on the robot since 2026-10-31)
 
 ---
 
