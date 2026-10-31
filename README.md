@@ -54,6 +54,8 @@ More of the same, with the measurements behind each, is in the [server notes](ht
 
 Write-up, measurements and tests: [stackchan-lab](https://github.com/yasumorishima/stackchan-lab#readme)
 
+Private companions: [stackchan-logs](https://github.com/yasumorishima/stackchan-logs) 🔒 *(private, server log pushed every 10 minutes)* · [stackchan-cache](https://github.com/yasumorishima/stackchan-cache) 🔒 *(private, cheer-song audio and scores for checking)*
+
 `M5Stack CoreS3 (ESP32-S3) / Raspberry Pi 5 / Python (aiohttp, WebSocket) / sherpa-onnx + ReazonSpeech / Open JTalk / MCP / Opus`
 
 ### [rpi5-infra](https://github.com/yasumorishima/rpi5-infra) 🔒 *(private, config record)*
