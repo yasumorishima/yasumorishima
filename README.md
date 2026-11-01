@@ -33,6 +33,7 @@ Official M5Stack Stack-chan (`M5STACK-K151`) moved off its stock cloud assistant
 | Device tools | camera, head angles, LED, volume, screen, battery - called through the same function-call array |
 | Interrupting | the device sends no mic while it is playing, so the server stops the audio and listens at a silent point |
 | Latency | the reply is spoken sentence by sentence as it streams, and only the utterance that just ended is sent to the recogniser |
+| Shipping | developed from cloud sessions that cannot reach the Pi: it polls `main`, tests the change on a staging copy, swaps it in, and rolls back if health or the startup log fails |
 
 </details>
 
@@ -54,7 +55,7 @@ More of the same, with the measurements behind each, is in the [server notes](ht
 
 Write-up, measurements and tests: [stackchan-lab](https://github.com/yasumorishima/stackchan-lab#readme)
 
-Private companions: [stackchan-logs](https://github.com/yasumorishima/stackchan-logs) 🔒 *(private, server log pushed every 10 minutes)* · [stackchan-cache](https://github.com/yasumorishima/stackchan-cache) 🔒 *(private, cheer-song audio and scores for checking)*
+Private companions: [stackchan-logs](https://github.com/yasumorishima/stackchan-logs) 🔒 *(private, server log every 10 minutes and deploy reports)* · [stackchan-cache](https://github.com/yasumorishima/stackchan-cache) 🔒 *(private, cheer-song audio and scores for checking)*
 
 `M5Stack CoreS3 (ESP32-S3) / Raspberry Pi 5 / Python (aiohttp, WebSocket) / sherpa-onnx + ReazonSpeech / Open JTalk / MCP / Opus`
 
