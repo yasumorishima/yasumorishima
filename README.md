@@ -13,583 +13,131 @@ Manufacturing Engineer & Data Analyst with <!-- CAREER_YEARS_START -->18<!-- CAR
   <img alt="At a glance: open-source, GitHub Actions automation, Kaggle and package metrics" src="https://raw.githubusercontent.com/yasumorishima/yasumorishima/main/assets/dashboard-light.svg">
 </picture>
 
-**Jump to** — [Robotics](#-robotics--embedded) · [Baseball websites](#-baseball-websites) · [Baseball analytics](#-baseball-analytics) · [Realtime open data](#-realtime-open-data) · [Document OCR](#-document-ocr) · [Open source](#-open-source-contributions) · [Competitions](#-data--competitions) · [Mobile and web apps](#-mobile--web-apps) · [PyPI](#-pypi-packages) · [Learning projects](#-learning-projects) · [Tech stack](#️-tech-stack) · [Career](#-career) · [Patents](#-patents) · [Contact](#-contact--blog)
+**Jump to** — [Robotics](#-robotics--embedded) · [Baseball websites](#-baseball-websites) · [Baseball analytics](#-baseball-analytics) · [Realtime open data](#-realtime-open-data) · [Document OCR](#-document-ocr) · [Open source](#-open-source-contributions) · [Competitions](#-data--competitions) · [Apps](#-mobile--web-apps) · [PyPI](#-pypi-packages) · [Learning](#-learning-projects) · [Profile](#-profile)
 
 ## 🤖 Robotics / Embedded
 
-### [stackchan-lab](https://github.com/yasumorishima/stackchan-lab) — M5 Stack-chan Development Log (Active)
-
-Official M5Stack Stack-chan (`M5STACK-K151`) moved off its stock cloud assistant onto a self-hosted stack on a Raspberry Pi 5 - 19 server-side tools · 11 device tools over MCP · sings 16 cheer songs · speaks while the model is still writing · stock firmware, unmodified
-
-<details>
-<summary>How the voice loop runs</summary>
-
-| Stage | |
-| --- | --- |
-| Speech in | sherpa-onnx / ReazonSpeech, on the Pi |
-| Reply | hosted 120B model, free tier |
-| Speech out | Open JTalk, on the Pi (0.27s per sentence), shaped for a speaker that cannot reproduce bass |
-| Tools | weather, FX, indices, crypto, NHK headlines, JMA quake / warning / typhoon, heat index, train delays, on-this-day, moon and sun, fuel surcharge, travel advisories, baseball scores and standings, roster notices, cheer-song lyrics, singing a cheer song |
-| Device tools | camera, head angles, LED, volume, screen, battery - called through the same function-call array |
-| Interrupting | the device sends no mic while it is playing, so the server stops the audio and listens at a silent point |
-| Latency | the reply is spoken sentence by sentence as it streams, and only the utterance that just ended is sent to the recogniser |
-| Shipping | developed from cloud sessions that cannot reach the Pi: it polls `main`, tests the change on a staging copy, swaps it in, and rolls back if health or the startup log fails |
-
-</details>
-
-<details>
-<summary>What went wrong, and what it turned out to be</summary>
-
-| Symptom | Cause |
-| --- | --- |
-| Pairing failed as `No devices found` | Factory firmware nine releases behind. OTA needs Wi-Fi, Wi-Fi setup needs pairing - USB was the only way in |
-| Device kept talking to the stock server | A hand-appended NVS entry padded its key with `0xFF` instead of `0x00`: valid CRC, invisible to my own parser, permanently missed by ESP-IDF |
-| OOM-killed at 7GB RSS, twice | A VAD that starts counting at speech never fires on an always-streaming mic |
-| Speech played in slow motion | Not length - the same 30 morae read fine as nonsense but break in a real sentence, and one comma puts it right. The server times each synthesis and re-splits what came out slow |
-| The rhythm would not come back, whatever I changed | The wall was the ruler. Comparing sound to sound has a floor of 142-680ms, and every difference I had been reading between methods sat inside it. Measured by times against times, the notes land 20-60ms from the onsets against 55-105ms for random - and it sings |
-| Conversation sounded quieter than the singing | Not level - band. The singing voice puts over 90% of its energy above 500Hz; the speaking voice puts 73-84% below it, where a speaker this small reproduces nothing. Matching the level in the band that is actually audible fixed what matching the overall level could not |
-
-More of the same, with the measurements behind each, is in the [server notes](https://github.com/yasumorishima/stackchan-lab/tree/main/server#readme).
-
-</details>
-
-Write-up, measurements and tests: [stackchan-lab](https://github.com/yasumorishima/stackchan-lab#readme)
-
-Private companions: [stackchan-logs](https://github.com/yasumorishima/stackchan-logs) 🔒 *(private, server log every 10 minutes and deploy reports)* · [stackchan-cache](https://github.com/yasumorishima/stackchan-cache) 🔒 *(private, cheer-song audio and scores for checking)*
-
-`M5Stack CoreS3 (ESP32-S3) / Raspberry Pi 5 / Python (aiohttp, WebSocket) / sherpa-onnx + ReazonSpeech / Open JTalk / MCP / Opus`
-
-### [rpi5-infra](https://github.com/yasumorishima/rpi5-infra) 🔒 *(private, config record)*
-
-Configuration record for the Raspberry Pi 5 that hosts the robot's server, kept so the box can be rebuilt after an SD failure and so a change like opening a port leaves a trace.
-
-<details>
-<summary>What it records, and what it deliberately leaves out</summary>
-
-| | |
-| --- | --- |
-| Recorded | firewall rules, systemd units, cron entries, listening ports, an inventory of what is actually running |
-| Left out | secrets - unit files reference their `EnvironmentFile` without containing values, and credential files are excluded |
-
-</details>
-
-`Raspberry Pi OS / systemd / ufw / cron / Tailscale`
-
----
+- **[stackchan-lab](https://github.com/yasumorishima/stackchan-lab)** — M5 Stack-chan on a self-hosted Raspberry Pi 5 voice server: tools over MCP, sings cheer songs · [server notes](https://github.com/yasumorishima/stackchan-lab/tree/main/server#readme) · 🔒 [stackchan-logs](https://github.com/yasumorishima/stackchan-logs) · 🔒 [stackchan-cache](https://github.com/yasumorishima/stackchan-cache)
+- **[rpi5-infra](https://github.com/yasumorishima/rpi5-infra)** 🔒 — config record for the Pi 5 (firewall, systemd, cron), no secrets
 
 ## ⚾ Baseball Websites
 
-### [Minami Baseball OB](https://minami-baseball-ob.vercel.app/) — Alumni Association Site (In Production)
+- **[Minami Baseball OB](https://minami-baseball-ob.vercel.app/)** — alumni association site in production · <!--ob:active_users-->11<!--/ob--> users · <!--ob:pages-->44<!--/ob--> pages · <!--ob:db_tables-->23<!--/ob--> tables · <!--ob:e2e_tests-->19<!--/ob--> e2e tests · <!--ob:senseki-->686<!--/ob--> games since 1955 · <!--ob:cost-->¥0<!--/ob-->/mo (<!--ob:ts_files-->159<!--/ob--> files, <!--ob:loc-->~22500<!--/ob--> LOC) · [docs](https://github.com/yasumorishima/minami-baseball-ob-docs)
+- **[Yokohama Funnies](https://yokohama-funnies.vercel.app/)** — amateur team site in production, with per-game stats · <!--fn:players-->23<!--/fn--> players · <!--fn:pages-->48<!--/fn--> pages · <!--fn:db_tables-->32<!--/fn--> tables · <!--fn:e2e_tests-->19<!--/fn--> e2e tests · <!--fn:cost-->¥0<!--/fn-->/mo (<!--fn:ts_files-->175<!--/fn--> files, <!--fn:loc-->~24700<!--/fn--> LOC) · [docs](https://github.com/yasumorishima/yokohama-funnies-docs)
 
-Full-stack web app for a high school baseball alumni association — <!--ob:active_users-->11<!--/ob--> active users · <!--ob:pages-->44<!--/ob--> pages · <!--ob:db_tables-->23<!--/ob--> DB tables · <!--ob:e2e_tests-->19<!--/ob--> e2e tests · <!--ob:cost-->¥0<!--/ob-->/mo running cost (<!--ob:ts_files-->159<!--/ob--> files, <!--ob:loc-->~22500<!--/ob--> LOC). **[Technical Documentation](https://github.com/yasumorishima/minami-baseball-ob-docs)**
-
-<table>
-<tr>
-<td align="center"><b>PC (Light)</b></td>
-<td align="center"><b>Game Results</b></td>
-</tr>
-<tr>
-<td><a href="https://minami-baseball-ob.vercel.app/"><img src="https://raw.githubusercontent.com/yasumorishima/minami-baseball-ob-docs/main/screenshots/top-pc.png" width="420"></a></td>
-<td><img src="https://raw.githubusercontent.com/yasumorishima/minami-baseball-ob-docs/main/screenshots/results.png" width="420"></td>
-</tr>
-</table>
-
-5-tier RBAC (Middleware + RLS), automated member pipeline (Form → GAS → Actions → Supabase), <!--ob:senseki-->686<!--/ob--> match records (1955–present)
-
-<details>
-<summary>Architecture & features</summary>
-
-- **5-tier RBAC** (guest → admin): Next.js Middleware + Supabase RLS — authorization at route, row, and component level
-- **Automated member pipeline**: Google Form → Apps Script → GitHub Actions auto-PR → Supabase role sync. Personal names never touch Git
-- **Custom CMS**: 9 editor pages + 5 inline edit, soft delete (7-day trash + auto-purge), change history, audit logs
-- **<!--ob:senseki-->686<!--/ob--> match records** (1955–present): cross-source verification, generation-based grouping, per-game photo management
-- **UX**: Unsaved warning, Web Share + LINE fallback, Calendar registration, ripple feedback, Suspense skeleton UI, weather forecast (Open-Meteo, 10 venues), automated game detection (2 sources → auto-PR)
-- **Security**: RLS on all 23 tables (17 main + 6 history), `server-only` admin, CODEOWNERS, branch protection, secret scanning, cookie consent, 60-min session timeout
-- **Silent-fail monitoring** — built after a 1-month silent outage (a Form trigger silently lost its OAuth grant):
-  - Hourly health-check probes the full member-request + feedback pipeline (Vercel proxy / dispatch chain / GAS time trigger / gas-issue-form secret match / role-sync recency)
-  - Workflow-run failure + sync-roles liveness (cron-stall) detection auto-opens a tracking GitHub issue and auto-closes it on recovery
-  - Dual-channel alerts: GitHub Actions email + GAS Gmail
-
-</details>
-
-`Next.js 15 / TypeScript 5.8 / Tailwind CSS 4 / Supabase (PostgreSQL + Auth + Storage) / Vercel / GitHub Actions / Google Apps Script / GA4`
-
-### [Yokohama Funnies](https://yokohama-funnies.vercel.app/) — Amateur Baseball Team Site (In Production)
-
-Companion site for an amateur baseball team, forked from Minami Baseball OB — <!--fn:players-->23<!--/fn-->-player roster · <!--fn:pages-->48<!--/fn--> pages · <!--fn:db_tables-->32<!--/fn--> DB tables · <!--fn:e2e_tests-->19<!--/fn--> e2e tests · <!--fn:cost-->¥0<!--/fn-->/mo running cost (<!--fn:ts_files-->175<!--/fn--> files, <!--fn:loc-->~24700<!--/fn--> LOC). **[Technical Documentation](https://github.com/yasumorishima/yokohama-funnies-docs)**
-
-5-tier RBAC (Middleware + RLS), PR-based member approval (Form → GAS → Actions auto-PR → merge → role sync), custom amateur-baseball stats schema (per-game batting / pitching / attendance) with manual-input + spreadsheet-migration ingestion
-
-<details>
-<summary>Architecture & features</summary>
-
-- **5-tier RBAC** (guest → admin): Next.js Middleware + Supabase RLS — authorization at route, row, and component level (Google OAuth)
-- **PR-based member approval** (same topology as Minami): Google Form → Apps Script → Vercel proxy → GitHub App auto-creates an approval PR adding a per-member role file (`config/members/<uid>.yml`); merging triggers a polling role-sync to Supabase + an approval email to the member — approve by merge. Personal data stays minimal in Git
-- **Amateur-baseball stats schema**: `players` (jersey / bats / throws / is_guest / photo / comment), per-game `game_player_batting` (14 cols) + `game_player_pitching`, `attendances` (○/△/×); aggregated views + client-side season filter compute 打率 / 出塁率 / 長打率 / OPS / ERA / WHIP / K9
-- **Stat ingestion**: spreadsheet migration + editor manual-input UI (`/edit/game-stats`, scorebook image side-by-side + per-player grid); editors upload scorebook images straight from the result page
-- **Custom CMS / UX**: dedicated + inline editor pages, soft delete (7-day trash + auto-purge), change history, audit logs, public No. 06 ROSTER section (photo + jersey + role + comment) via `players_public` view, Open-Meteo weather forecast with WBGT heat-stress display
-- **Security**: Supabase RLS on all tables, anon-readable roster view with sensitive columns filtered, server-only admin, gitleaks secret scanning, notifications isolated on a separate public Actions repo
-- **Silent-fail monitoring**:
-  - Hourly health-check probes every notification path (Vercel proxy / dispatch ack / GAS heartbeat / feedback webhook secret)
-  - Workflow-run failure + sync-roles liveness detection auto-opens/closes a GitHub issue, with email alerts on any silent failure
-
-</details>
-
-`Next.js 15 / TypeScript 5.8 / Tailwind CSS 4 / Supabase / Vercel / GitHub Actions / Google Apps Script`
-
----
+`Next.js / TypeScript / Supabase / Vercel / GitHub Actions / Google Apps Script`
 
 ## ⚾ Baseball Analytics
 
-Laid out the way a club's data-science group works: game strategy, scouting and development, delivery to staff, MLOps, and unstructured data. Data is MLB Statcast (Hawk-Eye tracking) and public NPB stats, all on free tiers; forecasting claims are pre-registered against floors.
+MLB Statcast and public NPB stats, free tiers only. Forecasts are pre-registered and scored against simple baselines.
 
-### 1. Strategy & In-Game Decisions
+**Strategy & scouting**
+- [MLB Win Probability Engine](https://github.com/yasumorishima/mlb-win-probability) · [Live](https://mlb-wp-engine.streamlit.app/) · [steal study](https://github.com/yasumorishima/mlb-win-probability/blob/master/research/steal_claude/RESULTS.md)
+- [NPB Season & Team Prediction](https://github.com/yasumorishima/npb-prediction) · [Live](https://npb-prediction.streamlit.app/) · [2026 team result](https://github.com/yasumorishima/npb-prediction/blob/main/data/backtest/2026_team_result.md) · [2021 backtest](https://github.com/yasumorishima/npb-prediction/tree/main/research/2021-backtest) · [JP](https://zenn.dev/shogaku/articles/npb-bayes-integration-production) / [EN](https://dev.to/yasumorishima/adding-bayesian-ensemble-monte-carlo-to-an-npb-prediction-app-58po)
+- [Next-Pitch Forecast](https://github.com/yasumorishima/mlb-pitch-forecast) · [results](https://github.com/yasumorishima/mlb-pitch-forecast/blob/main/RESULTS.md) · [API](https://mlb-pitch-forecast.vercel.app/api/predict)
+- [Pitch Shape × Swing Shape](https://github.com/yasumorishima/kaggle-datasets/tree/matchup-diag/pitch-swing-matchup) *(in progress)*
+- [NPB Foreign Player Study](https://github.com/yasumorishima/npb-foreign-statcast)
+- [Aging Curve & Development Tracker](https://github.com/yasumorishima/baseball-bayes) · [tracker](https://github.com/yasumorishima/baseball-bayes/tree/main/development)
+- [Which KPIs Carry Over](https://github.com/yasumorishima/mlb-data-pipeline) · [JP](https://qiita.com/ussu_ussu_ussu/items/81b75c0020bf2e1d84f3) / [EN](https://dev.to/yasumorishima/does-a-pitchs-performance-carry-over-to-next-season-whiff-rate-vs-run-value-on-8022-mlb-pairs-bj)
+- [Player Condition Monitoring](https://github.com/yasumorishima/kaggle-datasets#4-mlb-statcast--bat-tracking-2024-2026) · [Ohtani](https://www.kaggle.com/code/yasunorim/ohtani-2026-could-the-slump-be-seen-early) / [All hitters](https://www.kaggle.com/code/yasunorim/ohtani-2026-pattern-across-every-mlb-hitter) / [Anomaly](https://www.kaggle.com/code/yasunorim/do-hitters-drift-from-normal-before-the-il)
+- [Jev as a Baseball Prior](https://github.com/yasumorishima/jev-baseball) · [JP](https://qiita.com/ussu_ussu_ussu/items/cc28f711396515c1fb31) / [EN](https://dev.to/yasumorishima/asking-a-decision-only-ai-typesafe-jev-to-forecast-next-seasons-hitting-worth-about-20-to-50-360k)
 
-| Project | What it answers | Links |
-|---|---|---|
-| **[MLB Win Probability Engine](https://github.com/yasumorishima/mlb-win-probability)** | Win probability fitted to 915K Stats API plate appearances, with a pre-registered team-strength layer (Brier −0.0017 on held-out 2026) and a Claude bench coach. Pre-registered: does Claude predict stolen-base success better than a logistic model? No | [Live](https://mlb-wp-engine.streamlit.app/) · [Result](https://github.com/yasumorishima/mlb-win-probability/blob/master/research/steal_claude/RESULTS.md) |
-| **[NPB Team Simulation](https://github.com/yasumorishima/npb-prediction)** | Monte Carlo season simulation built on the player projections. Pre-registered 2026 scoring: median-wins MAE 5.83 beats the constant and last-year floors but not the Pythagorean one (5.82); win ranges too narrow | [Live](https://npb-prediction.streamlit.app/) · [Result](https://github.com/yasumorishima/npb-prediction/blob/main/data/backtest/2026_team_result.md) |
-| **[Next-Pitch Forecast](https://github.com/yasumorishima/mlb-pitch-forecast)** | Which pitch type comes next? Pre-registered and scored once on unseen 2026 (713K pitches): a LightGBM model beats a pitcher's usage tables by count, batter side and previous pitch (log loss 1.231 vs 1.294), for 97.5% of pitchers. Still names the right type only 46% of the time | [Results](https://github.com/yasumorishima/mlb-pitch-forecast/blob/main/RESULTS.md) |
-| **[Pitch Shape × Swing Shape](https://github.com/yasumorishima/kaggle-datasets/tree/matchup-diag/pitch-swing-matchup)** *(in progress)* | Does the shape of a pitch meeting the shape of a swing (bat tracking) change the outcome beyond pitch quality? 2024→2025 development only: once pitch quality is controlled the gain is not separable from zero, while quality × pitch shape is clear. 2026 stays unread until the plan is frozen | [Plan & results](https://github.com/yasumorishima/kaggle-datasets/tree/matchup-diag/pitch-swing-matchup) |
+**Dashboards & apps**
+- Scouting dashboards · [Looker](https://lookerstudio.google.com/reporting/9c1d9fa2-c796-45a0-85de-633a888c4fd9) · [Tableau](https://public.tableau.com/app/profile/y.m7878/viz/MLBScoutingDashboard/1)
+- [WBC 2026 Scouting](https://github.com/yasumorishima/wbc-scouting) — 37 browser apps · [All 37](https://yasumorishima.github.io/wbc-scouting/) / [Japan Pitchers](https://yasumorishima.github.io/wbc-scouting/japan-pitchers.html)
+- [MLB Bat Tracking Dashboard](https://github.com/yasumorishima/mlb-bat-tracking-dashboard) · [Live](https://yasumorishima-mlb-bat-tracking.streamlit.app/)
 
-**Tracking-data player evaluation** — <!-- MLB_STATS_START -->11 analyses<!-- MLB_STATS_END --> of Japanese MLB pitchers and Ohtani's batting, from Statcast pitch data.
+**MLOps & data platform**
+- [MLB Data Pipeline](https://github.com/yasumorishima/mlb-data-pipeline) — weekly Hugging Face dataset + dbt marts · [HF Dataset](https://huggingface.co/datasets/yasumorishima/mlb-stats)
+- [Baseball MLOps Pipeline](https://github.com/yasumorishima/baseball-mlops) · [Live](https://baseball-mlops.streamlit.app/)
+- [savant-extras](https://github.com/yasumorishima/savant-extras) · [PyPI](https://pypi.org/project/savant-extras/)
 
-<details>
-<summary>All analyses</summary>
-
-| Analysis | Key Finding | Article |
-|----------|-------------|---------|
-| **Kikuchi Slider Revolution (2019-2025)** | SL 17%→37% after Astros trade | [Zenn](https://zenn.dev/shogaku/articles/kikuchi-slider-revolution-2019-2025) / [DEV.to](https://dev.to/yasumorishima/yusei-kikuchis-pitching-evolution-a-statcast-analysis-2019-2025-2a4a) / [Kaggle](https://www.kaggle.com/code/yasunorim/yusei-kikuchi-slider-revolution-2019-2025) |
-| **Senga Ghost Fork (2023-2025)** | FO whiff rate 58%→39%, decline pre-injury | [Zenn](https://zenn.dev/shogaku/articles/senga-ghost-fork-analysis-2023-2025) / [DEV.to](https://dev.to/yasumorishima/kodai-sengas-ghost-fork-analyzed-with-statcast-data-2023-2025-1k1d) / [Kaggle](https://www.kaggle.com/code/yasunorim/kodai-senga-ghost-fork-analysis-2023-2025) |
-| **Imanaga 2nd Year (2024-2025)** | 3-pitch concentration (97%), 1st TTO xwOBA .505 | [Zenn](https://zenn.dev/shogaku/articles/imanaga-2nd-year-analysis-2024-2025) / [DEV.to](https://dev.to/yasumorishima/shota-imanagas-sophomore-year-what-statcast-data-reveals-2024-2025-235) / [Kaggle](https://www.kaggle.com/code/yasunorim/imanaga-rookie-to-sophomore-pitching) |
-| **Darvish Evolution (2021-2025)** | SL/ST halved, CU became putaway pitch | [Zenn](https://zenn.dev/shogaku/articles/darvish-pitching-evolution-2021-2025) / [DEV.to](https://dev.to/yasumorishima/yu-darvishs-pitching-evolution-2021-2025-a-statcast-data-analysis-fij) / [Kaggle](https://www.kaggle.com/code/yasunorim/yu-darvish-pitching-evolution-2021-2025) |
-| **Ohtani Spray Chart** | pybaseball's spraychart() in one line | [Zenn](https://zenn.dev/shogaku/articles/pybaseball-spraychart-builtin) |
-| **Ohtani Heatmap** | Stadium drawn in matplotlib + hit density heatmap | [Zenn](https://zenn.dev/shogaku/articles/pybaseball-spraychart-matplotlib) |
-| **2022-2024 analyses (5)** | WBC 2023 Sandoval scouting, Ohtani batting 2022 / exit-velocity random forest / injury signs 2023, 2024 home-run race; SQL (DuckDB) versions alongside | [Folder](https://github.com/yasumorishima/mlb-statcast-visualization/tree/main/analyses-2022-2024) |
-| **2026 update** | The four pitchers' arsenals 2019-2026 as GIFs; every drawn row checked against Savant before drawing | [Folder](https://github.com/yasumorishima/mlb-statcast-visualization/tree/main/update-2026) |
-
-</details>
-
-### 2. Scouting & Player Development
-
-| Project | What it answers | Links |
-|---|---|---|
-| **[NPB Season Prediction](https://github.com/yasumorishima/npb-prediction)** | Player projections: Bayesian ensemble (Marcel + Stan/Ridge + ML). First true out-of-sample test (frozen 2026-03-23): beats both floors, but adds nothing measurable over Marcel alone | [Live](https://npb-prediction.streamlit.app/) · Article [JP](https://zenn.dev/shogaku/articles/npb-bayes-integration-production) / [EN](https://dev.to/yasumorishima/adding-bayesian-ensemble-monte-carlo-to-an-npb-prediction-app-58po) |
-| **[NPB Foreign Player Study](https://github.com/yasumorishima/npb-foreign-statcast)** | Pre-registered: does MLB / Triple-A Statcast process data (xwOBA, whiff, CSW) predict a foreign player's first NPB season better than MLB results? First run null; 2026 arrivals frozen before the season ended | [Repo](https://github.com/yasumorishima/npb-foreign-statcast) |
-| **[Aging Curve & Development Tracker](https://github.com/yasumorishima/baseball-bayes)** | Stan state-space aging model: indistinguishable from Marcel on 2025. The same model tracks each hitter against his expected band; on unseen 2025, 10.2% fell outside the 90% band, more often above than below | [Repo](https://github.com/yasumorishima/baseball-bayes) · [Tracker](https://github.com/yasumorishima/baseball-bayes/tree/main/development) |
-| **[Which KPIs Carry Over](https://github.com/yasumorishima/mlb-data-pipeline)** | Which numbers repeat next season? Run value rebuilt from 5.98M pitches (99.2–99.7% match to Savant): luck and game context barely repeat, strikeout and walk skill does. Process (xwOBA) repeats better than results (wOBA) | Article [JP](https://qiita.com/ussu_ussu_ussu/items/81b75c0020bf2e1d84f3) / [EN](https://dev.to/yasumorishima/does-a-pitchs-performance-carry-over-to-next-season-whiff-rate-vs-run-value-on-8022-mlb-pairs-bj) |
-| **[Player Condition Monitoring](https://github.com/yasumorishima/kaggle-datasets#4-mlb-statcast--bat-tracking-2024-2026)** | Pre-registered across every MLB pitcher and hitter: drift from a player's own normal before the IL was not supported, but a pitcher's last outing before an arm IL is slow (AUC 0.61; confirmed on unseen 2021-23 vs long rests, 0.57) | [Ohtani](https://www.kaggle.com/code/yasunorim/ohtani-2026-could-the-slump-be-seen-early) / [All hitters](https://www.kaggle.com/code/yasunorim/ohtani-2026-pattern-across-every-mlb-hitter) / [Anomaly](https://www.kaggle.com/code/yasunorim/do-hitters-drift-from-normal-before-the-il) |
-| **[Jev as a Baseball Prior](https://github.com/yasumorishima/jev-baseball)** | Pre-registered: can TypeSafe Jev, a decision-only model, forecast a hitter's next-season wOBA change zero-shot? Beats chance, loses to Marcel (worth about 20 to 50 fitted examples) | Article [JP](https://qiita.com/ussu_ussu_ussu/items/cc28f711396515c1fb31) / [EN](https://dev.to/yasumorishima/asking-a-decision-only-ai-typesafe-jev-to-forecast-next-seasons-hitting-worth-about-20-to-50-360k) |
+**Vision & language**
+- [Baseball Skeleton Analysis](https://github.com/yasumorishima/baseball-cv) — 3D skeletons from Driveline C3D · [JP](https://zenn.dev/shogaku/articles/baseball-cv-skeleton-biomechanics) / [EN](https://dev.to/yasumorishima/3d-skeleton-detection-from-baseball-motion-capture-data-with-driveline-c3d-29ja)
+- [One-camera pitching pose](https://github.com/yasumorishima/pitching-pose-one-camera) *(in progress)*
+- [Ask the marts in Japanese](https://github.com/yasumorishima/stackchan-lab/blob/main/server/mlb_ask.py) — spoken MLB questions to DuckDB, on Stack-chan
 
 <details>
-<summary>Prediction accuracy & details</summary>
+<summary>Statcast player analyses (<!-- MLB_STATS_START -->11 analyses<!-- MLB_STATS_END -->)</summary>
 
-| System | Key Metric | Articles |
-|--------|-----------|----------|
-| **NPB 2026** | First true out-of-sample test (frozen 2026-03-23, scored at 95% of the season): beats both floors, but the Bayes+ML layer is indistinguishable from Marcel alone (hitter OPS MAE +0.00095 ± 0.00086). Intervals were uniformly too wide; σ is now a function of playing time, moving provisional coverage to .84/.95 and .85/.98 against nominal .80/.95 | [JP](https://zenn.dev/shogaku/articles/npb-bayes-integration-production) / [EN](https://dev.to/yasumorishima/adding-bayesian-ensemble-monte-carlo-to-an-npb-prediction-app-58po) |
-| **NPB 2026 Teams** | Pre-registered scoring of the March team forecast: median-wins MAE 5.83 beats the constant and last-year floors but not the Pythagorean one (5.82); 80% / 95% win ranges covered 6 and 9 of 12 teams, too narrow | [Result](https://github.com/yasumorishima/npb-prediction/blob/main/data/backtest/2026_team_result.md) |
-| **NPB 2021 Backtest** | MAE **10.90W** (corrected 2026-09-22; the repo long printed 10.7W, which its own per-team table does not reproduce) — Yakult & Orix last→champion driven by JP player breakouts, not foreign players | [Repo](https://github.com/yasumorishima/npb-prediction/tree/main/research/2021-backtest) |
-| **MLB WP Engine** | Held-out 2026: Brier 0.158 (old engine 0.160); about 3 points high in the 0.3–0.5 band | [Live](https://mlb-wp-engine.streamlit.app/) |
-| **Baseball MLOps** | Batter wOBA MAE .0287 (Marcel: .0326) / Pitcher xFIP MAE 0.483 (Marcel: 0.558) | [Live](https://baseball-mlops.streamlit.app/) |
+- Kikuchi Slider Revolution · [Zenn](https://zenn.dev/shogaku/articles/kikuchi-slider-revolution-2019-2025) / [DEV.to](https://dev.to/yasumorishima/yusei-kikuchis-pitching-evolution-a-statcast-analysis-2019-2025-2a4a) / [Kaggle](https://www.kaggle.com/code/yasunorim/yusei-kikuchi-slider-revolution-2019-2025)
+- Senga Ghost Fork · [Zenn](https://zenn.dev/shogaku/articles/senga-ghost-fork-analysis-2023-2025) / [DEV.to](https://dev.to/yasumorishima/kodai-sengas-ghost-fork-analyzed-with-statcast-data-2023-2025-1k1d) / [Kaggle](https://www.kaggle.com/code/yasunorim/kodai-senga-ghost-fork-analysis-2023-2025)
+- Imanaga 2nd Year · [Zenn](https://zenn.dev/shogaku/articles/imanaga-2nd-year-analysis-2024-2025) / [DEV.to](https://dev.to/yasumorishima/shota-imanagas-sophomore-year-what-statcast-data-reveals-2024-2025-235) / [Kaggle](https://www.kaggle.com/code/yasunorim/imanaga-rookie-to-sophomore-pitching)
+- Darvish Evolution · [Zenn](https://zenn.dev/shogaku/articles/darvish-pitching-evolution-2021-2025) / [DEV.to](https://dev.to/yasumorishima/yu-darvishs-pitching-evolution-2021-2025-a-statcast-data-analysis-fij) / [Kaggle](https://www.kaggle.com/code/yasunorim/yu-darvish-pitching-evolution-2021-2025)
+- Ohtani Spray Chart · [Zenn](https://zenn.dev/shogaku/articles/pybaseball-spraychart-builtin) — Ohtani Heatmap · [Zenn](https://zenn.dev/shogaku/articles/pybaseball-spraychart-matplotlib)
+- [2022-2024 analyses (5)](https://github.com/yasumorishima/mlb-statcast-visualization/tree/main/analyses-2022-2024) · [2026 update](https://github.com/yasumorishima/mlb-statcast-visualization/tree/main/update-2026)
 
 </details>
-
-### 3. Delivery to Staff: Dashboards & Apps
-
-| Tool | For whom / what | Links |
-|---|---|---|
-| **Scouting dashboards** | Looker Studio and Tableau Public on the dbt marts: leaderboards, pitch reliability, and which metrics carry over; on-screen counts checked against SQL (Looker) and the CSV snapshot (Tableau) | [Looker](https://lookerstudio.google.com/reporting/9c1d9fa2-c796-45a0-85de-633a888c4fd9) · [Tableau](https://public.tableau.com/app/profile/y.m7878/viz/MLBScoutingDashboard/1) |
-| **[WBC 2026 Scouting](https://github.com/yasumorishima/wbc-scouting)** | 37 Statcast apps across 19 countries: zone heatmaps, spray charts, pitch movement, LHP/RHP splits; runs in the browser (stlite on GitHub Pages), every page render-checked in CI | [All 37](https://yasumorishima.github.io/wbc-scouting/) / [Japan Pitchers](https://yasumorishima.github.io/wbc-scouting/japan-pitchers.html) |
-| **[MLB Bat Tracking Dashboard](https://github.com/yasumorishima/mlb-bat-tracking-dashboard)** | Leaderboard, player comparison, team lineup builder | [Live](https://yasumorishima-mlb-bat-tracking.streamlit.app/) |
-| **Amateur team stats** | Per-game batting and pitching for a real amateur team, read from its paper scorebooks and shown to the players ([Yokohama Funnies](#yokohama-funnies--amateur-baseball-team-site-in-production) above) | [Site](https://yokohama-funnies.vercel.app/) |
-
-### 4. MLOps & Data Platform
-
-| Project | What it does | Links |
-|---|---|---|
-| **[MLB Data Pipeline](https://github.com/yasumorishima/mlb-data-pipeline)** | Public Hugging Face dataset; its card states per table whether it is fresh. 14 tables refresh weekly (12 Savant, 2 MLB Stats API); the 3 FanGraphs tables are frozen at 2025. No run publishes a table that lost a season. dbt + DuckDB marts with enforced contracts on top, also built on a free BigQuery sandbox | [HF Dataset](https://huggingface.co/datasets/yasumorishima/mlb-stats) |
-| **[Next-Pitch Forecast API](https://github.com/yasumorishima/mlb-pitch-forecast#api)** | The pre-registered next-pitch model served as a free JSON API. GitHub Actions refreshes every pitcher's and batter's state daily in season and swaps the model only when it beats the served one on the last 7 days; a gate checks served features equal training features | [API](https://mlb-pitch-forecast.vercel.app/api/predict) |
-| **[Baseball MLOps Pipeline](https://github.com/yasumorishima/baseball-mlops)** | Statcast MLOps: 5-model ensemble served from the W&B model registry; weekly retraining retired with BigQuery (2026-04), data now on Hugging Face | [Live](https://baseball-mlops.streamlit.app/) |
-| **[savant-extras](https://github.com/yasumorishima/savant-extras)** | PyPI package for Baseball Savant leaderboards; checks the returned season, since Savant silently answers unknown parameters with the current one | [PyPI](https://pypi.org/project/savant-extras/) |
-| **Gated Kaggle datasets** | Statcast + bat tracking 2024-2026 (2.14M pitches) and ABS challenges, rebuilt on GitHub Actions and published only when every count gate passes ([Kaggle Datasets](#kaggle-datasets) below) | [Statcast](https://www.kaggle.com/datasets/yasunorim/mlb-statcast-bat-tracking-2024-2025) |
-
-### 5. Unstructured Data: Vision & Language
-
-**[Baseball Skeleton Analysis](https://github.com/yasumorishima/baseball-cv)** — 3D skeleton visualization from Driveline OpenBiomechanics C3D data
-
-<table>
-<tr>
-<td align="center"><b>Pitching Skeleton (3D C3D)</b></td>
-<td align="center"><b>Hitting Skeleton (3D C3D)</b></td>
-</tr>
-<tr>
-<td><img src="https://raw.githubusercontent.com/yasumorishima/baseball-cv/master/data/output/skeleton_pitching_anim.gif" width="400"></td>
-<td><img src="https://raw.githubusercontent.com/yasumorishima/baseball-cv/master/data/output/skeleton_hitting_anim.gif" width="400"></td>
-</tr>
-</table>
-
-Trunk rotation range vs pitch speed: r=0.425 (strongest). Contributed bug fix [PR #384](https://github.com/pyomeca/ezc3d/pull/384) to ezc3d.
-[Article (JP)](https://zenn.dev/shogaku/articles/baseball-cv-skeleton-biomechanics) / [Article (EN)](https://dev.to/yasumorishima/3d-skeleton-detection-from-baseball-motion-capture-data-with-driveline-c3d-29ja)
-
-- **[One-camera pitching pose](https://github.com/yasumorishima/pitching-pose-one-camera)** — how much of a pitch's mechanics one camera can measure, and from which angle: each of eight synchronized 360 fps OpenBiomechanics cameras alone vs a 3D reference (in progress, no results yet)
-- **Handwritten scorebook reading** — photos of paper scorebooks to plate appearances ([Document OCR](#-document-ocr) below)
-- **[Ask the marts in Japanese](https://github.com/yasumorishima/stackchan-lab/blob/main/server/mlb_ask.py)** — Stack-chan turns a spoken MLB question into one checked, read-only DuckDB query over the dbt marts (running on the robot since 2026-10-31)
-
----
 
 ## 🌍 Realtime Open Data
 
-<table>
-<tr>
-<td align="center"><a href="https://github.com/yasumorishima/japan-geohazard-monitor"><b>Japan Geohazard Monitor</b></a></td>
-<td align="center"><a href="https://github.com/yasumorishima/hormuz-ship-tracker"><b>Persian Gulf Ship Tracker</b></a></td>
-</tr>
-<tr>
-<td><a href="https://github.com/yasumorishima/japan-geohazard-monitor"><img src="https://raw.githubusercontent.com/yasumorishima/japan-geohazard-monitor/master/docs/screenshot.png" width="420"></a></td>
-<td><a href="https://github.com/yasumorishima/hormuz-ship-tracker"><img src="https://raw.githubusercontent.com/yasumorishima/hormuz-ship-tracker/master/docs/screenshot.png" width="420"></a></td>
-</tr>
-<tr>
-<td>31 geophysical data sources → ML earthquake prediction (walk-forward pooled AUC 0.907 over 37 windows; +0.005 per window over a climatology fitted on the same rows) + real-time monitoring dashboard</td>
-<td>Vessel tracking across the Persian Gulf &amp; Gulf of Oman. Collection, storage and a browser-side <a href="https://yasumorishima.github.io/hormuz-ship-tracker/">map</a> run on GitHub Actions and a Hugging Face dataset — no machine of my own<br><br>⚠️ <b>The AIS feed has no receivers in this water</b> — 12,312 vessels worldwide in 180 s on 2026-09-16 and 9,547 on 2026-09-17, none inside the strait. That collector keeps running in case coverage returns.<br><br>🛰️ <b>Sentinel-1 radar now watches the same water</b>, about once every two days, with no account needed. Checked against the project's own AIS archive: 24 of the 24 vessels AIS placed in scored water were found within 300 m — recall only; precision is not measurable from that data.</td>
-</tr>
-</table>
-
-`Real-time API / WebSocket → SQLite → FastAPI + Leaflet.js (dark theme)` — [All projects](https://github.com/yasumorishima/realtime-open-data)
-
-**[Earth Vital Signs](https://github.com/yasumorishima/earth-vital-signs)** — sea ice, CO2 and other greenhouse gases, sea and air temperature, daily El Niño and climate indices from NOAA/NSIDC/Copernicus, rebuilt daily on GitHub Actions and published only after checks pass
-
-**[Japan Road Traffic](https://github.com/yasumorishima/japan-road-traffic)** — vehicle counts from about 2,000 national-highway counters in Japan (hourly nationwide, every 5 minutes in Kanto). The source keeps only one to three months, so GitHub Actions saves every day before it disappears; plus 38,600 police detectors, being filled back to 2017
-
-**[Japan Geohazard Monitor](https://github.com/yasumorishima/japan-geohazard-monitor)** — Earthquake prediction research
-
-<details>
-<summary>Data sources, evaluation and the Kumamoto InSAR result</summary>
-
-- **85 features from 25+ open sources** — USGS, NASA Earthdata, INTERMAGNET, NMDB, NOAA, IOC
-- **Walk-forward evaluation** — a HistGBT ensemble on a 1° grid, scored on 3,004,835 rows across 37 windows from 1989 to 2026: pooled AUC 0.907, Brier skill +0.080
-- **What that number is not** — a climatology fitted on the same rows reaches 0.902 on its own, so the part that is forecast rather than base rate is +0.005 per window, positive in 92% of them
-
-| Where the 0.907 comes from | Arm over its climatology, per window |
-| --- | --- |
-| aftershock-driven positives (39% of them) | +0.018 |
-| isolated mainshocks (61%) | +0.007 |
-| the strict 11% — no M≥4 within 50 km in the prior year | +0.010, and it fails its own interval |
-
-- **How a round is judged** — pre-registered before it runs, its scripts and verifier frozen by checksum, read against permutation or twin floors rather than against zero. Sizings are labelled as sizings, and nulls are logged beside the passes
-- **Current axis: the isolated mainshock** — since 2026-09 the target is shocks that are not aftershocks of anything larger, in a causal global arena of 2,280 cells. The causal per-cell predictor stands at 0.62086 over 25 windows against a per-window cell oracle of 0.9482 — the 0.907 does not transfer to it. A crust-and-slab arm reached 0.6257 on those windows but fell below it on the one stretch no round had scored, so it is unconfirmed
-- **Every round, with its own caveats** — [RESEARCH-LOG.md](https://github.com/yasumorishima/japan-geohazard-monitor/blob/master/RESEARCH-LOG.md). Most recent rounds are sizings with no floor, several lose outright, and a pass is rank one against five to nineteen permutation worlds, which is not a p-value
-- **Open data & automation** — features published as a public Hugging Face dataset, weekly CI pipeline on GitHub Actions; licensed inputs that may not be redistributed are kept in [geohazard-restricted-inputs](https://github.com/yasumorishima/geohazard-restricted-inputs) 🔒
-- **Co-seismic InSAR** — 2026 Kumamoto M7.1 from open Sentinel-1 on ASF HyP3: line-of-sight displacement −21.7 to +15.0 cm and a coherence-change damage proxy ([method, figures and caveats](https://github.com/yasumorishima/japan-geohazard-monitor/tree/master/research/kumamoto2026_insar))
-
-</details>
-
-**[Japan Wildlife Sightings](https://github.com/yasumorishima/japan-wildlife-sightings)** — Bear and wildlife sighting open data, normalized · [map](https://yasumorishima.github.io/japan-wildlife-sightings/)
-
-<details>
-<summary>Why it exists, what is collected, and what is withheld</summary>
-
-- **The data is public but incompatible** — prefectures publish bear, boar and deer sightings as CKAN CSV, ArcGIS Survey123, Google My Maps KML, Excel or PDF. The Ministry of the Environment publishes monthly totals as PDF only, so no nationwide point dataset exists. The aggregators that do exist are closed.
-- **27 sources, 79,394 records** in one schema (75,743 with coordinates), rebuilt daily on GitHub Actions and checked by a validator that counts coordinates, dates and duplicate ids.
-- **Only what the terms allow is published** — 40,241 records from sources that state CC BY or PDL 1.0 (Akita, Kyoto, Ishikawa, Kanazawa, Yamaguchi, Sapporo, Muroran, Ishikari, Kamisunagawa). Every other source ships as a fetcher, not as data, with the licence wording quoted in [docs/licenses.md](https://github.com/yasumorishima/japan-wildlife-sightings/blob/main/docs/licenses.md).
-- **Finding the data is most of the work** — a prefecture page often links only a PDF while a public ArcGIS layer sits behind its map (Toyama 4,614 records, Fukushima 4,491). Most PDF-only prefectures publish monthly totals rather than per-incident rows; the two that don't are parsed back, one by layout and one by glyph coordinates.
-- **A map, not just a file** — MapLibre GL JS over GSI tiles, GSI aerial photography and NASA GIBS VIIRS imagery from the previous day. Library and glyphs are vendored, so the page depends on no external CDN.
-
-</details>
-
----
+- **[Japan Geohazard Monitor](https://github.com/yasumorishima/japan-geohazard-monitor)** — 31 open sources → earthquake prediction research · [research log](https://github.com/yasumorishima/japan-geohazard-monitor/blob/master/RESEARCH-LOG.md) · [Kumamoto InSAR](https://github.com/yasumorishima/japan-geohazard-monitor/tree/master/research/kumamoto2026_insar) · 🔒 [restricted inputs](https://github.com/yasumorishima/geohazard-restricted-inputs)
+- **[Persian Gulf Ship Tracker](https://github.com/yasumorishima/hormuz-ship-tracker)** — AIS + Sentinel-1 radar · [map](https://yasumorishima.github.io/hormuz-ship-tracker/)
+- **[Japan Wildlife Sightings](https://github.com/yasumorishima/japan-wildlife-sightings)** — bear and wildlife sightings from 27 sources in one schema · [map](https://yasumorishima.github.io/japan-wildlife-sightings/) · [licences](https://github.com/yasumorishima/japan-wildlife-sightings/blob/main/docs/licenses.md)
+- **[Earth Vital Signs](https://github.com/yasumorishima/earth-vital-signs)** — sea ice, CO2, temperature, El Niño, rebuilt daily
+- **[Japan Road Traffic](https://github.com/yasumorishima/japan-road-traffic)** — ~2,000 highway counters, archived daily before the source drops them
+- [All projects](https://github.com/yasumorishima/realtime-open-data)
 
 ## 🧾 Document OCR
 
-Two deterministic readers of documents nobody else could read — one handwritten, one printed. Neither sends a page to a cloud OCR or to a generative model, and the same page always reads back the same.
+No cloud OCR and no generative model in the read path; the same page always reads the same.
 
-### [Handwritten Scorebook OCR](https://github.com/yasumorishima/baseball-scorebook-ocr) 🔒 *(private R&D, active)*
-
-Reads handwritten Japanese paper scorebooks (紙スコアブック) from photos into structured at-bat data — no paid API, no cloud OCR · deterministic OpenCV on a Raspberry Pi 5 · a base-running constraint solver decides what the marks mean · graded on 33 hand-transcribed sheets
-
-<details>
-<summary>Where it stands</summary>
-
-| Configuration | Score |
-| --- | --- |
-| Grid facts handed over (shipped default) | 366 / 396 = **92%** |
-| No grid fact handed over at all | 363 / 396 = 92% |
-| ...and every recognition in-house as well | 321 / 396 = 81% with the ledger kept, **283 / 396 = 71%** with no ledger at all |
-| A price order picked after seeing the result, re-judged on two sheets it never saw | **refuted** -- 30 vs 34 on those forty corners, and last of the four places the term can take. A later mutation sweep of the frozen checker put the weight at four corners rather than forty, and the incumbent takes all four. Shipping default unchanged |
-| Hardest mark class: template matching alone → fused with the solver | 76% → **93%** |
-| Consecutive held-out sheets — each new game is graded before it joins the pool | 31 |
-| A paid vision model (Claude Opus 5.5, one-off credit) on the same 396 corners | **370 / 396 = 93%** on sheets it never saw; handing its reads to the solver adds nothing. Details in the write-up |
-| Real output | my team's 2026 season batting stats are compiled from this ground truth |
-
-</details>
-
-<details>
-<summary>What the last rounds changed</summary>
-
-| Change | Result |
-| --- | --- |
-| Which column is which inning: cut from the ledger, read off the paper | A gate demanding each inning read exactly {I, II, III} left the truth reachable on 3 sheets of 31; pricing it instead reaches all 31 |
-| The last hard gate — *an inning holds at most three batter outs* — allowed to be outbid | Worth 36 corners where the out/reach call is made in-house, under a price order arrived at after the fact. With every recognition in-house as well, the gap to reading the ruling lines back falls from 43 corners to 4 |
-| Adversarial review of the diagnostic behind that claim | It had been run without the flag it was describing, so the number meant something else. Re-measuring properly is what produced the 36 above |
-| Nine ways to stop spurious marks pinning the wrong batter | All null, against a measured ceiling of +14 corners |
-
-</details>
-
-Private repo (the method is the product) — public technical write-up: [baseball-scorebook-ocr-docs](https://github.com/yasumorishima/baseball-scorebook-ocr-docs) (JP)
-
-### [Business-Form PDF Extraction](https://github.com/yasumorishima/form-ocr-lab) 🔒 *(private R&D, active)*
-
-Turns supplier PDFs into the spreadsheet a back-office system can ingest, with **no generative model anywhere in the read path** — one invented unit price is a wrong receivable · same PDF in, same bytes out · standard library only · it reconciles against the total the form itself prints.
-
-<details>
-<summary>Why not a generative OCR</summary>
-
-| Check | Result |
-| --- | --- |
-| The same number read across two passes | prefixes swap between runs; `Q`↔`0`, case flips, digit counts drift |
-| Two-pass agreement on the worst page | about half — **majority voting does not converge** |
-| Where the two methods disagreed | **every mismatch was the generative side misreading** |
-| Duplicates it reported | 14 — all distinct parts it had misread. True duplicates: **0** |
-
-Measured on a dense 56 × 5 alphanumeric part-number grid. A generative reader is bad at exactly this shape of input: dense, uniform, alphanumeric, and unforgiving. The fix is not a better prompt — it is not giving it the job.
-
-</details>
-
-<details>
-<summary>Rebuilding it from the write-up</summary>
-
-The engine cannot leave the machine it runs on, so the write-up is all that survives it — which makes rebuilding from those notes alone a fair test of whether the notes are any good. Standard library only, on a Raspberry Pi 5.
-
-| Check | Result |
-| --- | --- |
-| Suites on the rebuild | **785 checks, 0 failures** — standard library only, graded entirely against PDFs it synthesises itself |
-| Do the tests have teeth | every claim is paired with a mutation that must turn it red — **42** written by hand, plus a mechanical source sweep of **98** mutants, none surviving |
-| What a sweep cannot measure | at zero survivors an outside review still found **three shipping-stoppers**, all of them gates that had never been written; re-reviewing the repair returned **six more**, two created by the fix. A mutation only breaks a line that exists |
-| The worst of them | on a console that cannot encode the tick and warning glyphs, printing threw: the spreadsheet was already on disk and the screen said it had not been written. **Failing to report is not failing to do the work** — and the tests could not see it because their in-memory output buffer has no encoding at all |
-
-Not the production engine, and it says so: the glyph dictionary, the per-form field shapes and the constants you can only fit against real paper are all structurally absent. **It has never been run on a real document.**
-
-</details>
-
-Private repo (the method is the product). What is kept there is the method and the judgement calls — no customer documents, no counterparty names.
-
+- **[Handwritten Scorebook OCR](https://github.com/yasumorishima/baseball-scorebook-ocr)** 🔒 — paper scorebook photos → at-bat data, 92% on 33 graded sheets · [write-up (JP)](https://github.com/yasumorishima/baseball-scorebook-ocr-docs)
+- **[Business-Form PDF Extraction](https://github.com/yasumorishima/form-ocr-lab)** 🔒 — supplier PDFs → spreadsheet, reconciled against the printed total
 
 ## 🌐 Open Source Contributions
 
-<!-- OSS_STATS_START -->(137 PRs / 92 Merged)<!-- OSS_STATS_END --> across 49 repositories. See [oss-contributions](https://github.com/yasumorishima/oss-contributions) for full details.
+<!-- OSS_STATS_START -->(137 PRs / 92 Merged)<!-- OSS_STATS_END --> across 49 repositories · [oss-contributions](https://github.com/yasumorishima/oss-contributions)
 
 <details>
-<summary>PR highlights (click to expand)</summary>
+<summary>PR highlights</summary>
 
-| Repository | PR | Description |
-|---|---|---|
-| **dfinity/icp-js-core** | [#1270](https://github.com/dfinity/icp-js-core/pull/1270) | Improve Candid decode error messages |
-| **line/line-bot-mcp-server** | [#369](https://github.com/line/line-bot-mcp-server/pull/369) | Add get_follower_ids tool |
-| **pyomeca/ezc3d** | [#384](https://github.com/pyomeca/ezc3d/pull/384) | Fix `__eq__` early return bug |
-| **codeforjapan/mapprint** | [#556](https://github.com/codeforjapan/mapprint/pull/556) | Share buttons on the disaster print map |
-| **codeforjapan/mapprint** | [#564](https://github.com/codeforjapan/mapprint/pull/564) | Deterministic list order on the printable map |
-| **codeforjapan/mapprint** | [#563](https://github.com/codeforjapan/mapprint/pull/563) | 2026 Kumamoto earthquake paper map |
-| **codeforjapan/BirdXplorer** | [#281](https://github.com/codeforjapan/BirdXplorer/pull/281) | Statement timeouts for the Community Notes API |
-| **hotosm/openaerialmap** | [#289](https://github.com/hotosm/openaerialmap/pull/289) | Stop the STAC ingester dropping the wrong record when an entry fails |
-| **apache/fineract-backoffice-ui** | [#321](https://github.com/apache/fineract-backoffice-ui/pull/321) | Translate the accounting screen titles and tooltips |
-| **daisy/MathCAT** | [#665](https://github.com/daisy/MathCAT/pull/665) | Fix chemistry assertions that could never fail |
-| **daisy/MathCAT** | [#720-929](https://github.com/daisy/MathCAT/pull/929) | Japanese speech rules, 25 merged PRs, now in MathCAT main ([#936](https://github.com/daisy/MathCAT/pull/936)): fractions in Japanese word order, exponents, roots, geometry terms, brackets, large operators, intervals, elementary functions, accents, nPk permutations, menclose marks, navigation phrases that were still spoken in English, and the readings of all 2,754 Unicode symbols |
-| **daisy/MathCAT** | [#746](https://github.com/daisy/MathCAT/pull/746) | Fix the Japanese navigation announcements a blind reader hears on every move, including four that stated the opposite of the truth at the edge of a table |
-| **PHPOffice/PHPPresentation** | [#897](https://github.com/PHPOffice/PHPPresentation/pull/897) | Fix PHP 8.4/8.5 static analysis by fixing 144 findings instead of ignoring them |
-| **project-inclusive/OpenFisca-Japan** | [#479-484](https://github.com/project-inclusive/OpenFisca-Japan/pull/479) | Six benefits added to Japan's welfare rules engine: vocational training and loans for single parents, housing security, school costs, higher-education fees, jobseeker support |
-| **MobilityData/gtfs-validator** | [#2177](https://github.com/MobilityData/gtfs-validator/pull/2177) | Require stop IDs on transfers when `transfer_type` is empty |
-| **sugarlabs/musicblocks-v4** | [#774](https://github.com/sugarlabs/musicblocks-v4/pull/774) | Improve the block Palette interactions (cursors, titles) with tests |
-| **AtsushiSakai/PythonRobotics** | [#1408](https://github.com/AtsushiSakai/PythonRobotics/pull/1408) | Run the CI workflows on Python 3.14 |
-| **optuna/optuna** | — | Hyperparameter optimization framework |
-| **pandas-dev/pandas** | — | Data analysis library |
-| **jldbc/pybaseball** | [#514](https://github.com/jldbc/pybaseball/pull/514) | Bug fixes & pandas 3 compatibility |
-
-<details>
-<summary>team-mirai — Civic Tech OSS (<!-- TEAM_MIRAI_STATS_START -->26 PRs (14 Merged / 4 Open / 8 Closed)<!-- TEAM_MIRAI_STATS_END -->)</summary>
-
-Civic tech projects for political transparency & citizen participation in Japan. Next.js / TypeScript / Supabase / Vitest.
-
-| Repository | Highlights |
-|---|---|
-| **action-board** | [48 unit tests](https://github.com/team-mirai-volunteer/action-board/pull/1969), [RPC tests](https://github.com/team-mirai-volunteer/action-board/pull/1869), [breadcrumb nav](https://github.com/team-mirai-volunteer/action-board/pull/1849), [cache fix](https://github.com/team-mirai-volunteer/action-board/pull/1845) + 5 more |
-| **mirai-gikai** | [Supabase CLI v2.106 seed permission fix](https://github.com/team-mirai/mirai-gikai/pull/930), [Safari/iOS ruby spacing fix](https://github.com/team-mirai/mirai-gikai/pull/932) |
-| **fact-checker** | [X API investigation](https://github.com/team-mirai-volunteer/fact-checker/issues/69#issuecomment-3811711591) + 5 PRs |
+- **daisy/MathCAT** — Japanese speech rules, 25 merged PRs ([#720-929](https://github.com/daisy/MathCAT/pull/929), [#936](https://github.com/daisy/MathCAT/pull/936)) · [#746](https://github.com/daisy/MathCAT/pull/746) navigation · [#665](https://github.com/daisy/MathCAT/pull/665) chemistry tests
+- **project-inclusive/OpenFisca-Japan** — six welfare benefits ([#479-484](https://github.com/project-inclusive/OpenFisca-Japan/pull/479))
+- **codeforjapan** — mapprint [#556](https://github.com/codeforjapan/mapprint/pull/556) · [#563](https://github.com/codeforjapan/mapprint/pull/563) · [#564](https://github.com/codeforjapan/mapprint/pull/564) · BirdXplorer [#281](https://github.com/codeforjapan/BirdXplorer/pull/281)
+- **dfinity/icp-js-core** [#1270](https://github.com/dfinity/icp-js-core/pull/1270) · **line/line-bot-mcp-server** [#369](https://github.com/line/line-bot-mcp-server/pull/369) · **pyomeca/ezc3d** [#384](https://github.com/pyomeca/ezc3d/pull/384) · **hotosm/openaerialmap** [#289](https://github.com/hotosm/openaerialmap/pull/289)
+- **apache/fineract-backoffice-ui** [#321](https://github.com/apache/fineract-backoffice-ui/pull/321) · **PHPOffice/PHPPresentation** [#897](https://github.com/PHPOffice/PHPPresentation/pull/897) · **MobilityData/gtfs-validator** [#2177](https://github.com/MobilityData/gtfs-validator/pull/2177) · **sugarlabs/musicblocks-v4** [#774](https://github.com/sugarlabs/musicblocks-v4/pull/774)
+- **AtsushiSakai/PythonRobotics** [#1408](https://github.com/AtsushiSakai/PythonRobotics/pull/1408) · **jldbc/pybaseball** [#514](https://github.com/jldbc/pybaseball/pull/514) · optuna · pandas
+- **team-mirai** (<!-- TEAM_MIRAI_STATS_START -->26 PRs (14 Merged / 4 Open / 8 Closed)<!-- TEAM_MIRAI_STATS_END -->) — action-board [#1969](https://github.com/team-mirai-volunteer/action-board/pull/1969) · [#1869](https://github.com/team-mirai-volunteer/action-board/pull/1869) · [#1849](https://github.com/team-mirai-volunteer/action-board/pull/1849) · [#1845](https://github.com/team-mirai-volunteer/action-board/pull/1845) · mirai-gikai [#930](https://github.com/team-mirai/mirai-gikai/pull/930) · [#932](https://github.com/team-mirai/mirai-gikai/pull/932) · fact-checker [#69](https://github.com/team-mirai-volunteer/fact-checker/issues/69#issuecomment-3811711591)
 
 </details>
-
-</details>
-
----
 
 ## 📊 Data & Competitions
 
-### Kaggle
+**Kaggle** — <!-- KAGGLE_COMP_STATS_START -->Notebooks Expert | 🥉 14 Bronze Notebook Medals<!-- KAGGLE_COMP_STATS_END --> · [All 14 notebooks](https://www.kaggle.com/yasunorim/code)
+- 2026: [Kaggriculture](https://www.kaggle.com/competitions/kaggriculture) <!-- RANK_KAGGRICULTURE_START -->6047/10148<!-- RANK_KAGGRICULTURE_END --> ([agent](https://github.com/yasumorishima/kaggle-competitions/tree/main/kaggriculture)) · [ROGII Wellbore Geology](https://www.kaggle.com/competitions/rogii-wellbore-geology-prediction) <!-- RANK_ROGII_START -->2545/6125<!-- RANK_ROGII_END --> · [PS S6E6](https://www.kaggle.com/competitions/playground-series-s6e6) · [Stanford RNA 3D Folding 2](https://www.kaggle.com/competitions/stanford-rna-3d-folding-2) · [BirdCLEF+ 2026](https://www.kaggle.com/competitions/birdclef-2026)
+- Medal notebooks: [savant-extras Defense](https://www.kaggle.com/code/yasunorim/savant-extras-defense-pitching-quality) · [WBC Spray Charts](https://www.kaggle.com/code/yasunorim/mlb-statcast-spray-charts-for-wbc-2026-players) · [March Mania 2026](https://www.kaggle.com/code/yasunorim/march-machine-learning-mania-2026-baseline) · [NFL Geometric Rules](https://www.kaggle.com/code/yasunorim/geometric-rules-baseline-2-921-rmse-no-ml) · [CAFA 6](https://www.kaggle.com/code/yasunorim/baseline-with-regularization)
 
-<!-- KAGGLE_COMP_STATS_START -->Notebooks Expert | 🥉 14 Bronze Notebook Medals<!-- KAGGLE_COMP_STATS_END -->
+**Kaggle Datasets** — <!-- KAGGLE_DS_STATS_START -->11 public datasets<!-- KAGGLE_DS_STATS_END -->
+- 🥈 [MLB Bat Tracking](https://www.kaggle.com/datasets/yasunorim/mlb-bat-tracking-2024-2025) · 🥈 [WBC 2026 Scouting](https://www.kaggle.com/datasets/yasunorim/wbc-2026-scouting) · [Statcast + Bat Tracking](https://www.kaggle.com/datasets/yasunorim/mlb-statcast-bat-tracking-2024-2025) · [ABS Challenges](https://www.kaggle.com/datasets/yasunorim/mlb-abs-challenges-aaa-2025-to-mlb-2026) ([JP](https://qiita.com/ussu_ussu_ussu/items/57c5760b3f9917b3883f) / [EN](https://dev.to/yasumorishima/abs-challenges-from-triple-a-to-mlb-catchers-win-most-and-batters-who-dont-chase-win-more-499a)) · [Savant Leaderboards](https://www.kaggle.com/datasets/yasunorim/baseball-savant-leaderboards-2024) · [Japanese MLB Players](https://www.kaggle.com/datasets/yasunorim/japan-mlb-pitchers-batters-statcast) · [Pitcher Arsenal](https://www.kaggle.com/datasets/yasunorim/mlb-pitcher-arsenal-2020-2025) ([notebook](https://www.kaggle.com/code/yasunorim/pitcher-arsenal-analysis))
+- [Earth Vital Signs](https://www.kaggle.com/datasets/yasunorim/earth-vital-signs-daily) · [Japan Road Traffic](https://www.kaggle.com/datasets/yasunorim/japan-road-traffic-volume) ([starter](https://www.kaggle.com/code/yasunorim/japan-road-traffic-a-forecasting-starter)) · [XC BirdCLEF 2026 URLs](https://www.kaggle.com/datasets/yasunorim/xc-birdclef-2026-target-urls) · [BEATs Pretrained](https://www.kaggle.com/datasets/yasunorim/beats-pretrained)
 
-**Finished 2026:** [Kaggriculture](https://www.kaggle.com/competitions/kaggriculture) ([agent](https://github.com/yasumorishima/kaggle-competitions/tree/main/kaggriculture), final rank <!-- RANK_KAGGRICULTURE_START -->6047/10148<!-- RANK_KAGGRICULTURE_END -->) · [ROGII Wellbore Geology](https://www.kaggle.com/competitions/rogii-wellbore-geology-prediction) ($50K wellbore TVT regression, closed 2026-08-05 — public LB 7.311, final public rank <!-- RANK_ROGII_START -->2545/6125<!-- RANK_ROGII_END -->) · [Playground Series S6E6 - Stellar Classification](https://www.kaggle.com/competitions/playground-series-s6e6) (macro-F1, private LB 0.95939) · [Stanford RNA 3D Folding 2](https://www.kaggle.com/competitions/stanford-rna-3d-folding-2) · [BirdCLEF+ 2026](https://www.kaggle.com/competitions/birdclef-2026)
+**SIGNATE** — Active: 5th Air Combat AI Challenge · 2026: NEDO Baggage-Loading Optimization <!-- RANK_NEDO_START -->167/591<!-- RANK_NEDO_END --> · NIR Moisture Prediction
 
-<details>
-<summary>Bronze Medal Notebooks (14)</summary>
-
-| Notebook | Topic |
-|----------|-------|
-| [savant-extras Defense & Pitching Quality](https://www.kaggle.com/code/yasunorim/savant-extras-defense-pitching-quality) | Defense metrics & pitching quality (savant-extras) |
-| [MLB Statcast Spray Charts for WBC 2026](https://www.kaggle.com/code/yasunorim/mlb-statcast-spray-charts-for-wbc-2026-players) | WBC 2026 spray + pitch zone charts (baseball-field-viz) |
-| [March Machine Learning Mania 2026](https://www.kaggle.com/code/yasunorim/march-machine-learning-mania-2026-baseline) | NCAA tournament prediction (LightGBM) |
-| [NFL Geometric Rules Baseline](https://www.kaggle.com/code/yasunorim/geometric-rules-baseline-2-921-rmse-no-ml) | Physics-based rules, No ML, RMSE 2.921 |
-| [CAFA 6 Baseline](https://www.kaggle.com/code/yasunorim/baseline-with-regularization) | Protein function prediction (PyTorch MLP) |
-
-[All 14 notebooks →](https://www.kaggle.com/yasunorim/code)
-
-</details>
-
-### Kaggle Datasets
-
-<!-- KAGGLE_DS_STATS_START -->11 public datasets<!-- KAGGLE_DS_STATS_END -->
-
-| Dataset | Description |
-|---------|-------------|
-| 🥈 [MLB Bat Tracking Leaderboard (2024-2025)](https://www.kaggle.com/datasets/yasunorim/mlb-bat-tracking-2024-2025) | 452 batters, 19 swing metrics |
-| 🥈 [WBC 2026 Scouting](https://www.kaggle.com/datasets/yasunorim/wbc-2026-scouting) | 306 players, 20 countries |
-
-<details>
-<summary>Other datasets (9)</summary>
-
-| Dataset | Description |
-|---------|-------------|
-| [Earth Vital Signs - Daily Climate Indicators](https://www.kaggle.com/datasets/yasunorim/earth-vital-signs-daily) | Sea ice, CO2, sea and air temperature, El Niño and climate indices (8 files), rebuilt daily on GitHub Actions ([repo](https://github.com/yasumorishima/earth-vital-signs)) |
-| [Japan Road Traffic Volume (Hourly Archive)](https://www.kaggle.com/datasets/yasunorim/japan-road-traffic-volume) | Vehicle counts from about 2,000 national-highway counters (hourly nationwide, 5-minute Kanto), saved daily on GitHub Actions before the source drops them; a per-counter daily summary, holidays, a usual-day baseline, JMA weather and a census road graph ([repo](https://github.com/yasumorishima/japan-road-traffic) · [forecasting starter](https://www.kaggle.com/code/yasunorim/japan-road-traffic-a-forecasting-starter)) |
-| [ABS Challenges: Triple-A 2025 to MLB 2026](https://www.kaggle.com/datasets/yasunorim/mlb-abs-challenges-aaa-2025-to-mlb-2026) | 15 ABS challenge boards by MLBAM id, with per-player stats (211 columns) · Article [JP](https://qiita.com/ussu_ussu_ussu/items/57c5760b3f9917b3883f) / [EN](https://dev.to/yasumorishima/abs-challenges-from-triple-a-to-mlb-catchers-win-most-and-batters-who-dont-chase-win-more-499a) |
-| [Baseball Savant Leaderboards (2024-2026)](https://www.kaggle.com/datasets/yasunorim/baseball-savant-leaderboards-2024) | 20 leaderboards, 2024-2026, joinable by player id |
-| [Japanese MLB Players Statcast (2015-2026)](https://www.kaggle.com/datasets/yasunorim/japan-mlb-pitchers-batters-statcast) | 38 Japanese MLB players, 198k pitches |
-| [MLB Pitcher Arsenal (2020-2026)](https://www.kaggle.com/datasets/yasunorim/mlb-pitcher-arsenal-2020-2025) | 5,716 pitcher-seasons, 129 columns · [notebook](https://www.kaggle.com/code/yasunorim/pitcher-arsenal-analysis) with a pitch-mix GIF |
-| [MLB Statcast + Bat Tracking (2024-2026)](https://www.kaggle.com/datasets/yasunorim/mlb-statcast-bat-tracking-2024-2025) | Every regular-season pitch 2024-2026 (2.14M) with bat tracking; published only when every count and fill gate passes |
-| [XC BirdCLEF 2026 Target Recordings (URLs)](https://www.kaggle.com/datasets/yasunorim/xc-birdclef-2026-target-urls) | Xeno-canto source URLs for the 2026 target species |
-| [BEATs iter3+ AS2M Pretrained](https://www.kaggle.com/datasets/yasunorim/beats-pretrained) | Audio-tagging checkpoint mirrored for offline notebooks |
-
-</details>
-
-### SIGNATE
-
-**Active:**
-- **5th Air Combat AI Challenge** (run by Japan's Acquisition, Technology & Logistics Agency) — behaviour-decision agents for a 4-fighter plus 1 escorted-aircraft engagement · Glicko-2 rating · entries stay private until it closes (¥1.92M, to 2026-12-04)
-
-**Finished 2026:** NEDO Challenge — Baggage-Loading Optimization (3D bin packing for airline ULD containers, ¥15M, closed 2026-10-19 — final private rank <!-- RANK_NEDO_START -->167/591<!-- RANK_NEDO_END -->, 64.330; finalists announced 2026-11-06) · NIR Moisture Prediction (wood spectroscopy)
-
-### DrivenData
-
-**[DrivenData Competitions](https://github.com/yasumorishima/drivendata-comp)** — Automated pipeline: GitHub Actions + GPU training + GPU→CPU fallback.
-Most recently competed in [On Top of Pasketti](https://www.drivendata.org/competitions/309/) (Children's ASR, $120K prize, Wav2Vec2 CTC; submission deadline 2026-04-06).
-
----
+**DrivenData** — [drivendata-comp](https://github.com/yasumorishima/drivendata-comp) · [On Top of Pasketti](https://www.drivendata.org/competitions/309/)
 
 ## 📱 Mobile & Web Apps
 
-| App | Description | Link |
-|---|---|---|
-| **[Daily Diary](https://github.com/yasumorishima/diary-app-flutter)** | Flutter mobile app, 10 languages, offline-first, biometric app lock, Android Auto Backup, AdMob · **screen-reader support**: every tappable control labelled for TalkBack, and CI fails the build if any ships unnamed, audits the real accessibility tree on an emulator and measures the spoken audio | [Google Play](https://play.google.com/store/apps/details?id=com.diary.daily) |
-| **[Fire Tablet Google Play Helper](https://github.com/yasumorishima/yasumorishima.github.io/tree/main/fire-gapps)** | Detects Fire OS from the browser UA, then lists the four required APKs in install order with step gating and saved progress | [Live](https://yasumorishima.github.io/fire-gapps/) |
-
-
-### [icrc167-android](https://github.com/yasumorishima/icrc167-android) — Internet Identity login for native Android (Active)
-
-The relying-party side of ICRC-167, so an Android app can sign a user in with Internet Identity and then call canisters directly — no bridge server and no backend of its own. An iOS implementation exists; the Android counterpart did not.
-
-<details>
-<summary>Seven things that were measured rather than assumed</summary>
-
-| Question | What the measurement said |
-| --- | --- |
-| Does the URL fragment survive an App Link hand-off? | It does — 379 bytes, matching SHA-256, over both delivery paths, while `intent-filter` matching ignores the fragment entirely. The same run caught `Uri.getFragment()` percent-decoding the payload and inventing a parameter that was never sent |
-| Does the device test prove anything? | Not at first. The principal is derived from the root key in the response, so a passing positive case would have passed just as well with signature checking removed. The negative cases — an answer carrying somebody else's `state`, a signature that does not verify — are the test; the positive one only shows the parts still fit together |
-| Is the hash right? | The same function produced the bytes that get signed and the bytes that get verified, so it agreed with itself and with nothing else. It is now pinned to the worked request-id example published in the interface specification |
-| Do the negative tests reach the check they are named for? | The pairing equation did not: replacing it with `return true` left every test green, because each negative case died at the decoder first. It is pinned now by cases where only the equation can decide, with the mutation in CI |
-| Can the round trip be tested before Internet Identity is in the picture? | Yes — any Ed25519 key may delegate, so a chain signed here comes back from mainnet as the principal that delegated, and the same chain signed by the wrong key is refused |
-| Do the published test vectors settle the rules? | Not all of them. A delegation must state its subnet's type; no canister signature in the public record carries it and a certificate fetched from `id.ai` does — the vectors are simply older than the rule |
-| Does verifying the certificate bind the answer to the canister? | Not on its own. The canister-range check runs only when the certificate is delegated, and the root state tree holds every subnet's node keys — one genuine certificate would otherwise let any node answer for anything |
-
-</details>
-
-A demo app signs in with Internet Identity, asks a canister who it sees, checks the node signature and prints PASS or FAIL — it did all three on a real phone with a real passkey on 2026-09-14. The Chromium 153 passkey prompt that never came is [dfinity/internet-identity#4334](https://github.com/dfinity/internet-identity/issues/4334), closed upstream; not re-measured on a device since.
-
-`Kotlin / Android (Custom Tabs, App Links, Keystore) / BLS12-381 · Ed25519 · ECDSA P-256 · SHA-256 / CBOR / GitHub Actions (JVM tests + emulator)`
-
----
+- **[Daily Diary](https://github.com/yasumorishima/diary-app-flutter)** — Flutter, 10 languages, TalkBack-checked in CI · [Google Play](https://play.google.com/store/apps/details?id=com.diary.daily)
+- **[icrc167-android](https://github.com/yasumorishima/icrc167-android)** — Internet Identity login for native Android (ICRC-167) · [ii#4334](https://github.com/dfinity/internet-identity/issues/4334)
+- **[Fire Tablet Google Play Helper](https://github.com/yasumorishima/yasumorishima.github.io/tree/main/fire-gapps)** · [Live](https://yasumorishima.github.io/fire-gapps/)
 
 ## 📦 PyPI Packages
 
-<details>
-<summary>6 packages (click to expand)</summary>
-
-| Package | Description |
-|---------|-------------|
-| [savant-extras](https://github.com/yasumorishima/savant-extras) | 17 Baseball Savant leaderboards + date range support. Complements pybaseball |
-| [baseball-field-viz](https://github.com/yasumorishima/baseball-field-viz) | Statcast coordinate transform + field drawing + spray charts + pitch zone charts |
-| [kaggle-notebook-deploy](https://github.com/yasumorishima/kaggle-notebook-deploy) | Deploy Kaggle Notebooks via `git push` + GitHub Actions |
-| [kaggle-wandb-sync](https://github.com/yasumorishima/kaggle-wandb-sync) | Sync W&B offline runs from Kaggle to W&B cloud |
-| [signate-deploy](https://github.com/yasumorishima/signate-deploy) | SIGNATE competition workflow via GitHub Actions |
-| [signate-wandb-sync](https://github.com/yasumorishima/signate-wandb-sync) | Record SIGNATE scores to W&B runs |
-
-</details>
-
----
+[savant-extras](https://github.com/yasumorishima/savant-extras) · [baseball-field-viz](https://github.com/yasumorishima/baseball-field-viz) · [kaggle-notebook-deploy](https://github.com/yasumorishima/kaggle-notebook-deploy) · [kaggle-wandb-sync](https://github.com/yasumorishima/kaggle-wandb-sync) · [signate-deploy](https://github.com/yasumorishima/signate-deploy) · [signate-wandb-sync](https://github.com/yasumorishima/signate-wandb-sync)
 
 ## 🔬 Learning Projects
 
-| Project | Description |
-|---|---|
-| **[Sansuu, Shogi & Sora](https://github.com/yasumorishima/icp-counter-learning)** | Four modes on the Internet Computer: arithmetic (36 calculation + 31 word-problem topics, read aloud on request) · shogi · **sora**, a planetarium drawing the real sky for any place and time · **play**, six toddler games that ask the child to read nothing. **Usable without sight**, English/Japanese, offline, records on-device | [Live](https://iqjbc-7aaaa-aaaaj-qnnsa-cai.icp0.io/) |
-| **[OpenClaw Twitter Bot](https://github.com/yasumorishima/raspi-baseball-bot)** | Raspberry Pi 5 + OpenClaw + Gemini API auto-tweet bot (stopped) — [Article (JP)](https://zenn.dev/shogaku/articles/raspi-baseball-bot-openclaw-gemini) |
-| **[alexa-rpi5](https://github.com/yasumorishima/alexa-rpi5)** 🔒 | Raspberry Pi 5 to Fire TV Cube control hub for a house with no Echo speaker: cube wrapper, watchers and integrations (details in the repo README) |
-| **[Slide Decks with Claude Code](https://github.com/yasumorishima/slide-deck-with-claude-code)** 🔒 | Personal notes on having Claude Code build 16:9 HTML slides and their PDF from a fixed template: steps, component classes, an overflow check before handoff, and the pitfalls a checker cannot see |
+- **[Sansuu, Shogi & Sora](https://github.com/yasumorishima/icp-counter-learning)** — arithmetic, shogi, planetarium and toddler games, usable without sight · [Live](https://iqjbc-7aaaa-aaaaj-qnnsa-cai.icp0.io/)
+- [OpenClaw Twitter Bot](https://github.com/yasumorishima/raspi-baseball-bot) (stopped) · [JP](https://zenn.dev/shogaku/articles/raspi-baseball-bot-openclaw-gemini) · 🔒 [alexa-rpi5](https://github.com/yasumorishima/alexa-rpi5) · 🔒 [Slide Decks with Claude Code](https://github.com/yasumorishima/slide-deck-with-claude-code)
+- Past: [GAS Calendar Tool](https://github.com/yasumorishima/gas-calendar-tool) · [Dune Analytics](https://github.com/yasumorishima/dune-analytics) ([JPYC](https://dune.com/shogaku_toushi/jpyc-date)) · 🔒 [selenium-to-playwright](https://github.com/yasumorishima/selenium-to-playwright) · [Archived Projects](https://github.com/yasumorishima/archived-projects)
 
-<details>
-<summary>Past Projects</summary>
+## 👤 Profile
 
-| Project | Description |
-|---|---|
-| [GAS Calendar Tool](https://github.com/yasumorishima/gas-calendar-tool) | Batch calendar event registration with senior-friendly mobile UI |
-| [Dune Analytics](https://github.com/yasumorishima/dune-analytics) | On-chain data analysis — [JPYC Stablecoin Dashboard](https://dune.com/shogaku_toushi/jpyc-date) |
-| **[selenium-to-playwright](https://github.com/yasumorishima/selenium-to-playwright)** 🔒 | Playwright browser automation: 20+ scripts + night batch runner with auto GitHub Issues |
-| [Archived Projects](https://github.com/yasumorishima/archived-projects) | Selenium automation, business workflow tools, etc. |
+**Tech** — Python (pandas, scikit-learn, LightGBM, PyTorch, DuckDB, W&B) · Hugging Face Datasets, dbt, BigQuery sandbox · Next.js, TypeScript, Supabase, Vercel, Streamlit · Flutter · GitHub Actions, Google Apps Script, VBA · Looker Studio, Tableau · Statistical Quality Control
 
-</details>
+**Career** — 2024–: Quality Management @ a semiconductor distributor · 2008–2024: Semiconductor Process Engineer (Toppan Printing 2008–2014, Toshiba → Kioxia 2014–2017)
 
----
+**Patent** — Stencil mask and manufacturing method thereof ([JP6307851B2](https://patents.google.com/patent/JP6307851B2/ja))
 
-## 🛠️ Tech Stack
-| Category | Technologies |
-| --- | --- |
-| **Data Analysis & ML** | Python, pandas, scikit-learn, LightGBM, XGBoost, CatBoost, PyTorch, matplotlib, seaborn, DuckDB, W&B |
-| **Data Platform** | Hugging Face Datasets (MLB / NPB / geohazard — public, auto-refreshed via GitHub Actions), SQLite, BigQuery sandbox (dbt marts, no billing), ~~BigQuery + BQML + Cloud Run + Grafana~~ (retired 2026-04) |
-| **Data Sources** | Baseball Savant (Statcast), pybaseball, USGS, NASA Earthdata, AIS |
-| **Web & Dashboards** | Streamlit, Next.js, TypeScript, Supabase, Vercel, shadcn/ui |
-| **Mobile App** | Flutter, Dart, Hive, Google AdMob |
-| **Automation & DevOps** | GitHub Actions, Google Apps Script, VBA, Power Query |
-| **Tools** | Claude Code, Kaggle, Google Colab, Excel, Looker Studio, Tableau Public |
-| **Manufacturing** | Statistical Quality Control, Process Engineering |
-
----
-
-## 📈 Career
-* **2024 - Present:** Quality Management @ a semiconductor distributor
-* **2008 - 2024:** Semiconductor Manufacturing Process Engineer
-  * **2008 - 2014:** Toppan Printing
-  * **2014 - 2017:** Toshiba → Toshiba Memory (now Kioxia)
-
----
-
-## 🏆 Patents
-**Stencil mask and manufacturing method thereof**
-* **Patent No:** 6307851
-* **Role:** Inventor
-* **Link:** [Google Patents (JP6307851B2)](https://patents.google.com/patent/JP6307851B2/ja)
-
----
-
-## 📫 Contact & Blog
-* **Site:** [https://yasumorishima.github.io](https://yasumorishima.github.io) — tools and blog hosted on this domain
-* **Blog:** [DEV.to (EN)](https://dev.to/yasumorishima) / [Zenn (JP)](https://zenn.dev/shogaku) / [Quarto Blog (EN)](https://yasumorishima.github.io/quarto-blog/)
-* **Kaggle:** [https://www.kaggle.com/yasunorim](https://www.kaggle.com/yasunorim)
-* **Wantedly:** [https://www.wantedly.com/id/yasunori_morishima_b](https://www.wantedly.com/id/yasunori_morishima_b)
-* **LinkedIn:** [https://www.linkedin.com/in/morishima-yasunori-b70229241](https://www.linkedin.com/in/morishima-yasunori-b70229241?trk=contact-info)
+**Contact** — [Site](https://yasumorishima.github.io) · [DEV.to](https://dev.to/yasumorishima) · [Zenn](https://zenn.dev/shogaku) · [Quarto Blog](https://yasumorishima.github.io/quarto-blog/) · [Kaggle](https://www.kaggle.com/yasunorim) · [Wantedly](https://www.wantedly.com/id/yasunori_morishima_b) · [LinkedIn](https://www.linkedin.com/in/morishima-yasunori-b70229241)
