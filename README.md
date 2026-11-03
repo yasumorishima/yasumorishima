@@ -22,6 +22,17 @@ Manufacturing Engineer & Data Analyst with <!-- CAREER_YEARS_START -->18<!-- CAR
 
 ## ⚾ Baseball Websites
 
+<table>
+<tr>
+<td align="center"><b>PC (Light)</b></td>
+<td align="center"><b>Game Results</b></td>
+</tr>
+<tr>
+<td><a href="https://minami-baseball-ob.vercel.app/"><img src="https://raw.githubusercontent.com/yasumorishima/minami-baseball-ob-docs/main/screenshots/top-pc.png" width="420"></a></td>
+<td><img src="https://raw.githubusercontent.com/yasumorishima/minami-baseball-ob-docs/main/screenshots/results.png" width="420"></td>
+</tr>
+</table>
+
 - **[Minami Baseball OB](https://minami-baseball-ob.vercel.app/)** — alumni association site in production · <!--ob:active_users-->11<!--/ob--> users · <!--ob:pages-->44<!--/ob--> pages · <!--ob:db_tables-->23<!--/ob--> tables · <!--ob:e2e_tests-->19<!--/ob--> e2e tests · <!--ob:senseki-->686<!--/ob--> games since 1955 · <!--ob:cost-->¥0<!--/ob-->/mo (<!--ob:ts_files-->159<!--/ob--> files, <!--ob:loc-->~22500<!--/ob--> LOC) · [docs](https://github.com/yasumorishima/minami-baseball-ob-docs)
 - **[Yokohama Funnies](https://yokohama-funnies.vercel.app/)** — amateur team site in production, with per-game stats · <!--fn:players-->23<!--/fn--> players · <!--fn:pages-->48<!--/fn--> pages · <!--fn:db_tables-->32<!--/fn--> tables · <!--fn:e2e_tests-->19<!--/fn--> e2e tests · <!--fn:cost-->¥0<!--/fn-->/mo (<!--fn:ts_files-->175<!--/fn--> files, <!--fn:loc-->~24700<!--/fn--> LOC) · [docs](https://github.com/yasumorishima/yokohama-funnies-docs)
 
@@ -53,6 +64,18 @@ MLB Statcast and public NPB stats, free tiers only. Forecasts are pre-registered
 - [savant-extras](https://github.com/yasumorishima/savant-extras) · [PyPI](https://pypi.org/project/savant-extras/)
 
 **Vision & language**
+
+<table>
+<tr>
+<td align="center"><b>Pitching Skeleton (3D C3D)</b></td>
+<td align="center"><b>Hitting Skeleton (3D C3D)</b></td>
+</tr>
+<tr>
+<td><img src="https://raw.githubusercontent.com/yasumorishima/baseball-cv/master/data/output/skeleton_pitching_anim.gif" width="400"></td>
+<td><img src="https://raw.githubusercontent.com/yasumorishima/baseball-cv/master/data/output/skeleton_hitting_anim.gif" width="400"></td>
+</tr>
+</table>
+
 - [Baseball Skeleton Analysis](https://github.com/yasumorishima/baseball-cv) — 3D skeletons from Driveline C3D · [JP](https://zenn.dev/shogaku/articles/baseball-cv-skeleton-biomechanics) / [EN](https://dev.to/yasumorishima/3d-skeleton-detection-from-baseball-motion-capture-data-with-driveline-c3d-29ja)
 - [One-camera pitching pose](https://github.com/yasumorishima/pitching-pose-one-camera) *(in progress)*
 - [Ask the marts in Japanese](https://github.com/yasumorishima/stackchan-lab/blob/main/server/mlb_ask.py) — spoken MLB questions to DuckDB, on Stack-chan
@@ -70,6 +93,17 @@ MLB Statcast and public NPB stats, free tiers only. Forecasts are pre-registered
 </details>
 
 ## 🌍 Realtime Open Data
+
+<table>
+<tr>
+<td align="center"><a href="https://github.com/yasumorishima/japan-geohazard-monitor"><b>Japan Geohazard Monitor</b></a></td>
+<td align="center"><a href="https://github.com/yasumorishima/hormuz-ship-tracker"><b>Persian Gulf Ship Tracker</b></a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/yasumorishima/japan-geohazard-monitor"><img src="https://raw.githubusercontent.com/yasumorishima/japan-geohazard-monitor/master/docs/screenshot.png" width="420"></a></td>
+<td><a href="https://github.com/yasumorishima/hormuz-ship-tracker"><img src="https://raw.githubusercontent.com/yasumorishima/hormuz-ship-tracker/master/docs/screenshot.png" width="420"></a></td>
+</tr>
+</table>
 
 - **[Japan Geohazard Monitor](https://github.com/yasumorishima/japan-geohazard-monitor)** — 31 open sources → earthquake prediction research · [research log](https://github.com/yasumorishima/japan-geohazard-monitor/blob/master/RESEARCH-LOG.md) · [Kumamoto InSAR](https://github.com/yasumorishima/japan-geohazard-monitor/tree/master/research/kumamoto2026_insar) · 🔒 [restricted inputs](https://github.com/yasumorishima/geohazard-restricted-inputs)
 - **[Persian Gulf Ship Tracker](https://github.com/yasumorishima/hormuz-ship-tracker)** — AIS + Sentinel-1 radar · [map](https://yasumorishima.github.io/hormuz-ship-tracker/)
