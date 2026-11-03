@@ -19,10 +19,10 @@ Manufacturing Engineer & Data Analyst with <!-- CAREER_YEARS_START -->18<!-- CAR
 
 ### [stackchan-lab](https://github.com/yasumorishima/stackchan-lab) — M5 Stack-chan Development Log (Active)
 
-Stack-chan (`M5STACK-K151`) on a self-hosted Raspberry Pi 5 server — 19 server tools · 11 device tools over MCP · sings 16 cheer songs · stock firmware
-
 <details>
 <summary>How the voice loop runs</summary>
+
+Stack-chan (`M5STACK-K151`) on a self-hosted Raspberry Pi 5 server — 19 server tools · 11 device tools over MCP · sings 16 cheer songs · stock firmware
 
 | Stage | |
 | --- | --- |
@@ -59,10 +59,10 @@ Write-up: [stackchan-lab](https://github.com/yasumorishima/stackchan-lab#readme)
 
 ### [rpi5-infra](https://github.com/yasumorishima/rpi5-infra) 🔒 *(private, config record)*
 
-Config record for the robot's Pi 5, so it can be rebuilt after an SD failure.
-
 <details>
 <summary>What it records, and what it leaves out</summary>
+
+Config record for the robot's Pi 5, so it can be rebuilt after an SD failure.
 
 | | |
 | --- | --- |
@@ -79,8 +79,6 @@ Config record for the robot's Pi 5, so it can be rebuilt after an SD failure.
 
 ### [Minami Baseball OB](https://minami-baseball-ob.vercel.app/) — Alumni Association Site (In Production)
 
-<!--ob:active_users-->11<!--/ob--> active users · <!--ob:pages-->44<!--/ob--> pages · <!--ob:db_tables-->23<!--/ob--> DB tables · <!--ob:e2e_tests-->19<!--/ob--> e2e tests · <!--ob:cost-->¥0<!--/ob-->/mo (<!--ob:ts_files-->159<!--/ob--> files, <!--ob:loc-->~22500<!--/ob--> LOC) · **[Technical Documentation](https://github.com/yasumorishima/minami-baseball-ob-docs)**
-
 <table>
 <tr>
 <td align="center"><b>PC (Light)</b></td>
@@ -95,6 +93,8 @@ Config record for the robot's Pi 5, so it can be rebuilt after an SD failure.
 <details>
 <summary>Architecture & features</summary>
 
+<!--ob:active_users-->11<!--/ob--> active users · <!--ob:pages-->44<!--/ob--> pages · <!--ob:db_tables-->23<!--/ob--> DB tables · <!--ob:e2e_tests-->19<!--/ob--> e2e tests · <!--ob:cost-->¥0<!--/ob-->/mo (<!--ob:ts_files-->159<!--/ob--> files, <!--ob:loc-->~22500<!--/ob--> LOC)
+
 - **5-tier RBAC**: Next.js Middleware + Supabase RLS
 - **Member pipeline**: Google Form → Apps Script → GitHub Actions → Supabase; no names in Git
 - **Custom CMS**: editors, soft delete, change history, audit logs
@@ -104,14 +104,16 @@ Config record for the robot's Pi 5, so it can be rebuilt after an SD failure.
 
 </details>
 
+**[Technical Documentation](https://github.com/yasumorishima/minami-baseball-ob-docs)**
+
 `Next.js 15 / TypeScript 5.8 / Tailwind CSS 4 / Supabase / Vercel / GitHub Actions / Google Apps Script / GA4`
 
 ### [Yokohama Funnies](https://yokohama-funnies.vercel.app/) — Amateur Baseball Team Site (In Production)
 
-Forked from Minami Baseball OB — <!--fn:players-->23<!--/fn-->-player roster · <!--fn:pages-->48<!--/fn--> pages · <!--fn:db_tables-->32<!--/fn--> DB tables · <!--fn:e2e_tests-->19<!--/fn--> e2e tests · <!--fn:cost-->¥0<!--/fn-->/mo (<!--fn:ts_files-->175<!--/fn--> files, <!--fn:loc-->~24700<!--/fn--> LOC) · **[Technical Documentation](https://github.com/yasumorishima/yokohama-funnies-docs)**
-
 <details>
 <summary>Architecture & features</summary>
+
+Forked from Minami Baseball OB — <!--fn:players-->23<!--/fn-->-player roster · <!--fn:pages-->48<!--/fn--> pages · <!--fn:db_tables-->32<!--/fn--> DB tables · <!--fn:e2e_tests-->19<!--/fn--> e2e tests · <!--fn:cost-->¥0<!--/fn-->/mo (<!--fn:ts_files-->175<!--/fn--> files, <!--fn:loc-->~24700<!--/fn--> LOC)
 
 - **5-tier RBAC** with Google OAuth
 - **Approve by merge**: a form request becomes a PR; merging grants the role
@@ -121,13 +123,20 @@ Forked from Minami Baseball OB — <!--fn:players-->23<!--/fn-->-player roster �
 
 </details>
 
+**[Technical Documentation](https://github.com/yasumorishima/yokohama-funnies-docs)**
+
 `Next.js 15 / TypeScript 5.8 / Tailwind CSS 4 / Supabase / Vercel / GitHub Actions / Google Apps Script`
 
 ---
 
 ## ⚾ Baseball Analytics
 
+<details>
+<summary>About this section</summary>
+
 Organised like a club's data-science group. MLB Statcast and public NPB stats, free tiers only; forecasts are pre-registered.
+
+</details>
 
 ### 1. Strategy & In-Game Decisions
 
@@ -214,7 +223,12 @@ Organised like a club's data-science group. MLB Statcast and public NPB stats, f
 </tr>
 </table>
 
+<details>
+<summary>Finding & articles</summary>
+
 Trunk rotation vs pitch speed: r=0.425. Bug fix [PR #384](https://github.com/pyomeca/ezc3d/pull/384) to ezc3d. [Article (JP)](https://zenn.dev/shogaku/articles/baseball-cv-skeleton-biomechanics) / [Article (EN)](https://dev.to/yasumorishima/3d-skeleton-detection-from-baseball-motion-capture-data-with-driveline-c3d-29ja)
+
+</details>
 
 - **[One-camera pitching pose](https://github.com/yasumorishima/pitching-pose-one-camera)** — what one camera can measure (in progress)
 - **Handwritten scorebook reading** — see [Document OCR](#-document-ocr)
@@ -278,14 +292,19 @@ Trunk rotation vs pitch speed: r=0.425. Bug fix [PR #384](https://github.com/pyo
 
 ## 🧾 Document OCR
 
+<details>
+<summary>Approach</summary>
+
 No cloud OCR, no generative model; the same page always reads the same.
+
+</details>
 
 ### [Handwritten Scorebook OCR](https://github.com/yasumorishima/baseball-scorebook-ocr) 🔒 *(private R&D, active)*
 
-Paper scorebook photos → at-bat data · OpenCV on a Raspberry Pi 5 · constraint solver · 33 graded sheets
-
 <details>
 <summary>Where it stands</summary>
+
+Paper scorebook photos → at-bat data · OpenCV on a Raspberry Pi 5 · constraint solver · 33 graded sheets
 
 | Configuration | Score |
 | --- | --- |
@@ -315,10 +334,10 @@ Public write-up: [baseball-scorebook-ocr-docs](https://github.com/yasumorishima/
 
 ### [Business-Form PDF Extraction](https://github.com/yasumorishima/form-ocr-lab) 🔒 *(private R&D, active)*
 
-Supplier PDFs → spreadsheet, **no generative model** · same input, same bytes out · reconciled against the printed total
-
 <details>
 <summary>Why not a generative OCR</summary>
+
+Supplier PDFs → spreadsheet, **no generative model** · same input, same bytes out · reconciled against the printed total
 
 | Check | Result |
 | --- | --- |
@@ -458,10 +477,10 @@ Supplier PDFs → spreadsheet, **no generative model** · same input, same bytes
 
 ### [icrc167-android](https://github.com/yasumorishima/icrc167-android) — Internet Identity login for native Android (Active)
 
-ICRC-167 for Android: sign in with Internet Identity and call canisters directly, no backend.
-
 <details>
 <summary>Seven things that were measured rather than assumed</summary>
+
+ICRC-167 for Android: sign in with Internet Identity and call canisters directly, no backend.
 
 | Question | What the measurement said |
 | --- | --- |
@@ -473,9 +492,9 @@ ICRC-167 for Android: sign in with Internet Identity and call canisters directly
 | Do published vectors settle the rules? | No, they predate the subnet-type rule |
 | Does the certificate bind to the canister? | Not on its own |
 
-</details>
-
 Demo passed on a real phone (2026-09-14) · passkey issue [dfinity/internet-identity#4334](https://github.com/dfinity/internet-identity/issues/4334)
+
+</details>
 
 `Kotlin / Android / BLS12-381 · Ed25519 · ECDSA P-256 / CBOR / GitHub Actions`
 
