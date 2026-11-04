@@ -364,7 +364,7 @@ Supplier PDFs → spreadsheet, **no generative model** · same input, same bytes
 
 ## 🌐 Open Source Contributions
 
-<!-- OSS_STATS_START -->(137 PRs / 92 Merged)<!-- OSS_STATS_END --> across 49 repositories. See [oss-contributions](https://github.com/yasumorishima/oss-contributions) for full details.
+<!-- OSS_STATS_START -->(137 PRs / 93 Merged)<!-- OSS_STATS_END --> across 49 repositories. See [oss-contributions](https://github.com/yasumorishima/oss-contributions) for full details.
 
 <details>
 <summary>PR highlights (click to expand)</summary>
