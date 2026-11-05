@@ -23,3 +23,4 @@ GitHub profile repository. `README.md` is what appears on https://github.com/yas
 
 - Only `main` appears on the profile. When a change is meant to be shown, go all the way: branch, PR, then merge. Do not stop at a pushed branch.
 - Reply to the owner in Japanese.
+- Do not force-push from a cloud session; the permission check blocks it. To restart a branch whose PR was already merged, merge the old remote branch into the new one and push normally.
