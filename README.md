@@ -366,7 +366,7 @@ Supplier PDFs → spreadsheet, **no generative model** · same input, same bytes
 
 <!-- OSS_STATS_START -->(137 PRs / 93 Merged)<!-- OSS_STATS_END --> across 49 repositories. See [oss-contributions](https://github.com/yasumorishima/oss-contributions) for full details.
 
-PR review: CodeRabbit, with one central config in [coderabbit](https://github.com/yasumorishima/coderabbit) 🔒 (docs-only PRs stay quiet).
+PR review: CodeRabbit, with one central config in [coderabbit](https://github.com/yasumorishima/coderabbit) 🔒 (docs-only PRs stay quiet), and CodeQL on public repos and forks, with coverage and triage notes in [codeql](https://github.com/yasumorishima/codeql) 🔒.
 
 <details>
 <summary>PR highlights (click to expand)</summary>
