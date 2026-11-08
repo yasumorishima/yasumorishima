@@ -330,7 +330,7 @@ Paper scorebook photos → at-bat data · OpenCV on a Raspberry Pi 5 · constrai
 
 </details>
 
-Code: [baseball-scorebook-reader](https://github.com/yasumorishima/baseball-scorebook-reader) (MIT) · Write-up: [docs](https://github.com/yasumorishima/baseball-scorebook-ocr-docs) · [Notation guide](https://github.com/yasumorishima/baseball-scorebook-ocr-docs/blob/main/notation.md) (JP) · Ground truth with names: [private](https://github.com/yasumorishima/baseball-scorebook-ocr) 🔒
+Code: [baseball-scorebook-reader](https://github.com/yasumorishima/baseball-scorebook-reader) (MIT) · Write-up: [docs](https://github.com/yasumorishima/baseball-scorebook-ocr-docs) · [Notation guide](https://github.com/yasumorishima/baseball-scorebook-ocr-docs/blob/main/notation.md) (JP) · Ground truth with names: [private](https://github.com/yasumorishima/baseball-scorebook-ocr) 🔒 · Blog: [DEV.to](https://dev.to/yasumorishima/reading-paper-baseball-scorebooks-with-claude-code-and-checking-them-with-arithmetic-2f23) / [Qiita](https://qiita.com/ussu_ussu_ussu/items/c9ecfde3d172a0069c65) (JP)
 
 ### [Business-Form PDF Extraction](https://github.com/yasumorishima/form-ocr-lab) 🔒 *(private R&D, active)*
 
