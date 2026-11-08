@@ -196,7 +196,7 @@ Organised like a club's data-science group. MLB Statcast and public NPB stats, f
 | **Scouting dashboards** | Leaderboards and pitch reliability on the dbt marts | [Looker](https://lookerstudio.google.com/reporting/9c1d9fa2-c796-45a0-85de-633a888c4fd9) · [Tableau](https://public.tableau.com/app/profile/y.m7878/viz/MLBScoutingDashboard/1) |
 | **[WBC 2026 Scouting](https://github.com/yasumorishima/wbc-scouting)** | 37 Statcast apps, 19 countries, in the browser | [All 37](https://yasumorishima.github.io/wbc-scouting/) / [Japan Pitchers](https://yasumorishima.github.io/wbc-scouting/japan-pitchers.html) |
 | **[MLB Bat Tracking Dashboard](https://github.com/yasumorishima/mlb-bat-tracking-dashboard)** | Leaderboard, comparison, lineup builder | [Live](https://yasumorishima-mlb-bat-tracking.streamlit.app/) |
-| **Amateur team stats** | Real team stats read from paper scorebooks | [Site](https://yokohama-funnies.vercel.app/) |
+| **Amateur team stats** | Real team stats read from paper scorebooks | [Site](https://yokohama-funnies.vercel.app/) · [How-to (JP)](https://github.com/yasumorishima/baseball-scorebook-ocr-docs/blob/main/stats-from-scorebook.md) · [Runbook](https://github.com/yasumorishima/yokohama-funnies/blob/main/docs/scorebook-to-stats.md) 🔒 |
 
 ### 4. MLOps & Data Platform
 
