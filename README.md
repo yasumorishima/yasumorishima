@@ -299,7 +299,7 @@ No cloud OCR, no generative model; the same page always reads the same.
 
 </details>
 
-### [Handwritten Scorebook OCR](https://github.com/yasumorishima/baseball-scorebook-ocr) 🔒 *(private R&D, active)*
+### [Handwritten Scorebook OCR](https://github.com/yasumorishima/baseball-scorebook-reader) *(open source, active)*
 
 <details>
 <summary>Where it stands</summary>
@@ -330,7 +330,7 @@ Paper scorebook photos → at-bat data · OpenCV on a Raspberry Pi 5 · constrai
 
 </details>
 
-Public write-up: [baseball-scorebook-ocr-docs](https://github.com/yasumorishima/baseball-scorebook-ocr-docs) (JP)
+Code: [baseball-scorebook-reader](https://github.com/yasumorishima/baseball-scorebook-reader) (MIT) · Write-up: [docs](https://github.com/yasumorishima/baseball-scorebook-ocr-docs) · [Notation guide](https://github.com/yasumorishima/baseball-scorebook-ocr-docs/blob/main/notation.md) (JP) · Ground truth with names: [private](https://github.com/yasumorishima/baseball-scorebook-ocr) 🔒
 
 ### [Business-Form PDF Extraction](https://github.com/yasumorishima/form-ocr-lab) 🔒 *(private R&D, active)*
 
