@@ -118,12 +118,12 @@ Forked from Minami Baseball OB — <!--fn:players-->23<!--/fn-->-player roster �
 - **5-tier RBAC** with Google OAuth
 - **Approve by merge**: a form request becomes a PR; merging grants the role
 - **Stats schema**: per-game batting / pitching / attendance → 打率 / OPS / ERA / WHIP
-- **Stat input**: spreadsheet migration + manual input beside the scorebook image
+- **Stat input**: spreadsheet migration, then scorebook photos read by Claude Code (Opus 5.5) and checked by arithmetic before saving
 - **Security & monitoring**: RLS, gitleaks, hourly health check
 
 </details>
 
-**[Technical Documentation](https://github.com/yasumorishima/yokohama-funnies-docs)**
+**[Technical Documentation](https://github.com/yasumorishima/yokohama-funnies-docs)** · **[Scorebook → stats how-to (JP)](https://github.com/yasumorishima/baseball-scorebook-ocr-docs/blob/main/stats-from-scorebook.md)** · [Runbook](https://github.com/yasumorishima/yokohama-funnies/blob/main/docs/scorebook-to-stats.md) 🔒
 
 `Next.js 15 / TypeScript 5.8 / Tailwind CSS 4 / Supabase / Vercel / GitHub Actions / Google Apps Script`
 
