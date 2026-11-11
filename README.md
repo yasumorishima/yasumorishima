@@ -383,7 +383,7 @@ PR review: CodeRabbit, with one central config in [coderabbit](https://github.co
 | **hotosm/openaerialmap** | [#289](https://github.com/hotosm/openaerialmap/pull/289) | STAC ingester dropping the wrong record |
 | **apache/fineract-backoffice-ui** | [#321](https://github.com/apache/fineract-backoffice-ui/pull/321) | Accounting screen translations |
 | **daisy/MathCAT** | [#665](https://github.com/daisy/MathCAT/pull/665) | Chemistry assertions that could never fail |
-| **daisy/MathCAT** | [#720-970](https://github.com/daisy/MathCAT/pull/970) | Japanese speech rules, 37 merged PRs, now in main ([#936](https://github.com/daisy/MathCAT/pull/936)) |
+| **daisy/MathCAT** | [#720-982](https://github.com/daisy/MathCAT/pull/982) | Japanese speech rules, 40 merged PRs, now in main ([#936](https://github.com/daisy/MathCAT/pull/936)) |
 | **daisy/MathCAT** | [#746](https://github.com/daisy/MathCAT/pull/746) | Japanese navigation announcements for blind readers |
 | **PHPOffice/PHPPresentation** | [#897](https://github.com/PHPOffice/PHPPresentation/pull/897) | PHP 8.4/8.5 static analysis, 144 findings fixed |
 | **project-inclusive/OpenFisca-Japan** | [#479-484](https://github.com/project-inclusive/OpenFisca-Japan/pull/479) | Six welfare benefits added |
