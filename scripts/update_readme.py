@@ -502,6 +502,53 @@ def get_mlb_analysis_count() -> int | None:
         return None
 
 
+# The Japanese speech rules for daisy/MathCAT start at #720; #665 has its own row.
+# Only PRs whose title starts with "ja" or mentions Japanese are counted, so a
+# later PR outside the Japanese rules does not change the number.
+MATHCAT_REPO = "daisy/MathCAT"
+MATHCAT_FIRST_JA_PR = 720
+MATHCAT_MARKER = "MATHCAT_JA"
+
+
+def get_mathcat_ja_prs() -> tuple[int, int] | None:
+    """(count, highest number) of the owner's merged Japanese MathCAT PRs from #720 on."""
+    output = run([
+        "gh", "pr", "list", "--repo", MATHCAT_REPO, "--author", "yasumorishima",
+        "--state", "merged", "--limit", "1000", "--json", "number,title",
+        "--jq", (f'[.[] | select(.number >= {MATHCAT_FIRST_JA_PR} and '
+                 f'(.title | test("^ja[: ]|Japanese"; "i"))) | .number] | [length, max] | @tsv'),
+    ])
+    try:
+        count, newest = (int(x) for x in output.split("\t"))
+    except ValueError:
+        return None
+    return (count, newest) if count > 0 else None
+
+
+def mathcat_ja_text(count: int, newest: int) -> str:
+    return (f"[#{MATHCAT_FIRST_JA_PR}-{newest}](https://github.com/{MATHCAT_REPO}/pull/{newest})"
+            f" | Japanese speech rules, {count} merged PRs")
+
+
+def update_mathcat_ja(readme: str, prs: tuple[int, int] | None) -> str:
+    """Rewrite the MathCAT row. Merged PRs never go away, so a smaller count or
+    an older newest PR means the fetch went wrong: keep the old text."""
+    m = re.search(rf"<!-- {MATHCAT_MARKER}_START -->\[#\d+-(\d+)\].*?, (\d+) merged PRs<!-- {MATHCAT_MARKER}_END -->", readme)
+    if m is None:
+        print("  WARNING: MathCAT marker not found, skipping", file=sys.stderr)
+        return readme
+    if prs is None:
+        print("  Skipping MathCAT update (API unavailable)")
+        return readme
+    count, newest = prs
+    old_newest, old_count = int(m.group(1)), int(m.group(2))
+    if count < old_count or newest < old_newest:
+        print(f"  Skipping MathCAT update: {count} PRs up to #{newest} is below the "
+              f"current {old_count} up to #{old_newest}", file=sys.stderr)
+        return readme
+    return replace_marker(readme, MATHCAT_MARKER, mathcat_ja_text(count, newest))
+
+
 def replace_marker(text: str, marker: str, replacement: str) -> str:
     pattern = rf"(<!-- {marker}_START -->).*?(<!-- {marker}_END -->)"
     return re.sub(
@@ -614,6 +661,12 @@ def main():
         readme = replace_marker(readme, "MLB_STATS", f"{mlb_count} analyses")
     else:
         print("  Skipping MLB analysis update (API unavailable)")
+
+    # Japanese speech rules in daisy/MathCAT
+    print("Fetching MathCAT Japanese PR count...")
+    mathcat = get_mathcat_ja_prs()
+    print(f"  MathCAT ja PRs: {mathcat}")
+    readme = update_mathcat_ja(readme, mathcat)
 
     # Career years (started 2008)
     career_years = date.today().year - 2008
