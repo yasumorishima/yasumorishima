@@ -503,17 +503,20 @@ def get_mlb_analysis_count() -> int | None:
 
 
 # The Japanese speech rules for daisy/MathCAT start at #720; #665 has its own row.
+# Only PRs whose title starts with "ja" or mentions Japanese are counted, so a
+# later PR outside the Japanese rules does not change the number.
 MATHCAT_REPO = "daisy/MathCAT"
 MATHCAT_FIRST_JA_PR = 720
 MATHCAT_MARKER = "MATHCAT_JA"
 
 
 def get_mathcat_ja_prs() -> tuple[int, int] | None:
-    """(count, highest number) of the owner's merged MathCAT PRs from #720 on."""
+    """(count, highest number) of the owner's merged Japanese MathCAT PRs from #720 on."""
     output = run([
         "gh", "pr", "list", "--repo", MATHCAT_REPO, "--author", "yasumorishima",
-        "--state", "merged", "--limit", "1000", "--json", "number",
-        "--jq", f"[.[].number | select(. >= {MATHCAT_FIRST_JA_PR})] | [length, max] | @tsv",
+        "--state", "merged", "--limit", "1000", "--json", "number,title",
+        "--jq", (f'[.[] | select(.number >= {MATHCAT_FIRST_JA_PR} and '
+                 f'(.title | test("^ja[: ]|Japanese"; "i"))) | .number] | [length, max] | @tsv'),
     ])
     try:
         count, newest = (int(x) for x in output.split("\t"))
