@@ -360,6 +360,21 @@ Supplier PDFs → spreadsheet, **no generative model** · same input, same bytes
 
 </details>
 
+<details>
+<summary>PDFs with no extractable text, without a per-call AI API</summary>
+
+Characters drawn as vector outlines, so there is no text to copy. The usual answer is to send every page to a generative-AI API. Here a generative model only **drafts a glyph → character table once**, a human checks it, and every run after that is a lookup.
+
+| Point | What it means |
+| --- | --- |
+| Cost per run | **none**: no API calls, works offline |
+| Hallucination | **none**: only characters in the table come out; an unknown shape stays unassigned |
+| Not "no errors" | a wrong table entry repeats every run; look-alikes (0/O, 1/l) can be absorbed silently |
+| Thin data | characters seen only a few times are named, so they get checked by eye |
+| Next | a trial on a public (or self-made) sample PDF |
+
+</details>
+
 ---
 
 ## 🌐 Open Source Contributions
