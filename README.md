@@ -379,7 +379,7 @@ Characters drawn as vector outlines, so there is no text to copy. The usual answ
 
 ## 🌐 Open Source Contributions
 
-<!-- OSS_STATS_START -->(177 PRs / 129 Merged)<!-- OSS_STATS_END --> across 49 repositories. See [oss-contributions](https://github.com/yasumorishima/oss-contributions) for full details.
+<!-- OSS_STATS_START -->(191 PRs / 144 Merged)<!-- OSS_STATS_END --> across 49 repositories. See [oss-contributions](https://github.com/yasumorishima/oss-contributions) for full details.
 
 PR review: CodeRabbit, with one central config in [coderabbit](https://github.com/yasumorishima/coderabbit) 🔒 (docs-only PRs stay quiet), and CodeQL on public repos and forks, with coverage and triage notes in [codeql](https://github.com/yasumorishima/codeql) 🔒.
 
