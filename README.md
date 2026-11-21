@@ -371,9 +371,20 @@ Characters drawn as vector outlines, so there is no text to copy. The usual answ
 | Hallucination | **none**: only characters in the table come out; an unknown shape stays unassigned |
 | Not "no errors" | a wrong table entry repeats every run; look-alikes (0/O, 1/l) can be absorbed silently |
 | Thin data | characters seen only a few times are named, so they get checked by eye |
-| Next | a trial on a public (or self-made) sample PDF |
+| First trial | self-made samples; two related OSS tools run against them ([notes](https://github.com/yasumorishima/document-extraction-lab/tree/main/topics/glyph-table)) |
+| Next | this method on the same samples, then a comparison with a generative-AI API |
 
 </details>
+
+Public follow-up, written from scratch with self-made samples only: [document-extraction-lab](https://github.com/yasumorishima/document-extraction-lab) 🔒 *(private until reviewed)*
+
+### [Document Extraction Lab](https://github.com/yasumorishima/document-extraction-lab) 🔒 *(private until reviewed, active)*
+
+Getting data out of documents (PDFs, scans, images), one topic per folder. Self-made or public samples only.
+
+| Topic | Status |
+| --- | --- |
+| [glyph-table](https://github.com/yasumorishima/document-extraction-lab/tree/main/topics/glyph-table): PDFs whose text cannot be copied | samples built; related OSS tried: one repaired **0 wrong** characters (only look-alikes left open), one breaks at **3** steps |
 
 ---
 
