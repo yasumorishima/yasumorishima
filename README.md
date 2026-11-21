@@ -384,7 +384,7 @@ Getting data out of documents (PDFs, scans, images), one topic per folder. Self-
 
 | Topic | Status |
 | --- | --- |
-| [glyph-table](https://github.com/yasumorishima/document-extraction-lab/tree/main/topics/glyph-table): PDFs whose text cannot be copied | samples built; related OSS tried: one restored the text with **no errors** (look-alikes left unresolved), the other breaks at **3** steps |
+| [glyph-table](https://github.com/yasumorishima/document-extraction-lab/tree/main/topics/glyph-table): PDFs whose text cannot be copied | samples built; related OSS tried: font repair made **no errors** (look-alikes left open), full-page OCR **silently swapped** look-alikes and one amount; the other tool breaks at **4** points |
 
 ---
 
