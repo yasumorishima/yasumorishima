@@ -332,7 +332,7 @@ Paper scorebook photos → at-bat data · OpenCV on a Raspberry Pi 5 · constrai
 
 Code: [baseball-scorebook-reader](https://github.com/yasumorishima/baseball-scorebook-reader) (MIT) · Write-up: [docs](https://github.com/yasumorishima/baseball-scorebook-ocr-docs) · [Notation guide](https://github.com/yasumorishima/baseball-scorebook-ocr-docs/blob/main/notation.md) (JP) · Ground truth with names: [private](https://github.com/yasumorishima/baseball-scorebook-ocr) 🔒 · Blog: [DEV.to](https://dev.to/yasumorishima/reading-paper-baseball-scorebooks-with-claude-code-and-checking-them-with-arithmetic-2f23) / [Qiita](https://qiita.com/ussu_ussu_ussu/items/c9ecfde3d172a0069c65) (JP)
 
-### [Document Extraction Lab](https://github.com/yasumorishima/document-extraction-lab) 🔒 *(private until reviewed, active)*
+### [Document Extraction Lab](https://github.com/yasumorishima/document-extraction-lab) *(active)*
 
 Getting data out of documents (PDFs, scans, images), one topic per folder. Self-made or public samples only.
 
