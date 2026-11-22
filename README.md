@@ -332,33 +332,13 @@ Paper scorebook photos → at-bat data · OpenCV on a Raspberry Pi 5 · constrai
 
 Code: [baseball-scorebook-reader](https://github.com/yasumorishima/baseball-scorebook-reader) (MIT) · Write-up: [docs](https://github.com/yasumorishima/baseball-scorebook-ocr-docs) · [Notation guide](https://github.com/yasumorishima/baseball-scorebook-ocr-docs/blob/main/notation.md) (JP) · Ground truth with names: [private](https://github.com/yasumorishima/baseball-scorebook-ocr) 🔒 · Blog: [DEV.to](https://dev.to/yasumorishima/reading-paper-baseball-scorebooks-with-claude-code-and-checking-them-with-arithmetic-2f23) / [Qiita](https://qiita.com/ussu_ussu_ussu/items/c9ecfde3d172a0069c65) (JP)
 
-### [Business-Form PDF Extraction](https://github.com/yasumorishima/form-ocr-lab) 🔒 *(private R&D, active)*
+### [Document Extraction Lab](https://github.com/yasumorishima/document-extraction-lab) 🔒 *(private until reviewed, active)*
 
-<details>
-<summary>Why not a generative OCR</summary>
+Getting data out of documents (PDFs, scans, images), one topic per folder. Self-made or public samples only.
 
-Supplier PDFs → spreadsheet, **no generative model** · same input, same bytes out · reconciled against the printed total
-
-| Check | Result |
+| Topic | Status |
 | --- | --- |
-| Same number, two passes | characters swap between runs |
-| Two-pass agreement, worst page | about half — **voting does not converge** |
-| Where the methods disagreed | **always the generative side** |
-| Duplicates it reported | 14, true duplicates **0** |
-
-</details>
-
-<details>
-<summary>Rebuilding it from the write-up</summary>
-
-| Check | Result |
-| --- | --- |
-| Suites on the rebuild | **785 checks, 0 failures** |
-| Do the tests have teeth | **42** hand mutations + **98** swept mutants, none surviving |
-| What a sweep cannot measure | outside review still found **3**, then **6** more issues |
-| The worst of them | the file was written, but the screen said it was not |
-
-</details>
+| [glyph-table](https://github.com/yasumorishima/document-extraction-lab/tree/main/topics/glyph-table): PDFs whose text cannot be copied | evaluated against OCR, 4 Claude models and two related OSS tools on self-made samples and a real monthly report: **0 silent errors**, unknown shapes flagged with "?" |
 
 <details>
 <summary>PDFs with no extractable text, without a per-call AI API</summary>
@@ -375,16 +355,6 @@ Characters drawn as vector outlines, so there is no text to copy. The usual answ
 | vs. generative AI | top models also read the real report without errors; the difference is cost per page and the same answer every run |
 
 </details>
-
-Public follow-up, written from scratch with self-made and public samples only: [document-extraction-lab](https://github.com/yasumorishima/document-extraction-lab) 🔒 *(private until reviewed)*
-
-### [Document Extraction Lab](https://github.com/yasumorishima/document-extraction-lab) 🔒 *(private until reviewed, active)*
-
-Getting data out of documents (PDFs, scans, images), one topic per folder. Self-made or public samples only.
-
-| Topic | Status |
-| --- | --- |
-| [glyph-table](https://github.com/yasumorishima/document-extraction-lab/tree/main/topics/glyph-table): PDFs whose text cannot be copied | evaluated against OCR, 4 Claude models and two related OSS tools on self-made samples and a real monthly report: **0 silent errors**, unknown shapes flagged with "?" |
 
 ---
 
