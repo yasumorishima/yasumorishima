@@ -369,14 +369,14 @@ Characters drawn as vector outlines, so there is no text to copy. The usual answ
 | --- | --- |
 | Cost per run | **none**: no API calls, works offline |
 | Hallucination | **none**: only characters in the table come out; an unknown shape stays unassigned |
-| Not "no errors" | a wrong table entry repeats every run; look-alikes (0/O, 1/l) can be absorbed silently |
+| Not "no errors" | a wrong table entry repeats every run (one unchecked entry: 200 silent errors in 11 months), so drafts from 4 models are compared and a person checks only where they disagree (11% of entries) |
 | Thin data | characters seen only a few times are named, so they get checked by eye |
-| First trial | self-made samples; two related OSS tools run against them ([notes](https://github.com/yasumorishima/document-extraction-lab/tree/main/topics/glyph-table)) |
-| Next | this method on the same samples, then a comparison with a generative-AI API |
+| Measured | self-made samples (17 conditions, English/Japanese) and a real government monthly report: **0 silent errors**; full-page OCR misread thousands ([results](https://github.com/yasumorishima/document-extraction-lab/tree/main/topics/glyph-table/results)) |
+| vs. generative AI | top models also read the real report without errors; the difference is cost per page and the same answer every run |
 
 </details>
 
-Public follow-up, written from scratch with self-made samples only: [document-extraction-lab](https://github.com/yasumorishima/document-extraction-lab) 🔒 *(private until reviewed)*
+Public follow-up, written from scratch with self-made and public samples only: [document-extraction-lab](https://github.com/yasumorishima/document-extraction-lab) 🔒 *(private until reviewed)*
 
 ### [Document Extraction Lab](https://github.com/yasumorishima/document-extraction-lab) 🔒 *(private until reviewed, active)*
 
@@ -384,7 +384,7 @@ Getting data out of documents (PDFs, scans, images), one topic per folder. Self-
 
 | Topic | Status |
 | --- | --- |
-| [glyph-table](https://github.com/yasumorishima/document-extraction-lab/tree/main/topics/glyph-table): PDFs whose text cannot be copied | samples built; related OSS tried: font repair made **no errors** (look-alikes left open), full-page OCR **silently swapped** look-alikes and one amount; the other tool breaks at **4** points |
+| [glyph-table](https://github.com/yasumorishima/document-extraction-lab/tree/main/topics/glyph-table): PDFs whose text cannot be copied | evaluated against OCR, 4 Claude models and two related OSS tools on self-made samples and a real monthly report: **0 silent errors**, unknown shapes flagged with "?" |
 
 ---
 
