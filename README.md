@@ -569,6 +569,7 @@ Demo passed on a real phone (2026-09-14) · passkey issue [dfinity/internet-iden
 ## 📫 Contact & Blog
 * **Site:** [https://yasumorishima.github.io](https://yasumorishima.github.io)
 * **Blog:** [DEV.to (EN)](https://dev.to/yasumorishima) / [Zenn (JP)](https://zenn.dev/shogaku) / [Quarto Blog (EN)](https://yasumorishima.github.io/quarto-blog/)
+* **Claude Code notes:** [claude-code-notes](https://github.com/yasumorishima/claude-code-notes) (index of my Claude Code write-ups + small verified snippets)
 * **Kaggle:** [https://www.kaggle.com/yasunorim](https://www.kaggle.com/yasunorim)
 * **Wantedly:** [https://www.wantedly.com/id/yasunori_morishima_b](https://www.wantedly.com/id/yasunori_morishima_b)
 * **LinkedIn:** [https://www.linkedin.com/in/morishima-yasunori-b70229241](https://www.linkedin.com/in/morishima-yasunori-b70229241?trk=contact-info)
