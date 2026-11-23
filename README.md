@@ -340,6 +340,8 @@ Getting data out of documents (PDFs, scans, images), one topic per folder. Self-
 | --- | --- |
 | [glyph-table](https://github.com/yasumorishima/document-extraction-lab/tree/main/topics/glyph-table): PDFs whose text cannot be copied | evaluated against OCR, 4 Claude models and two related OSS tools on self-made samples and a real monthly report: **0 silent errors**, unknown shapes flagged with "?" |
 
+Reported upstream (2026-11): [pdf-glyph-mapping #10](https://github.com/shreevatsa/pdf-glyph-mapping/issues/10#issuecomment-7093906215) (4 breaks reproduced on the author's data, two one-line fixes proposed) · [CUNY pdf-accessibility-app #92](https://github.com/CUNY-AI-Lab/pdf-accessibility-app/issues/92) (look-alike substitutions pass unflagged) · [#93](https://github.com/CUNY-AI-Lab/pdf-accessibility-app/issues/93) (characters missing from Japanese screen-reader text; fixed upstream in OCRmyPDF 17.13.0, only the lock needs bumping)
+
 <details>
 <summary>PDFs with no extractable text, without a per-call AI API</summary>
 
