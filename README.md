@@ -413,6 +413,8 @@ PR review: CodeRabbit, with one central config in [coderabbit](https://github.co
 
 <!-- KAGGLE_COMP_STATS_START -->Notebooks Expert | 🥉 14 Bronze Notebook Medals<!-- KAGGLE_COMP_STATS_END -->
 
+**Active:** [Santa 2026](https://www.kaggle.com/competitions/santa-2026) ([search](https://github.com/yasumorishima/kaggle-competitions/tree/main/santa-2026), <!-- RANK_SANTA2026_START -->129/3085<!-- RANK_SANTA2026_END -->) · [Generalist Gaming Agent](https://www.kaggle.com/competitions/generalist-gaming-agent) ([agent](https://github.com/yasumorishima/kaggle-competitions/tree/main/gga), <!-- RANK_GGA_START -->266/316<!-- RANK_GGA_END -->)
+
 **Finished 2026:** [Kaggriculture](https://www.kaggle.com/competitions/kaggriculture) ([agent](https://github.com/yasumorishima/kaggle-competitions/tree/main/kaggriculture), <!-- RANK_KAGGRICULTURE_START -->6047/10148<!-- RANK_KAGGRICULTURE_END -->) · [ROGII Wellbore Geology](https://www.kaggle.com/competitions/rogii-wellbore-geology-prediction) (<!-- RANK_ROGII_START -->2545/6125<!-- RANK_ROGII_END -->) · [PS S6E6](https://www.kaggle.com/competitions/playground-series-s6e6) (F1 0.95939) · [Stanford RNA 3D Folding 2](https://www.kaggle.com/competitions/stanford-rna-3d-folding-2) · [BirdCLEF+ 2026](https://www.kaggle.com/competitions/birdclef-2026)
 
 <details>
