@@ -4,6 +4,18 @@
   "production_sites": 3,
   "competition_ranks": [
     {
+      "marker": "RANK_SANTA2026",
+      "source": "kaggle",
+      "slug": "santa-2026",
+      "user": "yasunorim"
+    },
+    {
+      "marker": "RANK_GGA",
+      "source": "kaggle",
+      "slug": "generalist-gaming-agent",
+      "user": "yasunorim"
+    },
+    {
       "marker": "RANK_KAGGRICULTURE",
       "source": "kaggle",
       "slug": "kaggriculture",
