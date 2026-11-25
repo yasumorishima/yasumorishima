@@ -460,9 +460,9 @@ PR review: CodeRabbit, with one central config in [coderabbit](https://github.co
 
 ### SIGNATE
 
-**Active:** 5th Air Combat AI Challenge (to 2026-12-04)
+**Active:** 5th Air Combat AI Challenge (to 2026-12-04) · 3rd MLIT Geospatial Data Challenge — foot-traffic forecasting for new stores (to 2027-01-12)
 
-**Finished 2026:** NEDO Baggage-Loading Optimization (<!-- RANK_NEDO_START -->167/591<!-- RANK_NEDO_END -->) · NIR Moisture Prediction
+**Finished 2026:** NEDO Baggage-Loading Optimization (<!-- RANK_NEDO_START -->167/591<!-- RANK_NEDO_END -->) · NIR Moisture Prediction · AI Engineering Challenge (LLM / RAG)
 
 ### DrivenData
 
