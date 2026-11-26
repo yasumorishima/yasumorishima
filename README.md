@@ -248,7 +248,7 @@ Trunk rotation vs pitch speed: r=0.425. Bug fix [PR #384](https://github.com/pyo
 <td><a href="https://github.com/yasumorishima/hormuz-ship-tracker"><img src="https://raw.githubusercontent.com/yasumorishima/hormuz-ship-tracker/master/docs/screenshot.png" width="420"></a></td>
 </tr>
 <tr>
-<td>31 geophysical sources → ML earthquake prediction (AUC 0.907) + monitoring dashboard</td>
+<td>Forecasting the first (isolated) mainshock: honest AUC 0.778, goal 0.90 + monitoring dashboard</td>
 <td>Vessel tracking via AIS + Sentinel-1 radar, all on GitHub Actions · <a href="https://yasumorishima.github.io/hormuz-ship-tracker/">map</a></td>
 </tr>
 </table>
@@ -264,13 +264,14 @@ Trunk rotation vs pitch speed: r=0.425. Bug fix [PR #384](https://github.com/pyo
 <details>
 <summary>Evaluation and the Kumamoto InSAR result</summary>
 
-| Where the 0.907 comes from | Arm over its climatology, per window |
+| Sudden (isolated) mainshocks, 2,280 cells | AUC |
 | --- | --- |
-| aftershock-driven positives (39%) | +0.018 |
-| isolated mainshocks (61%) | +0.007 |
-| strict 11% (no M≥4 within 50 km in prior year) | +0.010 |
+| honest axis (headline; dropped rows as negatives) | **0.778** |
+| main SUDDEN-ALL axis (verdicts read here) | 0.787 |
+| climatology alone (main axis) | 0.753 |
 
-- **Evaluation**: walk-forward, 37 windows, 1989–2026; climatology alone reaches 0.902
+- **Target**: the first earthquake, an isolated M≥6 with nothing larger before it; goal AUC 0.90 (0.122 to go). Older 0.90-0.92 figures were pooled with aftershocks and are not sudden-mainshock skill
+- **Evaluation**: walk-forward, 37 windows, 1989–2026, plus a pre-1990 arena; 68 non-catalogue pilot groups read since round 960, none at the gate yet; prospective tests on 2027+ windows
 - **Rules**: pre-registered, frozen scripts, compared against permutation floors — [RESEARCH-LOG.md](https://github.com/yasumorishima/japan-geohazard-monitor/blob/master/RESEARCH-LOG.md)
 - **Data**: public HF dataset, weekly CI; licensed inputs in [geohazard-restricted-inputs](https://github.com/yasumorishima/geohazard-restricted-inputs) 🔒
 - **InSAR**: 2026 Kumamoto M7.1 displacement from Sentinel-1 ([details](https://github.com/yasumorishima/japan-geohazard-monitor/tree/master/research/kumamoto2026_insar))
