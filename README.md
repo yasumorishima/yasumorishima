@@ -475,7 +475,7 @@ PR review: CodeRabbit, with one central config in [coderabbit](https://github.co
 
 | App | Description | Link |
 |---|---|---|
-| **[Daily Diary](https://github.com/yasumorishima/diary-app-flutter)** | Flutter, 10 languages, offline-first, screen-reader checked in CI | [Google Play](https://play.google.com/store/apps/details?id=com.diary.daily) |
+| **[Daily Diary](https://github.com/yasumorishima/diary-app-flutter)** | Flutter, 10 languages, offline-first, screen-reader checked in CI, Play Age Signals for age-appropriate ads, released to Google Play from CI on a version bump | [Google Play](https://play.google.com/store/apps/details?id=com.diary.daily) |
 | **[Fire Tablet Google Play Helper](https://github.com/yasumorishima/yasumorishima.github.io/tree/main/fire-gapps)** | Step-by-step APK install guide for Fire OS | [Live](https://yasumorishima.github.io/fire-gapps/) |
 
 ### [icrc167-android](https://github.com/yasumorishima/icrc167-android) — Internet Identity login for native Android (Active)
